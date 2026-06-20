@@ -13,6 +13,12 @@
       "skillPath": "skills/canvas-design/SKILL.md",
       "computedHash": "4e8bbc31d3b159efdd32d31a63ba8cd5a44d84911e924c1f2c709c50cbcdd0ec"
     },
+    "carrossel": {
+      "source": "duduesh/carrossel-ratos",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "7a7ce92b51d281cbb6178d67d37bd839d489ab2c069ef28efc2efef10dfc04ce"
+    },
     "content-strategy": {
       "source": "coreyhaines31/marketingskills",
       "sourceType": "github",
