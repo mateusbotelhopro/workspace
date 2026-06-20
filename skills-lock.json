@@ -73,6 +73,12 @@
       "skillPath": "SKILL.md",
       "computedHash": "33b4f65775d0cdc8d63487d046ecd53cb03f39222b427622b2804d355fa9cb60"
     },
+    "gpt-image2-ratos": {
+      "source": "duduesh/gpt-image2-ratos",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "f28b3b10d5d659bf5862670180051d769b6985877387e16ac996c8081b2c90f2"
+    },
     "marketing-psychology": {
       "source": "coreyhaines31/marketingskills",
       "sourceType": "github",
