@@ -33,11 +33,19 @@ Atende clientes externos nas áreas acima, e usa o sistema também pra organizar
 Detalhes em `_contexto/preferencias.md`. Evitar excesso de travessão (—) e termos de IA genéricos.
 
 ## Ferramentas conectadas
-- [ ] Notion
-- [ ] Google Ads (skill /google-ads-ratos)
-- [ ] Meta Ads (skill /meta-ads-ratos)
 
-*(Marcar conforme for instalando os MCPs/skills)*
+- [ ] Notion
+
+## Skills instaladas
+
+- **Tráfego pago/Analytics:** google-ads-ratos, meta-ads-ratos, ga4-ratos, ads
+- **Copy/Marketing:** copywriting, ogilvy-copy, schwartz-copy, marketing-psychology, content-strategy, seo-audit
+- **Dev/Web:** frontend-design, web-design-guidelines, vercel-react-best-practices, nextjs-app-router-patterns, webapp-testing, context7-cli, context7-mcp, find-docs
+- **Documentos:** docx, pdf, pptx, xlsx
+- **Mídia/Visual:** canvas-design, nanobanana-ratos, gpt-image2-ratos, transcribe, yt-transcript
+- **Operação própria:** apresentacao-institucional, carrossel, comentario-dm-ratos, onboarding-cliente, proposta-comercial, publicar-instagram, publicar-site, roteiro-post, find-skills
+
+*(Atualizar essa lista conforme instalar/remover skills)*
 
 ---
 
