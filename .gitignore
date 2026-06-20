@@ -18,19 +18,6 @@ dados/*.pdf
 dados/*.json
 !dados/README.md
 
-# Pastas de trabalho do usuário (geradas pelo /setup, conteúdo pessoal)
-clientes/
-propostas/
-conteudo/
-projetos/
-briefings/
-trabalho/
-estudos/
-publicacoes/
-anotacoes/
-curriculo/
-tarefas.md
-
 # Sistema
 .DS_Store
 node_modules/

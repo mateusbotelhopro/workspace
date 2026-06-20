@@ -1,4 +1,4 @@
-# Guia de Design — DobraLabs
+# Guia de Design — Mateus Botelho
 
 > Você pode editar esse arquivo a qualquer momento.
 > As skills de carrossel, proposta e slide leem este arquivo antes de criar qualquer visual.
@@ -7,55 +7,47 @@
 
 ## Cores
 
-- **Fundo principal:** branco (#FFFFFF)
-
-- **Cor de destaque / CTA:** amarelo/alaranjado (acento da marca)
-
-- **Texto principal:** preto / quase preto
-
-- **Fundo alternativo / cards:** branco com borda (ver bordas abaixo)
-
-- **Cor proibida:** sem cor proibida definida ainda
+- **Fundo principal:** [ainda não definido]
+- **Cor de destaque / CTA:** [ainda não definido]
+- **Texto principal:** [ainda não definido]
+- **Fundo alternativo / cards:** [ainda não definido]
+- **Cor proibida:** [ainda não definido]
 
 ---
 
 ## Tipografia
 
-- **Títulos e destaques:** Instrument Serif
-
-- **Corpo, subtítulos e botões:** Bricolage Grotesque
-
-- **Peso do título:** Instrument Serif tem peso único (regular), usar tamanho grande pra destaque
+- **Títulos e destaques:** [ainda não definido]
+- **Corpo, subtítulos e botões:** [ainda não definido]
+- **Peso do título:** [ainda não definido]
 
 ---
 
 ## Estilo geral
 
-Base branco e preto com respiro/whitespace generoso, acento amarelo/alaranjado pontual.
-Visual clean, bold mas acessível, com personalidade ("laboratório nerd"). Grid organizado.
+[Ainda não definido. Até preencher, usar um visual neutro: clean, sem cor forte, bom contraste.]
 
 ---
 
 ## Elementos-chave
 
-- Bordas: cantos arredondados; usar dashed borders (tracejadas) em alguns elementos/cards
-- Border-radius dos cards: arredondado
-- Botões: cantos arredondados, acento amarelo/alaranjado
-- Sombras: leves ou nenhuma (visual clean)
+- Bordas: [ainda não definido]
+- Border-radius dos cards: [ainda não definido]
+- Botões: [ainda não definido]
+- Sombras: [ainda não definido]
 
 ---
 
 ## O que NUNCA fazer
 
-- Não poluir com cor; manter base branco/preto e usar o amarelo/alaranjado com parcimônia
-- Não usar fontes fora de Instrument Serif (títulos) e Bricolage Grotesque (corpo)
+[Preencher quando tiver identidade definida.]
 
 ---
 
 ## Logo
 
-- **Arquivo:** marca/logo-dobralabs-escuro.png *(logo escuro, pra fundo claro)*
-- **Versão pra fundo escuro:** marca/logo-dobralabs-completo-branco.png *(logo branco)*
+- **Arquivo:** [adicione em marca/ e atualize aqui quando tiver]
+- **Versão pra fundo escuro:** [se houver]
 - **Onde usar:** slide final do carrossel (CTA), header de propostas, slides de apresentação
 - **Tamanho sugerido:** largura entre 120-200px nos HTMLs
 
@@ -63,10 +55,10 @@ Visual clean, bold mas acessível, com personalidade ("laboratório nerd"). Grid
 
 ## Perfil do autor
 
-> Usado no estilo "tweet" do carrossel. Preenchido automaticamente no setup.
+> Usado no estilo "tweet" do carrossel.
 
-- **Nome:** Eduardo
-- **Handle:** @ratosdeia
+- **Nome:** Mateus Botelho
+- **Handle:** [adicione quando tiver]
 - **Foto:** *(adicione em marca/foto-perfil.jpg quando tiver)*
 - **Badge verificado:** não
 
@@ -74,4 +66,4 @@ Visual clean, bold mas acessível, com personalidade ("laboratório nerd"). Grid
 
 ## Observações adicionais
 
-Marca: DobraLabs. Canal de conteúdo: Ratos de IA.
+[Sem identidade visual definida ainda. Atualize esse arquivo quando tiver cores, fontes e logo.]

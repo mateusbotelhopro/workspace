@@ -1,44 +1,43 @@
-# DobraLabs — Claude Code OS
+# Mateus Botelho — Claude Code OS
 
 ## O que é esse workspace
-Workspace de trabalho do Eduardo (DobraLabs). Aqui ficam os projetos de clientes (dev de software e consultoria), a produção de conteúdo do canal Ratos de IA, propostas, reuniões e relatórios.
+Workspace de trabalho do Mateus Botelho. Aqui ficam os clientes (tráfego pago, marketing, comercial, sites/SaaS, copy), a operação interna própria, propostas e conteúdo.
 
 **Estrutura de pastas:**
 - `_contexto/` — memória do sistema (não apagar)
-- `marca/` — identidade visual e logos da DobraLabs
-- `clientes/` — uma pasta por cliente (dev e consultoria); `_modelo-cliente/` é o template
-- `conteudo/` — produção do Ratos de IA (`roteiros/`, `carrosseis/`, `ideias/`)
+- `marca/` — identidade visual e logos (ainda em definição)
+- `clientes/` — uma pasta por cliente; `_modelo-cliente/` é o template (briefing.md)
+- `interno/` — operação própria, organizada por área (`trafego/`, `comercial/`, `marketing/`)
+- `conteudo/` — produção de conteúdo (próprio ou de cliente)
 - `propostas/` — propostas avulsas antes de virar cliente
-- `reunioes/` — atas e anotações de reunião
-- `relatorios/` — relatórios e análises
 - `dados/` — drop zone pra arquivos analisar (CSV, XLSX, TXT, PDF)
+- `tarefas/` — gestão de tarefas (substitui o Notion). `tarefas/geral.md` é a operação interna; `tarefas/[nome-cliente].md` é por cliente
 - `templates/skills/` — templates de skills prontos pra personalizar com /mapear
 - `templates/ferramentas/catalogo.md` — APIs e ferramentas disponíveis pra usar em skills
-- `tarefas.md` — lista de tarefas corrente
 
 ## Sobre o negócio
-DobraLabs presta serviços de desenvolvimento de software e consultoria pra clientes, e mantém o canal Ratos de IA no YouTube. Operação solo: o Eduardo toca tudo.
+Mateus presta serviços de gestão de tráfego pago, marketing, estrutura e operação comercial, criação de sites/blogs e SaaS/aplicativos, e copywriting. Atende clientes e também usa o sistema pra gerir sua própria operação. Solo: toca tudo sozinho.
 
 ## O que mais fazemos aqui
-- Conteúdo pra redes sociais (foco no YouTube Ratos de IA)
-- Propostas comerciais e apresentações comerciais
-- Relatórios e análises
-- Muitas reuniões (atas e follow-ups)
+- Gestão de tráfego pago (Google Ads, Meta Ads)
+- Marketing e estrutura/operação comercial
+- Criação de sites, blogs, SaaS e aplicativos (código customizado e no-code/low-code, depende do projeto)
+- Automação de WhatsApp (ManyChat/n8n) — atendimento e funis de venda, depende do cliente
+- Copywriting
+- Propostas comerciais
 
 ## Clientes e contexto
-Atende clientes externos de dev de software e consultoria, e usa o sistema também pra gerir o próprio negócio. Cada cliente tem sua pasta em `clientes/[nome-cliente]/`.
+Atende clientes externos nas áreas acima, e usa o sistema também pra organizar a própria operação. Cada cliente tem sua pasta em `clientes/[nome-cliente]/`. Foco atual: centralizar e organizar a operação dos clientes antes de estruturar a operação interna.
 
 ## Tom de voz
-Informal e direto, como quem fala. Evitar travessão (—), frases-fragmento curtas em série, e dicotomias do tipo "não é isso, é aquilo". Detalhes em `_contexto/preferencias.md`.
+Detalhes em `_contexto/preferencias.md`. Evitar excesso de travessão (—) e termos de IA genéricos.
 
 ## Ferramentas conectadas
-- [ ] Google Drive
-- [ ] Gmail
-- [ ] Canva
-- [ ] Meta Ads (skill /meta-ads-ratos)
+- [ ] Notion
 - [ ] Google Ads (skill /google-ads-ratos)
+- [ ] Meta Ads (skill /meta-ads-ratos)
 
-*(Marcar conforme for instalando os MCPs)*
+*(Marcar conforme for instalando os MCPs/skills)*
 
 ---
 
@@ -70,11 +69,12 @@ Ao concluir uma tarefa que não tinha skill mas parece repetível, perguntar se 
 
 ## Regras do sistema
 
-- Cada cliente tem sua pasta em `clientes/[nome-cliente]/` (briefing.md + proposta.html)
-- Propostas de cliente salvar em `clientes/[nome-cliente]/proposta.html`
-- Conteúdo do Ratos de IA vai em `conteudo/`
-- Atas de reunião vão em `reunioes/`
-- Relatórios e análises vão em `relatorios/`
+- Cada cliente tem sua pasta em `clientes/[nome-cliente]/` (briefing.md gerado por `/onboarding-cliente`)
+- Propostas de cliente salvar em `clientes/[nome-cliente]/proposta.pdf` (gerada por `/proposta-comercial`)
+- Operação interna própria vai em `interno/[area]/`
+- Conteúdo vai em `conteudo/`
+- Tarefas gerais vão em `tarefas/geral.md`; tarefas por cliente vão em `tarefas/[nome-cliente].md` (copiar de `clientes/_modelo-cliente/tarefas-modelo.md`)
+- Projetos de automação WhatsApp (ManyChat/n8n) pra cliente seguem o fluxo de `/novo-projeto`, usando as ferramentas do `templates/ferramentas/catalogo.md` (N8N MCP, WhatsApp Cloud API/Z-API) conforme o que o projeto pedir
 
 ---
 

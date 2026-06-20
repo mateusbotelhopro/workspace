@@ -1,14 +1,24 @@
-# Contexto da Empresa — DobraLabs
+# Contexto da Empresa — Mateus Botelho
 
-**Nome:** Eduardo
-**Negócio:** DobraLabs
-**O que faz:** Presta serviços de desenvolvimento de software e consultoria pra clientes, e produz conteúdo próprio (canal Ratos de IA no YouTube).
-**Perfil:** freelancer (atende clientes) + criador (conteúdo próprio)
-**Atende clientes:** sim (dev de software + consultoria) e também usa o sistema pra gerir o próprio negócio
+**Nome:** Mateus Botelho
+**Negócio:** Mateus Botelho
+**O que faz:** Gestão de tráfego pago, gestão de marketing, estrutura e operação comercial, criação de sites/blogs e SaaS/aplicativos, automação de WhatsApp (ManyChat/n8n), e copywriting — pra clientes e pra sua própria operação.
+**Perfil:** freelancer (atende clientes) + solopreneur (gestão da própria operação)
+**Atende clientes:** sim, e também usa o sistema pra gerir sua própria operação
 **Equipe:** solo (toca tudo sozinho)
-**Ferramentas:** Google Drive, Canva, Gmail, Meta Ads, Google Ads
-**Principais entregas:** conteúdo pra redes sociais, propostas comerciais, apresentações comerciais, relatórios e análises. Faz bastante reunião.
+**Ferramentas:** Google Ads, Meta Ads, Notion (sendo substituído pela pasta `tarefas/`), Capcut, Claude, ChatGPT
+**Principais entregas:** gestão de tráfego pago, gestão de marketing, estrutura comercial, operação comercial, sites e blogs, SaaS e aplicativos, automação de WhatsApp (atendimento e funis de venda), copywriting
+
+## Stack de desenvolvimento
+
+Sites, blogs, apps e SaaS: mistura de código customizado (Next.js/React, etc) e no-code/low-code (Wordpress, Webflow, Bubble), depende do projeto e do cliente.
+
+## Automação de WhatsApp (serviço novo)
+
+Vende automação de WhatsApp via ManyChat e n8n. Tipo de entrega varia por cliente: atendimento automatizado (bot de suporte/triagem) ou automações de venda/funil (follow-up de lead, recuperação de carrinho, agendamento).
 
 ## Contexto adicional
-- Canal do YouTube se chama Ratos de IA.
+
 - Trabalha solo, então o sistema serve tanto pra produção quanto pra gestão.
+- Atende clientes em paralelo com a própria operação — workspace organizado por cliente (`clientes/`) e por área interna (`interno/`).
+- Gestão de tarefas migrou do Notion pra pasta `tarefas/` (geral.md + um arquivo por cliente).
