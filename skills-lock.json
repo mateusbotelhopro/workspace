@@ -7,6 +7,12 @@
       "skillPath": "skills/ads/SKILL.md",
       "computedHash": "350c7857b946c68b105fe867505a4f5cf8f694cdb54923f055215a546cbeb6ce"
     },
+    "canvas-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/canvas-design/SKILL.md",
+      "computedHash": "4e8bbc31d3b159efdd32d31a63ba8cd5a44d84911e924c1f2c709c50cbcdd0ec"
+    },
     "content-strategy": {
       "source": "coreyhaines31/marketingskills",
       "sourceType": "github",
