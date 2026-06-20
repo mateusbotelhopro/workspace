@@ -127,6 +127,12 @@
       "skillPath": "skills/pptx/SKILL.md",
       "computedHash": "2275e4d8dba1790d52f6619b3e2fed04edc948beef545a2ad18e4a1be644426d"
     },
+    "schwartz-copy": {
+      "source": "duduesh/schwartz-copy",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "7c42c70b74fafca050433a8ffa0d435025f108fa43ec0bd6cd6b61deacddc85a"
+    },
     "seo-audit": {
       "source": "coreyhaines31/marketingskills",
       "sourceType": "github",
