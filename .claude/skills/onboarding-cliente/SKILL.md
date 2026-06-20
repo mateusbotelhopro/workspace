@@ -22,7 +22,7 @@ description: >
 
 Perguntar: "Qual é o nome do cliente/empresa?"
 
-Verificar se já existe `clientes/[nome-cliente]/`. Se não existir, criar a pasta (copiando a estrutura de `clientes/_modelo-cliente/` se houver).
+Verificar se já existe `clientes/[nome-cliente]/`. Se não existir, criar a pasta (copiando a estrutura de `clientes/_modelo-cliente/` se houver, **incluindo o `CLAUDE.md`** — esse arquivo é obrigatório em toda pasta de cliente nova, porque ela às vezes é aberta separada como workspace próprio no Claude Code).
 
 ### Passo 2 — Entrevista de descoberta
 
@@ -74,6 +74,10 @@ Gerar `clientes/[nome-cliente]/briefing.md`:
 *Base pra montar a estratégia. Atualizar conforme o cliente trouxer novas informações.*
 ```
 
+### Passo 3.5 — Gerar o CLAUDE.md do cliente
+
+Copiar `clientes/_modelo-cliente/CLAUDE.md` pra `clientes/[nome-cliente]/CLAUDE.md`, preenchendo os campos com o que foi coletado na entrevista (nome, segmento, serviços contratados — perguntar se ainda não estiver claro qual serviço foi contratado). Esse arquivo é **obrigatório** em toda pasta de cliente: se essa pasta for aberta separada como workspace, ele é o que garante que o contexto do negócio não se perca.
+
 ### Passo 4 — Próximo passo
 
 Depois de salvar o briefing, perguntar: "Briefing salvo. Quer que eu já esboce uma estratégia inicial com base nisso, ou prefere revisar o briefing primeiro?"
@@ -86,3 +90,4 @@ Depois de salvar o briefing, perguntar: "Briefing salvo. Quer que eu já esboce 
 - Uma pergunta por vez durante a entrevista
 - Se o cliente for muito direto e já mandar tudo de uma vez, não repetir perguntas já respondidas
 - Tom segue `_contexto/preferencias.md`
+- Todo cliente novo precisa sair dessa skill com `briefing.md` E `CLAUDE.md` na pasta — nunca só o briefing
