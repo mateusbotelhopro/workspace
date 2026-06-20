@@ -85,6 +85,12 @@
       "skillPath": "SKILL.md",
       "computedHash": "aceb593716063759a798a6adfcc03fd7e1e4f46376ac38b59fca1921bb506336"
     },
+    "nanobanana-ratos": {
+      "source": "duduesh/nanobanana-ratos",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "b138616bd71cf9615b1a13ff935f194094f9a72e14fe5ca9792bc47b9200b86f"
+    },
     "nextjs-app-router-patterns": {
       "source": "wshobson/agents",
       "sourceType": "github",
