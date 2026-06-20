@@ -1,6 +1,12 @@
 {
   "version": 1,
   "skills": {
+    "ads": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "skillPath": "skills/ads/SKILL.md",
+      "computedHash": "350c7857b946c68b105fe867505a4f5cf8f694cdb54923f055215a546cbeb6ce"
+    },
     "content-strategy": {
       "source": "coreyhaines31/marketingskills",
       "sourceType": "github",
@@ -30,6 +36,12 @@
       "sourceType": "github",
       "skillPath": "skills/marketing-psychology/SKILL.md",
       "computedHash": "d057044710ce7b7f9b90b84b3ab64e9359aaf47982b922ec10daca3822185ede"
+    },
+    "nextjs-app-router-patterns": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "skillPath": "plugins/frontend-mobile-development/skills/nextjs-app-router-patterns/SKILL.md",
+      "computedHash": "3a46e9093baecb3a85819529ce05006f817663f48d9e872868c32ae6049c0d5c"
     },
     "seo-audit": {
       "source": "coreyhaines31/marketingskills",
