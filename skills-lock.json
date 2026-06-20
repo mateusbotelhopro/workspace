@@ -37,6 +37,12 @@
       "skillPath": "skills/copywriting/SKILL.md",
       "computedHash": "cb9761b92e140cd68c1de6397c51dd9952da198382abfdbf26589ef26f6572b4"
     },
+    "docx": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/docx/SKILL.md",
+      "computedHash": "150be87ff7b18f273ad07da303adb1cf2ca21cc3e76db7a2cf0373405178a278"
+    },
     "find-docs": {
       "source": "upstash/context7",
       "sourceType": "github",
