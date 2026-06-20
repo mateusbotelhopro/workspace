@@ -37,6 +37,12 @@
       "skillPath": "SKILL.md",
       "computedHash": "32e9be65dfbc0ec5dc2ac16279461491b111580b72c7653ef2f81c1839002b91"
     },
+    "google-ads-ratos": {
+      "source": "duduesh/google-ads-ratos",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "33b4f65775d0cdc8d63487d046ecd53cb03f39222b427622b2804d355fa9cb60"
+    },
     "marketing-psychology": {
       "source": "coreyhaines31/marketingskills",
       "sourceType": "github",
