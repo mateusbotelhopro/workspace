@@ -48,6 +48,23 @@ O cliente pede tarefas pontuais e variadas no dia a dia, além do trabalho estru
 
 **Onboarding de clientes deles:** feito em reunião (call/presencial) pelo time deles — não é nosso processo a documentar, só mencionado pra contexto.
 
+**Canal de demandas:** chegam por WhatsApp direto, de forma pontual e informal.
+
+## Organização de arquivos
+
+Pasta organizada por frente de negócio:
+
+```text
+clientes/joao-ferret/
+  joao-ferret/        — contratos, criativos, materiais
+  elo-juridico/        — contratos, criativos, materiais
+  beneficios-na-mao/    — criativos, leads, materiais de captação
+  advogaja/             — materiais do sistema/SaaS
+  _geral/               — financeiro, processos transversais, arquivos que não pertencem a uma frente só
+```
+
+**Sistema do Ferret** (financeiro/CRM) é separado do Advogaja — sistema próprio do João Ferret/Elo Jurídico, ainda a receber/detalhar.
+
 ## Acessos e contas conectadas
 
 *(preencher conforme for configurando — IDs de conta, não credenciais/senhas)*
