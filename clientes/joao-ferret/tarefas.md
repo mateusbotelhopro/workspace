@@ -1,10 +1,10 @@
 # Tarefas — João Ferret
 
 ## A fazer
-- [ ] Receber e organizar arquivos de campanhas/sites existentes (Mateus vai enviar)
 - [ ] Mapear processo atual de captação de leads via Google Sheets
 - [ ] Revisar criativos atuais da campanha pausada (Benefícios na Mão)
 - [ ] Organizar pasta de clientes/contratos do João Ferret e Elo Jurídico
+- [ ] Instalar Pixel do Meta Ads e Google Analytics/Ads no site Benefícios na Mão quando a campanha de tráfego voltar a rodar (hoje pausada, não é urgente)
 
 ## Em andamento
 - [ ]

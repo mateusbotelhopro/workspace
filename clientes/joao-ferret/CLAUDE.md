@@ -65,6 +65,19 @@ clientes/joao-ferret/
 
 **Sistema do Ferret** (financeiro/CRM) é separado do Advogaja — sistema próprio do João Ferret/Elo Jurídico, ainda a receber/detalhar.
 
+### Site Benefícios na Mão
+
+Recebido em 2026-06-21: `beneficios-na-mao/beneficiosnamao.com.br/` — site estático completo (landing, blog com 5 artigos, landing dedicada `maternidade.html` pra tráfego pago, política de privacidade, termos de uso). WhatsApp único usado no site: +55 47 99165-5075.
+
+Auditoria feita em 2026-06-21:
+
+- Removida a barra "gov.br" que existia no topo de todas as páginas (imitava visualmente o site oficial do governo — risco de banimento de conta de ads e enquadramento como prática enganosa). Decisão do cliente: remover.
+- Corrigido bug: canonical/og:url de `maternidade.html` apontava pra `/maternidade` sem `.html` (ia dar 404 em link direto/ads). Corrigido pra `/maternidade.html`.
+- `maternidade.html` estava fora do sitemap.xml e sem nenhum link interno apontando pra ela — adicionada ao sitemap. Continua sem link na nav (parece intencional, página feita pra tráfego pago direto).
+- Nenhum pixel de Meta Ads ou Google Analytics/Ads instalado ainda — não é urgente, campanha está pausada; instalar quando voltar a rodar tráfego.
+- CNPJ do Benefícios na Mão: 64.929.385/0001-59 — adicionado na política de privacidade e nos termos de uso (faltava, exigência LGPD).
+- Estatísticas da landing de maternidade ("+40 mil mães atendidas", "96% de aprovação", "4.9/5") confirmadas pelo cliente como reais — manter.
+
 ## Acessos e contas conectadas
 
 *(preencher conforme for configurando — IDs de conta, não credenciais/senhas)*

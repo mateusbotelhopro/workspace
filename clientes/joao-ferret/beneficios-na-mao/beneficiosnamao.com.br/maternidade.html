@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salário-Maternidade | Análise Gratuita — Benefícios na Mão</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <meta name="description" content="Descubra em minutos se você tem direito ao salário-maternidade. Mais de 40 mil mães atendidas e 96% de aprovação. Análise gratuita pelo WhatsApp, sem sair de casa.">
+    <meta name="keywords" content="salário-maternidade INSS, auxílio-maternidade, direito salário maternidade, MEI maternidade, desempregada salário maternidade, análise gratuita maternidade">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="author" content="Benefícios na Mão">
+    <meta name="theme-color" content="#005aa8">
+    <link rel="canonical" href="https://beneficiosnamao.com.br/maternidade.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://beneficiosnamao.com.br/maternidade.html">
+    <meta property="og:title" content="Salário-Maternidade | Análise Gratuita — Benefícios na Mão">
+    <meta property="og:description" content="Mais de 40 mil mães atendidas. 96% de aprovação. Descubra agora se você tem direito ao salário-maternidade.">
+    <meta property="og:image" content="https://beneficiosnamao.com.br/assets/maternidade.png">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Benefícios na Mão">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Salário-Maternidade | Análise Gratuita — Benefícios na Mão">
+    <meta name="twitter:description" content="Mais de 40 mil mães atendidas. 96% de aprovação. Análise gratuita pelo WhatsApp.">
+    <meta name="twitter:image" content="https://beneficiosnamao.com.br/assets/maternidade.png">
+
+    <style>
+        /* ── Stats strip ────────────────────────────────────── */
+        .mat-stats-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: var(--line);
+            gap: 1px;
+            border: 1px solid var(--line);
+            margin: 0 auto 0;
+            overflow: hidden;
+        }
+
+        .mat-stat {
+            background: var(--white);
+            text-align: center;
+            padding: 24px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .mat-stat strong {
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: var(--blue-900);
+            line-height: 1;
+        }
+
+        .mat-stat span {
+            font-size: 0.86rem;
+            color: var(--text-700);
+        }
+
+        /* ── Quem pode receber ──────────────────────────────── */
+        .mat-quem {
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            gap: 52px;
+            align-items: center;
+            padding: 52px 0;
+        }
+
+        .mat-quem__img {
+            position: relative;
+        }
+
+        .mat-quem__img img {
+            width: 100%;
+            border-radius: 12px;
+            object-fit: cover;
+            max-height: 420px;
+            box-shadow: var(--shadow);
+        }
+
+        .mat-quem__content {
+            padding: 8px 0;
+        }
+
+        .mat-section-label {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            color: var(--orange);
+            margin-bottom: 10px;
+        }
+
+        .mat-quem__content h2 {
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            color: var(--blue-900);
+            line-height: 1.1;
+            margin-bottom: 8px;
+        }
+
+        .mat-quem__content > p {
+            color: var(--text-700);
+            font-size: 0.97rem;
+            margin-bottom: 20px;
+        }
+
+        .mat-criteria {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .mat-criteria li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.97rem;
+            color: var(--text-700);
+        }
+
+        .mat-criteria li::before {
+            content: '✓';
+            color: var(--orange);
+            font-weight: 800;
+            flex-shrink: 0;
+            font-size: 1rem;
+            margin-top: 1px;
+        }
+
+        /* ── Chat Quiz section ──────────────────────────────── */
+        .mat-quiz-section {
+            background: linear-gradient(170deg, #072840 0%, #0b3f6f 55%, #1a5fa0 100%);
+            padding: 52px 0 72px;
+        }
+
+        .mat-quiz-heading {
+            text-align: center;
+            padding: 0 0 36px;
+        }
+
+        .mat-quiz-heading h2 {
+            color: #fff;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+        }
+
+        .mat-quiz-heading p {
+            color: rgba(255,255,255,0.72);
+            font-size: 1rem;
+        }
+
+        .chat-quiz {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            border: 1px solid var(--line);
+            box-shadow: 0 32px 100px rgba(0, 20, 60, 0.35);
+            border-radius: 18px;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 20px 28px;
+            background: var(--blue-900);
+            color: var(--white);
+            position: relative;
+        }
+
+        .chat-avatar {
+            width: 52px;
+            height: 52px;
+            background: var(--orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .chat-avatar::after {
+            content: '';
+            position: absolute;
+            bottom: 1px;
+            right: 1px;
+            width: 11px;
+            height: 11px;
+            background: #25D366;
+            border-radius: 50%;
+            border: 2px solid var(--blue-900);
+        }
+
+        .chat-header__info strong {
+            display: block;
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+        .chat-status {
+            font-size: 0.82rem;
+            opacity: 0.75;
+        }
+
+        .chat-messages {
+            min-height: 420px;
+            max-height: 580px;
+            overflow-y: auto;
+            padding: 28px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: #f0f4f8;
+            scroll-behavior: smooth;
+        }
+
+        .chat-messages::-webkit-scrollbar { width: 5px; }
+        .chat-messages::-webkit-scrollbar-track { background: transparent; }
+        .chat-messages::-webkit-scrollbar-thumb { background: #c5d5e8; border-radius: 99px; }
+
+        .msg {
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+            max-width: 86%;
+            animation: msgIn 0.25s ease both;
+        }
+
+        @keyframes msgIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .msg--bot { align-self: flex-start; }
+        .msg--user { align-self: flex-end; flex-direction: row-reverse; }
+
+        .msg__avatar {
+            width: 30px;
+            height: 30px;
+            background: var(--orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.68rem;
+            font-weight: 800;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .msg__bubble {
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 0.97rem;
+            line-height: 1.6;
+            word-break: break-word;
+        }
+
+        .msg--bot .msg__bubble {
+            background: var(--white);
+            color: var(--text-900);
+            border: 1px solid var(--line);
+            border-bottom-left-radius: 4px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+
+        .msg--user .msg__bubble {
+            background: var(--blue-900);
+            color: var(--white);
+            border-bottom-right-radius: 4px;
+        }
+
+        /* Typing indicator */
+        .typing-bubble {
+            padding: 14px 18px !important;
+        }
+
+        .typing-dots {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            height: 14px;
+        }
+
+        .typing-dots span {
+            width: 7px;
+            height: 7px;
+            background: #a0b4c8;
+            border-radius: 50%;
+            animation: bounce-dot 1.3s infinite;
+        }
+
+        .typing-dots span:nth-child(2) { animation-delay: 0.18s; }
+        .typing-dots span:nth-child(3) { animation-delay: 0.36s; }
+
+        @keyframes bounce-dot {
+            0%, 55%, 100% { transform: translateY(0); opacity: 0.5; }
+            28%            { transform: translateY(-6px); opacity: 1; }
+        }
+
+        /* Result card inside chat */
+        .msg--result {
+            max-width: 96%;
+            align-self: center;
+        }
+
+        .msg--result .msg__bubble {
+            border-left: 4px solid var(--orange) !important;
+            padding: 20px 22px;
+            width: 100%;
+        }
+
+        .result-icon {
+            font-size: 2rem;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .result-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--blue-900);
+            margin-bottom: 8px;
+        }
+
+        .result-text {
+            font-size: 0.9rem;
+            color: var(--text-700);
+            margin-bottom: 18px;
+            line-height: 1.6;
+        }
+
+        .result-wa-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #25D366;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 0.97rem;
+            padding: 13px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            transition: background 150ms, transform 150ms;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+        }
+
+        .result-wa-btn:hover {
+            background: #1da851;
+            transform: translateY(-1px);
+        }
+
+        .result-wa-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+            flex-shrink: 0;
+        }
+
+        /* Chat footer */
+        .chat-footer {
+            border-top: 1px solid var(--line);
+            padding: 18px 28px;
+            background: var(--white);
+            min-height: 76px;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: center;
+        }
+
+        .chat-text-form {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .chat-text-input {
+            flex: 1;
+            padding: 11px 16px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.93rem;
+            color: var(--text-900);
+            outline: none;
+            transition: border-color 150ms, box-shadow 150ms;
+            background: #f9fbfd;
+        }
+
+        .chat-text-input:focus {
+            border-color: var(--blue-900);
+            box-shadow: 0 0 0 3px rgba(0, 90, 168, 0.1);
+            background: var(--white);
+        }
+
+        .chat-send-btn {
+            width: 44px;
+            height: 44px;
+            background: var(--blue-900);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: background 150ms;
+        }
+
+        .chat-send-btn:hover { background: var(--blue-800); }
+
+        .chat-send-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: white;
+        }
+
+        .chat-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .chat-opt {
+            padding: 12px 22px;
+            background: var(--white);
+            border: 2px solid var(--line);
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--blue-900);
+            cursor: pointer;
+            transition: border-color 150ms, background 150ms, transform 150ms;
+            line-height: 1.3;
+        }
+
+        .chat-opt:hover {
+            border-color: var(--blue-900);
+            background: var(--blue-100);
+            transform: translateY(-1px);
+        }
+
+        .chat-opt.selected {
+            border-color: var(--orange);
+            background: #fff5e6;
+        }
+
+        .chat-restart-wrap {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .chat-restart-btn {
+            background: none;
+            border: 1px solid var(--line);
+            color: var(--text-700);
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: border-color 150ms, color 150ms;
+        }
+
+        .chat-restart-btn:hover {
+            border-color: var(--blue-900);
+            color: var(--blue-900);
+        }
+
+        /* ── Progress bar ───────────────────────────────────── */
+        .chat-progress {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 3px;
+            background: rgba(255,255,255,0.18);
+        }
+
+        .chat-progress__bar {
+            height: 100%;
+            background: var(--orange);
+            width: 0%;
+            transition: width 0.45s ease;
+            border-radius: 0 2px 2px 0;
+        }
+
+        /* ── Avatar photo ───────────────────────────────────── */
+        .chat-avatar img,
+        .msg__avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        /* ── Back button ────────────────────────────────────── */
+        .quiz-back-btn {
+            background: none;
+            border: none;
+            color: #8fa8be;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 0 0 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: color 150ms;
+            align-self: flex-start;
+            line-height: 1;
+        }
+
+        .quiz-back-btn:hover { color: var(--blue-900); }
+
+        /* ── Result badge ───────────────────────────────────── */
+        .result-badge {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            padding: 3px 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        /* ── Responsive ─────────────────────────────────────── */
+        @media (max-width: 1024px) {
+            .mat-hero-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .mat-hero-img {
+                display: none;
+            }
+            .mat-quem {
+                grid-template-columns: 1fr;
+                padding: 36px 0;
+            }
+            .mat-quem__img { display: none; }
+            .mat-stats-strip {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 720px) {
+            .mat-stats-strip {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .chat-messages {
+                min-height: 360px;
+                max-height: 460px;
+                padding: 18px 16px;
+            }
+            .chat-footer {
+                padding: 14px 16px;
+            }
+            .chat-opt {
+                font-size: 0.9rem;
+                padding: 11px 16px;
+                flex: 1;
+                min-width: calc(50% - 4px);
+                text-align: center;
+            }
+            .mat-quiz-section {
+                padding: 36px 0 52px;
+            }
+            .chat-quiz {
+                border-radius: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mat-values-inner {
+                flex-direction: column;
+                gap: 4px;
+                font-size: 0.95rem;
+            }
+            .mat-stat strong { font-size: 1.6rem; }
+        }
+
+        /* ── Live counter ───────────────────────────────────── */
+        .quiz-live-counter {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.85);
+            white-space: nowrap;
+        }
+
+        .quiz-live-counter__dot {
+            width: 8px; height: 8px;
+            background: #ff4d4d;
+            border-radius: 50%;
+            animation: blink-dot 1.4s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes blink-dot {
+            0%, 100% { opacity: 1; }
+            50%       { opacity: 0.25; }
+        }
+
+        /* ── Social proof strip ─────────────────────────────── */
+        .mat-social-proof {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            padding: 0 0 22px;
+        }
+
+        .mat-social-proof__faces {
+            display: flex;
+        }
+
+        .mat-social-proof__faces img {
+            width: 34px; height: 34px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #fff;
+            margin-left: -10px;
+        }
+
+        .mat-social-proof__faces img:first-child { margin-left: 0; }
+
+        .mat-social-proof__text {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.82);
+            line-height: 1.4;
+        }
+
+        .mat-social-proof__text strong { color: #fff; }
+
+        .mat-social-proof__stars {
+            color: #f9c23c;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+        }
+
+        /* ── Depoimentos ────────────────────────────────────── */
+        .mat-depoimentos {
+            background: var(--blue-100);
+            padding: 60px 0 68px;
+        }
+
+        .mat-depoimentos .section-heading { margin-bottom: 40px; }
+
+        .mat-dep-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .mat-dep-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 24px 22px;
+            border: 1px solid var(--line);
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            transition: box-shadow 200ms, transform 200ms;
+        }
+
+        .mat-dep-card:hover {
+            box-shadow: 0 12px 40px rgba(0,42,90,0.12);
+            transform: translateY(-3px);
+        }
+
+        .mat-dep-card__top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .mat-dep-card__avatar {
+            width: 52px; height: 52px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .mat-dep-card__name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--blue-900);
+            line-height: 1.2;
+        }
+
+        .mat-dep-card__city {
+            font-size: 0.78rem;
+            color: var(--text-700);
+        }
+
+        .mat-dep-card__stars {
+            color: #f9c23c;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .mat-dep-card__quote {
+            font-size: 0.9rem;
+            color: var(--text-700);
+            line-height: 1.65;
+            flex: 1;
+        }
+
+        .mat-dep-card__valor {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #2e7d32;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            align-self: flex-start;
+        }
+
+        @media (max-width: 1024px) {
+            .mat-dep-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 560px) {
+            .mat-dep-grid { grid-template-columns: 1fr; }
+            .mat-social-proof { flex-direction: column; gap: 8px; text-align: center; }
+        }
+
+        /* ── Floating quiz widget ────────────────────────────── */
+        .quiz-float[hidden] { display: none !important; }
+
+        .quiz-float {
+            position: fixed;
+            bottom: 100px;
+            right: 24px;
+            z-index: 990;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+        }
+
+        .quiz-float__toggle {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--blue-900);
+            border: none;
+            border-radius: 40px;
+            padding: 7px 18px 7px 7px;
+            cursor: pointer;
+            box-shadow: 0 6px 24px rgba(0,20,60,0.3);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.87rem;
+            font-weight: 700;
+            position: relative;
+            animation: float-pop 0.45s cubic-bezier(.34,1.56,.64,1) both;
+        }
+
+        @keyframes float-pop {
+            from { opacity: 0; transform: translateY(18px) scale(0.85); }
+            to   { opacity: 1; transform: none; }
+        }
+
+        .quiz-float__toggle img {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+            border: 2px solid rgba(255,255,255,0.25);
+        }
+
+        .quiz-float__toggle-dot {
+            position: absolute;
+            top: 5px;
+            left: 42px;
+            width: 11px;
+            height: 11px;
+            background: #25D366;
+            border-radius: 50%;
+            border: 2px solid var(--blue-900);
+        }
+
+        .quiz-float__panel {
+            width: 360px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 72px rgba(0,20,60,0.32);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            animation: panel-in 0.3s cubic-bezier(.34,1.2,.64,1) both;
+            max-height: calc(100vh - 150px);
+        }
+
+        @keyframes panel-in {
+            from { opacity: 0; transform: translateY(14px) scale(0.96); }
+            to   { opacity: 1; transform: none; }
+        }
+
+        .quiz-float__head {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 13px 14px;
+            background: var(--blue-900);
+            color: white;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .quiz-float__head-av {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .quiz-float__head-av img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .quiz-float__head-av::after {
+            content: '';
+            position: absolute;
+            bottom: 0; right: 0;
+            width: 10px; height: 10px;
+            background: #25D366;
+            border-radius: 50%;
+            border: 2px solid var(--blue-900);
+        }
+
+        .quiz-float__head-info strong {
+            display: block;
+            font-size: 0.92rem;
+            font-weight: 700;
+        }
+
+        .quiz-float__head-info span {
+            font-size: 0.72rem;
+            opacity: 0.72;
+        }
+
+        .quiz-float__close {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.12);
+            border: none;
+            color: white;
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 150ms;
+            flex-shrink: 0;
+        }
+
+        .quiz-float__close:hover { background: rgba(255,255,255,0.28); }
+
+        .quiz-float__prog {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 3px;
+            background: rgba(255,255,255,0.18);
+        }
+
+        .quiz-float__prog-bar {
+            height: 100%;
+            background: var(--orange);
+            width: 0%;
+            transition: width 0.45s ease;
+            border-radius: 0 2px 2px 0;
+        }
+
+        .quiz-float__panel .chat-messages {
+            min-height: 240px !important;
+            max-height: 340px !important;
+            padding: 16px 14px !important;
+        }
+
+        .quiz-float__panel .chat-footer {
+            padding: 12px 14px !important;
+            min-height: 60px !important;
+        }
+
+        .quiz-float__panel .chat-opt {
+            font-size: 0.84rem !important;
+            padding: 9px 14px !important;
+        }
+
+        .quiz-float__panel .msg__bubble {
+            font-size: 0.88rem !important;
+        }
+
+        @media (max-width: 480px) {
+            .quiz-float__panel { width: calc(100vw - 16px); }
+            .quiz-float { right: 8px; bottom: 84px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
+        <div class="container site-nav__inner">
+            <a href="index.html" class="site-nav__brand">
+                <span class="brand-icon" aria-hidden="true">⚖</span>
+                Benefícios na Mão
+            </a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="site-nav__links" id="nav-menu">
+                <a href="index.html#beneficios">Benefícios</a>
+                <a href="index.html#como-funciona">Como funciona</a>
+                <a href="index.html#faq">Dúvidas</a>
+                <a href="blog.html">Blog</a>
+                <a href="#quiz" class="nav-cta">Análise Grátis</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="mat-quiz-section" id="quiz" aria-label="Análise gratuita de salário-maternidade">
+            <div class="container">
+                <div class="mat-quiz-heading section-heading reveal">
+                    <h1>Descubra agora se você tem direito</h1>
+                    <p>Mais de 40 mil mães atendidas · 96% de aprovação · Análise gratuita pelo WhatsApp</p>
+                </div>
+                <div class="mat-social-proof reveal">
+                    <div class="mat-social-proof__faces" aria-hidden="true">
+                        <img src="assets/dep1.jpg" alt="" width="34" height="34">
+                        <img src="assets/dep2.jpg" alt="" width="34" height="34">
+                        <img src="assets/dep3.jpg" alt="" width="34" height="34">
+                        <img src="assets/dep4.jpg" alt="" width="34" height="34">
+                    </div>
+                    <div class="mat-social-proof__text">
+                        <span class="mat-social-proof__stars" aria-label="5 estrelas">★★★★★</span>
+                        <strong> 4.9/5</strong> · mais de <strong>40 mil mães</strong> já receberam o benefício
+                    </div>
+                </div>
+                <div class="chat-quiz reveal">
+                    <div class="chat-header" role="banner">
+                        <div class="chat-avatar" aria-hidden="true">
+                            <img src="assets/ana-carolina.png" alt="Ana Carolina">
+                        </div>
+                        <div class="chat-header__info">
+                            <strong>Ana Carolina</strong>
+                            <span class="chat-status">Consultora · Online agora</span>
+                        </div>
+                        <div class="quiz-live-counter" aria-live="polite">
+                            <span class="quiz-live-counter__dot" aria-hidden="true"></span>
+                            <span id="live-count">8</span> analisando agora
+                        </div>
+                        <div class="chat-progress" role="progressbar" aria-label="Progresso da análise">
+                            <div class="chat-progress__bar" id="quiz-progress-bar"></div>
+                        </div>
+                    </div>
+                    <div
+                        class="chat-messages"
+                        id="chat-messages"
+                        aria-live="polite"
+                        aria-label="Conversa com Ana Carolina"
+                        role="log"
+                    ></div>
+                    <div class="chat-footer" id="chat-footer" role="form" aria-label="Área de resposta"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mat-stats-strip container reveal" aria-label="Números do serviço">
+            <div class="mat-stat">
+                <strong>+40 mil</strong>
+                <span>Mães atendidas</span>
+            </div>
+            <div class="mat-stat">
+                <strong>96%</strong>
+                <span>Taxa de aprovação</span>
+            </div>
+            <div class="mat-stat">
+                <strong>100%</strong>
+                <span>Online, sem filas</span>
+            </div>
+            <div class="mat-stat">
+                <strong>Grátis</strong>
+                <span>Análise sem custo</span>
+            </div>
+        </section>
+
+        <section class="mat-quem container reveal" id="quem-tem-direito">
+            <div class="mat-quem__img">
+                <img
+                    src="assets/mulher-gravida.webp"
+                    alt="Mulher grávida"
+                    width="560" height="420"
+                    loading="lazy"
+                >
+            </div>
+            <div class="mat-quem__content">
+                <span class="mat-section-label">OPORTUNIDADE ÚNICA!</span>
+                <h2>Quem pode receber?</h2>
+                <p>Não é só para quem tem carteira assinada. Veja se o seu caso se encaixa:</p>
+                <ul class="mat-criteria">
+                    <li>Mães que trabalharam de carteira assinada (CLT)</li>
+                    <li>Estavam desempregadas no momento do parto</li>
+                    <li>Contribuíram com o INSS por pelo menos 10 meses</li>
+                    <li>MEI, autônoma ou trabalhadora doméstica</li>
+                    <li>Adotaram uma criança recentemente</li>
+                </ul>
+                <a href="#quiz" class="btn btn-primary">Quero meu benefício</a>
+            </div>
+        </section>
+
+        <section class="steps-section reveal" id="como-funciona">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Como funciona?</h2>
+                    <p>Garantimos um processo simples, rápido e 100% online.</p>
+                </div>
+                <div class="steps-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="step-card">
+                        <span class="step-num">01</span>
+                        <h3>Faça sua análise gratuita</h3>
+                        <p>Responda algumas perguntas no nosso chat e saiba na hora se tem chances reais de receber o benefício.</p>
+                    </div>
+                    <div class="step-card">
+                        <span class="step-num">02</span>
+                        <h3>Nossa equipe cuida de tudo</h3>
+                        <p>Tendo direito, você será acompanhada por nossa equipe especializada para darmos a entrada no benefício.</p>
+                    </div>
+                    <div class="step-card step-card--highlight">
+                        <span class="step-num">03</span>
+                        <h3>Você recebe seu dinheiro</h3>
+                        <p>Damos todo o suporte para que você saiba a data e forma do pagamento, sem burocracia.</p>
+                    </div>
+                </div>
+                <div class="steps-cta">
+                    <a href="#quiz" class="btn btn-primary">COMEÇAR ANÁLISE AGORA — É GRÁTIS</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section container reveal" id="faq">
+            <div class="section-heading">
+                <h2>Dúvidas sobre o salário-maternidade</h2>
+                <p>Tudo que as mães precisam saber antes de começar.</p>
+            </div>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>Desempregada pode receber o salário-maternidade?</summary>
+                    <p>Sim! Se você contribuiu para o INSS por pelo menos 10 meses e estava desempregada no momento do parto, você pode ter direito pelo chamado "período de graça". Não perca seu benefício por falta de informação — faça a análise gratuita.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Quanto tempo tenho para pedir o salário-maternidade?</summary>
+                    <p>O prazo para solicitar é de até 5 anos a partir do parto, adoção ou guarda judicial. Porém, quanto antes você pedir, melhor. Valores retroativos podem ser perdidos com o tempo.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>MEI tem direito ao salário-maternidade?</summary>
+                    <p>Sim! MEI que contribui para o INSS há pelo menos 10 meses tem direito ao salário-maternidade. O valor é calculado com base em 1 salário mínimo por 120 dias (4 meses).</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Quanto vou receber?</summary>
+                    <p>Para empregadas CLT, o valor equivale ao salário mensal multiplicado por 4 meses. Para MEI, autônomas e contribuintes individuais, o valor base é de 1 salário mínimo por 4 meses. Em alguns casos o valor pode ser maior.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Preciso ir pessoalmente ao INSS?</summary>
+                    <p>Não. Todo o processo pode ser feito de forma digital. Nossa equipe te orienta pelo WhatsApp em cada etapa, sem que você precise sair de casa ou enfrentar filas.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Meu pedido foi negado. Ainda tenho chance?</summary>
+                    <p>Sim! Em muitos casos é possível recorrer com a documentação correta. Uma análise especializada pode identificar o motivo da negativa e o caminho para reverter a decisão.</p>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <section class="mat-depoimentos reveal">
+        <div class="container">
+            <div class="section-heading">
+                <h2>O que as mães estão dizendo</h2>
+                <p>Histórias reais de quem já garantiu o seu benefício com a nossa ajuda.</p>
+            </div>
+            <div class="mat-dep-grid">
+                <div class="mat-dep-card">
+                    <div class="mat-dep-card__top">
+                        <img class="mat-dep-card__avatar" src="assets/dep3.jpg" alt="Camila S." width="52" height="52" loading="lazy">
+                        <div>
+                            <div class="mat-dep-card__name">Camila S.</div>
+                            <div class="mat-dep-card__city">São Paulo, SP</div>
+                        </div>
+                    </div>
+                    <div class="mat-dep-card__stars" aria-label="5 estrelas">★★★★★</div>
+                    <p class="mat-dep-card__quote">"Estava desempregada e não sabia que ainda tinha direito. A Ana Carolina me explicou tudo em minutos e em menos de 30 dias o dinheiro caiu na conta!"</p>
+                    <span class="mat-dep-card__valor">Recebeu R$ 7.640</span>
+                </div>
+                <div class="mat-dep-card">
+                    <div class="mat-dep-card__top">
+                        <img class="mat-dep-card__avatar" src="assets/dep1.jpg" alt="Rafaela M." width="52" height="52" loading="lazy">
+                        <div>
+                            <div class="mat-dep-card__name">Rafaela M.</div>
+                            <div class="mat-dep-card__city">Salvador, BA</div>
+                        </div>
+                    </div>
+                    <div class="mat-dep-card__stars" aria-label="5 estrelas">★★★★★</div>
+                    <p class="mat-dep-card__quote">"Já tinha meu bebê há 2 anos e achei que tinha perdido o prazo. A equipe descobriu que ainda dava tempo e me ajudou a entrar com o pedido. Incrível!"</p>
+                    <span class="mat-dep-card__valor">Recebeu R$ 6.240</span>
+                </div>
+                <div class="mat-dep-card">
+                    <div class="mat-dep-card__top">
+                        <img class="mat-dep-card__avatar" src="assets/dep2.jpg" alt="Juliana F." width="52" height="52" loading="lazy">
+                        <div>
+                            <div class="mat-dep-card__name">Juliana F.</div>
+                            <div class="mat-dep-card__city">Curitiba, PR</div>
+                        </div>
+                    </div>
+                    <div class="mat-dep-card__stars" aria-label="5 estrelas">★★★★★</div>
+                    <p class="mat-dep-card__quote">"Fiz a análise achando que não ia ter direito por ser MEI. Me surpreendi! O processo foi todo pelo WhatsApp, sem burocracia e sem sair de casa."</p>
+                    <span class="mat-dep-card__valor">Recebeu R$ 5.520</span>
+                </div>
+                <div class="mat-dep-card">
+                    <div class="mat-dep-card__top">
+                        <img class="mat-dep-card__avatar" src="assets/dep4.jpg" alt="Mariana T." width="52" height="52" loading="lazy">
+                        <div>
+                            <div class="mat-dep-card__name">Mariana T.</div>
+                            <div class="mat-dep-card__city">Belo Horizonte, MG</div>
+                        </div>
+                    </div>
+                    <div class="mat-dep-card__stars" aria-label="5 estrelas">★★★★★</div>
+                    <p class="mat-dep-card__quote">"Pensei que o INSS ia negar de novo, mas com a orientação certa foi aprovado na primeira tentativa. Recomendo demais para todas as mamães!"</p>
+                    <span class="mat-dep-card__valor">Recebeu R$ 9.120</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bottom-cta reveal">
+        <div class="container bottom-cta__inner">
+            <div>
+                <h2>Análise gratuita. Resultado rápido. Sem enrolação.</h2>
+                <p>Descubra agora se você tem direito ao salário-maternidade — sem sair de casa, sem pagar nada e sem compromisso.</p>
+            </div>
+            <a href="#quiz" class="btn btn-primary">Fazer análise gratuita</a>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container footer-inner">
+            <div class="footer-links">
+                <a href="index.html#beneficios">Benefícios</a>
+                <a href="index.html#como-funciona">Como funciona</a>
+                <a href="index.html#faq">Dúvidas</a>
+                <a href="blog.html">Blog</a>
+                <a href="politica-de-privacidade.html">Política de Privacidade</a>
+                <a href="termos-de-uso.html">Termos de Uso</a>
+            </div>
+            <p class="footer-copy">&copy; <span id="current-year"></span> Benefícios na Mão. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5547991655075?text=Ol%C3%A1%2C%20quero%20saber%20se%20tenho%20direito%20ao%20sal%C3%A1rio-maternidade." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M16 1C7.716 1 1 7.716 1 16c0 2.628.676 5.101 1.864 7.254L1 31l8.022-1.838A14.927 14.927 0 0016 31c8.284 0 15-6.716 15-15S24.284 1 16 1zm0 27.273a12.22 12.22 0 01-6.226-1.706l-.447-.266-4.763 1.09 1.117-4.641-.292-.477A12.222 12.222 0 013.727 16C3.727 9.212 9.212 3.727 16 3.727S28.273 9.212 28.273 16 22.788 28.273 16 28.273zm6.71-9.16c-.368-.184-2.175-1.073-2.512-1.196-.337-.122-.582-.184-.828.184-.245.368-.951 1.196-1.165 1.44-.214.245-.428.276-.796.092-.368-.184-1.554-.573-2.96-1.827-1.094-.977-1.832-2.184-2.047-2.552-.214-.368-.023-.567.161-.75.165-.165.368-.429.552-.643.184-.214.245-.368.368-.613.122-.245.061-.46-.03-.643-.092-.184-.828-1.993-1.134-2.73-.299-.716-.602-.619-.828-.63l-.705-.013c-.245 0-.643.092-.98.46s-1.288 1.257-1.288 3.065 1.319 3.556 1.503 3.8c.184.245 2.596 3.964 6.29 5.558.879.38 1.565.607 2.1.778.882.28 1.685.241 2.319.146.707-.105 2.175-.889 2.482-1.748.307-.858.307-1.594.214-1.748-.092-.153-.337-.245-.705-.428z"/>
+        </svg>
+    </a>
+
+    <div class="exit-popup" id="exit-popup" role="dialog" aria-modal="true" aria-labelledby="exit-popup-title" hidden>
+        <div class="exit-popup__backdrop" id="exit-popup-backdrop"></div>
+        <div class="exit-popup__box">
+            <button class="exit-popup__close" id="exit-popup-close" aria-label="Fechar">&#x2715;</button>
+            <div class="exit-popup__icon" aria-hidden="true">⚠️</div>
+            <h2 class="exit-popup__title" id="exit-popup-title">Espera! Você pode ter direito ao salário-maternidade.</h2>
+            <p class="exit-popup__text">Muitas mães perdem o benefício por não saberem que têm direito. Nossa análise é <strong>gratuita</strong> e leva menos de 2 minutos.</p>
+            <button class="btn btn-primary exit-popup__cta" id="exit-popup-quiz">Quero minha análise gratuita</button>
+            <button class="exit-popup__dismiss" id="exit-popup-dismiss">Não, vou sair sem verificar</button>
+        </div>
+    </div>
+
+    <!-- Floating quiz widget -->
+    <div class="quiz-float" id="quiz-float" hidden>
+        <div class="quiz-float__panel" id="quiz-float-panel" hidden>
+            <div class="quiz-float__head">
+                <div class="quiz-float__head-av">
+                    <img src="assets/ana-carolina.png" alt="Ana Carolina">
+                </div>
+                <div class="quiz-float__head-info">
+                    <strong>Ana Carolina</strong>
+                    <span>Consultora · Online agora</span>
+                </div>
+                <button class="quiz-float__close" id="quiz-float-close" aria-label="Fechar">✕</button>
+                <div class="quiz-float__prog">
+                    <div class="quiz-float__prog-bar" id="quiz-progress-bar-float"></div>
+                </div>
+            </div>
+            <div class="chat-messages" id="chat-messages-float" aria-live="polite" role="log"></div>
+            <div class="chat-footer" id="chat-footer-float" role="form"></div>
+        </div>
+        <button class="quiz-float__toggle" id="quiz-float-toggle" aria-label="Fazer análise gratuita" aria-expanded="false">
+            <img src="assets/ana-carolina.png" alt="Ana Carolina">
+            <span class="quiz-float__toggle-dot" aria-hidden="true"></span>
+            Análise Grátis
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+    function createQuiz(opts) {
+        var WA_NUM      = '5547991655075';
+        var messagesEl  = document.getElementById(opts.messagesId);
+        var footerEl    = document.getElementById(opts.footerId);
+        var progressBar = opts.progressBarId ? document.getElementById(opts.progressBarId) : null;
+        var LS_KEY      = opts.lsKey || 'bnm_quiz_mat_v2';
+        var MAX_Q       = 8;
+        var AVATAR      = '<div class="msg__avatar" aria-hidden="true"><img src="assets/ana-carolina.png" alt=""></div>';
+        var pfx         = opts.messagesId; // unique prefix for button IDs
+
+        if (!messagesEl || !footerEl) return { start: function(){} };
+
+        // ── State ─────────────────────────────────────────────
+        var data    = {};
+        var history = []; // {stepId, answerEl, key}
+
+        // ── Utilities ─────────────────────────────────────────
+        function wait(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+
+        function scrollBottom() {
+            requestAnimationFrame(function () { messagesEl.scrollTop = messagesEl.scrollHeight; });
+        }
+
+        function esc(str) {
+            return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        }
+
+        function fmtPhone(raw) {
+            var d = raw.replace(/\D/g, '').slice(0, 11);
+            if (d.length <= 2)  return d;
+            if (d.length <= 6)  return '(' + d.slice(0,2) + ') ' + d.slice(2);
+            if (d.length <= 10) return '(' + d.slice(0,2) + ') ' + d.slice(2,6) + '-' + d.slice(6);
+            return '(' + d.slice(0,2) + ') ' + d.slice(2,7) + '-' + d.slice(7,11);
+        }
+
+        // ── Progress ──────────────────────────────────────────
+        function updateProgress() {
+            if (!progressBar) return;
+            var pct = Math.min(Math.round((history.length / MAX_Q) * 100), 92);
+            progressBar.style.width = pct + '%';
+        }
+
+        // ── LocalStorage ──────────────────────────────────────
+        function saveLS() {
+            try {
+                localStorage.setItem(LS_KEY, JSON.stringify({
+                    data:  data,
+                    steps: history.map(function (h) { return {id: h.stepId, key: h.key}; })
+                }));
+            } catch(e) {}
+        }
+
+        function clearLS() { try { localStorage.removeItem(LS_KEY); } catch(e) {} }
+
+        // ── Messages ──────────────────────────────────────────
+        function addBotMessage(html) {
+            return new Promise(function (resolve) {
+                var typingEl = document.createElement('div');
+                typingEl.className = 'msg msg--bot';
+                typingEl.innerHTML = AVATAR + '<div class="msg__bubble typing-bubble"><div class="typing-dots"><span></span><span></span><span></span></div></div>';
+                messagesEl.appendChild(typingEl);
+                scrollBottom();
+                var delay = Math.min(420 + html.replace(/<[^>]+>/g, '').length * 15, 1700);
+                setTimeout(function () {
+                    typingEl.remove();
+                    var el = document.createElement('div');
+                    el.className = 'msg msg--bot';
+                    el.innerHTML = AVATAR + '<div class="msg__bubble">' + html + '</div>';
+                    messagesEl.appendChild(el);
+                    scrollBottom();
+                    resolve();
+                }, delay);
+            });
+        }
+
+        function addUserMessage(text) {
+            var el = document.createElement('div');
+            el.className = 'msg msg--user';
+            el.innerHTML = '<div class="msg__bubble">' + esc(text) + '</div>';
+            messagesEl.appendChild(el);
+            scrollBottom();
+            return el;
+        }
+
+        function showMessages(list) {
+            return list.reduce(function (p, item) {
+                return p.then(function () {
+                    var html = typeof item === 'function' ? item(data) : item;
+                    return addBotMessage(html).then(function () { return wait(100); });
+                });
+            }, Promise.resolve());
+        }
+
+        // ── Footer helpers ─────────────────────────────────────
+        function backBtn() {
+            return history.length > 0
+                ? '<button class="quiz-back-btn" id="qback" type="button">← Voltar</button>'
+                : '';
+        }
+
+        function bindBack() {
+            var btn = document.getElementById('qback');
+            if (btn) btn.addEventListener('click', function () {
+                footerEl.innerHTML = '';
+                goBack();
+            });
+        }
+
+        // ── Input renderers ────────────────────────────────────
+        function renderText(placeholder, type) {
+            return new Promise(function (resolve) {
+                footerEl.innerHTML = backBtn() +
+                    '<form class="chat-text-form" id="cform" novalidate>' +
+                    '<input id="cinput" type="' + (type === 'tel' ? 'tel' : 'text') + '" ' +
+                    'class="chat-text-input" placeholder="' + esc(placeholder) + '" ' +
+                    'autocomplete="' + (type === 'tel' ? 'tel' : 'off') + '" required>' +
+                    '<button type="submit" class="chat-send-btn" aria-label="Enviar">' +
+                    '<svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>' +
+                    '</button></form>';
+
+                var inputEl = document.getElementById('cinput');
+                setTimeout(function () { inputEl.focus(); }, 80);
+
+                if (type === 'tel') {
+                    inputEl.addEventListener('input', function () {
+                        inputEl.value = fmtPhone(inputEl.value);
+                    });
+                }
+
+                document.getElementById('cform').addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    var val = inputEl.value.trim();
+                    if (!val) return;
+                    if (type === 'tel' && val.replace(/\D/g,'').length < 10) {
+                        inputEl.style.borderColor = '#e53935';
+                        inputEl.placeholder = 'Inclua o DDD — ex: (47) 99999-9999';
+                        inputEl.value = '';
+                        setTimeout(function () { inputEl.style.borderColor = ''; }, 2400);
+                        return;
+                    }
+                    footerEl.innerHTML = '';
+                    resolve(val);
+                });
+
+                bindBack();
+            });
+        }
+
+        function renderOptions(opts) {
+            return new Promise(function (resolve) {
+                var btns = opts.map(function (o) {
+                    return '<button class="chat-opt" type="button">' + esc(o) + '</button>';
+                }).join('');
+                footerEl.innerHTML = backBtn() + '<div class="chat-options">' + btns + '</div>';
+
+                footerEl.querySelectorAll('.chat-opt').forEach(function (btn) {
+                    btn.addEventListener('click', function () {
+                        footerEl.innerHTML = '';
+                        resolve(btn.textContent.trim());
+                    });
+                });
+
+                bindBack();
+            });
+        }
+
+        // ── Navigation ─────────────────────────────────────────
+        function goBack() {
+            if (!history.length) return;
+            var last = history.pop();
+            if (last.answerEl && last.answerEl.parentNode) last.answerEl.parentNode.removeChild(last.answerEl);
+            if (last.key) delete data[last.key];
+            updateProgress();
+            saveLS();
+            rerunInput(last.stepId);
+        }
+
+        function rerunInput(stepId) {
+            var s = STEPS[stepId];
+            if (!s) { runStep('nome'); return; }
+            if (s.input === 'text' || s.input === 'tel') {
+                renderText(s.placeholder || 'Digite...', s.input).then(function (v) { commit(stepId, v); });
+            } else {
+                renderOptions(s.options).then(function (v) { commit(stepId, v); });
+            }
+        }
+
+        // ── Step registry ──────────────────────────────────────
+        var STEPS = {
+            nome:         { input:'text',    key:'nome',         placeholder:'Digite seu nome...',   next:'phone' },
+            phone:        { input:'tel',     key:'phone',        placeholder:'(00) 00000-0000',      next:'gravida' },
+            gravida:      { input:'options', key:'gravida',      options:['Sim','Não','Já tive meu bebê'], next: function(d){ if(d.gravida==='Sim') return 'meses'; if(d.gravida==='Já tive meu bebê') return 'idade_bebe'; return 'trabalhando'; } },
+            meses:        { input:'options', key:'meses',        options:['1 a 3 meses','4 a 6 meses','7 a 9 meses'], next:'trabalhando' },
+            trabalhando:  { input:'options', key:'trabalhando',  options:['Trabalhando','Desempregada'], next:'carteira' },
+            carteira:     { input:'options', key:'carteira',     options:['Sim','Não'],              next: function(d){ return d.carteira==='Sim'?'lembra':'tem_filho'; } },
+            tem_filho:    { input:'options', key:'temFilho',     options:['Sim, tenho filho menor de 5 anos','Não'],  next:'disq_nao_trabalhou' },
+            lembra:       { input:'options', key:'lembra',       options:['Sim, lembro','Não lembro bem'], next: function(d){ return d.lembra==='Sim, lembro'?'data_saida':'periodo_saida'; } },
+            data_saida:   { input:'text',    key:'dataSaida',    placeholder:'Ex: Março de 2024',    next:'result' },
+            periodo_saida:{ input:'options', key:'periodoSaida', options:['Antes de Janeiro de 2025','Depois de Janeiro de 2025','Foi em Janeiro de 2025'], next:'result' },
+
+            idade_bebe:       { input:'options', key:'idadeBebe',       options:['Menos de 1 ano','1 a 2 anos','3 a 4 anos','5 anos ou mais'], next: function(d){ return d.idadeBebe==='5 anos ou mais'?'disq_prazo':'recebeu_auxilio'; } },
+            recebeu_auxilio:  { input:'options', key:'recebeuAuxilio',  options:['Sim, já recebi','Não recebi'], next: function(d){ return d.recebeuAuxilio==='Sim, já recebi'?'disq_ja_recebeu':'trabalhou_gestante'; } },
+            trabalhou_gestante:{ input:'options', key:'trabalhouGestante', options:['Sim, trabalhei registrada (CLT)','Sim, contribuí para o INSS','Não'], next: function(d){ return d.trabalhouGestante==='Não'?'disq_nao_trabalhou':'trabalhando'; } }
+        };
+
+        function stepMessages(stepId) {
+            switch (stepId) {
+                case 'nome':          return ['Qual o seu nome?'];
+                case 'phone':         return [function(d){ return 'Olá, <strong>'+esc(d.nome)+'</strong>! 😊'; }, 'Qual o número do seu WhatsApp? Não esqueça o DDD! 😃'];
+                case 'gravida':       return ['Você está grávida?'];
+                case 'meses':         return ['Desejamos que nasça com muita saúde 🥰', 'Você está grávida de quantos meses?'];
+                case 'trabalhando':   return ['Neste momento você está trabalhando ou está desempregada?'];
+                case 'carteira':      return ['Você já contribuiu para o INSS alguma vez?'];
+                case 'tem_filho':     return ['Entendido! Só mais uma pergunta rápida 😊', 'Você tem filho com menos de 5 anos?'];
+                case 'lembra':        return ['Ótimo, agora preciso que lembre qual foi o mês e ano que saiu do seu último emprego registrado.', 'Você consegue se lembrar?'];
+                case 'data_saida':    return ['Qual foi o mês e ano que saiu?'];
+                case 'periodo_saida':      return ['Vou fazer outra pergunta para te ajudar a lembrar...', 'A data de saída do seu último registro foi antes ou depois de Janeiro de 2025?'];
+                case 'idade_bebe':         return ['Que lindo! 🍼 Com quantos anos está sua criança?'];
+                case 'recebeu_auxilio':    return ['Entendido! Na época em que estava gestante, você recebeu o auxílio-maternidade pelo INSS ou pelo seu empregador?'];
+                case 'trabalhou_gestante': return ['Ok! Na época em que estava gestante, você trabalhou com carteira assinada ou contribuiu para o INSS?'];
+                default: return [];
+            }
+        }
+
+        // ── Disqualification ──────────────────────────────────
+        var DISQ_MSGS = {
+            prazo: [
+                'Entendo, mamãe! 💛',
+                'Infelizmente, o prazo para solicitar o salário-maternidade é de até <strong>5 anos</strong> após o parto. Como sua criança já tem 5 anos ou mais, o benefício não pode mais ser solicitado.',
+                'Mas se você tiver uma nova gestação ou outro familiar precisando de orientação, estaremos aqui! Muito obrigada pelo seu contato. 💙'
+            ],
+            ja_recebeu: [
+                'Que ótimo que você já recebeu seu benefício! 🎉',
+                'Como o auxílio-maternidade já foi concedido para esse nascimento, infelizmente não é possível solicitá-lo novamente.',
+                'Se tiver dúvidas sobre outros benefícios ou situações futuras, conte sempre com a gente. Muito obrigada! 💙'
+            ],
+            nao_trabalhou: [
+                'Obrigada pela sinceridade! 💛',
+                'Para ter direito ao salário-maternidade, é necessário ter trabalhado com carteira assinada ou contribuído para o INSS durante o período da gestação.',
+                'Infelizmente, sem esse vínculo, não seria possível dar entrada no benefício. Se precisar de orientação sobre outros direitos, estamos aqui! 💙'
+            ]
+        };
+
+        function showDisqualified(type) {
+            if (progressBar) progressBar.style.width = '100%';
+            showMessages(DISQ_MSGS[type] || DISQ_MSGS.prazo).then(function () {
+                footerEl.innerHTML = '<div class="chat-restart-wrap"><button class="chat-restart-btn" id="'+pfx+'-disq-restart">↺ Refazer análise</button></div>';
+                document.getElementById(pfx+'-disq-restart').addEventListener('click', function () {
+                    data = {}; history = [];
+                    messagesEl.innerHTML = ''; footerEl.innerHTML = '';
+                    if (progressBar) progressBar.style.width = '0%';
+                    clearLS(); startQuiz();
+                });
+            });
+        }
+
+        // ── Step runner ────────────────────────────────────────
+        function runStep(stepId) {
+            if (stepId === 'result') { showResult(); return; }
+            if (stepId.indexOf('disq_') === 0) { showDisqualified(stepId.slice(5)); return; }
+            var s = STEPS[stepId];
+            if (!s) return;
+
+            var msgs = stepMessages(stepId);
+            var p = msgs.length ? showMessages(msgs) : Promise.resolve();
+            p.then(function () {
+                if (s.input === 'text' || s.input === 'tel') {
+                    renderText(s.placeholder || 'Digite...', s.input).then(function (v) { commit(stepId, v); });
+                } else {
+                    renderOptions(s.options).then(function (v) { commit(stepId, v); });
+                }
+            });
+        }
+
+        function commit(stepId, val) {
+            var s = STEPS[stepId];
+            if (s && s.key) data[s.key] = val;
+            var ansEl = addUserMessage(val);
+            history.push({stepId: stepId, answerEl: ansEl, key: s ? s.key : null});
+            updateProgress();
+            saveLS();
+            var next = s && (typeof s.next === 'function' ? s.next(data) : s.next);
+            runStep(next || 'result');
+        }
+
+        // ── Personalized result ────────────────────────────────
+        function verdict() {
+            var d = data;
+            if (d.trabalhando === 'Trabalhando') {
+                return { badge:'ÓTIMAS NOTÍCIAS!', color:'#2e7d32', icon:'🎉',
+                    title:'Você tem grandes chances de receber!',
+                    text:'Quem está com contribuição ativa no INSS tem direito garantido ao salário-maternidade. Fale com a consultora para darmos entrada rápido!' };
+            }
+            if (d.periodoSaida === 'Depois de Janeiro de 2025' || d.periodoSaida === 'Foi em Janeiro de 2025') {
+                return { badge:'BOAS CHANCES!', color:'#1565c0', icon:'✅',
+                    title:'Você provavelmente tem direito!',
+                    text:'Como você saiu recentemente de um emprego com contribuição ao INSS, ainda está dentro do período de graça. Confirme os detalhes com a consultora!' };
+            }
+            if (d.periodoSaida === 'Antes de Janeiro de 2025') {
+                return { badge:'VALE VERIFICAR!', color:'#e65100', icon:'⏳',
+                    title:'Ainda pode ter direito — mas corra!',
+                    text:'Dependendo do seu histórico de contribuição, o prazo pode estar se encerrando. Fale com a consultora o quanto antes para não perder o benefício.' };
+            }
+            return { badge:'PODE TER DIREITO!', color:'#1565c0', icon:'✅',
+                title:'Você pode ter direito ao benefício!',
+                text:'Com base no que você me contou, seu caso tem boas perspectivas. Nossa consultora vai analisar e te orientar gratuitamente.' };
+        }
+
+        function buildWAMsg() {
+            var lines = [
+                'Olá! Fiz a análise no site e quero saber mais sobre o salário-maternidade.','',
+                '📋 *Meus dados:*',
+                '👤 Nome: '+(data.nome||'-'),
+                '📱 WhatsApp: '+(data.phone||'-'),
+                '🤰 Grávida: '+(data.gravida||'-')+(data.meses?' ('+data.meses+')':''),
+                '💼 Situação: '+(data.trabalhando||'-'),
+                '📋 Contribuiu ao INSS: '+(data.carteira||'-')
+            ];
+            if (data.dataSaida)    lines.push('📅 Saída: '+data.dataSaida);
+            if (data.periodoSaida) lines.push('📅 Período: '+data.periodoSaida);
+            return encodeURIComponent(lines.join('\n'));
+        }
+
+        function showResult() {
+            if (progressBar) progressBar.style.width = '100%';
+            if (opts.onComplete) opts.onComplete();
+            var v = verdict();
+            addBotMessage('Perfeito, <strong>'+esc(data.nome)+'</strong>! Já analisei suas respostas 📋').then(function () {
+                return wait(280);
+            }).then(function () {
+                var el = document.createElement('div');
+                el.className = 'msg msg--bot msg--result';
+                el.innerHTML = AVATAR +
+                    '<div class="msg__bubble">' +
+                    '<span class="result-badge" style="background:'+v.color+'20;color:'+v.color+'">'+v.badge+'</span>' +
+                    '<div class="result-title">'+v.icon+' '+v.title+'</div>' +
+                    '<div class="result-text">'+v.text+'</div>' +
+                    '<a href="https://wa.me/'+WA_NUM+'?text='+buildWAMsg()+'" class="result-wa-btn" target="_blank" rel="noopener noreferrer">' +
+                    '<svg viewBox="0 0 32 32"><path d="M16 1C7.716 1 1 7.716 1 16c0 2.628.676 5.101 1.864 7.254L1 31l8.022-1.838A14.927 14.927 0 0016 31c8.284 0 15-6.716 15-15S24.284 1 16 1zm0 27.273a12.22 12.22 0 01-6.226-1.706l-.447-.266-4.763 1.09 1.117-4.641-.292-.477A12.222 12.222 0 013.727 16C3.727 9.212 9.212 3.727 16 3.727S28.273 9.212 28.273 16 22.788 28.273 16 28.273zm6.71-9.16c-.368-.184-2.175-1.073-2.512-1.196-.337-.122-.582-.184-.828.184-.245.368-.951 1.196-1.165 1.44-.214.245-.428.276-.796.092-.368-.184-1.554-.573-2.96-1.827-1.094-.977-1.832-2.184-2.047-2.552-.214-.368-.023-.567.161-.75.165-.165.368-.429.552-.643.184-.214.245-.368.368-.613.122-.245.061-.46-.03-.643-.092-.184-.828-1.993-1.134-2.73-.299-.716-.602-.619-.828-.63l-.705-.013c-.245 0-.643.092-.98.46s-1.288 1.257-1.288 3.065 1.319 3.556 1.503 3.8c.184.245 2.596 3.964 6.29 5.558.879.38 1.565.607 2.1.778.882.28 1.685.241 2.319.146.707-.105 2.175-.889 2.482-1.748.307-.858.307-1.594.214-1.748-.092-.153-.337-.245-.705-.428z"/></svg>' +
+                    'Falar com consultora agora</a></div>';
+                messagesEl.appendChild(el);
+                scrollBottom();
+                clearLS();
+
+                footerEl.innerHTML = '<div class="chat-restart-wrap"><button class="chat-restart-btn" id="'+pfx+'-restart">↺ Refazer análise</button></div>';
+                document.getElementById(pfx+'-restart').addEventListener('click', function () {
+                    data = {}; history = [];
+                    messagesEl.innerHTML = ''; footerEl.innerHTML = '';
+                    if (progressBar) progressBar.style.width = '0%';
+                    clearLS(); startQuiz();
+                });
+            });
+        }
+
+        // ── Start ──────────────────────────────────────────────
+        function startQuiz() {
+            showMessages([
+                'Seja bem-vinda à <strong>Benefícios na Mão</strong> 👋',
+                'Com anos de experiência e mais de <strong style="color:#f39200">40 mil mães atendidas</strong>, temos orgulho de nossos <strong style="color:#f39200">96% de sucesso</strong> na liberação do auxílio-maternidade.',
+                'Com apenas algumas perguntas já conseguimos saber se você terá direito! É rápido, seguro e sua consultora já está te esperando.',
+                'Vamos começar:'
+            ]).then(function () { runStep('nome'); });
+        }
+
+        // ── localStorage resume + init ─────────────────────────
+        function start() {
+            try {
+                var saved = JSON.parse(localStorage.getItem(LS_KEY) || 'null');
+                if (saved && saved.data && saved.data.nome && saved.steps && saved.steps.length >= 1) {
+                    data = saved.data;
+                    addBotMessage('Olá novamente, <strong>'+esc(data.nome)+'</strong>! 👋 Encontrei sua análise em andamento.').then(function () {
+                        footerEl.innerHTML = backBtn() +
+                            '<div class="chat-options">' +
+                            '<button class="chat-opt" id="'+pfx+'-resume" type="button">Continuar de onde parei</button>' +
+                            '<button class="chat-opt" id="'+pfx+'-restart2" type="button">Começar do início</button>' +
+                            '</div>';
+
+                        document.getElementById(pfx+'-resume').addEventListener('click', function () {
+                            footerEl.innerHTML = '';
+                            history = saved.steps.map(function (s) { return {stepId:s.id, answerEl:null, key:s.key}; });
+                            updateProgress();
+                            var last  = saved.steps[saved.steps.length - 1];
+                            var lastS = STEPS[last.id];
+                            var nextId = lastS ? (typeof lastS.next === 'function' ? lastS.next(data) : lastS.next) : 'nome';
+                            addBotMessage('Certo! Vou continuar de onde paramos.').then(function () { runStep(nextId); });
+                        });
+
+                        document.getElementById(pfx+'-restart2').addEventListener('click', function () {
+                            data = {}; history = []; footerEl.innerHTML = '';
+                            clearLS(); startQuiz();
+                        });
+                    });
+                } else {
+                    startQuiz();
+                }
+            } catch(e) { startQuiz(); }
+        }
+
+        return { start: start };
+    }
+
+    // ── Main quiz ──────────────────────────────────────────
+    createQuiz({
+        messagesId:    'chat-messages',
+        footerId:      'chat-footer',
+        progressBarId: 'quiz-progress-bar',
+        lsKey:         'bnm_quiz_mat_v2',
+        onComplete:    function () { window.__bnmMainDone = true; }
+    }).start();
+
+    // ── Floating quiz widget ───────────────────────────────
+    (function () {
+        var quizSection = document.getElementById('quiz');
+        var floatEl     = document.getElementById('quiz-float');
+        var panelEl     = document.getElementById('quiz-float-panel');
+        var toggleEl    = document.getElementById('quiz-float-toggle');
+        var closeEl     = document.getElementById('quiz-float-close');
+        var msgEl       = document.getElementById('chat-messages-float');
+        var ftrEl       = document.getElementById('chat-footer-float');
+        if (!quizSection || !floatEl) return;
+
+        var panelOpen    = false;
+        var teaserShown  = false;
+        var inited       = false;
+        var floatQuiz    = createQuiz({
+            messagesId:    'chat-messages-float',
+            footerId:      'chat-footer-float',
+            progressBarId: 'quiz-progress-bar-float',
+            lsKey:         'bnm_quiz_float_v1'
+        });
+
+        var AV = '<div class="msg__avatar" aria-hidden="true"><img src="assets/ana-carolina.png" alt=""></div>';
+
+        function showTeaser() {
+            panelEl.hidden = false;
+            toggleEl.hidden = true;
+            panelOpen = true;
+
+            var typingEl = document.createElement('div');
+            typingEl.className = 'msg msg--bot';
+            typingEl.innerHTML = AV + '<div class="msg__bubble typing-bubble"><div class="typing-dots"><span></span><span></span><span></span></div></div>';
+            msgEl.appendChild(typingEl);
+
+            setTimeout(function () {
+                typingEl.remove();
+                var el = document.createElement('div');
+                el.className = 'msg msg--bot';
+                el.innerHTML = AV + '<div class="msg__bubble">Oi! 😊 Vi que você ainda não fez sua análise de salário-maternidade.<br><br>Que tal fazer agora? É <strong>gratuito</strong> e leva menos de 2 minutinhos!</div>';
+                msgEl.appendChild(el);
+
+                ftrEl.innerHTML =
+                    '<div class="chat-options">' +
+                    '<button class="chat-opt" id="float-yes" type="button">Vamos começar! 🚀</button>' +
+                    '</div>';
+
+                document.getElementById('float-yes').addEventListener('click', function () {
+                    msgEl.innerHTML = '';
+                    ftrEl.innerHTML = '';
+                    if (!inited) { inited = true; floatQuiz.start(); }
+                });
+            }, 1300);
+        }
+
+        window.addEventListener('scroll', function () {
+            if (window.__bnmMainDone) { floatEl.hidden = true; return; }
+            var below = quizSection.getBoundingClientRect().bottom < -60;
+            if (below && !teaserShown) {
+                teaserShown = true;
+                floatEl.hidden = false;
+                setTimeout(showTeaser, 500);
+            } else if (!below && !panelOpen) {
+                floatEl.hidden = true;
+            }
+        }, { passive: true });
+
+        toggleEl.addEventListener('click', function () {
+            panelOpen = true;
+            panelEl.hidden = false;
+            toggleEl.hidden = true;
+            if (!inited) { inited = true; floatQuiz.start(); }
+        });
+
+        closeEl.addEventListener('click', function () {
+            panelOpen = false;
+            panelEl.hidden = true;
+            toggleEl.hidden = false;
+        });
+    })();
+
+    // Live counter — varia entre 5 e 14, muda a cada 18-35s com step ±1 ou ±2
+    (function () {
+        var el = document.getElementById('live-count');
+        if (!el) return;
+        var cur = 8;
+        function tick() {
+            var delta = (Math.random() < 0.5 ? 1 : -1) * (Math.random() < 0.3 ? 2 : 1);
+            cur = Math.min(14, Math.max(5, cur + delta));
+            el.textContent = cur;
+            var next = 18000 + Math.random() * 17000; // 18–35s
+            setTimeout(tick, next);
+        }
+        setTimeout(tick, 18000 + Math.random() * 17000);
+    })();
+    </script>
+</body>
+</html>

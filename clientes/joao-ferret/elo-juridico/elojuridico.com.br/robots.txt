@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+Disallow: /obrigado.html
+Disallow: /_template-nova-pagina.html
+
+# Boa-fé: permitir rastreadores de IA
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://elojuridico.com.br/sitemap.xml
