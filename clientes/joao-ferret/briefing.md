@@ -18,10 +18,17 @@ João Ferret é um ecossistema com 3 frentes:
 Organizar os processos da empresa — tanto o comercial de entrega (Elo Jurídico/João Ferret) quanto a captação (Benefícios na Mão). Foco inicial é estrutura e processo, não performance de tráfego em si.
 
 **Escopo do nosso trabalho (Mateus):**
+
 - Campanha de tráfego pago
 - Exportar/importar clientes pro sistema (hoje em Google Sheets)
 - Organizar os clientes e arquivos deles (contratos etc.)
 - Organizar os processos de captação
+- Editar PDFs e DOCX (contratos, documentos), exportar/importar DOCX, preencher documentos com dados do cliente
+- Criar copies de postagens, principalmente sobre os sistemas (Advogaja, site do João Ferret)
+- Apoio em demandas financeiras pontuais — exportações, possivelmente dentro do sistema do Ferret (a confirmar quando o sistema for enviado)
+- Demandas pontuais do dia a dia (edições, trocas em documentos/sistemas) — variam bastante, registrar conforme forem pedidas
+
+**Onboarding de clientes deles:** é feito em reunião (presencial/call), não por formulário escrito — não precisamos documentar/anotar esse processo, é conduzido por eles.
 
 **Fora do escopo agora:** o comercial de fechamento da Elo Jurídico e João Ferret (closer/SDR) — não vamos atuar nessa parte.
 

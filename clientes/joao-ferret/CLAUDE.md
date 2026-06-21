@@ -31,8 +31,22 @@ Detalhes completos do negócio, objetivo, público e histórico estão em [brief
 - [x] Marketing / estrutura comercial — organização de processos de captação e entrega (NÃO inclui o comercial de fechamento da Elo Jurídico/João Ferret — isso é com o time interno deles: closer/SDR)
 - [ ] Site / blog / SaaS / aplicativo
 - [ ] Automação WhatsApp (ManyChat/n8n)
-- [ ] Copywriting
+- [x] Copywriting — copies de postagens, principalmente sobre os sistemas (Advogaja, site João Ferret)
 - [ ] Conteúdo / redes sociais
+- [x] Edição de documentos — PDF e DOCX (contratos, preenchimento com dados do cliente, exportar/importar)
+- [x] Apoio financeiro pontual — exportações (possivelmente dentro do sistema do Ferret, a confirmar quando enviado)
+
+## Demandas do dia a dia (recorrentes, ad hoc)
+
+O cliente pede tarefas pontuais e variadas no dia a dia, além do trabalho estrutural acima. Registrar aqui o que for pedido com frequência:
+
+- Editar PDFs (contratos, documentos)
+- Exportar/importar DOCX
+- Preencher documentos com dados do cliente
+- Criar copies de postagens dos sistemas (Advogaja, site João Ferret)
+- Trocas/edições pontuais em documentos e sistemas
+
+**Onboarding de clientes deles:** feito em reunião (call/presencial) pelo time deles — não é nosso processo a documentar, só mencionado pra contexto.
 
 ## Acessos e contas conectadas
 
