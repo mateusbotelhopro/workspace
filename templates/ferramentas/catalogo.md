@@ -69,13 +69,14 @@ node --env-file=.env scripts/publish-postforme.js
 ```
 **Quando usar:** Skills de carrossel, conteudo visual, publicacao automatica
 
-### WhatsApp Cloud API / Z-API
+### WhatsApp Cloud API / Z-API / Revolution API
 **O que faz:** Envia e recebe mensagens de WhatsApp programaticamente (atendimento, notificacao, automacao)
-**Precisa de conta:** Sim. Dois caminhos:
+**Precisa de conta:** Sim. Tres caminhos:
 - **WhatsApp Cloud API (oficial Meta):** numero verificado, mais regras, sem custo ate certo volume
 - **Z-API (terceiro):** mais simples de plugar, paga, usa numero pessoal
-**Configurar:** Tokens no `.env` (varia por provedor)
-**Quando usar:** Skills de atendimento automatico, envio de notificacao, agente conversacional, follow-up de venda
+- **Revolution API (terceiro):** alternativa via numero pessoal, integra direto com N8N por webhook, comum em automacoes de funil/atendimento
+**Configurar:** Tokens/instancia no `.env` (varia por provedor)
+**Quando usar:** Skills de atendimento automatico, envio de notificacao, agente conversacional, follow-up de venda. Pra automacoes via N8N, Revolution API costuma ser a opcao mais rapida de plugar
 
 ---
 

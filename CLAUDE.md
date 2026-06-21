@@ -44,6 +44,7 @@ Detalhes em `_contexto/preferencias.md`. Evitar excesso de travessão (—) e te
 - **Documentos:** docx, pdf, pptx, xlsx
 - **Mídia/Visual:** canvas-design, nanobanana-ratos, gpt-image2-ratos, transcribe, yt-transcript
 - **Operação própria:** apresentacao-institucional, carrossel, comentario-dm-ratos, onboarding-cliente, proposta-comercial, publicar-instagram, publicar-site, roteiro-post, find-skills
+- **Comercial:** contrato-cliente, estrutura-comercial, mapear-funil
 
 *(Atualizar essa lista conforme instalar/remover skills)*
 
