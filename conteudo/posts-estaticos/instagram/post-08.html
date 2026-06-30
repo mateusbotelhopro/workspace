@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080, initial-scale=1">
+<title>Post 08</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1080px;
+    height: 1350px;
+    background: #0A0A0A;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bg-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.2) saturate(0.3) contrast(1.1);
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+      rgba(10, 10, 10, 0.3) 0%,
+      rgba(10, 10, 10, 0.5) 25%,
+      rgba(10, 10, 10, 0.8) 55%,
+      rgba(10, 10, 10, 0.96) 100%
+    );
+  }
+
+  .red-accent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle at top right, rgba(229, 9, 20, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .content {
+    position: absolute;
+    bottom: 80px;
+    left: 72px;
+    right: 72px;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .tag { display: none; }
+
+  .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 88px;
+    font-weight: 400;
+    line-height: 1.0;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+  }
+
+  .headline em {
+    font-style: normal;
+    color: #E50914;
+  }
+
+  .checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding-left: 4px;
+  }
+
+  .check-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.4;
+  }
+
+  .check-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #E50914;
+    flex-shrink: 0;
+  }
+
+  .handle {
+    position: absolute;
+    bottom: 28px;
+    right: 72px;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.25);
+    z-index: 5;
+  }
+
+  .side-line { display: none; }
+</style>
+</head>
+<body>
+  <img src="../imagens/analytics.jpg" alt="" class="bg-image">
+  <div class="overlay"></div>
+  <div class="red-accent"></div>
+  <div class="side-line"></div>
+
+  <div class="content">
+    <span class="tag">Fundo de funil</span>
+    <h1 class="headline">
+      Se eu <em>auditasse</em><br>
+      sua conta de<br>
+      anúncios agora,<br>
+      o que eu<br>
+      <em>encontraria</em>?
+    </h1>
+    <div class="checklist">
+      <div class="check-item"><span class="check-dot"></span>Pixel funcionando ou rastreando errado?</div>
+      <div class="check-item"><span class="check-dot"></span>Eventos corretos ou duplicados?</div>
+      <div class="check-item"><span class="check-dot"></span>Criativos testados ou parados há meses?</div>
+      <div class="check-item"><span class="check-dot"></span>Públicos segmentados ou no automático?</div>
+    </div>
+  </div>
+
+  <span class="handle">@mateusbotelhopro</span>
+</body>
+</html>

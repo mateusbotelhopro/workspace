@@ -7,7 +7,7 @@
 #     customer_id: "1234567890"  # sem hifens
 #     notas: "Opcional — qualquer observacao"
 
-clientes: []
-  # - nome: "Meu Cliente"
-  #   customer_id: "1234567890"
-  #   notas: "Conta principal"
+clientes:
+  - nome: "Fob Advogados"
+    customer_id: "4632988258"
+    notas: "Direito Bancário - SP"

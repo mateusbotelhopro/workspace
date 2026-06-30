@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1000">
+<title>Kick-off — Mateus Botelho</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Archivo', system-ui, sans-serif;
+    color: #1a1a1a;
+    -webkit-font-smoothing: antialiased;
+    background: #fff;
+  }
+
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    background: #fff;
+  }
+  .page:last-child { page-break-after: avoid; }
+
+  /* ===== TITLE BLOCK ===== */
+  .doc-title-block {
+    padding: 48px 48px 0;
+  }
+  .doc-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 32px;
+    color: #0A0A0A;
+    letter-spacing: 0.02em;
+    line-height: 1;
+  }
+  .doc-title span { color: #2438E8; }
+  .doc-sub {
+    font-size: 11px;
+    color: #a3a3a3;
+    letter-spacing: 0.04em;
+    margin-top: 6px;
+  }
+  .doc-title-rule {
+    height: 3px;
+    background: #2438E8;
+    width: 56px;
+    margin-top: 16px;
+  }
+
+  /* ===== CONTENT ===== */
+  .content {
+    padding: 32px 48px 80px;
+  }
+
+  /* ===== INFO GRID ===== */
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-bottom: 28px;
+  }
+  .info-row {
+    display: flex;
+    align-items: baseline;
+    padding: 9px 0;
+    border-bottom: 1px solid #eee;
+    gap: 8px;
+  }
+  .info-row.full {
+    grid-column: 1 / -1;
+  }
+  .info-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: #0A0A0A;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .info-value {
+    font-size: 12px;
+    color: #404040;
+    flex: 1;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 1px;
+    min-height: 16px;
+  }
+  .info-value.filled {
+    color: #0A0A0A;
+    font-weight: 600;
+    border-bottom-color: transparent;
+  }
+
+  /* ===== CHECKBOX ROW ===== */
+  .check-section {
+    margin-bottom: 24px;
+    padding: 16px 20px;
+    background: #fafafa;
+    border-radius: 8px;
+    border: 1px solid #f0f0f0;
+  }
+  .check-section-title {
+    font-size: 10px;
+    font-weight: 700;
+    color: #0A0A0A;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .check-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+  }
+  .check-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: #404040;
+  }
+  .check-box {
+    width: 14px;
+    height: 14px;
+    border: 1.5px solid #ccc;
+    border-radius: 3px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .check-box.checked {
+    background: #2438E8;
+    border-color: #2438E8;
+  }
+  .check-box.checked::after {
+    content: '\2713';
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  /* ===== CANVAS TITLE ===== */
+  .canvas-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    margin-top: 8px;
+  }
+  .canvas-label {
+    font-family: 'Anton', sans-serif;
+    font-size: 36px;
+    color: #0A0A0A;
+    letter-spacing: 0.04em;
+    line-height: 1;
+  }
+  .canvas-label span { color: #2438E8; }
+  .canvas-desc {
+    font-size: 11px;
+    color: #737373;
+    line-height: 1.5;
+    max-width: 500px;
+  }
+
+  /* ===== CANVAS BLOCKS ===== */
+  .canvas-block {
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+  .canvas-block-header {
+    background: #0A0A0A;
+    padding: 10px 20px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .canvas-block-number {
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
+    color: #2438E8;
+    line-height: 1;
+  }
+  .canvas-block-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 0.06em;
+    line-height: 1;
+  }
+  .canvas-block-hint {
+    font-size: 10px;
+    color: #666;
+    margin-left: auto;
+    font-style: italic;
+  }
+  .canvas-block-body {
+    padding: 16px 20px;
+    font-size: 12px;
+    color: #404040;
+    line-height: 1.8;
+    min-height: 80px;
+    background: #fff;
+  }
+  .canvas-block-body p {
+    margin-bottom: 8px;
+  }
+  .canvas-block-body p:last-child { margin-bottom: 0; }
+  .canvas-block-body .placeholder {
+    color: #bbb;
+    font-style: italic;
+  }
+
+  /* ===== MINI GRID (2 blocks side by side) ===== */
+  .canvas-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .canvas-row .canvas-block {
+    margin-bottom: 0;
+  }
+
+  /* ===== SEPARATOR ===== */
+  .section-sep {
+    height: 1px;
+    background: linear-gradient(to right, #2438E8, transparent 50%);
+    margin: 28px 0;
+  }
+
+  /* ===== FOOTER ===== */
+  .page-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 48px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9px;
+    color: #ccc;
+  }
+  .page-footer-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, #2438E8, transparent 40%);
+  }
+
+  /* ===== WARNING BAR ===== */
+  .warning-bar {
+    background: rgba(36,56,232,0.06);
+    border-left: 3px solid #2438E8;
+    padding: 10px 20px;
+    font-size: 10px;
+    color: #666;
+    margin-bottom: 24px;
+    border-radius: 0 6px 6px 0;
+    font-weight: 500;
+  }
+  .warning-bar strong {
+    color: #2438E8;
+  }
+
+  /* ===== INNER HEADER (pag 2+) ===== */
+  .inner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .inner-header-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 16px;
+    color: #0A0A0A;
+    letter-spacing: 0.04em;
+  }
+  .inner-page-label {
+    font-size: 10px;
+    color: #a3a3a3;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* ===== TABLE ===== */
+  .canvas-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+    margin: 8px 0;
+  }
+  .canvas-table th {
+    text-align: left;
+    font-weight: 700;
+    color: #0A0A0A;
+    padding: 8px 12px;
+    background: #f5f5f5;
+    border-bottom: 2px solid #e5e5e5;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .canvas-table td {
+    padding: 8px 12px;
+    color: #404040;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .canvas-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* ===== NOTES AREA ===== */
+  .notes-block {
+    border: 1px dashed #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    min-height: 120px;
+    margin-top: 16px;
+  }
+  .notes-title {
+    font-size: 10px;
+    font-weight: 700;
+    color: #a3a3a3;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .notes-lines {
+    border-bottom: 1px solid #f0f0f0;
+    height: 24px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ PAGINA 1 ============ -->
+<div class="page">
+  <div class="doc-title-block">
+    <div class="doc-title">KICK-OFF DE <span>PROJETO</span></div>
+    <div class="doc-sub">Mateus Botelho — mateusbotelho.com</div>
+    <div class="doc-title-rule"></div>
+  </div>
+
+  <div class="content">
+    <div class="warning-bar">
+      <strong>IMPORTANTE:</strong> Preencher todos os campos durante a reunião de kick-off. Este documento será a base de todo o planejamento.
+    </div>
+
+    <!-- INFO DO PROJETO -->
+    <div class="info-grid">
+      <div class="info-row"><span class="info-label">Projeto:</span><span class="info-value"></span></div>
+      <div class="info-row"><span class="info-label">Responsável:</span><span class="info-value"></span></div>
+      <div class="info-row"><span class="info-label">Data:</span><span class="info-value"></span></div>
+      <div class="info-row"><span class="info-label">Contatos:</span><span class="info-value"></span></div>
+      <div class="info-row full"><span class="info-label">Comunicação oficial:</span><span class="info-value"></span></div>
+      <div class="info-row"><span class="info-label">Valor do contrato:</span><span class="info-value"></span></div>
+      <div class="info-row"><span class="info-label">Orçamento de mídia (mensal):</span><span class="info-value"></span></div>
+    </div>
+
+    <!-- CHECKBOXES -->
+    <div class="check-section">
+      <div class="check-section-title">Serviços contratados</div>
+      <div class="check-grid">
+        <div class="check-item"><div class="check-box"></div> Gestão de tráfego pago</div>
+        <div class="check-item"><div class="check-box"></div> Gestão de marketing</div>
+        <div class="check-item"><div class="check-box"></div> Estrutura comercial</div>
+        <div class="check-item"><div class="check-box"></div> Site / Landing page</div>
+        <div class="check-item"><div class="check-box"></div> Automação WhatsApp</div>
+        <div class="check-item"><div class="check-box"></div> Copywriting</div>
+        <div class="check-item"><div class="check-box"></div> SaaS / Aplicativo</div>
+        <div class="check-item"><div class="check-box"></div> Outro: _______________</div>
+      </div>
+    </div>
+
+    <div class="check-section">
+      <div class="check-section-title">Forma de mensuração de resultados</div>
+      <div class="check-grid">
+        <div class="check-item"><div class="check-box"></div> Lead</div>
+        <div class="check-item"><div class="check-box"></div> Venda direta</div>
+        <div class="check-item"><div class="check-box"></div> Agendamento</div>
+        <div class="check-item"><div class="check-box"></div> Ecommerce</div>
+        <div class="check-item"><div class="check-box"></div> PDV (ponto de venda)</div>
+        <div class="check-item"><div class="check-box"></div> Software/SaaS</div>
+        <div class="check-item"><div class="check-box"></div> Outro: _______________</div>
+      </div>
+    </div>
+
+    <!-- CANVAS -->
+    <div class="section-sep"></div>
+
+    <div class="canvas-header">
+      <div class="canvas-label"><span>C</span>ANVAS</div>
+      <div class="canvas-desc">Todas as perguntas aqui farão referência direta ao planejamento do projeto. Anote tudo que o cliente apresentar pra ter o máximo de clareza antes de começar.</div>
+    </div>
+
+    <!-- BLOCO 1 -->
+    <div class="canvas-block">
+      <div class="canvas-block-header">
+        <span class="canvas-block-number">01</span>
+        <span class="canvas-block-title">JUSTIFICATIVA</span>
+        <span class="canvas-block-hint">por que o cliente está buscando esse serviço?</span>
+      </div>
+      <div class="canvas-block-body">
+        <p class="placeholder">O que motivou a busca? Qual problema quer resolver? De onde veio (indicação, site, rede social)?</p>
+      </div>
+    </div>
+
+    <!-- BLOCO 2 -->
+    <div class="canvas-block">
+      <div class="canvas-block-header">
+        <span class="canvas-block-number">02</span>
+        <span class="canvas-block-title">OBJETIVO</span>
+        <span class="canvas-block-hint">o que quer alcançar com o projeto?</span>
+      </div>
+      <div class="canvas-block-body">
+        <p class="placeholder">Meta principal. Ser específico: número de leads, faturamento, agendamentos, vendas. Qual resultado o cliente considera sucesso?</p>
+      </div>
+    </div>
+
+    <!-- BLOCO 3 -->
+    <div class="canvas-block">
+      <div class="canvas-block-header">
+        <span class="canvas-block-number">03</span>
+        <span class="canvas-block-title">REQUISITOS E RESTRIÇÕES</span>
+        <span class="canvas-block-hint">existe algo que limita ou direciona o projeto?</span>
+      </div>
+      <div class="canvas-block-body">
+        <p class="placeholder">Regras do setor, código de ética, restrições de comunicação, limitações técnicas, exigências legais, preferências do cliente.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Mateus Botelho — Kick-off de Projeto</span>
+    <span>Página 1</span>
+  </div>
+  <div class="page-footer-bar"></div>
+</div>
+
+<!-- ============ PAGINA 2 ============ -->
+<div class="page">
+  <div class="content" style="padding-top:40px;">
+    <div class="inner-header">
+      <span class="inner-header-title">KICK-OFF DE PROJETO</span>
+      <span class="inner-page-label">Mateus Botelho</span>
+    </div>
+
+    <!-- BLOCO 4 -->
+    <div class="canvas-block">
+      <div class="canvas-block-header">
+        <span class="canvas-block-number">04</span>
+        <span class="canvas-block-title">PÚBLICO-ALVO</span>
+        <span class="canvas-block-hint">quem são os clientes ideais?</span>
+      </div>
+      <div class="canvas-block-body">
+        <p class="placeholder">Perfil demográfico (idade, gênero, localização). Perfil comportamental (o que faz, o que busca, onde está). Nível de consciência (sabe que tem o problema? já procurou solução?).</p>
+      </div>
+    </div>
+
+    <!-- BLOCO 5 e 6 lado a lado -->
+    <div class="canvas-row">
+      <div class="canvas-block">
+        <div class="canvas-block-header">
+          <span class="canvas-block-number">05</span>
+          <span class="canvas-block-title">CONCORRENTES</span>
+        </div>
+        <div class="canvas-block-body">
+          <p class="placeholder">Quem são os principais concorrentes? O que fazem bem? O que fazem mal? Como o cliente se diferencia?</p>
+        </div>
+      </div>
+      <div class="canvas-block">
+        <div class="canvas-block-header">
+          <span class="canvas-block-number">06</span>
+          <span class="canvas-block-title">DIFERENCIAIS</span>
+        </div>
+        <div class="canvas-block-body">
+          <p class="placeholder">O que faz o cliente ser diferente? Prova social, garantia, método próprio, experiência, preço, localização, atendimento?</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOCO 7 -->
+    <div class="canvas-block">
+      <div class="canvas-block-header">
+        <span class="canvas-block-number">07</span>
+        <span class="canvas-block-title">OFERTA E PRODUTO</span>
+        <span class="canvas-block-hint">o que vai ser vendido/divulgado?</span>
+      </div>
+      <div class="canvas-block-body">
+        <p class="placeholder">Produto ou serviço principal. Ticket médio. Margem. Forma de pagamento. Existe upsell ou cross-sell? Há sazonalidade?</p>
+      </div>
+    </div>
+
+    <!-- BLOCO 8 -->
+    <div class="canvas-block">
+      <div class="canvas-block-header">
+        <span class="canvas-block-number">08</span>
+        <span class="canvas-block-title">PROCESSO COMERCIAL ATUAL</span>
+        <span class="canvas-block-hint">como o cliente vende hoje?</span>
+      </div>
+      <div class="canvas-block-body">
+        <p class="placeholder">Como chega o lead? Quem atende? Por onde (WhatsApp, telefone, presencial)? Tempo médio de resposta? Usa CRM? Qual a taxa de conversão atual? Qual o gargalo?</p>
+      </div>
+    </div>
+
+    <!-- BLOCO 9 -->
+    <div class="canvas-block">
+      <div class="canvas-block-header">
+        <span class="canvas-block-number">09</span>
+        <span class="canvas-block-title">HISTÓRICO DE MARKETING</span>
+        <span class="canvas-block-hint">o que já foi feito?</span>
+      </div>
+      <div class="canvas-block-body">
+        <p class="placeholder">Já investiu em tráfego pago? Quanto? Resultados? Já teve site? Quem fez? Por que parou ou quer mudar? Tem redes sociais ativas?</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Mateus Botelho — Kick-off de Projeto</span>
+    <span>Página 2</span>
+  </div>
+  <div class="page-footer-bar"></div>
+</div>
+
+<!-- ============ PAGINA 3 ============ -->
+<div class="page">
+  <div class="content" style="padding-top:40px;">
+    <div class="inner-header">
+      <span class="inner-header-title">KICK-OFF DE PROJETO</span>
+      <span class="inner-page-label">Mateus Botelho</span>
+    </div>
+
+    <!-- BLOCO 10 -->
+    <div class="canvas-block">
+      <div class="canvas-block-header">
+        <span class="canvas-block-number">10</span>
+        <span class="canvas-block-title">ACESSOS E ATIVOS</span>
+        <span class="canvas-block-hint">o que o cliente já tem disponível?</span>
+      </div>
+      <div class="canvas-block-body">
+        <table class="canvas-table">
+          <thead>
+            <tr><th>Ativo</th><th>Status</th><th>Acesso?</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Google Ads</td><td></td><td></td></tr>
+            <tr><td>Meta Ads (BM)</td><td></td><td></td></tr>
+            <tr><td>Google Analytics</td><td></td><td></td></tr>
+            <tr><td>Instagram / Facebook</td><td></td><td></td></tr>
+            <tr><td>Site / Domínio</td><td></td><td></td></tr>
+            <tr><td>WhatsApp Business</td><td></td><td></td></tr>
+            <tr><td>CRM / Ferramenta</td><td></td><td></td></tr>
+            <tr><td>Logo / Identidade visual</td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- BLOCO 11 e 12 lado a lado -->
+    <div class="canvas-row">
+      <div class="canvas-block">
+        <div class="canvas-block-header">
+          <span class="canvas-block-number">11</span>
+          <span class="canvas-block-title">ENTREGÁVEIS</span>
+        </div>
+        <div class="canvas-block-body">
+          <p class="placeholder">O que será entregue nesse projeto? Lista clara dos entregáveis com prazo de cada um.</p>
+          <br>
+          <table class="canvas-table">
+            <thead><tr><th>#</th><th>Entregável</th><th>Prazo</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td></td><td></td></tr>
+              <tr><td>2</td><td></td><td></td></tr>
+              <tr><td>3</td><td></td><td></td></tr>
+              <tr><td>4</td><td></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="canvas-block">
+        <div class="canvas-block-header">
+          <span class="canvas-block-number">12</span>
+          <span class="canvas-block-title">MÉTRICAS DE SUCESSO</span>
+        </div>
+        <div class="canvas-block-body">
+          <p class="placeholder">Como vamos medir se o projeto deu certo?</p>
+          <br>
+          <table class="canvas-table">
+            <thead><tr><th>Métrica</th><th>Meta</th></tr></thead>
+            <tbody>
+              <tr><td>CPL (custo por lead)</td><td></td></tr>
+              <tr><td>Volume de leads/mês</td><td></td></tr>
+              <tr><td>Taxa de conversão</td><td></td></tr>
+              <tr><td>ROAS</td><td></td></tr>
+              <tr><td>Faturamento</td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOCO 13 -->
+    <div class="canvas-block">
+      <div class="canvas-block-header">
+        <span class="canvas-block-number">13</span>
+        <span class="canvas-block-title">PRÓXIMOS PASSOS</span>
+        <span class="canvas-block-hint">o que precisa acontecer pra começar?</span>
+      </div>
+      <div class="canvas-block-body">
+        <table class="canvas-table">
+          <thead><tr><th>Ação</th><th>Responsável</th><th>Prazo</th></tr></thead>
+          <tbody>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- NOTAS -->
+    <div class="notes-block">
+      <div class="notes-title">Observações gerais</div>
+      <div class="notes-lines"></div>
+      <div class="notes-lines"></div>
+      <div class="notes-lines"></div>
+      <div class="notes-lines"></div>
+      <div class="notes-lines"></div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Mateus Botelho — Kick-off de Projeto</span>
+    <span>Página 3</span>
+  </div>
+  <div class="page-footer-bar"></div>
+</div>
+
+</body>
+</html>

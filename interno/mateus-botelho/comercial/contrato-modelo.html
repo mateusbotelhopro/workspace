@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1000">
+<title>Contrato de Prestação de Serviços — Mateus Botelho</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Archivo', system-ui, sans-serif;
+    color: #1a1a1a;
+    -webkit-font-smoothing: antialiased;
+    background: #fff;
+  }
+
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    background: #fff;
+  }
+  .page:last-child { page-break-after: avoid; }
+
+  /* ===== TITLE BLOCK (pag 1) ===== */
+  .doc-title-block {
+    padding: 48px 48px 0;
+  }
+  .doc-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 32px;
+    color: #0A0A0A;
+    letter-spacing: 0.02em;
+    line-height: 1;
+  }
+  .doc-title span { color: #2438E8; }
+  .doc-sub {
+    font-size: 11px;
+    color: #a3a3a3;
+    letter-spacing: 0.04em;
+    margin-top: 6px;
+  }
+  .doc-title-rule {
+    height: 3px;
+    background: #2438E8;
+    width: 56px;
+    margin-top: 16px;
+  }
+
+  /* ===== INNER HEADER (pag 2+) ===== */
+  .inner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 16px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .inner-header-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 16px;
+    color: #0A0A0A;
+    letter-spacing: 0.04em;
+  }
+  .inner-page-label {
+    font-size: 10px;
+    color: #a3a3a3;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* ===== CONTENT ===== */
+  .content {
+    padding: 32px 48px 80px;
+  }
+
+  /* ===== INFO GRID ===== */
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-bottom: 28px;
+  }
+  .info-row {
+    display: flex;
+    align-items: baseline;
+    padding: 9px 0;
+    border-bottom: 1px solid #eee;
+    gap: 8px;
+  }
+  .info-row.full {
+    grid-column: 1 / -1;
+  }
+  .info-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: #0A0A0A;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .info-value {
+    font-size: 12px;
+    color: #404040;
+    flex: 1;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 1px;
+    min-height: 16px;
+  }
+  .info-value.filled {
+    color: #0A0A0A;
+    font-weight: 600;
+    border-bottom-color: transparent;
+  }
+
+  /* ===== CLAUSE BLOCKS ===== */
+  .clause-block {
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+  .clause-block-header {
+    background: #0A0A0A;
+    padding: 10px 20px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .clause-block-number {
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
+    color: #2438E8;
+    line-height: 1;
+  }
+  .clause-block-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 0.06em;
+    line-height: 1;
+  }
+  .clause-block-body {
+    padding: 16px 20px;
+    font-size: 12px;
+    color: #404040;
+    line-height: 1.8;
+    background: #fff;
+  }
+  .clause-block-body p {
+    margin-bottom: 8px;
+  }
+  .clause-block-body p:last-child { margin-bottom: 0; }
+
+  /* ===== FIELDS ===== */
+  .field {
+    display: inline;
+    background: rgba(36,56,232,0.06);
+    border-bottom: 1.5px solid #2438E8;
+    padding: 1px 6px;
+    font-weight: 600;
+    color: #171717;
+    border-radius: 2px;
+    font-size: 12px;
+  }
+
+  /* ===== SUB ITEMS ===== */
+  .sub-item {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 6px;
+    font-size: 12px;
+    color: #404040;
+    line-height: 1.7;
+  }
+  .sub-item-marker {
+    color: #2438E8;
+    font-weight: 700;
+    font-size: 11px;
+    min-width: 16px;
+    padding-top: 1px;
+  }
+
+  /* ===== TABLE ===== */
+  .contract-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+    margin: 8px 0;
+  }
+  .contract-table th {
+    text-align: left;
+    font-weight: 700;
+    color: #0A0A0A;
+    padding: 8px 12px;
+    background: #f5f5f5;
+    border-bottom: 2px solid #e5e5e5;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .contract-table td {
+    padding: 8px 12px;
+    color: #404040;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .contract-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* ===== INFO BOX ===== */
+  .info-box {
+    background: rgba(36,56,232,0.04);
+    border-left: 3px solid #2438E8;
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 12px 0;
+    font-size: 11px;
+    color: #525252;
+    line-height: 1.7;
+  }
+  .info-box strong {
+    color: #171717;
+  }
+
+  /* ===== SEPARATOR ===== */
+  .section-sep {
+    height: 1px;
+    background: linear-gradient(to right, #2438E8, transparent 50%);
+    margin: 24px 0;
+  }
+
+  /* ===== SIGNATURE ===== */
+  .sig-section {
+    margin-top: 36px;
+  }
+  .sig-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 20px;
+  }
+  .sig-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .sig-line {
+    width: 100%;
+    height: 1px;
+    background: #ccc;
+    margin-top: 48px;
+  }
+  .sig-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #171717;
+  }
+  .sig-role {
+    font-size: 11px;
+    color: #737373;
+  }
+  .sig-doc {
+    font-size: 10px;
+    color: #a3a3a3;
+  }
+
+  /* ===== FOOTER ===== */
+  .page-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 48px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9px;
+    color: #ccc;
+  }
+  .page-footer-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, #2438E8, transparent 40%);
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ PAGINA 1 ============ -->
+<div class="page">
+  <div class="doc-title-block">
+    <div class="doc-title">CONTRATO DE PRESTAÇÃO DE <span>SERVIÇOS</span></div>
+    <div class="doc-sub">Mateus Ramos Botelho — mateusbotelho.com</div>
+    <div class="doc-title-rule"></div>
+  </div>
+
+  <div class="content">
+
+    <!-- INFO DO CONTRATO -->
+    <div class="info-grid">
+      <div class="info-row"><span class="info-label">Cliente:</span><span class="info-value filled">Antunes Martins Ferreira Advogados</span></div>
+      <div class="info-row"><span class="info-label">Projeto:</span><span class="info-value"></span></div>
+      <div class="info-row"><span class="info-label">Data:</span><span class="info-value"></span></div>
+      <div class="info-row"><span class="info-label">Valor total:</span><span class="info-value"></span></div>
+    </div>
+
+    <!-- CLAUSULA 1 -->
+    <div class="clause-block">
+      <div class="clause-block-header">
+        <span class="clause-block-number">01</span>
+        <span class="clause-block-title">DAS PARTES</span>
+      </div>
+      <div class="clause-block-body">
+        <p><strong>CONTRATADA:</strong> Kortex Company Ltda, pessoa jurídica de direito privado, inscrita no CNPJ sob o n. 67.137.260/0001-84, com sede na Rua Rio Grande do Norte, nº 1435, Sala 708 PVMTO 7, Bairro Savassi, Belo Horizonte - MG, CEP 30.130-138, neste ato representada por seu sócio-administrador Mateus Ramos Botelho, doravante denominada <strong>CONTRATADA</strong>.</p>
+        <p><strong>CONTRATANTE:</strong> Antunes Martins Ferreira Advogados, pessoa jurídica de direito privado, inscrita no CNPJ sob o n. 53.827.092/0001-44, com sede na Av. das Américas, nº 15579, Sala 210, Recreio dos Bandeirantes, Rio de Janeiro - RJ, CEP 22.790-701, doravante denominada <strong>CONTRATANTE</strong>.</p>
+      </div>
+    </div>
+
+    <!-- CLAUSULA 2 -->
+    <div class="clause-block">
+      <div class="clause-block-header">
+        <span class="clause-block-number">02</span>
+        <span class="clause-block-title">DO OBJETO</span>
+      </div>
+      <div class="clause-block-body">
+        <p>O presente contrato tem por objeto a prestação dos seguintes serviços pela CONTRATADA ao CONTRATANTE:</p>
+        <table class="contract-table">
+          <thead>
+            <tr><th>Item</th><th>Descrição</th><th>Prazo</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="field">[01]</span></td><td><span class="field">[Descrição do entregável]</span></td><td><span class="field">[X dias]</span></td></tr>
+            <tr><td><span class="field">[02]</span></td><td><span class="field">[Descrição do entregável]</span></td><td><span class="field">[X dias]</span></td></tr>
+            <tr><td><span class="field">[03]</span></td><td><span class="field">[Descrição do entregável]</span></td><td><span class="field">[X dias]</span></td></tr>
+          </tbody>
+        </table>
+        <p>Os serviços serão prestados conforme as especificações acordadas entre as partes previamente ao início da execução.</p>
+      </div>
+    </div>
+
+    <!-- CLAUSULA 3 -->
+    <div class="clause-block">
+      <div class="clause-block-header">
+        <span class="clause-block-number">03</span>
+        <span class="clause-block-title">DO ESCOPO E EXCLUSÕES</span>
+      </div>
+      <div class="clause-block-body">
+        <p>3.1. O escopo dos serviços compreende exclusivamente os itens descritos na Cláusula 2. Quaisquer serviços adicionais, alterações de escopo ou funcionalidades não previstas serão tratados como aditivo contratual, com prazo e valor a serem negociados separadamente.</p>
+        <p>3.2. Não estão inclusos neste contrato, salvo acordo expresso em contrário:</p>
+        <div class="sub-item"><span class="sub-item-marker">a)</span> Produção de conteúdo textual (copywriting), fotografias ou ilustrações;</div>
+        <div class="sub-item"><span class="sub-item-marker">b)</span> Manutenção mensal após o período de garantia;</div>
+        <div class="sub-item"><span class="sub-item-marker">c)</span> Custos de ferramentas, APIs, hospedagem ou domínio (por conta do CONTRATANTE);</div>
+        <div class="sub-item"><span class="sub-item-marker">d)</span> Treinamento presencial (documentação e vídeo walkthrough estão inclusos).</div>
+      </div>
+    </div>
+
+    <!-- CLAUSULA 4 -->
+    <div class="clause-block">
+      <div class="clause-block-header">
+        <span class="clause-block-number">04</span>
+        <span class="clause-block-title">DO PRAZO</span>
+      </div>
+      <div class="clause-block-body">
+        <p>4.1. O prazo de execução dos serviços será de <span class="field">[X]</span> dias úteis, contados a partir da data de recebimento do pagamento inicial e dos materiais necessários fornecidos pelo CONTRATANTE.</p>
+        <p>4.2. Eventuais atrasos causados pela demora do CONTRATANTE em fornecer materiais, acessos ou feedback não serão computados no prazo de entrega.</p>
+        <p>4.3. Caso a CONTRATADA necessite de prazo adicional por motivos internos, comunicará o CONTRATANTE com antecedência, informando a nova previsão.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Mateus Botelho — Contrato de Prestação de Serviços</span>
+    <span>Página 1</span>
+  </div>
+  <div class="page-footer-bar"></div>
+</div>
+
+<!-- ============ PAGINA 2 ============ -->
+<div class="page">
+  <div class="content" style="padding-top:40px;">
+    <div class="inner-header">
+      <span class="inner-header-title">CONTRATO DE PRESTAÇÃO DE SERVIÇOS</span>
+      <span class="inner-page-label">Mateus Botelho</span>
+    </div>
+
+    <!-- CLAUSULA 5 -->
+    <div class="clause-block">
+      <div class="clause-block-header">
+        <span class="clause-block-number">05</span>
+        <span class="clause-block-title">DO INVESTIMENTO E PAGAMENTO</span>
+      </div>
+      <div class="clause-block-body">
+        <p>5.1. Pelo serviço descrito na Cláusula 2, o CONTRATANTE pagará à CONTRATADA o valor total de <span class="field">R$ [VALOR TOTAL]</span>, nas seguintes condições:</p>
+        <table class="contract-table">
+          <thead>
+            <tr><th>Parcela</th><th>Valor</th><th>Vencimento</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1ª parcela (entrada)</td><td><span class="field">R$ [VALOR]</span></td><td>Na assinatura do contrato</td></tr>
+            <tr><td>2ª parcela (entrega)</td><td><span class="field">R$ [VALOR]</span></td><td>Na entrega do projeto</td></tr>
+          </tbody>
+        </table>
+        <p>5.2. Os pagamentos serão realizados via Pix ou transferência bancária para a conta indicada pela CONTRATADA.</p>
+        <p>5.3. O atraso no pagamento de qualquer parcela acarretará multa de 2% sobre o valor em atraso, acrescido de juros de 1% ao mês, calculados pro rata die.</p>
+        <p>5.4. Ajustes fora do escopo original serão cobrados a parte, ao valor de <strong>R$ 150,00 por hora</strong>, mediante aprovação prévia do CONTRATANTE.</p>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <strong>Dados bancários da CONTRATADA:</strong><br>
+      Banco: <span class="field">[BANCO]</span> | Agência: <span class="field">[AG]</span> | Conta: <span class="field">[CC]</span><br>
+      PIX: <span class="field">[CHAVE PIX]</span> | Titular: Kortex Company Ltda
+    </div>
+
+    <!-- CLAUSULA 6 -->
+    <div class="clause-block">
+      <div class="clause-block-header">
+        <span class="clause-block-number">06</span>
+        <span class="clause-block-title">DAS OBRIGAÇÕES DO CONTRATANTE</span>
+      </div>
+      <div class="clause-block-body">
+        <div class="sub-item"><span class="sub-item-marker">a)</span> Fornecer todos os materiais, acessos, conteúdos e informações necessários à execução dos serviços, em tempo hábil;</div>
+        <div class="sub-item"><span class="sub-item-marker">b)</span> Designar um responsável para aprovações e feedback durante o projeto;</div>
+        <div class="sub-item"><span class="sub-item-marker">c)</span> Realizar os pagamentos nas datas e condições pactuadas;</div>
+        <div class="sub-item"><span class="sub-item-marker">d)</span> Comunicar de forma clara e objetiva eventuais solicitações de ajustes dentro da rodada prevista;</div>
+        <div class="sub-item"><span class="sub-item-marker">e)</span> Responder solicitações da CONTRATADA em até 5 dias úteis, sob pena de suspensão do prazo de entrega.</div>
+      </div>
+    </div>
+
+    <!-- CLAUSULA 7 -->
+    <div class="clause-block">
+      <div class="clause-block-header">
+        <span class="clause-block-number">07</span>
+        <span class="clause-block-title">DAS OBRIGAÇÕES DA CONTRATADA</span>
+      </div>
+      <div class="clause-block-body">
+        <div class="sub-item"><span class="sub-item-marker">a)</span> Executar os serviços com qualidade, diligência e dentro do prazo acordado;</div>
+        <div class="sub-item"><span class="sub-item-marker">b)</span> Manter o CONTRATANTE informado sobre o andamento do projeto, com links de preview quando aplicável;</div>
+        <div class="sub-item"><span class="sub-item-marker">c)</span> Realizar o deploy em ambiente de produção e transferir os acessos ao CONTRATANTE;</div>
+        <div class="sub-item"><span class="sub-item-marker">d)</span> Fornecer documentação básica de uso do projeto entregue;</div>
+        <div class="sub-item"><span class="sub-item-marker">e)</span> Incluir 1 (uma) rodada de ajustes após a entrega, sem custo adicional.</div>
+      </div>
+    </div>
+
+    <!-- CLAUSULA 8 -->
+    <div class="clause-block">
+      <div class="clause-block-header">
+        <span class="clause-block-number">08</span>
+        <span class="clause-block-title">DA REVISÃO E AJUSTES</span>
+      </div>
+      <div class="clause-block-body">
+        <p>8.1. Após a entrega da versão final, o CONTRATANTE terá <strong>1 (uma) rodada de ajustes</strong> inclusa no valor contratado.</p>
+        <p>8.2. A rodada de ajustes compreende correções e alterações menores dentro do escopo original. Não inclui mudanças estruturais, novas funcionalidades ou redesign.</p>
+        <p>8.3. O CONTRATANTE deverá enviar todas as solicitações de ajuste de forma consolidada em até <strong>7 dias úteis</strong> após a entrega. Após esse prazo, a entrega será considerada aceita.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Mateus Botelho — Contrato de Prestação de Serviços</span>
+    <span>Página 2</span>
+  </div>
+  <div class="page-footer-bar"></div>
+</div>
+
+<!-- ============ PAGINA 3 ============ -->
+<div class="page">
+  <div class="content" style="padding-top:40px;">
+    <div class="inner-header">
+      <span class="inner-header-title">CONTRATO DE PRESTAÇÃO DE SERVIÇOS</span>
+      <span class="inner-page-label">Mateus Botelho</span>
+    </div>
+
+    <!-- CLAUSULA 9 -->
+    <div class="clause-block">
+      <div class="clause-block-header">
+        <span class="clause-block-number">09</span>
+        <span class="clause-block-title">DA PROPRIEDADE INTELECTUAL</span>
+      </div>
+      <div class="clause-block-body">
+        <p>9.1. Após a quitação integral do valor contratado, todos os direitos sobre o projeto entregue serão transferidos ao CONTRATANTE, incluindo código-fonte, design e demais ativos produzidos.</p>
+        <p>9.2. A CONTRATADA reserva o direito de utilizar o projeto em seu portfólio, salvo acordo de confidencialidade firmado entre as partes.</p>
+        <p>9.3. Ferramentas, bibliotecas, frameworks e componentes de terceiros utilizados no projeto permanecem sob suas respectivas licenças originais.</p>
+      </div>
+    </div>
+
+    <!-- CLAUSULA 10 -->
+    <div class="clause-block">
+      <div class="clause-block-header">
+        <span class="clause-block-number">10</span>
+        <span class="clause-block-title">DA CONFIDENCIALIDADE</span>
+      </div>
+      <div class="clause-block-body">
+        <p>10.1. Ambas as partes se comprometem a manter sigilo sobre todas as informações confidenciais a que tiverem acesso durante a vigência deste contrato.</p>
+        <p>10.2. São consideradas informações confidenciais: dados de clientes, estratégias de negócio, senhas, credenciais de acesso, e quaisquer informações não públicas.</p>
+        <p>10.3. Esta obrigação permanece vigente por 2 (dois) anos após o encerramento do contrato.</p>
+      </div>
+    </div>
+
+    <!-- CLAUSULA 11 -->
+    <div class="clause-block">
+      <div class="clause-block-header">
+        <span class="clause-block-number">11</span>
+        <span class="clause-block-title">DA RESCISÃO</span>
+      </div>
+      <div class="clause-block-body">
+        <p>11.1. O presente contrato poderá ser rescindido por qualquer das partes, mediante comunicação por escrito com antecedência mínima de 15 (quinze) dias.</p>
+        <p>11.2. Em caso de rescisão pelo CONTRATANTE antes da entrega, o valor da entrada (1ª parcela) não será restituído, servindo como compensação pelo trabalho já executado.</p>
+        <p>11.3. Em caso de rescisão pela CONTRATADA, esta devolverá ao CONTRATANTE os valores pagos proporcionais ao serviço não executado, em até 15 dias úteis.</p>
+        <p>11.4. O inadimplemento de qualquer obrigação contratual por qualquer das partes, não sanado em 10 dias após notificação, configura justa causa para rescisão imediata.</p>
+      </div>
+    </div>
+
+    <!-- CLAUSULA 12 -->
+    <div class="clause-block">
+      <div class="clause-block-header">
+        <span class="clause-block-number">12</span>
+        <span class="clause-block-title">DAS DISPOSIÇÕES GERAIS</span>
+      </div>
+      <div class="clause-block-body">
+        <p>12.1. As partes declaram que este contrato foi celebrado de livre e espontânea vontade, sem qualquer vício de consentimento.</p>
+        <p>12.2. Eventuais tolerâncias quanto ao descumprimento de cláusulas não constituem novação ou renúncia de direitos.</p>
+        <p>12.3. Fica eleito o foro da comarca de <span class="field">[CIDADE/UF]</span> para dirimir quaisquer controvérsias oriundas deste contrato, com renúncia expressa a qualquer outro, por mais privilegiado que seja.</p>
+      </div>
+    </div>
+
+    <div class="section-sep"></div>
+
+    <!-- ASSINATURAS -->
+    <div class="sig-section">
+      <p style="font-size:12px;color:#404040;margin-bottom:4px;">E por estarem de acordo, as partes firmam o presente instrumento.</p>
+      <p style="font-size:12px;color:#a3a3a3;"><span class="field">[CIDADE/UF]</span>, <span class="field">[DD]</span> de <span class="field">[MÊS]</span> de <span class="field">[AAAA]</span>.</p>
+
+      <div class="sig-grid">
+        <div class="sig-block">
+          <div class="sig-line"></div>
+          <div class="sig-name">Kortex Company Ltda</div>
+          <div class="sig-role">CONTRATADA — Mateus Ramos Botelho</div>
+          <div class="sig-doc">CNPJ: 67.137.260/0001-84</div>
+        </div>
+        <div class="sig-block">
+          <div class="sig-line"></div>
+          <div class="sig-name">Antunes Martins Ferreira Advogados</div>
+          <div class="sig-role">CONTRATANTE</div>
+          <div class="sig-doc">CNPJ: 53.827.092/0001-44</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Mateus Botelho — Contrato de Prestação de Serviços</span>
+    <span>Página 3</span>
+  </div>
+  <div class="page-footer-bar"></div>
+</div>
+
+</body>
+</html>

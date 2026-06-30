@@ -1,0 +1,1 @@
+import{r as o}from"./react-vendor-B_0kEqtF.js";const s=o.createContext({isComposing:()=>!1,setComposing:()=>{},justEndedComposing:()=>!1,markCompositionEnd:()=>{}}),e=()=>o.useContext(s);export{e as u};

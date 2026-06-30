@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Método Coy — Mentoria em Lentes de Resina Composta | Instituto Coy</title>
+<meta name="description" content="Domine as lentes de resina composta com o Método Coy. Mentoria intensiva com Thaís Lima e Roberto Correia. Técnica de elite + posicionamento premium para dentistas.">
+<meta name="keywords" content="lentes de resina composta, mentoria odontologia, método coy, instituto coy, odontologia estética, facetas de resina, curso lentes de resina, Thaís Lima, Roberto Correia, estratificação resina">
+<meta name="author" content="Instituto Coy">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#C9A227">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Método Coy — Mentoria em Lentes de Resina Composta">
+<meta property="og:description" content="Doutor(a), pare de entregar resultados comuns. Domine as lentes de resina composta com o Método Coy. Mentoria intensiva com Thaís Lima e Roberto Correia.">
+<meta property="og:image" content="og-image.jpg">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Instituto Coy">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Método Coy — Mentoria em Lentes de Resina Composta">
+<meta name="twitter:description" content="Doutor(a), pare de entregar resultados comuns. Domine as lentes de resina composta com o Método Coy. Mentoria intensiva com Thaís Lima e Roberto Correia.">
+<meta name="twitter:image" content="og-image.jpg">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Método Coy — Mentoria em Lentes de Resina Composta",
+  "description": "Mentoria intensiva em odontologia estética. Domine as lentes de resina composta com técnica de elite e posicionamento premium para cobrar o que você realmente vale.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Instituto Coy",
+    "email": "institutocoyacademy@gmail.com"
+  },
+  "instructor": [
+    {
+      "@type": "Person",
+      "name": "Thaís Lima",
+      "jobTitle": "Cirurgiã-Dentista — CRO 149420SP"
+    },
+    {
+      "@type": "Person",
+      "name": "Roberto Correia",
+      "jobTitle": "Cirurgião-Dentista — CRO 128214SP"
+    }
+  ],
+  "coursePrerequisites": "Profissionais da área de odontologia (dentistas, biomédicos)",
+  "educationalLevel": "Avançado",
+  "inLanguage": "pt-BR",
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "Presencial e Online",
+    "name": "Mentoria Método Coy"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ouro: #C9A227;
+  --ouro-claro: #E4C766;
+  --ouro-brilho: #F5E6A3;
+  --preto: #0A0A0A;
+  --preto-card: #111111;
+  --bg-dark: #080604;
+  --bg-warm: #110E09;
+  --bg-warm2: #1A150E;
+  --cinza-900: #1A1A1A;
+  --cinza-800: #2A2A2A;
+  --creme: #FAF7F0;
+  --creme-escuro: #F0EBE0;
+  --branco: #FFFFFF;
+  --texto-suave: #6B6B6B;
+  --texto-claro: #CFC8BC;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg-dark);
+  color: var(--branco);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 500; }
+img { max-width: 100%; display: block; }
+
+/* ===== SCROLL PROGRESS BAR ===== */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; z-index: 9999;
+  height: 3px; width: 0%;
+  background: linear-gradient(90deg, var(--ouro), var(--ouro-brilho), var(--ouro));
+  transition: width 0.1s linear;
+}
+
+/* ===== REVEAL ANIMATIONS ===== */
+.reveal {
+  opacity: 0; transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-left { opacity: 0; transform: translateX(-50px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+.reveal-right { opacity: 0; transform: translateX(50px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+.reveal-scale { opacity: 0; transform: scale(0.9); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+
+/* ===== SHARED COMPONENTS ===== */
+.eyebrow {
+  text-transform: uppercase; letter-spacing: 4px; font-size: 12px;
+  color: var(--ouro); font-weight: 700; display: inline-block;
+}
+.btn-primary {
+  display: inline-block; position: relative;
+  background: linear-gradient(135deg, var(--ouro-claro), var(--ouro));
+  color: var(--preto); text-decoration: none;
+  padding: 18px 48px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase; font-size: 14px;
+  border-radius: 4px; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 30px rgba(201,162,39,0.3), 0 0 0 0 rgba(201,162,39,0);
+  overflow: hidden;
+}
+.btn-primary::before {
+  content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.6s;
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(201,162,39,0.5), 0 0 60px rgba(201,162,39,0.15);
+}
+.btn-primary:hover::before { left: 100%; }
+
+.btn-secondary {
+  display: inline-block;
+  background: transparent; border: 1px solid var(--ouro);
+  color: var(--ouro); text-decoration: none;
+  padding: 14px 36px; font-weight: 600;
+  letter-spacing: 1px; text-transform: uppercase; font-size: 13px;
+  border-radius: 4px; transition: all 0.3s;
+}
+.btn-secondary:hover {
+  background: var(--ouro); color: var(--preto);
+  box-shadow: 0 8px 30px rgba(201,162,39,0.3);
+}
+
+.micro-text {
+  font-size: 12px; letter-spacing: 1px; text-transform: uppercase;
+  color: rgba(255,255,255,0.4); margin-top: 16px;
+}
+
+.section-title {
+  text-align: center; font-size: clamp(28px, 4vw, 40px); margin-bottom: 16px;
+  line-height: 1.3;
+}
+.section-subtitle {
+  text-align: center; color: var(--texto-suave);
+  max-width: 580px; margin: 0 auto 60px; font-size: 16px; line-height: 1.7;
+}
+.gold-text {
+  background: linear-gradient(135deg, var(--ouro-claro), var(--ouro));
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+.divider-gold {
+  display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 32px;
+}
+.divider-gold::before, .divider-gold::after {
+  content: ''; height: 1px; width: 60px;
+  background: linear-gradient(90deg, transparent, var(--ouro), transparent);
+}
+.divider-gold .diamond {
+  width: 6px; height: 6px; background: var(--ouro);
+  transform: rotate(45deg); flex-shrink: 0;
+}
+
+section { padding: 100px 0; position: relative; }
+.section-cta { text-align: center; margin-top: 48px; }
+
+/* ===== GOLD PARTICLES ===== */
+.particles-container {
+  position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0;
+}
+.particle {
+  position: absolute; width: 3px; height: 3px;
+  background: var(--ouro); border-radius: 50%;
+  opacity: 0; animation: float-particle 6s infinite;
+}
+@keyframes float-particle {
+  0% { opacity: 0; transform: translateY(0) scale(0); }
+  20% { opacity: 0.6; transform: translateY(-30px) scale(1); }
+  100% { opacity: 0; transform: translateY(-180px) scale(0); }
+}
+
+/* ===== GLOW ORB (decorative) ===== */
+.glow-orb {
+  position: absolute; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, rgba(201,162,39,0.08), transparent 70%);
+  filter: blur(40px); z-index: 0;
+}
+
+/* ===== TOPO AVISO (urgency bar) ===== */
+.topo-aviso {
+  background: linear-gradient(90deg, var(--ouro), var(--ouro-claro), var(--ouro));
+  background-size: 200% 100%;
+  animation: shimmer-bar 3s ease-in-out infinite;
+  color: var(--preto); text-align: center;
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 0.5px; padding: 10px 24px;
+}
+@keyframes shimmer-bar {
+  0%, 100% { background-position: 0% 0; }
+  50% { background-position: 100% 0; }
+}
+
+/* ===== HEADER ===== */
+.header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 16px 0; transition: all 0.4s;
+  background: transparent;
+}
+.header.scrolled {
+  background: rgba(10,10,10,0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(201,162,39,0.1);
+  padding: 10px 0;
+}
+.header .container {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.header .logo-link { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.header .logo-img {
+  height: 36px; border-radius: 4px;
+  background: var(--branco); padding: 4px 10px;
+}
+.header .header-cta {
+  font-size: 12px; padding: 10px 24px; letter-spacing: 1px;
+}
+.header .badge-urgency {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
+  color: var(--ouro); font-weight: 600;
+}
+.header .badge-urgency .pulse-dot {
+  width: 6px; height: 6px; background: var(--ouro); border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative; min-height: 100vh; display: flex; align-items: center;
+  padding: 140px 0 100px;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(201,162,39,0.06), transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(201,162,39,0.04), transparent 50%),
+    linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-warm) 50%, var(--bg-dark) 100%);
+  overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="g" patternUnits="userSpaceOnUse" width="20" height="20"><circle cx="1" cy="1" r="0.5" fill="rgba(201,162,39,0.04)"/></pattern></defs><rect fill="url(%23g)" width="100" height="100"/></svg>');
+  opacity: 0.5;
+}
+.hero-grid {
+  display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 60px; align-items: center;
+  position: relative; z-index: 2;
+}
+.hero-content { position: relative; }
+.hero-content .eyebrow { margin-bottom: 24px; font-size: 13px; }
+.hero h1 {
+  font-size: clamp(36px, 5vw, 52px); line-height: 1.2; margin-bottom: 24px;
+  font-weight: 600;
+}
+.hero h1 .destaque {
+  background: linear-gradient(135deg, var(--ouro-brilho), var(--ouro), var(--ouro-claro));
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  position: relative;
+}
+.hero .subhead {
+  font-size: 17px; color: var(--texto-claro); max-width: 500px;
+  margin-bottom: 36px; line-height: 1.8;
+}
+.hero-cta-group { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
+.hero-trust-row {
+  display: flex; flex-wrap: wrap; gap: 18px 28px; margin-top: 28px;
+}
+.hero-trust-row span {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12px; letter-spacing: 0.3px; color: var(--texto-claro); font-weight: 600;
+}
+.hero-trust-row svg { width: 15px; height: 15px; fill: var(--ouro); flex-shrink: 0; }
+
+.hero-photo-wrapper {
+  position: relative;
+}
+.hero-photo-wrapper::before {
+  content: ''; position: absolute;
+  top: -3px; left: -3px; right: -3px; bottom: -3px;
+  background: linear-gradient(135deg, var(--ouro), transparent 40%, transparent 60%, var(--ouro-claro));
+  border-radius: 14px; z-index: -1;
+}
+.hero-photo-wrapper::after {
+  content: ''; position: absolute;
+  top: 20px; left: 20px; right: -20px; bottom: -20px;
+  border: 1px solid rgba(201,162,39,0.15); border-radius: 14px; z-index: -2;
+}
+.hero-photo {
+  border-radius: 12px; overflow: hidden; position: relative;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+}
+.hero-photo img { width: 100%; display: block; }
+.hero-photo .overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(10,10,10,0.6) 100%);
+}
+.hero-badge-float {
+  position: absolute; bottom: 24px; left: 24px; right: 24px;
+  background: rgba(10,10,10,0.7); backdrop-filter: blur(16px);
+  border: 1px solid rgba(201,162,39,0.2);
+  border-radius: 10px; padding: 14px 18px;
+  display: flex; align-items: center; gap: 12px;
+  z-index: 3;
+}
+.hero-badge-float .icon-circle {
+  width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--ouro-claro), var(--ouro));
+  display: flex; align-items: center; justify-content: center;
+}
+.hero-badge-float .icon-circle svg { width: 18px; height: 18px; fill: var(--preto); }
+.hero-badge-float .badge-text { font-size: 13px; color: var(--branco); font-weight: 500; }
+.hero-badge-float .badge-text span { color: var(--ouro); font-weight: 700; display: block; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+
+/* ===== SOCIAL PROOF STRIP ===== */
+.proof-strip {
+  background: var(--preto-card); border-top: 1px solid rgba(201,162,39,0.1);
+  border-bottom: 1px solid rgba(201,162,39,0.1);
+  padding: 20px 0; position: relative; overflow: hidden;
+}
+.proof-strip .container {
+  display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; align-items: center;
+}
+.proof-item {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; font-weight: 600; color: var(--texto-claro);
+  letter-spacing: 0.3px;
+}
+.proof-item svg { width: 18px; height: 18px; fill: var(--ouro); flex-shrink: 0; }
+
+/* ===== CHAMADA PARA DENTISTAS ===== */
+.dentista-callout {
+  background: linear-gradient(135deg, var(--ouro-claro), var(--ouro));
+  padding: 18px 0;
+}
+.dentista-callout p {
+  text-align: center; color: var(--preto); font-size: 16px;
+  font-weight: 600; letter-spacing: 0.2px; margin: 0;
+}
+.dentista-callout p strong { font-weight: 800; }
+
+/* ===== VS SECTION ===== */
+.vs-section {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(201,162,39,0.04), transparent 50%),
+    linear-gradient(180deg, var(--bg-dark), var(--bg-warm), var(--bg-dark));
+  position: relative;
+}
+.vs-title { text-align: center; font-size: clamp(26px, 3.5vw, 36px); margin-bottom: 10px; line-height: 1.35; }
+.vs-subtitle { text-align: center; color: #999; margin-bottom: 50px; font-size: 15px; }
+
+.pergunta-lista { max-width: 720px; margin: 0 auto; }
+.pergunta-item {
+  display: flex; gap: 18px; align-items: flex-start;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(201,162,39,0.1);
+  border-radius: 12px; padding: 22px 26px; margin-bottom: 14px;
+  transition: all 0.3s;
+  position: relative; overflow: hidden;
+}
+.pergunta-item::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: linear-gradient(180deg, var(--ouro), transparent);
+  opacity: 0; transition: opacity 0.3s;
+}
+.pergunta-item:hover { background: rgba(201,162,39,0.03); border-color: rgba(201,162,39,0.2); }
+.pergunta-item:hover::before { opacity: 1; }
+.pergunta-icon {
+  width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(201,162,39,0.1); display: flex; align-items: center; justify-content: center;
+  color: var(--ouro); font-size: 14px; font-weight: 700;
+}
+.pergunta-item p { font-size: 15px; color: #E5E0D5; line-height: 1.6; }
+
+.cta-bridge {
+  margin-top: 50px;
+  background: linear-gradient(135deg, rgba(201,162,39,0.08), rgba(201,162,39,0.03));
+  border: 1px solid rgba(201,162,39,0.15);
+  border-radius: 16px; padding: 32px 36px; text-align: center;
+  position: relative;
+}
+.cta-bridge::before {
+  content: ''; position: absolute; inset: -1px; border-radius: 16px;
+  background: linear-gradient(135deg, var(--ouro), transparent, var(--ouro-claro));
+  z-index: -1; opacity: 0.2;
+}
+.cta-bridge p { font-size: 16px; color: var(--branco); line-height: 1.7; max-width: 600px; margin: 0 auto; }
+.cta-bridge p strong { color: var(--ouro); }
+
+/* ===== 3 PONTOS (PROBLEMAS) ===== */
+.problemas-section {
+  background:
+    radial-gradient(ellipse at center, rgba(201,162,39,0.03), transparent 60%),
+    var(--bg-dark);
+}
+.problemas-section .section-title { margin-bottom: 50px; }
+.problemas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.problema-card {
+  background: rgba(255,255,255,0.02); border: 1px solid rgba(201,162,39,0.1);
+  border-radius: 14px; padding: 32px 26px; text-align: center;
+  transition: all 0.3s;
+}
+.problema-card:hover { border-color: rgba(201,162,39,0.3); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(201,162,39,0.08); }
+.problema-diamond {
+  width: 14px; height: 14px; background: linear-gradient(135deg, var(--ouro-claro), var(--ouro));
+  transform: rotate(45deg); margin: 0 auto 22px;
+}
+.problema-card h3 { font-size: 19px; margin-bottom: 12px; color: var(--branco); }
+.problema-card p { font-size: 14px; color: var(--texto-claro); line-height: 1.6; }
+
+/* ===== COMPARATIVO SEM/COM ===== */
+.comparativo-section {
+  background: linear-gradient(180deg, var(--bg-dark), var(--bg-warm2), var(--bg-dark));
+}
+.comparativo-section .section-subtitle { margin-bottom: 48px; }
+.comparativo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 880px; margin: 0 auto; }
+.comp-card { border-radius: 16px; padding: 36px 32px; }
+.comp-card h3 { font-size: 20px; margin-bottom: 22px; }
+.comp-card ul { list-style: none; display: grid; gap: 16px; }
+.comp-card li { display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; color: var(--texto-claro); line-height: 1.6; }
+.comp-sem { background: rgba(180,40,40,0.06); border: 1px solid rgba(220,80,80,0.25); }
+.comp-sem h3 { color: #E08080; }
+.comp-x { color: #E08080; font-weight: 700; font-size: 16px; flex-shrink: 0; }
+.comp-com { background: rgba(40,160,90,0.06); border: 1px solid rgba(90,200,140,0.25); }
+.comp-com h3 { color: #6FCE9A; }
+.comp-check { color: #6FCE9A; font-weight: 700; font-size: 15px; flex-shrink: 0; }
+.comp-com li strong { color: var(--ouro); }
+
+/* ===== PARA QUEM (FOTO + LISTA) ===== */
+.para-quem-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 60px; align-items: center; }
+.para-quem-img { border-radius: 12px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.4); }
+.para-quem-img img { width: 100%; display: block; }
+.para-quem-content .eyebrow { margin-bottom: 16px; }
+.para-quem-content h2 { font-size: clamp(26px, 3.5vw, 34px); margin-bottom: 28px; line-height: 1.3; }
+.quem-lista { display: grid; gap: 18px; }
+.quem-row { display: flex; gap: 16px; align-items: flex-start; }
+.quem-row .diamond {
+  width: 8px; height: 8px; background: var(--ouro); transform: rotate(45deg);
+  flex-shrink: 0; margin-top: 7px;
+}
+.quem-row p { font-size: 14.5px; color: var(--texto-claro); line-height: 1.7; }
+.quem-row p strong { color: var(--branco); }
+.section-cta-left { margin-top: 32px; }
+
+/* ===== O METODO ===== */
+.o-metodo-section {
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(201,162,39,0.04), transparent 50%),
+    var(--bg-dark);
+}
+.na-pratica-triggers {
+  text-align: center; font-size: clamp(18px, 2.4vw, 22px); font-weight: 700;
+  color: var(--ouro); margin-bottom: 50px; letter-spacing: 0.2px;
+}
+.metodo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.metodo-card {
+  background: rgba(255,255,255,0.02); border: 1px solid rgba(201,162,39,0.08);
+  border-radius: 14px; overflow: hidden; transition: all 0.4s;
+}
+.metodo-card:hover { border-color: rgba(201,162,39,0.25); box-shadow: 0 20px 40px rgba(201,162,39,0.08); transform: translateY(-4px); }
+.metodo-thumb { height: 160px; overflow: hidden; }
+.metodo-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.metodo-card h3 { font-size: 17px; margin: 20px 22px 10px; color: var(--branco); font-weight: 500; }
+.metodo-card p { font-size: 14px; color: var(--texto-claro); line-height: 1.6; margin: 0 22px 22px; }
+
+/* ===== SEM SECTION ===== */
+.sem-section {
+  background: linear-gradient(180deg, var(--bg-dark), var(--preto-card), var(--bg-dark));
+  text-align: center;
+}
+.sem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 920px; margin: 0 auto; }
+.sem-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(201,162,39,0.1);
+  border-radius: 14px; padding: 36px 24px;
+  transition: all 0.4s; position: relative; overflow: hidden;
+}
+.sem-card::before {
+  content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 60px; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--ouro), transparent);
+}
+.sem-card:hover {
+  border-color: rgba(201,162,39,0.3);
+  box-shadow: 0 20px 40px rgba(201,162,39,0.08);
+  transform: translateY(-4px);
+}
+.sem-card .sem-x {
+  font-size: 28px; color: rgba(201,162,39,0.3); margin-bottom: 16px; display: block;
+  font-family: 'Space Grotesk', sans-serif;
+}
+.sem-card p { font-size: 15px; color: #CCC; line-height: 1.6; }
+
+/* ===== PERGUNTA / RENDA ===== */
+.pergunta-final {
+  background:
+    radial-gradient(ellipse at center, rgba(201,162,39,0.06), transparent 50%),
+    linear-gradient(180deg, var(--bg-dark), var(--bg-warm), var(--bg-dark));
+  text-align: center; padding: 120px 0;
+}
+.pergunta-final .overline {
+  text-transform: uppercase; letter-spacing: 2px;
+  color: #777; font-size: 13px; margin-bottom: 28px; font-weight: 500;
+}
+.pergunta-final h2 {
+  font-size: clamp(28px, 4vw, 40px); max-width: 750px;
+  margin: 0 auto; line-height: 1.4;
+}
+.mao-icon {
+  width: 64px; height: 64px; margin: 0 auto 28px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--ouro-claro), var(--ouro));
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 12px 30px rgba(201,162,39,0.25);
+}
+.mao-icon svg { width: 30px; height: 30px; fill: var(--preto); }
+
+/* ===== RESULTADO POSSIVEL ===== */
+.resultado-possivel {
+  background: var(--bg-dark); text-align: center;
+}
+.resultado-img {
+  max-width: 360px; margin: 0 auto 32px; border-radius: 14px; overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4); border: 1px solid rgba(201,162,39,0.15);
+}
+.resultado-caption {
+  font-size: clamp(22px, 3vw, 30px); font-weight: 600; color: var(--branco);
+  max-width: 600px; margin: 0 auto 36px;
+}
+
+/* ===== STATS MARQUEE ===== */
+.stats-marquee {
+  background: linear-gradient(90deg, var(--ouro), var(--ouro-claro), var(--ouro));
+  padding: 16px 0; overflow: hidden; position: relative;
+}
+.stats-track {
+  display: flex; gap: 48px; animation: marquee 20s linear infinite;
+  white-space: nowrap;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.stats-track span {
+  font-size: 13px; font-weight: 800; text-transform: uppercase;
+  letter-spacing: 1px; color: var(--preto); display: flex; align-items: center; gap: 12px;
+}
+.stats-track span::after {
+  content: ''; width: 5px; height: 5px; background: var(--preto); border-radius: 50%; opacity: 0.4;
+}
+
+/* ===== PARA QUEM ===== */
+.para-quem {
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(201,162,39,0.04), transparent 50%),
+    var(--bg-dark);
+}
+
+/* ===== DEPOIMENTOS ===== */
+.depoimentos-section {
+  background:
+    radial-gradient(ellipse at top, rgba(201,162,39,0.05), transparent 50%),
+    var(--bg-dark);
+  overflow: hidden;
+}
+.depoimentos-section .section-subtitle { color: #999; }
+.depoimentos-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
+  max-width: 700px; margin: 0 auto;
+}
+.depoimento-tile {
+  border-radius: 14px; overflow: hidden; position: relative;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  border: 1px solid rgba(201,162,39,0.1);
+  transition: all 0.3s;
+}
+.depoimento-tile:hover { transform: translateY(-4px); box-shadow: 0 28px 50px rgba(0,0,0,0.5); }
+.depoimento-tile img { width: 100%; display: block; }
+
+/* ANTES E DEPOIS */
+.antes-depois-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  margin-bottom: 16px;
+}
+.ad-card {
+  border-radius: 14px; overflow: hidden;
+  border: 1px solid rgba(201,162,39,0.1);
+  background: rgba(255,255,255,0.02);
+  transition: all 0.3s;
+}
+.ad-card:hover { border-color: rgba(201,162,39,0.25); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+.ad-card img { width: 100%; display: block; }
+.ad-legenda {
+  padding: 14px 18px; font-size: 12px; color: #777;
+  text-align: center; border-top: 1px solid rgba(255,255,255,0.04);
+}
+.depoimentos-subtitle {
+  font-size: 28px; margin-top: 72px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* ===== MENTORES ===== */
+.mentor-section {
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(201,162,39,0.04), transparent 50%),
+    linear-gradient(180deg, var(--bg-dark), var(--bg-warm2), var(--bg-dark));
+}
+.mentores-duo {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+}
+.mentor-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(201,162,39,0.1);
+  border-radius: 16px; overflow: hidden;
+  transition: all 0.4s;
+}
+.mentor-card:hover {
+  border-color: rgba(201,162,39,0.25);
+  box-shadow: 0 24px 50px rgba(201,162,39,0.08);
+}
+.mentor-card-img { position: relative; overflow: hidden; max-height: 420px; }
+.mentor-card-img img {
+  width: 100%; height: 420px; object-fit: cover; object-position: center 35%;
+  display: block;
+}
+.mentor-card-img img.roberto { object-position: center 25%; }
+.mentor-card-img::after {
+  content: ''; position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(10,10,10,0.5) 0%, transparent 35%, transparent 55%, rgba(10,10,10,0.85) 100%),
+    radial-gradient(ellipse at center 40%, transparent 40%, rgba(10,10,10,0.3) 100%);
+}
+.mentor-card-content { padding: 28px; }
+.mentor-card-content .tag-mentor {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
+  color: var(--ouro); background: rgba(201,162,39,0.08);
+  border: 1px solid rgba(201,162,39,0.15);
+  padding: 6px 14px; border-radius: 20px; font-weight: 600; margin-bottom: 14px;
+}
+.mentor-card-content h3 {
+  font-family: 'Space Grotesk', sans-serif; font-size: 26px;
+  margin-bottom: 4px; color: var(--branco); font-weight: 500;
+}
+.mentor-card-content .cargo {
+  color: var(--ouro-claro); font-size: 12px; text-transform: uppercase;
+  letter-spacing: 1.5px; font-weight: 600; margin-bottom: 16px; display: block;
+}
+.mentor-card-content p {
+  color: var(--texto-claro); margin-bottom: 0; font-size: 14.5px; line-height: 1.7;
+}
+.mentor-card .mentor-stats {
+  display: flex; gap: 32px; margin-top: 20px; padding-top: 18px;
+  border-top: 1px solid rgba(201,162,39,0.1); flex-wrap: wrap;
+}
+.mentor-stat .numero {
+  font-size: 24px; font-family: 'Space Grotesk', sans-serif; color: var(--ouro);
+  display: block; margin-bottom: 2px;
+}
+.mentor-stat .legenda {
+  font-size: 11px; color: #999; text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+/* ===== MODULOS ===== */
+.modulos-section {
+  background: linear-gradient(180deg, var(--bg-dark), var(--bg-warm), var(--bg-dark));
+}
+.modulos-layout { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 60px; align-items: start; }
+.modulos-intro { position: sticky; top: 140px; }
+.modulos-intro .eyebrow { margin-bottom: 16px; display: block; }
+.modulos-intro h2 { font-size: clamp(26px, 3.5vw, 34px); margin-bottom: 18px; line-height: 1.3; }
+.modulos-intro p { color: var(--texto-claro); font-size: 15px; line-height: 1.7; }
+.modulos-lista { display: grid; gap: 14px; }
+.modulo-row {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(201,162,39,0.08);
+  border-radius: 12px; padding: 22px 26px;
+  transition: all 0.3s;
+}
+.modulo-row:hover { border-color: rgba(201,162,39,0.25); background: rgba(201,162,39,0.03); }
+.modulo-row.mod-row-extra { border-style: dashed; border-color: rgba(201,162,39,0.3); }
+.mod-tag {
+  font-size: 11px; color: var(--ouro); text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 700; display: block; margin-bottom: 8px;
+}
+.modulo-row h3 { font-size: 16px; margin-bottom: 6px; color: var(--branco); font-weight: 500; }
+.modulo-row p { font-size: 13.5px; color: var(--texto-claro); line-height: 1.6; }
+
+/* ===== ESTRUTURA POR TRAS ===== */
+.estrutura-section {
+  background: radial-gradient(ellipse at center, rgba(201,162,39,0.04), transparent 50%), var(--bg-dark);
+}
+.estrutura-section .section-title { max-width: 760px; margin: 0 auto 50px; }
+.estrutura-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.estrutura-card {
+  background: rgba(255,255,255,0.02); border: 1px solid rgba(201,162,39,0.1);
+  border-radius: 14px; padding: 32px 26px; text-align: center; transition: all 0.3s;
+}
+.estrutura-card:hover { border-color: rgba(201,162,39,0.3); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(201,162,39,0.08); }
+.estrutura-icon {
+  width: 52px; height: 52px; margin: 0 auto 20px; border-radius: 12px;
+  background: linear-gradient(135deg, var(--ouro), var(--ouro-claro));
+  display: flex; align-items: center; justify-content: center;
+}
+.estrutura-icon svg { width: 24px; height: 24px; fill: var(--preto); }
+.estrutura-card h3 { font-size: 17px; margin-bottom: 10px; color: var(--branco); }
+.estrutura-card p { font-size: 14px; color: var(--texto-claro); line-height: 1.6; }
+
+/* ===== BONUS ===== */
+.bonus-section {
+  background:
+    radial-gradient(ellipse at center, rgba(201,162,39,0.03), transparent 50%),
+    var(--bg-dark);
+}
+.bonus-lista { max-width: 760px; margin: 0 auto; display: grid; gap: 16px; }
+.bonus-row {
+  display: flex; gap: 20px; align-items: center;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(201,162,39,0.08);
+  border-radius: 14px; padding: 22px 26px;
+  transition: all 0.3s; position: relative;
+}
+.bonus-row:hover { border-color: rgba(201,162,39,0.25); background: rgba(201,162,39,0.03); }
+.bonus-icon {
+  width: 52px; height: 52px; border-radius: 12px; flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(201,162,39,0.15), rgba(201,162,39,0.05));
+  border: 1px solid rgba(201,162,39,0.2);
+  display: flex; align-items: center; justify-content: center;
+}
+.bonus-icon svg { width: 24px; height: 24px; fill: var(--ouro); }
+.bonus-text .bonus-tag { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--ouro); font-weight: 700; margin-bottom: 4px; }
+.bonus-text h3 { font-size: 16px; margin-bottom: 4px; color: var(--branco); font-weight: 500; }
+.bonus-text p { font-size: 13.5px; color: var(--texto-claro); line-height: 1.5; margin: 0; }
+
+/* ===== CTA FINAL ===== */
+.cta-final {
+  position: relative; text-align: center; overflow: hidden;
+  padding: 120px 0;
+  background:
+    radial-gradient(ellipse at center, rgba(201,162,39,0.1), transparent 60%),
+    linear-gradient(180deg, var(--bg-dark) 0%, rgba(10,10,10,0.4) 50%, var(--bg-dark) 100%),
+    url('imagens/fundo/crowd-maos-levantadas.jpg');
+  background-size: cover; background-position: center 30%;
+  background-blend-mode: normal, normal, luminosity;
+}
+.cta-final::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(10,10,10,0.5) 30%, rgba(10,10,10,0.5) 70%, var(--bg-dark) 100%);
+}
+.cta-final .container { position: relative; z-index: 2; }
+.cta-final .eyebrow { display: block; margin-bottom: 20px; }
+.cta-final h2 {
+  font-size: clamp(30px, 4.5vw, 42px); margin-bottom: 20px; line-height: 1.3;
+  background: linear-gradient(135deg, var(--branco) 30%, var(--ouro-claro) 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+.cta-final .legenda {
+  color: var(--texto-claro); max-width: 560px; margin: 0 auto 40px;
+  font-size: 16px; line-height: 1.7;
+}
+.cta-final .urgency-line {
+  color: var(--ouro-claro); font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; font-size: 13px; margin-bottom: 16px; display: block;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--preto); text-align: center; padding: 52px 0;
+  border-top: 1px solid rgba(201,162,39,0.1);
+}
+footer .logo-img {
+  height: 28px; background: var(--branco); padding: 6px 12px;
+  border-radius: 4px; display: inline-block; margin-bottom: 20px;
+}
+footer p { font-size: 13px; color: #555; }
+footer .footer-links { margin-top: 14px; }
+footer .footer-links a {
+  color: #777; text-decoration: none; font-size: 12px; margin: 0 12px;
+  transition: color 0.3s;
+}
+footer .footer-links a:hover { color: var(--ouro); }
+
+/* ===== FLOATING CTA (MOBILE) ===== */
+.floating-cta {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;
+  padding: 12px 16px; background: rgba(10,10,10,0.95);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(201,162,39,0.2);
+  transform: translateY(100%); transition: transform 0.4s;
+  display: none;
+}
+.floating-cta.show { transform: translateY(0); }
+.floating-cta .btn-primary { display: block; text-align: center; width: 100%; padding: 16px; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 960px) {
+  .hero-grid, .para-quem-grid { grid-template-columns: 1fr; }
+  .mentores-duo { grid-template-columns: 1fr 1fr; }
+  .hero { padding: 120px 0 80px; min-height: auto; }
+  .hero-photo-wrapper { max-width: 500px; margin: 0 auto; }
+  .hero-photo-wrapper::after { display: none; }
+  .problemas-grid, .metodo-grid, .estrutura-grid { grid-template-columns: repeat(2, 1fr); }
+  .comparativo-grid, .modulos-layout { grid-template-columns: 1fr; }
+  .modulos-intro { position: static; margin-bottom: 32px; }
+  .para-quem-img { max-width: 400px; margin: 0 auto; }
+  .mentor-img-wrapper { max-width: 350px; margin: 0 auto; }
+}
+@media (max-width: 640px) {
+  .problemas-grid, .metodo-grid, .estrutura-grid { grid-template-columns: 1fr; }
+  .mentores-duo { grid-template-columns: 1fr; }
+  .depoimentos-grid { grid-template-columns: 1fr; max-width: 360px; }
+  .antes-depois-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+  section { padding: 72px 0; }
+  .floating-cta { display: block; }
+  .header .header-cta { display: none; }
+  .proof-strip .container { gap: 20px; justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; }
+  .proof-item { white-space: nowrap; }
+  .hero-cta-group { flex-direction: column; align-items: flex-start; }
+  .hero-cta-group .btn-primary { width: 100%; text-align: center; }
+  .mentor-stats { gap: 24px; }
+  .stats-track { gap: 32px; }
+}
+</style>
+</head>
+<body>
+
+<!-- SCROLL PROGRESS -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- TOPO AVISO -->
+<div class="topo-aviso">
+  Turma com vagas limitadas &middot; Inscrições abertas por tempo limitado
+</div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="container">
+    <a href="#" class="logo-link">
+      <img src="imagens/logo/logo-preto.jpeg" alt="Instituto Coy" class="logo-img">
+    </a>
+    <div style="display:flex;align-items:center;gap:20px;">
+      <span class="badge-urgency">
+        <span class="pulse-dot"></span> Inscrições abertas
+      </span>
+      <a href="#oferta" class="btn-primary header-cta">Garantir vaga</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="particles-container" id="heroParticles"></div>
+  <div class="glow-orb" style="width:500px;height:500px;top:-100px;right:-150px;"></div>
+  <div class="glow-orb" style="width:300px;height:300px;bottom:0;left:-100px;"></div>
+
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <span class="eyebrow reveal stagger-1">Método Coy &middot; Resina Composta</span>
+      <h1 class="reveal stagger-2">Doutor(a), pare de entregar resultados comuns e comece a entregar <span class="destaque">resultados extraordinários</span> em lentes de resina</h1>
+      <p class="subhead reveal stagger-3">O Método Coy ensina a técnica e o posicionamento que fazem seus pacientes pagarem pelo valor que você realmente merece. Chegou a sua vez de brilhar na odontologia estética.</p>
+      <div class="hero-cta-group reveal stagger-4">
+        <a href="#oferta" class="btn-primary">Quero garantir minha vaga</a>
+      </div>
+      <div class="hero-trust-row reveal stagger-5">
+        <span><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> 9 módulos práticos</span>
+        <span><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Certificado de conclusão</span>
+        <span><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Turma com vagas limitadas</span>
+      </div>
+    </div>
+
+    <div class="hero-photo-wrapper reveal-right stagger-3">
+      <div class="hero-photo">
+        <img src="imagens/antes-depois/caso-01.png" alt="Antes e depois real — paciente do Método Coy">
+        <div class="overlay"></div>
+        <div class="hero-badge-float">
+          <div class="icon-circle">
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          </div>
+          <div class="badge-text">
+            <span>Resultado real</span>
+            Lentes de resina composta &mdash; paciente do Método Coy
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAMADA PARA DENTISTAS -->
+<div class="dentista-callout">
+  <div class="container">
+    <p class="reveal">Você, <strong>Cirurgião(ã)-Dentista</strong>: é assim que seus pacientes podem sair do seu consultório.</p>
+  </div>
+</div>
+
+<!-- SOCIAL PROOF STRIP -->
+<div class="proof-strip">
+  <div class="container">
+    <div class="proof-item reveal stagger-1">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+      Técnica de elite em resina
+    </div>
+    <div class="proof-item reveal stagger-2">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+      Posicionamento premium
+    </div>
+    <div class="proof-item reveal stagger-3">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+      Resultados extraordinários
+    </div>
+    <div class="proof-item reveal stagger-4">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+      Pacientes por indicação
+    </div>
+  </div>
+</div>
+
+<!-- 3 PONTOS -->
+<section class="problemas-section">
+  <div class="container">
+    <h2 class="section-title reveal">3 pontos que estão estagnando sua carreira hoje</h2>
+    <div class="problemas-grid">
+      <div class="problema-card reveal stagger-1">
+        <div class="problema-diamond"></div>
+        <h3>Retrabalho</h3>
+        <p>Caso de resina que não dura, vira retorno, ajuste e tempo perdido que você não cobra.</p>
+      </div>
+      <div class="problema-card reveal stagger-2">
+        <div class="problema-diamond"></div>
+        <h3>Insegurança</h3>
+        <p>Sem critério técnico claro, cada caso é um recomeço &mdash; e a confiança do paciente (e a sua) fica em xeque.</p>
+      </div>
+      <div class="problema-card reveal stagger-3">
+        <div class="problema-diamond"></div>
+        <h3>Teto invisível</h3>
+        <p>Sem posicionamento, seu preço fica refém da concorrência, não da qualidade que você entrega.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESFORCO SEM TECNICA -->
+<section class="comparativo-section">
+  <div class="container">
+    <h2 class="section-title reveal">Esforço sem técnica não escala.</h2>
+    <p class="section-subtitle reveal stagger-1">O que não tem método não tem previsibilidade.</p>
+    <div class="comparativo-grid">
+      <div class="comp-card comp-sem reveal-left">
+        <h3>Sem técnica</h3>
+        <ul>
+          <li><span class="comp-x">&times;</span> Resultado que varia a cada paciente</li>
+          <li><span class="comp-x">&times;</span> Decisões no improviso, no &ldquo;achismo&rdquo;</li>
+          <li><span class="comp-x">&times;</span> Retrabalho que consome tempo e margem</li>
+        </ul>
+      </div>
+      <div class="comp-card comp-com reveal-right">
+        <h3>Com o Método Coy</h3>
+        <ul>
+          <li><span class="comp-check">&#10003;</span> Resultado replicável caso após caso</li>
+          <li><span class="comp-check">&#10003;</span> Critérios objetivos em cada etapa</li>
+          <li><span class="comp-check">&#10003;</span> Confiança pra cobrar de <strong>5 a 7 mil reais</strong> em um único caso</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERGUNTA FATURAMENTO -->
+<section class="pergunta-final">
+  <div class="particles-container" id="perguntaParticles"></div>
+  <div class="container">
+    <span class="overline reveal">Doutor(a)</span>
+    <div class="mao-icon reveal-scale stagger-1">
+      <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+    </div>
+    <h2 class="reveal stagger-2">Já pensou em faturar de <span class="gold-text">5 a 7 mil</span> em um caso apenas, sem ter que atender todos os dias?</h2>
+  </div>
+</section>
+
+<!-- RESULTADO POSSIVEL -->
+<section class="resultado-possivel">
+  <div class="container">
+    <div class="resultado-img reveal-scale">
+      <img src="imagens/antes-depois/caso-03.png" alt="Sorriso transformado — resultado do Método Coy">
+    </div>
+    <p class="resultado-caption reveal stagger-1">Você pode entregar esse resultado.</p>
+    <div class="section-cta reveal stagger-2">
+      <a href="#oferta" class="btn-primary">Quero aprender a entregar isso</a>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM E -->
+<section class="para-quem" id="oferta">
+  <div class="container para-quem-grid">
+    <div class="para-quem-img reveal-left">
+      <img src="imagens/fotos/foto-thais-lima.jpeg" alt="Thaís Lima — Instituto Coy">
+    </div>
+    <div class="para-quem-content">
+      <span class="eyebrow reveal">Para quem é</span>
+      <h2 class="reveal stagger-1">Para quem é a Mentoria <span class="gold-text">Método Coy</span>?</h2>
+      <div class="quem-lista">
+        <div class="quem-row reveal stagger-1">
+          <div class="diamond"></div>
+          <p><strong>Dentistas em início de carreira</strong> que querem começar na estética já com a técnica certa, sem perder tempo com tentativa e erro.</p>
+        </div>
+        <div class="quem-row reveal stagger-2">
+          <div class="diamond"></div>
+          <p><strong>Profissionais que já fazem resina</strong> e entregam resultados razoáveis, mas sabem que podem ir muito além com o método certo.</p>
+        </div>
+        <div class="quem-row reveal stagger-3">
+          <div class="diamond"></div>
+          <p><strong>Quem quer cobrar mais</strong> e tem habilidade, mas não sabe como se posicionar pra que o mercado pague o que vale.</p>
+        </div>
+        <div class="quem-row reveal stagger-4">
+          <div class="diamond"></div>
+          <p><strong>Quem quer se destacar</strong> e está cansado de ser mais um, querendo construir uma reputação que atrai pacientes por indicação.</p>
+        </div>
+      </div>
+      <div class="section-cta-left reveal stagger-5">
+        <a href="#oferta" class="btn-primary">Quero conhecer a mentoria</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS MARQUEE -->
+<div class="stats-marquee">
+  <div class="stats-track">
+    <span>Técnica de elite em resina</span>
+    <span>Posicionamento premium</span>
+    <span>Resultados extraordinários</span>
+    <span>Pacientes por indicação</span>
+    <span>Precificação justa</span>
+    <span>Mentoria intensiva</span>
+    <span>Método comprovado</span>
+    <span>Técnica de elite em resina</span>
+    <span>Posicionamento premium</span>
+    <span>Resultados extraordinários</span>
+    <span>Pacientes por indicação</span>
+    <span>Precificação justa</span>
+    <span>Mentoria intensiva</span>
+    <span>Método comprovado</span>
+  </div>
+</div>
+
+<!-- O METODO -->
+<section class="o-metodo-section">
+  <div class="container">
+    <div class="divider-gold reveal"><div class="diamond"></div></div>
+    <h2 class="section-title reveal">O <span class="gold-text">Método Coy</span></h2>
+    <p class="na-pratica-triggers reveal stagger-1">Fature mais. Trabalhe menos. Entregue resultados únicos.</p>
+    <div class="metodo-grid">
+      <div class="metodo-card reveal stagger-1">
+        <div class="metodo-thumb"><img src="imagens/antes-depois/caso-01.png" alt="Naturalidade do resultado — Método Coy"></div>
+        <h3>Naturalidade acima de imitação</h3>
+        <p>Resultados em resina com naturalidade que os pacientes não acreditam que é resina.</p>
+      </div>
+      <div class="metodo-card reveal stagger-2">
+        <div class="metodo-thumb"><img src="imagens/antes-depois/caso-02.png" alt="Técnica com previsibilidade — Método Coy"></div>
+        <h3>Técnica que gera resultado</h3>
+        <p>Domine a estratificação com a previsibilidade que fideliza o paciente e te diferencia da concorrência.</p>
+      </div>
+      <div class="metodo-card reveal stagger-3">
+        <div class="metodo-thumb"><img src="imagens/antes-depois/caso-03.png" alt="Posicionamento que valoriza — Método Coy"></div>
+        <h3>Posicionamento que valoriza</h3>
+        <p>Aprenda a se apresentar, precificar e comunicar de um jeito que seus pacientes paguem pelo valor que você entrega.</p>
+      </div>
+      <div class="metodo-card reveal stagger-4">
+        <div class="metodo-thumb"><img src="imagens/fotos/foto-thais-lima.jpeg" alt="Acompanhamento próximo — Método Coy" style="object-position: center 15%;"></div>
+        <h3>Agenda por indicação</h3>
+        <p>Construa uma reputação que enche a agenda de pacientes que chegam por indicação, não por preço baixo.</p>
+      </div>
+    </div>
+    <div class="section-cta reveal stagger-5">
+      <a href="#oferta" class="btn-primary">Quero dominar o método</a>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTADOS REAIS -->
+<section class="depoimentos-section">
+  <div class="container">
+    <div class="divider-gold reveal"><div class="diamond"></div></div>
+    <h2 class="section-title reveal">Resultados reais de quem passou pelo Método Coy</h2>
+    <p class="section-subtitle reveal stagger-1">Antes e depois de pacientes atendidos por alunos da mentoria.</p>
+
+    <!-- ANTES E DEPOIS -->
+    <div class="antes-depois-grid">
+      <div class="ad-card reveal stagger-1">
+        <img src="imagens/antes-depois/caso-01.png" alt="Antes e depois — Lentes de resina composta Método Coy">
+        <p class="ad-legenda">Lentes de resina composta &mdash; Método Coy</p>
+      </div>
+      <div class="ad-card reveal stagger-2">
+        <img src="imagens/antes-depois/caso-02.png" alt="Antes e depois — Lentes de resina composta Método Coy">
+        <p class="ad-legenda">Lentes de resina composta &mdash; Método Coy</p>
+      </div>
+      <div class="ad-card reveal stagger-3">
+        <img src="imagens/antes-depois/caso-03.png" alt="Antes e depois — Lentes de resina composta Método Coy">
+        <p class="ad-legenda">Lentes de resina composta &mdash; Método Coy</p>
+      </div>
+    </div>
+
+    <!-- DEPOIMENTOS -->
+    <h3 class="section-title reveal" style="font-size:28px;margin-top:72px;">O que dizem os alunos</h3>
+    <div class="depoimentos-grid" style="margin-top:32px;">
+      <div class="depoimento-tile reveal stagger-2"><img src="imagens/depoimentos/depoimento-mentoria-t1.jpeg" alt="Depoimento de aluna da mentoria"></div>
+      <div class="depoimento-tile reveal stagger-3"><img src="imagens/depoimentos/depoimento-mentoria-t5.jpeg" alt="Depoimento de aluna da mentoria"></div>
+    </div>
+
+    <div class="section-cta reveal stagger-4">
+      <a href="#oferta" class="btn-primary">Quero resultados assim também</a>
+    </div>
+  </div>
+</section>
+
+<!-- MENTORES -->
+<section class="mentor-section">
+  <div class="container">
+    <div class="divider-gold reveal"><div class="diamond"></div></div>
+    <h2 class="section-title reveal">Quem vai te guiar nessa jornada</h2>
+    <p class="section-subtitle reveal stagger-1">Dois profissionais que já passaram pelo que você está vivendo e hoje ensinam o caminho.</p>
+
+    <div class="mentores-duo">
+      <!-- Thaís (primeiro) -->
+      <div class="mentor-card reveal stagger-2">
+        <div class="mentor-card-img">
+          <img src="imagens/fotos/foto-thais-lima.jpeg" alt="Thaís Lima">
+        </div>
+        <div class="mentor-card-content">
+          <span class="tag-mentor">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+            Mentora &amp; Instrutora
+          </span>
+          <h3>Thaís Lima</h3>
+          <span class="cargo">Cirurgiã-Dentista &middot; CRO 149420SP</span>
+          <p>Especialista em estética dental e co-criadora do Método Coy, Thaís traz um olhar clínico apurado e uma didática que simplifica o complexo. Acompanha cada aluno de perto para garantir que a técnica seja absorvida na prática.</p>
+          <div class="mentor-stats">
+            <div class="mentor-stat">
+              <span class="numero">[X]</span>
+              <span class="legenda">Turmas realizadas</span>
+            </div>
+            <div class="mentor-stat">
+              <span class="numero">[X] anos</span>
+              <span class="legenda">De experiência</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Roberto -->
+      <div class="mentor-card reveal stagger-3">
+        <div class="mentor-card-img">
+          <img src="imagens/fotos/foto-roberto-correia.jpeg" alt="Roberto Correia" class="roberto">
+        </div>
+        <div class="mentor-card-content">
+          <span class="tag-mentor">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+            Mentor &amp; Criador do Método
+          </span>
+          <h3>Roberto Correia</h3>
+          <span class="cargo">Cirurgião-Dentista &middot; CRO 128214SP</span>
+          <p>Criador do Método Coy, Roberto passou anos entregando bom trabalho sem ser valorizado. Até entender que técnica de excelência + posicionamento certo muda tudo. Hoje ensina dentistas a dominarem as lentes de resina e a cobrarem o que realmente valem.</p>
+          <div class="mentor-stats">
+            <div class="mentor-stat">
+              <span class="numero">+[X]</span>
+              <span class="legenda">Alunos formados</span>
+            </div>
+            <div class="mentor-stat">
+              <span class="numero">[X] anos</span>
+              <span class="legenda">De experiência</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULOS -->
+<section class="modulos-section">
+  <div class="container modulos-layout">
+    <div class="modulos-intro">
+      <span class="eyebrow reveal">A mentoria por dentro</span>
+      <h2 class="reveal stagger-1">A <span class="gold-text">mentoria</span> por dentro.</h2>
+      <p class="reveal stagger-2">Nove módulos que constroem você do fundamento à entrega final, com técnica e posicionamento em cada etapa.</p>
+    </div>
+    <div class="modulos-lista">
+      <div class="modulo-row reveal stagger-1">
+        <span class="mod-tag">Módulo 01</span>
+        <h3>Fundamentos da Resina Composta</h3>
+        <p>Base técnica sólida para dominar o material e entender seu comportamento clínico.</p>
+      </div>
+      <div class="modulo-row reveal stagger-2">
+        <span class="mod-tag">Módulo 02</span>
+        <h3>Seleção de Cor e Opacidade</h3>
+        <p>Como escolher a combinação exata para resultados com naturalidade impecável.</p>
+      </div>
+      <div class="modulo-row reveal stagger-3">
+        <span class="mod-tag">Módulo 03</span>
+        <h3>Preparo e Planejamento</h3>
+        <p>Planejamento do caso, mock-up e comunicação com o paciente antes do procedimento.</p>
+      </div>
+      <div class="modulo-row reveal stagger-1">
+        <span class="mod-tag">Módulo 04</span>
+        <h3>Técnica de Estratificação</h3>
+        <p>O passo a passo da estratificação que gera o resultado natural do Método Coy.</p>
+      </div>
+      <div class="modulo-row reveal stagger-2">
+        <span class="mod-tag">Módulo 05</span>
+        <h3>Acabamento e Polimento</h3>
+        <p>Protocolo de acabamento que dá o brilho e a textura de dente natural.</p>
+      </div>
+      <div class="modulo-row reveal stagger-3">
+        <span class="mod-tag">Módulo 06</span>
+        <h3>Casos Anteriores e Laminados</h3>
+        <p>Aplicação em dentes anteriores com foco em lentes e facetas diretas em resina.</p>
+      </div>
+      <div class="modulo-row reveal stagger-1">
+        <span class="mod-tag">Módulo 07</span>
+        <h3>Fotografia Odontológica</h3>
+        <p>Registre seus casos com qualidade profissional para portfólio e redes sociais.</p>
+      </div>
+      <div class="modulo-row reveal stagger-2">
+        <span class="mod-tag">Módulo 08</span>
+        <h3>Posicionamento Profissional</h3>
+        <p>Como se apresentar, precificar e atrair os pacientes certos para o seu consultório.</p>
+      </div>
+      <div class="modulo-row reveal stagger-3 mod-row-extra">
+        <span class="mod-tag">Extra &middot; Módulo 09</span>
+        <h3>Casos Clínicos ao Vivo</h3>
+        <p>Acompanhamento prático de casos reais com mentoria direta dos instrutores.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESTRUTURA POR TRAS -->
+<section class="estrutura-section">
+  <div class="container">
+    <div class="divider-gold reveal"><div class="diamond"></div></div>
+    <h2 class="section-title reveal">Você sai da mentoria com um método nas mãos e uma <span class="gold-text">estrutura por trás</span> para sustentá-lo</h2>
+    <div class="estrutura-grid">
+      <div class="estrutura-card reveal stagger-1">
+        <div class="estrutura-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2z"/></svg>
+        </div>
+        <h3>Fornecedores Estratégicos</h3>
+        <p>Guia curado de resinas, adesivos e instrumentais com o melhor custo-benefício.</p>
+      </div>
+      <div class="estrutura-card reveal stagger-2">
+        <div class="estrutura-icon">
+          <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </div>
+        <h3>Comunidade do Método</h3>
+        <p>Grupo exclusivo com os instrutores e colegas de turma para tirar dúvidas e trocar casos.</p>
+      </div>
+      <div class="estrutura-card reveal stagger-3">
+        <div class="estrutura-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+        </div>
+        <h3>Certificado de Conclusão</h3>
+        <p>Certificado do Instituto Coy para agregar ao seu currículo e credibilidade profissional.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BONUS -->
+<section class="bonus-section">
+  <div class="container">
+    <div class="divider-gold reveal"><div class="diamond"></div></div>
+    <h2 class="section-title reveal">Bônus exclusivos para esta turma</h2>
+    <p class="section-subtitle reveal stagger-1">Além de todo o conteúdo da mentoria, você ainda leva:</p>
+    <div class="bonus-lista">
+      <div class="bonus-row reveal stagger-1">
+        <div class="bonus-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+        </div>
+        <div class="bonus-text">
+          <div class="bonus-tag">Bônus 01</div>
+          <h3>Templates de Orçamento Premium</h3>
+          <p>Modelos prontos de apresentação de orçamento que comunicam valor e justificam seu preço.</p>
+        </div>
+      </div>
+      <div class="bonus-row reveal stagger-2">
+        <div class="bonus-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 6h-3.17L16 4h-6v2h5.12l1.83 2H21v12H5v-9H3v9c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM8 14c0 2.76 2.24 5 5 5s5-2.24 5-5-2.24-5-5-5-5 2.24-5 5zm5-3c1.65 0 3 1.35 3 3s-1.35 3-3 3-3-1.35-3-3 1.35-3 3-3zM5 6h3V4H5V1H3v3H0v2h3v3h2V6z"/></svg>
+        </div>
+        <div class="bonus-text">
+          <div class="bonus-tag">Bônus 02</div>
+          <h3>Kit de Fotografia Odontológica</h3>
+          <p>Checklist de equipamentos e configurações para fotografar seus casos com qualidade profissional.</p>
+        </div>
+      </div>
+    </div>
+    <div class="section-cta reveal">
+      <a href="#oferta" class="btn-primary">Quero tudo isso + os bônus</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="particles-container" id="ctaParticles"></div>
+  <div class="container">
+    <span class="eyebrow reveal">Turma limitada &middot; mentoria intensiva</span>
+    <h2 class="reveal stagger-1">Chegou a sua vez de brilhar na odontologia estética</h2>
+    <p class="legenda reveal stagger-2">O Método Coy já transformou a carreira de dezenas de dentistas. Não fique pra trás enquanto outros se destacam com a técnica e o posicionamento certos.</p>
+    <span class="urgency-line reveal stagger-3">Vagas limitadas &middot; inscrições abertas por tempo limitado</span>
+    <a href="#" class="btn-primary reveal stagger-4">Quero garantir minha vaga agora</a>
+    <p class="micro-text reveal stagger-5">Ao clicar, você será direcionado para a página de inscrição</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="imagens/logo/logo-preto.jpeg" alt="Instituto Coy" class="logo-img">
+  <p>&copy; Instituto Coy. Todos os direitos reservados.</p>
+  <div class="footer-links">
+    <a href="termos-de-uso.html">Termos de Uso</a>
+    <a href="politica-de-privacidade.html">Política de Privacidade</a>
+  </div>
+</footer>
+
+<!-- FLOATING CTA MOBILE -->
+<div class="floating-cta" id="floatingCta">
+  <a href="#oferta" class="btn-primary">Quero garantir minha vaga</a>
+</div>
+
+<script>
+// Scroll progress bar
+const progressBar = document.getElementById('scrollProgress');
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.width = (scrollTop / docHeight * 100) + '%';
+});
+
+// Header scroll effect
+const header = document.getElementById('header');
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  if (scrollTop > 80) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+  lastScroll = scrollTop;
+});
+
+// Floating CTA on mobile
+const floatingCta = document.getElementById('floatingCta');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 600) {
+    floatingCta.classList.add('show');
+  } else {
+    floatingCta.classList.remove('show');
+  }
+});
+
+// Intersection Observer for reveal animations
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -40px 0px' };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+  observer.observe(el);
+});
+
+// Gold particles
+function createParticles(containerId, count) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  for (let i = 0; i < count; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.style.left = Math.random() * 100 + '%';
+    particle.style.top = Math.random() * 100 + '%';
+    particle.style.animationDelay = Math.random() * 6 + 's';
+    particle.style.animationDuration = (4 + Math.random() * 4) + 's';
+    const size = 2 + Math.random() * 3;
+    particle.style.width = size + 'px';
+    particle.style.height = size + 'px';
+    container.appendChild(particle);
+  }
+}
+createParticles('heroParticles', 20);
+createParticles('ctaParticles', 15);
+createParticles('perguntaParticles', 12);
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+</body>
+</html>

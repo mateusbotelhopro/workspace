@@ -6,7 +6,7 @@ Workspace de trabalho do Mateus Botelho. Aqui ficam os clientes (tráfego pago, 
 **Estrutura de pastas:**
 - `_contexto/` — memória do sistema (não apagar)
 - `marca/` — identidade visual e logos (ainda em definição)
-- `clientes/` — uma pasta por cliente; `_modelo-cliente/` é o template (briefing.md, CLAUDE.md, tarefas-modelo.md). Cada cliente tem seu próprio CLAUDE.md porque a pasta às vezes é aberta separada
+- `clientes/` — uma pasta por cliente; `_modelo-cliente/` é o template (briefing.md, CLAUDE.md, tarefas-modelo.md). Cada cliente tem seu próprio CLAUDE.md porque a pasta às vezes é aberta separada. Inclui `clientes/ip-instituto-coy/` (landing page de lançamento)
 - `interno/` — operação própria, organizada por área (`trafego/`, `comercial/`, `marketing/`)
 - `conteudo/` — produção de conteúdo (próprio ou de cliente)
 - `propostas/` — propostas avulsas antes de virar cliente
@@ -45,6 +45,7 @@ Detalhes em `_contexto/preferencias.md`. Evitar excesso de travessão (—) e te
 - **Mídia/Visual:** canvas-design, nanobanana-ratos, gpt-image2-ratos, transcribe, yt-transcript
 - **Operação própria:** apresentacao-institucional, carrossel, comentario-dm-ratos, onboarding-cliente, proposta-comercial, publicar-instagram, publicar-site, roteiro-post, find-skills
 - **Comercial:** contrato-cliente, estrutura-comercial, mapear-funil
+- **Listas/Prospecção:** limpar-listas (abre CSV/XLSX/Google Sheets, limpa duplicados e telefones inválidos, exporta CSV + relatório HTML formatado pra WhatsApp)
 
 *(Atualizar essa lista conforme instalar/remover skills)*
 

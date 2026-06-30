@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Josiele — Estratégia & Marketing Digital</title>
+<meta name="description" content="Profissional de marketing e estratégia digital. Ajudo empresas a fortalecerem sua presença digital com planejamento estratégico, gestão de redes sociais e posicionamento de marca.">
+<link rel="canonical" href="https://josiele.com.br/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Josiele — Estratégia & Marketing Digital">
+<meta property="og:description" content="Transformo estratégia em presença digital. Planejamento, conteúdo e posicionamento para marcas que querem crescer com autenticidade e resultado.">
+<meta property="og:image" content="https://josiele.com.br/josiele.jpeg">
+<meta property="og:url" content="https://josiele.com.br/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Josiele Marketing">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Josiele — Estratégia & Marketing Digital">
+<meta name="twitter:description" content="Transformo estratégia em presença digital. Planejamento, conteúdo e posicionamento para marcas que querem crescer com autenticidade e resultado.">
+<meta name="twitter:image" content="https://josiele.com.br/josiele.jpeg">
+
+<!-- SEO extras -->
+<meta name="robots" content="index, follow">
+<meta name="author" content="Josiele">
+<meta name="theme-color" content="#0a0a0a">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Josiele Marketing",
+  "url": "https://josiele.com.br",
+  "image": "https://josiele.com.br/josiele.jpeg",
+  "description": "Profissional de marketing e estratégia digital. Planejamento estratégico, gestão de redes sociais, criação de conteúdo, posicionamento de marca e captação de vídeo.",
+  "telephone": "+55-31-98301-8242",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "BR"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Josiele",
+    "jobTitle": "Profissional de Marketing Digital"
+  },
+  "serviceType": [
+    "Gestão de Redes Sociais",
+    "Planejamento Estratégico de Conteúdo",
+    "Posicionamento de Marca",
+    "Consultoria em Marketing Digital",
+    "Criação de Campanhas Promocionais",
+    "Captação de Vídeo"
+  ],
+  "areaServed": {
+    "@type": "Country",
+    "name": "Brasil"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#0a0a0a;
+  --white:#fafafa;
+  --gray-100:#f5f5f5;
+  --gray-200:#e5e5e5;
+  --gray-400:#a3a3a3;
+  --gray-600:#525252;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  font-family:var(--sans);
+  color:var(--black);
+  background:var(--white);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:1.5rem 2.5rem;
+  display:flex;justify-content:space-between;align-items:center;
+  background:rgba(250,250,250,.85);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid transparent;
+  transition:border-color .3s;
+}
+nav.scrolled{border-bottom-color:var(--gray-200)}
+.nav-logo{
+  font-family:var(--serif);
+  font-size:1.25rem;
+  font-weight:500;
+  letter-spacing:.02em;
+  color:var(--black);
+  text-decoration:none;
+}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{
+  font-size:.8rem;
+  font-weight:400;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--gray-600);
+  text-decoration:none;
+  transition:color .3s;
+}
+.nav-links a:hover{color:var(--black)}
+.nav-cta{
+  font-size:.75rem;
+  font-weight:500;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:.65rem 1.5rem;
+  background:var(--black);
+  color:var(--white);
+  text-decoration:none;
+  transition:opacity .3s;
+}
+.nav-cta:hover{opacity:.8}
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:.5rem}
+.menu-toggle span{display:block;width:20px;height:1.5px;background:var(--black);margin:5px 0;transition:all .3s}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  padding:8rem 5vw 4rem;
+  gap:4rem;
+}
+.hero-content{max-width:560px;justify-self:end}
+.hero-label{
+  font-size:.7rem;
+  font-weight:500;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--gray-400);
+  margin-bottom:2rem;
+  display:flex;align-items:center;gap:.75rem;
+}
+.hero-label::before{content:'';width:2rem;height:1px;background:var(--gray-400)}
+.hero-title{
+  font-family:var(--serif);
+  font-size:clamp(2.5rem,5vw,4.5rem);
+  font-weight:400;
+  line-height:1.1;
+  letter-spacing:-.02em;
+  margin-bottom:1.5rem;
+}
+.hero-title em{font-style:italic;font-weight:400}
+.hero-desc{
+  font-size:1rem;
+  font-weight:300;
+  line-height:1.7;
+  color:var(--gray-600);
+  margin-bottom:2.5rem;
+  max-width:440px;
+}
+.hero-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.btn-primary{
+  display:inline-block;
+  font-size:.75rem;
+  font-weight:500;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  padding:.9rem 2rem;
+  background:var(--black);
+  color:var(--white);
+  text-decoration:none;
+  transition:opacity .3s;
+}
+.btn-primary:hover{opacity:.8}
+.btn-secondary{
+  display:inline-block;
+  font-size:.75rem;
+  font-weight:500;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  padding:.9rem 2rem;
+  border:1px solid var(--gray-200);
+  color:var(--black);
+  text-decoration:none;
+  transition:all .3s;
+}
+.btn-secondary:hover{border-color:var(--black)}
+.hero-image{
+  position:relative;
+  justify-self:start;
+  width:100%;
+  max-width:480px;
+}
+.hero-image img{
+  width:100%;
+  height:auto;
+  aspect-ratio:3/4;
+  object-fit:cover;
+  object-position:top center;
+  filter:grayscale(100%);
+  transition:filter .6s;
+}
+.hero-image:hover img{filter:grayscale(0%)}
+.hero-image::after{
+  content:'';
+  position:absolute;
+  bottom:-1.5rem;right:-1.5rem;
+  width:60%;height:60%;
+  border:1px solid var(--gray-200);
+  z-index:-1;
+}
+
+/* ── SECTION COMMONS ── */
+section{padding:7rem 5vw}
+.section-label{
+  font-size:.7rem;
+  font-weight:500;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--gray-400);
+  margin-bottom:1rem;
+  display:flex;align-items:center;gap:.75rem;
+}
+.section-label::before{content:'';width:2rem;height:1px;background:var(--gray-400)}
+.section-title{
+  font-family:var(--serif);
+  font-size:clamp(2rem,3.5vw,3rem);
+  font-weight:400;
+  line-height:1.15;
+  letter-spacing:-.01em;
+  margin-bottom:1rem;
+}
+
+/* ── ABOUT ── */
+.about{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6rem;
+  align-items:center;
+  background:var(--gray-100);
+}
+.about-text p{
+  font-size:1rem;
+  font-weight:300;
+  line-height:1.8;
+  color:var(--gray-600);
+  margin-bottom:1.25rem;
+}
+.about-quote{
+  font-family:var(--serif);
+  font-size:clamp(1.5rem,2.5vw,2.25rem);
+  font-weight:400;
+  font-style:italic;
+  line-height:1.4;
+  color:var(--black);
+  position:relative;
+  padding-left:2rem;
+  border-left:2px solid var(--black);
+}
+
+/* ── SERVICES ── */
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0;
+  margin-top:4rem;
+  border-top:1px solid var(--gray-200);
+}
+.service-card{
+  padding:2.5rem 2rem;
+  border-bottom:1px solid var(--gray-200);
+  border-right:1px solid var(--gray-200);
+  transition:background .3s;
+  cursor:default;
+}
+.service-card:nth-child(3n){border-right:none}
+.service-card:hover{background:var(--gray-100)}
+.service-number{
+  font-size:.7rem;
+  font-weight:400;
+  letter-spacing:.1em;
+  color:var(--gray-400);
+  margin-bottom:1.25rem;
+}
+.service-name{
+  font-family:var(--serif);
+  font-size:1.35rem;
+  font-weight:500;
+  margin-bottom:.75rem;
+}
+.service-desc{
+  font-size:.875rem;
+  font-weight:300;
+  line-height:1.6;
+  color:var(--gray-600);
+}
+.service-featured{
+  grid-column:1/-1;
+  border-right:none;
+  border-left:2px solid var(--black);
+  background:var(--gray-100);
+}
+.service-featured:hover{background:var(--gray-200)}
+
+/* ── APPROACH ── */
+.approach{background:var(--black);color:var(--white)}
+.approach .section-label{color:var(--gray-400)}
+.approach .section-label::before{background:var(--gray-400)}
+.approach .section-title{color:var(--white)}
+.approach-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:3rem;
+  margin-top:4rem;
+}
+.approach-step{border-top:1px solid rgba(255,255,255,.15);padding-top:2rem}
+.approach-step-num{
+  font-family:var(--serif);
+  font-size:2rem;
+  font-weight:400;
+  color:rgba(255,255,255,.3);
+  margin-bottom:1rem;
+}
+.approach-step h3{
+  font-family:var(--serif);
+  font-size:1.25rem;
+  font-weight:500;
+  margin-bottom:.75rem;
+}
+.approach-step p{
+  font-size:.875rem;
+  font-weight:300;
+  line-height:1.7;
+  color:var(--gray-400);
+}
+
+/* ── CTA ── */
+.cta{
+  text-align:center;
+  padding:8rem 5vw;
+}
+.cta .section-label{justify-content:center}
+.cta .section-label::before{display:none}
+.cta .section-title{
+  max-width:700px;
+  margin:0 auto 1rem;
+}
+.cta-desc{
+  font-size:1rem;
+  font-weight:300;
+  line-height:1.7;
+  color:var(--gray-600);
+  max-width:500px;
+  margin:0 auto 2.5rem;
+}
+
+/* ── FOOTER ── */
+footer{
+  padding:3rem 5vw;
+  border-top:1px solid var(--gray-200);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.footer-brand{
+  font-family:var(--serif);
+  font-size:1rem;
+  font-weight:500;
+}
+.footer-copy{
+  font-size:.75rem;
+  color:var(--gray-400);
+}
+
+/* ── ANIMATIONS ── */
+.fade-up{
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1);
+}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr;text-align:center;padding-top:7rem}
+  .hero-content{justify-self:center;max-width:600px}
+  .hero-label{justify-content:center}
+  .hero-desc{margin-left:auto;margin-right:auto}
+  .hero-actions{justify-content:center}
+  .hero-image{justify-self:center;max-width:380px;order:-1}
+  .hero-image::after{display:none}
+  .about{grid-template-columns:1fr;gap:3rem}
+  .about-quote{max-width:600px}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .service-card:nth-child(3n){border-right:1px solid var(--gray-200)}
+  .service-card:nth-child(2n){border-right:none}
+  .service-featured{grid-column:1/-1;border-right:none}
+  .approach-grid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  nav{padding:1rem 1.5rem}
+  .nav-links{display:none}
+  .menu-toggle{display:block}
+  .menu-open .nav-links{
+    display:flex;
+    flex-direction:column;
+    position:absolute;
+    top:100%;left:0;right:0;
+    background:var(--white);
+    padding:2rem 1.5rem;
+    border-bottom:1px solid var(--gray-200);
+    gap:1.25rem;
+  }
+  .menu-open .menu-toggle span:nth-child(1){transform:rotate(45deg) translate(4.5px,4.5px)}
+  .menu-open .menu-toggle span:nth-child(2){opacity:0}
+  .menu-open .menu-toggle span:nth-child(3){transform:rotate(-45deg) translate(4.5px,-4.5px)}
+  .hero{padding:6rem 1.5rem 3rem;min-height:auto}
+  .hero-title{font-size:2.25rem}
+  section{padding:4rem 1.5rem}
+  .services-grid{grid-template-columns:1fr}
+  .service-card{border-right:none !important}
+  .service-featured{grid-column:1}
+  footer{flex-direction:column;gap:1rem;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Josiele</a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#metodo">Método</a></li>
+  </ul>
+  <a href="#contato" class="nav-cta">Fale comigo</a>
+  <button type="button" class="menu-toggle" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('menu-open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content fade-up">
+    <div class="hero-label">Estratégia & Marketing Digital</div>
+    <h1 class="hero-title">Sua marca merece<br>ser <em>memorável</em></h1>
+    <p class="hero-desc">Transformo estratégia em presença digital. Planejamento, conteúdo e posicionamento para marcas que querem crescer com autenticidade e resultado.</p>
+    <div class="hero-actions">
+      <a href="#contato" class="btn-primary">Iniciar projeto</a>
+      <a href="#servicos" class="btn-secondary">Ver serviços</a>
+    </div>
+  </div>
+  <div class="hero-image fade-up">
+    <img src="josiele.jpeg" alt="Josiele — Profissional de Marketing e Estratégia Digital" loading="eager">
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="sobre">
+  <div class="about-text fade-up">
+    <div class="section-label">Sobre</div>
+    <h2 class="section-title">Estratégia que<br>conecta e converte</h2>
+    <p>Sou profissional de marketing e empreendedora, apaixonada por estratégia, comunicação e desenvolvimento de marcas.</p>
+    <p>Ajudo empresas a fortalecerem sua presença digital por meio de planejamento estratégico, gestão de redes sociais, criação de conteúdo e posicionamento de marca.</p>
+    <p>Meu trabalho é conectar negócios ao público certo, transformando ideias em resultados através de estratégias personalizadas, criativas e alinhadas aos seus objetivos.</p>
+  </div>
+  <div class="fade-up">
+    <blockquote class="about-quote">
+      Ajudar empresas e marcas a crescerem de forma estratégica, construindo autoridade, conexão com o público e resultados consistentes.
+    </blockquote>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="servicos">
+  <div class="fade-up">
+    <div class="section-label">Serviços</div>
+    <h2 class="section-title">O que posso fazer<br>pela sua marca</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card fade-up">
+      <div class="service-number">01</div>
+      <h3 class="service-name">Gestão de Redes Sociais</h3>
+      <p class="service-desc">Gerenciamento completo dos seus perfis, com conteúdo estratégico que gera engajamento e fortalece sua marca.</p>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-number">02</div>
+      <h3 class="service-name">Planejamento Estratégico</h3>
+      <p class="service-desc">Definição de metas, público e direcionamento para que cada ação de marketing tenha propósito e resultado.</p>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-number">03</div>
+      <h3 class="service-name">Calendário Editorial</h3>
+      <p class="service-desc">Organização e planejamento de conteúdo com consistência, frequência e alinhamento à sua estratégia.</p>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-number">04</div>
+      <h3 class="service-name">Posicionamento de Marca</h3>
+      <p class="service-desc">Construção de uma identidade sólida que diferencia seu negócio e cria conexão real com seu público.</p>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-number">05</div>
+      <h3 class="service-name">Consultoria Digital</h3>
+      <p class="service-desc">Análise da sua presença digital com recomendações práticas para otimizar resultados e acelerar crescimento.</p>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-number">06</div>
+      <h3 class="service-name">Campanhas Promocionais</h3>
+      <p class="service-desc">Criação de campanhas estratégicas para lançamentos, datas sazonais e ações de atração de clientes.</p>
+    </div>
+    <div class="service-card service-featured fade-up">
+      <div class="service-number">07</div>
+      <h3 class="service-name">Captação de Vídeo</h3>
+      <p class="service-desc">Produção de vídeos profissionais para redes sociais, institucional e campanhas. Do roteiro à entrega final, com qualidade que eleva a percepção da sua marca.</p>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="approach" id="metodo">
+  <div class="fade-up">
+    <div class="section-label">Método</div>
+    <h2 class="section-title">Como trabalho</h2>
+  </div>
+  <div class="approach-grid">
+    <div class="approach-step fade-up">
+      <div class="approach-step-num">01</div>
+      <h3>Diagnóstico</h3>
+      <p>Entendo seu negócio, público, concorrência e momento atual. Sem diagnóstico real, não existe estratégia que funcione.</p>
+    </div>
+    <div class="approach-step fade-up">
+      <div class="approach-step-num">02</div>
+      <h3>Estratégia</h3>
+      <p>Defino o posicionamento, os canais, o conteúdo e as ações necessárias para atingir seus objetivos de forma clara e mensurável.</p>
+    </div>
+    <div class="approach-step fade-up">
+      <div class="approach-step-num">03</div>
+      <h3>Execução & Análise</h3>
+      <p>Coloco a estratégia em prática, acompanho métricas e ajusto o que for preciso para garantir resultado contínuo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contato">
+  <div class="fade-up">
+    <div class="section-label">Contato</div>
+    <h2 class="section-title">Pronta pra transformar<br>sua presença digital?</h2>
+    <p class="cta-desc">Vamos conversar sobre o seu negócio e descobrir como posso ajudar sua marca a alcançar os resultados que ela merece.</p>
+    <a href="https://wa.me/5531983018242" class="btn-primary" target="_blank" rel="noopener">Conversar no WhatsApp</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Josiele</div>
+  <div class="footer-copy">&copy; 2026 Josiele. Todos os direitos reservados.</div>
+</footer>
+
+<script>
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Fade-up on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }});
+}, { threshold: 0.15 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { t.scrollIntoView({ behavior: 'smooth' }); document.querySelector('nav').classList.remove('menu-open'); }
+  });
+});
+</script>
+</body>
+</html>

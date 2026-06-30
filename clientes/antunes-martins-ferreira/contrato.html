@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1000">
+<title>Contrato de Gestão de Tráfego Pago — Antunes Martins Ferreira</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Archivo', system-ui, sans-serif;
+    color: #1a1a1a;
+    -webkit-font-smoothing: antialiased;
+    background: #fff;
+  }
+
+  .page {
+    width: 794px;
+    height: 1123px;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    background: #fff;
+  }
+  .page:last-child { page-break-after: avoid; }
+
+  /* ===== TITLE BLOCK (pag 1) ===== */
+  .doc-title-block {
+    padding: 48px 48px 0;
+  }
+  .doc-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 32px;
+    color: #0A0A0A;
+    letter-spacing: 0.02em;
+    line-height: 1;
+  }
+  .doc-title span { color: #2438E8; }
+  .doc-sub {
+    font-size: 11px;
+    color: #a3a3a3;
+    letter-spacing: 0.04em;
+    margin-top: 6px;
+  }
+  .doc-title-rule {
+    height: 3px;
+    background: #2438E8;
+    width: 56px;
+    margin-top: 16px;
+  }
+
+  /* ===== INNER HEADER (pag 2+) ===== */
+  .inner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 16px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .inner-header-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 16px;
+    color: #0A0A0A;
+    letter-spacing: 0.04em;
+  }
+  .inner-page-label {
+    font-size: 10px;
+    color: #a3a3a3;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* ===== CONTENT ===== */
+  .content {
+    padding: 32px 48px 80px;
+  }
+
+  /* ===== INFO GRID ===== */
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-bottom: 28px;
+  }
+  .info-row {
+    display: flex;
+    align-items: baseline;
+    padding: 9px 0;
+    border-bottom: 1px solid #eee;
+    gap: 8px;
+  }
+  .info-row.full {
+    grid-column: 1 / -1;
+  }
+  .info-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: #0A0A0A;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .info-value {
+    font-size: 12px;
+    color: #404040;
+    flex: 1;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 1px;
+    min-height: 16px;
+  }
+  .info-value.filled {
+    color: #0A0A0A;
+    font-weight: 600;
+    border-bottom-color: transparent;
+  }
+
+  /* ===== CLAUSE BLOCKS ===== */
+  .clause-block {
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+  .clause-block-header {
+    background: #0A0A0A;
+    padding: 10px 20px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .clause-block-number {
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
+    color: #2438E8;
+    line-height: 1;
+  }
+  .clause-block-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 0.06em;
+    line-height: 1;
+  }
+  .clause-block-body {
+    padding: 16px 20px;
+    font-size: 12px;
+    color: #404040;
+    line-height: 1.8;
+    background: #fff;
+  }
+  .clause-block-body p {
+    margin-bottom: 8px;
+  }
+  .clause-block-body p:last-child { margin-bottom: 0; }
+
+  /* ===== FIELDS ===== */
+  .field {
+    display: inline;
+    background: rgba(36,56,232,0.06);
+    border-bottom: 1.5px solid #2438E8;
+    padding: 1px 6px;
+    font-weight: 600;
+    color: #171717;
+    border-radius: 2px;
+    font-size: 12px;
+  }
+
+  /* ===== SUB ITEMS ===== */
+  .sub-item {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 6px;
+    font-size: 12px;
+    color: #404040;
+    line-height: 1.7;
+  }
+  .sub-item-marker {
+    color: #2438E8;
+    font-weight: 700;
+    font-size: 11px;
+    min-width: 16px;
+    padding-top: 1px;
+  }
+
+  /* ===== INFO BOX ===== */
+  .info-box {
+    background: rgba(36,56,232,0.04);
+    border-left: 3px solid #2438E8;
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 12px 0 16px;
+    font-size: 11px;
+    color: #525252;
+    line-height: 1.7;
+  }
+  .info-box strong {
+    color: #171717;
+  }
+
+  /* ===== SEPARATOR ===== */
+  .section-sep {
+    height: 1px;
+    background: linear-gradient(to right, #2438E8, transparent 50%);
+    margin: 24px 0;
+  }
+
+  /* ===== SIGNATURE ===== */
+  .sig-section {
+    margin-top: 28px;
+  }
+  .sig-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 20px;
+  }
+  .sig-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .sig-box {
+    height: 90px;
+    border: 1.5px dashed #c7cdf5;
+    border-radius: 8px;
+    background: rgba(36,56,232,0.03);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .sig-box-label {
+    font-size: 10px;
+    color: #8a92e0;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .sig-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #171717;
+    margin-top: 10px;
+  }
+  .sig-role {
+    font-size: 11px;
+    color: #737373;
+  }
+  .sig-doc {
+    font-size: 10px;
+    color: #a3a3a3;
+  }
+
+  /* ===== FOOTER ===== */
+  .page-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 48px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9px;
+    color: #ccc;
+  }
+  .page-footer-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, #2438E8, transparent 40%);
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ PAGINA 1 ============ -->
+<div class="page">
+  <div class="doc-title-block">
+    <div class="doc-title">CONTRATO DE GESTÃO DE <span>TRÁFEGO PAGO</span></div>
+    <div class="doc-sub">MR Botelho Gestão de Tráfego Online</div>
+    <div class="doc-title-rule"></div>
+  </div>
+
+  <div class="content">
+
+    <!-- INFO DO CONTRATO -->
+    <div class="info-grid">
+      <div class="info-row"><span class="info-label">Cliente:</span><span class="info-value filled">Antunes Martins Ferreira Advogados</span></div>
+      <div class="info-row"><span class="info-label">Plataformas:</span><span class="info-value filled">Google Ads e Meta Ads</span></div>
+      <div class="info-row"><span class="info-label">Data:</span><span class="info-value filled">27/06/2026</span></div>
+      <div class="info-row"><span class="info-label">Mensalidade:</span><span class="info-value filled">R$ 1.000,00</span></div>
+    </div>
+
+    <!-- CLAUSULA 1 -->
+    <div class="clause-block">
+      <div class="clause-block-header">
+        <span class="clause-block-number">01</span>
+        <span class="clause-block-title">DAS PARTES</span>
+      </div>
+      <div class="clause-block-body">
+        <p><strong>CONTRATADA:</strong> MR Botelho Gestão de Tráfego Online LTDA, pessoa jurídica de direito privado, inscrita no CNPJ sob o n. 65.710.769/0001-49, com sede na Rua Rio Grande do Norte, nº 1435, Sala 708 Pvmto 7, Bairro Savassi, Belo Horizonte - MG, CEP 30.130-138, doravante denominada <strong>CONTRATADA</strong>.</p>
+        <p><strong>CONTRATANTE:</strong> Antunes Martins Ferreira Advogados, sociedade simples pura, inscrita no CNPJ sob o n. 53.827.092/0001-44, com endereço na Av. das Américas, nº 15579, Sala 210, Recreio dos Bandeirantes, Rio de Janeiro - RJ, CEP 22.790-701, doravante denominada <strong>CONTRATANTE</strong>.</p>
+      </div>
+    </div>
+
+    <!-- CLAUSULA 2 -->
+    <div class="clause-block">
+      <div class="clause-block-header">
+        <span class="clause-block-number">02</span>
+        <span class="clause-block-title">DO OBJETO</span>
+      </div>
+      <div class="clause-block-body">
+        <p>O presente contrato tem por objeto a prestação de serviços de <strong>gestão de tráfego pago</strong> pela CONTRATADA ao CONTRATANTE, nas plataformas <strong>Google Ads</strong> (foco na área trabalhista) e <strong>Meta Ads</strong> (foco na área previdenciária), além de criação e ajustes de landing pages em WordPress, compreendendo:</p>
+        <div class="sub-item"><span class="sub-item-marker">a)</span> Planejamento estratégico de campanhas, públicos e funil de anúncios;</div>
+        <div class="sub-item"><span class="sub-item-marker">b)</span> Criação e configuração das campanhas, conjuntos de anúncios e anúncios;</div>
+        <div class="sub-item"><span class="sub-item-marker">c)</span> Configuração de pixel, tags de conversão e eventos de rastreamento;</div>
+        <div class="sub-item"><span class="sub-item-marker">d)</span> Gestão, otimização e testes contínuos de público, criativo e oferta, com foco em qualificação de leads;</div>
+        <div class="sub-item"><span class="sub-item-marker">e)</span> Criação e ajustes de landing pages em WordPress vinculadas às campanhas;</div>
+        <div class="sub-item"><span class="sub-item-marker">f)</span> Envio de relatório periódico de performance ao CONTRATANTE.</div>
+        <p>Os serviços serão prestados de forma <strong>contínua e recorrente</strong>, mediante pagamento de mensalidade, conforme Cláusula 5.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>MR Botelho Gestão de Tráfego Online — Contrato de Gestão de Tráfego Pago</span>
+    <span>Página 1 de 5</span>
+  </div>
+  <div class="page-footer-bar"></div>
+</div>
+
+<!-- ============ PAGINA 2 ============ -->
+<div class="page">
+  <div class="content" style="padding-top:40px;">
+    <div class="inner-header">
+      <span class="inner-header-title">CONTRATO DE GESTÃO DE TRÁFEGO PAGO</span>
+      <span class="inner-page-label">MR Botelho Gestão de Tráfego Online</span>
+    </div>
+
+    <!-- CLAUSULA 3 -->
+    <div class="clause-block">
+      <div class="clause-block-header">
+        <span class="clause-block-number">03</span>
+        <span class="clause-block-title">DO ESCOPO E EXCLUSÕES</span>
+      </div>
+      <div class="clause-block-body">
+        <p>3.1. O escopo dos serviços compreende exclusivamente a gestão das campanhas e das landing pages indicadas na Cláusula 2. Serviços adicionais não previstos serão tratados como aditivo contratual, com valor a ser negociado separadamente.</p>
+        <p>3.2. Não estão inclusos neste contrato, salvo acordo expresso em contrário:</p>
+        <div class="sub-item"><span class="sub-item-marker">a)</span> O investimento em mídia (verba publicitária), conforme Cláusula 4;</div>
+        <div class="sub-item"><span class="sub-item-marker">b)</span> Produção de fotos e vídeos profissionais;</div>
+        <div class="sub-item"><span class="sub-item-marker">c)</span> Gestão orgânica de redes sociais (postagens, stories, resposta a comentários);</div>
+        <div class="sub-item"><span class="sub-item-marker">d)</span> Registro, hospedagem ou manutenção de domínio.</div>
+      </div>
+    </div>
+
+    <!-- CLAUSULA 4 -->
+    <div class="clause-block">
+      <div class="clause-block-header">
+        <span class="clause-block-number">04</span>
+        <span class="clause-block-title">DO INVESTIMENTO EM MÍDIA</span>
+      </div>
+      <div class="clause-block-body">
+        <p>4.1. O valor investido diretamente em anúncios (verba de mídia) <strong>não está incluso</strong> na mensalidade de gestão e é de responsabilidade exclusiva do CONTRATANTE.</p>
+        <p>4.2. O pagamento da verba de mídia é feito diretamente pelo CONTRATANTE às plataformas (Google e Meta), por meio de cartão de crédito ou conta de faturamento própria, vinculados às contas de anúncio do CONTRATANTE.</p>
+        <p>4.3. O orçamento de mídia é definido e ajustado de comum acordo entre as partes conforme performance e objetivos das campanhas, ficando a critério do CONTRATANTE o valor investido em cada plataforma.</p>
+      </div>
+    </div>
+
+    <!-- CLAUSULA 5 -->
+    <div class="clause-block">
+      <div class="clause-block-header">
+        <span class="clause-block-number">05</span>
+        <span class="clause-block-title">DA MENSALIDADE E PAGAMENTO</span>
+      </div>
+      <div class="clause-block-body">
+        <p>5.1. Pelos serviços descritos na Cláusula 2, o CONTRATANTE pagará à CONTRATADA o valor mensal de <strong>R$ 1.000,00 (mil reais)</strong>, com vencimento no dia <strong>30</strong> de cada mês.</p>
+        <p>5.2. O primeiro pagamento é devido na assinatura deste contrato, referente ao mês de início dos serviços.</p>
+        <p>5.3. Os pagamentos serão realizados via Pix ou transferência bancária para a conta indicada pela CONTRATADA.</p>
+        <p>5.4. O atraso no pagamento da mensalidade acarretará multa de 2% sobre o valor em atraso, acrescido de juros de 1% ao mês, calculados pro rata die, podendo a CONTRATADA suspender a gestão das campanhas até a regularização.</p>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <strong>Dados bancários da CONTRATADA:</strong><br>
+      PIX: <span class="field">124.771.436-54</span> | Titular: MR Botelho Gestão de Tráfego Online LTDA
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>MR Botelho Gestão de Tráfego Online — Contrato de Gestão de Tráfego Pago</span>
+    <span>Página 2 de 5</span>
+  </div>
+  <div class="page-footer-bar"></div>
+</div>
+
+<!-- ============ PAGINA 3 ============ -->
+<div class="page">
+  <div class="content" style="padding-top:40px;">
+    <div class="inner-header">
+      <span class="inner-header-title">CONTRATO DE GESTÃO DE TRÁFEGO PAGO</span>
+      <span class="inner-page-label">MR Botelho Gestão de Tráfego Online</span>
+    </div>
+
+    <!-- CLAUSULA 6 -->
+    <div class="clause-block">
+      <div class="clause-block-header">
+        <span class="clause-block-number">06</span>
+        <span class="clause-block-title">DO PRAZO E VIGÊNCIA</span>
+      </div>
+      <div class="clause-block-body">
+        <p>6.1. Este contrato vigora por prazo indeterminado, com permanência mínima de <strong>3 (três) meses</strong>, período necessário para estruturação, aprendizado de plataforma e maturação das campanhas.</p>
+        <p>6.2. Após o período mínimo, o contrato é renovado automaticamente mês a mês, podendo ser cancelado por qualquer das partes conforme Cláusula 11.</p>
+        <p>6.3. A contagem do prazo se inicia a partir da liberação de todos os acessos e materiais necessários pelo CONTRATANTE, conforme Cláusula 7.</p>
+      </div>
+    </div>
+
+    <!-- CLAUSULA 7 -->
+    <div class="clause-block">
+      <div class="clause-block-header">
+        <span class="clause-block-number">07</span>
+        <span class="clause-block-title">DAS OBRIGAÇÕES DO CONTRATANTE</span>
+      </div>
+      <div class="clause-block-body">
+        <div class="sub-item"><span class="sub-item-marker">a)</span> Fornecer acesso de administrador às contas de anúncio (Google Ads / Business Manager), ao site WordPress, materiais de marca e demais informações necessárias;</div>
+        <div class="sub-item"><span class="sub-item-marker">b)</span> Garantir a verba de mídia ativa e com saldo/limite suficiente nas plataformas, conforme Cláusula 4;</div>
+        <div class="sub-item"><span class="sub-item-marker">c)</span> Designar um responsável para aprovações e feedback dentro do prazo combinado;</div>
+        <div class="sub-item"><span class="sub-item-marker">d)</span> Aprovar ou solicitar ajustes em criativos, textos e landing pages em até <strong>3 (três) dias úteis</strong> após o envio;</div>
+        <div class="sub-item"><span class="sub-item-marker">e)</span> Realizar os pagamentos da mensalidade nas datas pactuadas.</div>
+      </div>
+    </div>
+
+    <!-- CLAUSULA 8 -->
+    <div class="clause-block">
+      <div class="clause-block-header">
+        <span class="clause-block-number">08</span>
+        <span class="clause-block-title">DAS OBRIGAÇÕES DA CONTRATADA</span>
+      </div>
+      <div class="clause-block-body">
+        <div class="sub-item"><span class="sub-item-marker">a)</span> Executar a gestão das campanhas e landing pages com qualidade, diligência e boas práticas de mercado;</div>
+        <div class="sub-item"><span class="sub-item-marker">b)</span> Manter o CONTRATANTE informado sobre o andamento das campanhas e enviar relatório periódico de performance;</div>
+        <div class="sub-item"><span class="sub-item-marker">c)</span> Otimizar continuamente públicos, criativos e orçamento conforme os dados de performance, com foco na qualificação de leads;</div>
+        <div class="sub-item"><span class="sub-item-marker">d)</span> Comunicar previamente alterações relevantes de estratégia antes de aplicá-las;</div>
+        <div class="sub-item"><span class="sub-item-marker">e)</span> Manter sigilo sobre os dados e estratégias do CONTRATANTE, conforme Cláusula 10.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>MR Botelho Gestão de Tráfego Online — Contrato de Gestão de Tráfego Pago</span>
+    <span>Página 3 de 5</span>
+  </div>
+  <div class="page-footer-bar"></div>
+</div>
+
+<!-- ============ PAGINA 4 ============ -->
+<div class="page">
+  <div class="content" style="padding-top:40px;">
+    <div class="inner-header">
+      <span class="inner-header-title">CONTRATO DE GESTÃO DE TRÁFEGO PAGO</span>
+      <span class="inner-page-label">MR Botelho Gestão de Tráfego Online</span>
+    </div>
+
+    <!-- CLAUSULA 9 -->
+    <div class="clause-block">
+      <div class="clause-block-header">
+        <span class="clause-block-number">09</span>
+        <span class="clause-block-title">DA AUSÊNCIA DE GARANTIA DE RESULTADOS</span>
+      </div>
+      <div class="clause-block-body">
+        <p>9.1. A CONTRATADA se compromete a empregar as melhores práticas de mercado na gestão das campanhas, mas <strong>não garante resultados numéricos específicos</strong> (volume de leads, casos fechados ou faturamento), uma vez que dependem de fatores externos à sua atuação.</p>
+        <p>9.2. São fatores que escapam ao controle da CONTRATADA: políticas e algoritmos das plataformas (Google e Meta), concorrência, sazonalidade, capacidade de atendimento e conversão do CONTRATANTE, e o orçamento de mídia disponibilizado.</p>
+        <p>9.3. A CONTRATADA atuará com base em dados e otimização contínua, reportando de forma transparente os resultados obtidos a cada período.</p>
+      </div>
+    </div>
+
+    <!-- CLAUSULA 10 -->
+    <div class="clause-block">
+      <div class="clause-block-header">
+        <span class="clause-block-number">10</span>
+        <span class="clause-block-title">DA PROPRIEDADE DOS ATIVOS E CONFIDENCIALIDADE</span>
+      </div>
+      <div class="clause-block-body">
+        <p>10.1. As contas de anúncio, pixels, públicos salvos, criativos e demais ativos criados durante a prestação dos serviços <strong>pertencem ao CONTRATANTE</strong>. A CONTRATADA atua apenas como gestora, com acesso de administração para fins de execução deste contrato.</p>
+        <p>10.2. Em caso de encerramento do contrato, a CONTRATADA removerá seu acesso das contas, mantendo-as íntegras e em nome do CONTRATANTE.</p>
+        <p>10.3. Ambas as partes se comprometem a manter sigilo sobre informações confidenciais a que tiverem acesso durante a vigência deste contrato, incluindo dados de clientes, estratégias, senhas e credenciais de acesso, obrigação que permanece vigente por 2 (dois) anos após o encerramento do contrato.</p>
+      </div>
+    </div>
+
+    <!-- CLAUSULA 11 -->
+    <div class="clause-block">
+      <div class="clause-block-header">
+        <span class="clause-block-number">11</span>
+        <span class="clause-block-title">DA RESCISÃO</span>
+      </div>
+      <div class="clause-block-body">
+        <p>11.1. Após o período mínimo de permanência (Cláusula 6), o presente contrato poderá ser rescindido por qualquer das partes, mediante comunicação por escrito com antecedência mínima de 30 (trinta) dias.</p>
+        <p>11.2. Em caso de cancelamento pelo CONTRATANTE antes do término do período mínimo, não haverá multa, bastando aviso prévio por escrito com antecedência mínima de <strong>20 (vinte) dias</strong>.</p>
+        <p>11.3. A verba de mídia eventualmente já comprometida ou gasta junto às plataformas não é restituível pela CONTRATADA, por não estar sob sua titularidade.</p>
+        <p>11.4. O inadimplemento de qualquer obrigação contratual por qualquer das partes, não sanado em 10 dias após notificação, configura justa causa para rescisão imediata.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>MR Botelho Gestão de Tráfego Online — Contrato de Gestão de Tráfego Pago</span>
+    <span>Página 4 de 5</span>
+  </div>
+  <div class="page-footer-bar"></div>
+</div>
+
+<!-- ============ PAGINA 5 ============ -->
+<div class="page">
+  <div class="content" style="padding-top:40px;">
+    <div class="inner-header">
+      <span class="inner-header-title">CONTRATO DE GESTÃO DE TRÁFEGO PAGO</span>
+      <span class="inner-page-label">MR Botelho Gestão de Tráfego Online</span>
+    </div>
+
+    <!-- CLAUSULA 12 -->
+    <div class="clause-block">
+      <div class="clause-block-header">
+        <span class="clause-block-number">12</span>
+        <span class="clause-block-title">DAS DISPOSIÇÕES GERAIS</span>
+      </div>
+      <div class="clause-block-body">
+        <p>12.1. As partes declaram que este contrato foi celebrado de livre e espontânea vontade, sem qualquer vício de consentimento.</p>
+        <p>12.2. Eventuais tolerâncias quanto ao descumprimento de cláusulas não constituem novação ou renúncia de direitos.</p>
+        <p>12.3. Fica eleito o foro da comarca de <strong>Belo Horizonte - MG</strong> para dirimir quaisquer controvérsias oriundas deste contrato, com renúncia expressa a qualquer outro, por mais privilegiado que seja.</p>
+      </div>
+    </div>
+
+    <div class="section-sep"></div>
+
+    <!-- ASSINATURAS -->
+    <div class="sig-section">
+      <p style="font-size:12px;color:#404040;margin-bottom:4px;">E por estarem de acordo, as partes firmam eletronicamente o presente instrumento, nos termos do art. 10, §2º, da MP 2.200-2/2001.</p>
+      <p style="font-size:12px;color:#a3a3a3;">Belo Horizonte - MG, 27 de junho de 2026.</p>
+
+      <div class="sig-grid">
+        <div class="sig-block">
+          <div class="sig-box"><span class="sig-box-label">Assinatura eletrônica</span></div>
+          <div class="sig-name">MR Botelho Gestão de Tráfego Online LTDA</div>
+          <div class="sig-role">CONTRATADA</div>
+          <div class="sig-doc">CNPJ: 65.710.769/0001-49</div>
+        </div>
+        <div class="sig-block">
+          <div class="sig-box"><span class="sig-box-label">Assinatura eletrônica</span></div>
+          <div class="sig-name">Antunes Martins Ferreira Advogados</div>
+          <div class="sig-role">CONTRATANTE</div>
+          <div class="sig-doc">CNPJ: 53.827.092/0001-44</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>MR Botelho Gestão de Tráfego Online — Contrato de Gestão de Tráfego Pago</span>
+    <span>Página 5 de 5</span>
+  </div>
+  <div class="page-footer-bar"></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 44" fill="none">
+  <circle cx="16" cy="8" r="3.2" fill="#00c9a7"/>
+  <polyline points="5,17 16,35 27,17" stroke="#00c9a7" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="42" y="30"
+    font-family="'Inter','Helvetica Neue',Arial,sans-serif"
+    font-size="24" font-weight="700"
+    fill="#f5faf9">Vellos<tspan fill="#00c9a7">.</tspan></text>
+</svg>

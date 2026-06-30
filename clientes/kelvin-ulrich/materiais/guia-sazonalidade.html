@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia de Sazonalidade — Gestor Kelvin</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #111111;
+    font-size: 13px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ── PAGE SYSTEM ── */
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media print {
+    .page { margin: 0; }
+    body { background: #fff; }
+  }
+
+  /* ── DARK PAGES ── */
+  .dark {
+    background: #0a0a0a;
+    color: #ffffff;
+  }
+
+  /* ── LIGHT PAGES ── */
+  .light {
+    background: #ffffff;
+    color: #111111;
+  }
+
+  .light-gray {
+    background: #f7f8fa;
+    color: #111111;
+  }
+
+  /* ── BRAND COLORS ── */
+  :root {
+    --blue: #38bdf8;
+    --blue-light: #7dd3fc;
+    --dark: #0a0a0a;
+    --dark2: #141414;
+    --dark3: #1c1c1c;
+    --gray: #888888;
+    --light-border: #e5e7eb;
+  }
+
+  /* ── DECORATIVE GLOW ── */
+  .glow-top {
+    position: absolute;
+    top: -80px; left: 50%;
+    transform: translateX(-50%);
+    width: 420px; height: 420px;
+    background: radial-gradient(circle, rgba(56,189,248,0.18) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .glow-br {
+    position: absolute;
+    bottom: -60px; right: -60px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(56,189,248,0.10) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  /* ── HEADER / FOOTER BAR ── */
+  .bar-top {
+    height: 4px;
+    background: linear-gradient(90deg, #38bdf8, #7dd3fc);
+  }
+  .bar-top-light {
+    height: 4px;
+    background: linear-gradient(90deg, #38bdf8, #7dd3fc);
+  }
+
+  .footer {
+    margin-top: auto;
+    padding: 10mm 14mm 8mm;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+  .footer-light {
+    margin-top: auto;
+    padding: 10mm 14mm 8mm;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #aaa;
+    border-top: 1px solid var(--light-border);
+  }
+
+  .footer-brand { color: var(--blue); font-weight: 700; }
+
+  /* ── CHIPS / BADGES ── */
+  .chip {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: rgba(56,189,248,0.12);
+    color: var(--blue);
+    border: 1px solid rgba(56,189,248,0.25);
+  }
+  .chip-dark {
+    background: rgba(56,189,248,0.12);
+    color: var(--blue);
+    border-color: rgba(56,189,248,0.3);
+  }
+  .chip-light {
+    background: #eff9ff;
+    color: #0284c7;
+    border: 1px solid #bae6fd;
+  }
+
+  /* ── TYPOGRAPHY ── */
+  .kicker {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 10px;
+  }
+
+  h1.hero {
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1.05;
+    color: #ffffff;
+    margin-bottom: 14px;
+  }
+  h1.hero span { color: var(--blue); }
+
+  h2.section-title {
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #ffffff;
+    margin-bottom: 6px;
+  }
+  h2.section-title-light {
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #111111;
+    margin-bottom: 6px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+  }
+  .subtitle-light {
+    font-size: 13px;
+    font-weight: 400;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: rgba(255,255,255,0.08);
+    margin: 8mm 0;
+  }
+  .divider-light {
+    height: 1px;
+    background: var(--light-border);
+    margin: 8mm 0;
+  }
+
+  /* ── HIGHLIGHT BOX ── */
+  .highlight-box {
+    background: rgba(56,189,248,0.08);
+    border: 1px solid rgba(56,189,248,0.22);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 6mm 0;
+  }
+  .highlight-box p {
+    font-size: 12.5px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.85);
+  }
+  .highlight-box strong { color: var(--blue); }
+
+  .highlight-box-light {
+    background: #eff9ff;
+    border: 1px solid #bae6fd;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 6mm 0;
+  }
+  .highlight-box-light p {
+    font-size: 12.5px;
+    line-height: 1.65;
+    color: #1e40af;
+  }
+  .highlight-box-light strong { color: #0369a1; }
+
+  /* ── OBJECTION CARDS ── */
+  .objection-card {
+    background: var(--dark2);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-bottom: 10px;
+  }
+  .objection-card .quote {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    font-style: italic;
+    margin-bottom: 8px;
+    padding-left: 10px;
+    border-left: 2px solid rgba(255,255,255,0.15);
+  }
+  .objection-card .answer {
+    font-size: 12px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.78);
+  }
+  .objection-card .answer strong { color: var(--blue); }
+
+  /* ── CALENDAR CARDS ── */
+  .cal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 6mm 0;
+  }
+  .cal-card {
+    background: var(--dark2);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .cal-card .month {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 4px;
+  }
+  .cal-card .event {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 5px;
+    line-height: 1.3;
+  }
+  .cal-card .desc {
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.55;
+  }
+  .cal-card.highlight-cal {
+    background: rgba(56,189,248,0.10);
+    border-color: rgba(56,189,248,0.30);
+  }
+  .cal-card.highlight-cal .event { color: var(--blue-light); }
+
+  /* ── ACTION LIST ── */
+  .action-list { list-style: none; margin: 0; padding: 0; }
+  .action-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.78);
+  }
+  .action-list li:last-child { border-bottom: none; }
+  .action-list li .icon {
+    width: 26px; height: 26px;
+    border-radius: 8px;
+    background: rgba(56,189,248,0.12);
+    border: 1px solid rgba(56,189,248,0.25);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .action-list li strong { color: #ffffff; display: block; margin-bottom: 2px; font-size: 12.5px; }
+
+  .action-list-light { list-style: none; margin: 0; padding: 0; }
+  .action-list-light li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--light-border);
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: #444;
+  }
+  .action-list-light li:last-child { border-bottom: none; }
+  .action-list-light li .icon {
+    width: 26px; height: 26px;
+    border-radius: 8px;
+    background: #eff9ff;
+    border: 1px solid #bae6fd;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .action-list-light li strong { color: #111; display: block; margin-bottom: 2px; font-size: 12.5px; }
+
+  /* ── STAT BLOCKS ── */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin: 6mm 0;
+  }
+  .stat-box {
+    background: var(--dark2);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+  }
+  .stat-box .num {
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--blue);
+    line-height: 1;
+    margin-bottom: 5px;
+  }
+  .stat-box .label {
+    font-size: 10.5px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.4;
+  }
+
+  /* ── WAVE GRAPHIC ── */
+  .wave-container {
+    margin: 6mm 0;
+    background: var(--dark2);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px;
+    padding: 14px 18px;
+  }
+  .wave-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+  }
+  .wave-bar-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    height: 50px;
+    margin-bottom: 6px;
+  }
+  .wave-bar {
+    flex: 1;
+    border-radius: 4px 4px 0 0;
+    background: rgba(56,189,248,0.25);
+    transition: all 0.3s;
+  }
+  .wave-bar.high { background: linear-gradient(180deg, #38bdf8, #0369a1); }
+  .wave-bar.med { background: rgba(56,189,248,0.4); }
+  .wave-bar.low { background: rgba(56,189,248,0.12); }
+  .wave-months {
+    display: flex;
+    gap: 5px;
+  }
+  .wave-month {
+    flex: 1;
+    font-size: 8.5px;
+    color: rgba(255,255,255,0.3);
+    text-align: center;
+    font-weight: 500;
+  }
+
+  /* ── TIMELINE (cycle) ── */
+  .cycle-row {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin: 6mm 0;
+  }
+  .cycle-item {
+    flex: 1;
+    text-align: center;
+    padding: 10px 6px;
+    position: relative;
+  }
+  .cycle-item::after {
+    content: '→';
+    position: absolute;
+    right: -8px; top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255,255,255,0.2);
+    font-size: 13px;
+  }
+  .cycle-item:last-child::after { display: none; }
+  .cycle-item .c-icon {
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+  .cycle-item .c-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.3;
+  }
+  .cycle-item.active .c-label { color: var(--blue); }
+  .cycle-item .c-note {
+    font-size: 9px;
+    color: rgba(255,255,255,0.3);
+    margin-top: 3px;
+  }
+
+  /* ── QUOTE PULL ── */
+  .pull-quote {
+    border-left: 3px solid var(--blue);
+    padding: 8px 16px;
+    margin: 6mm 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.5;
+    font-style: italic;
+  }
+  .pull-quote-light {
+    border-left: 3px solid var(--blue);
+    padding: 8px 16px;
+    margin: 6mm 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  /* ── CONTENT WRAPPER ── */
+  .content {
+    padding: 10mm 14mm;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── COVER SPECIFICS ── */
+  .cover-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20mm;
+  }
+  .cover-logo {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue);
+  }
+  .cover-sep {
+    width: 1px; height: 14px;
+    background: rgba(255,255,255,0.2);
+  }
+  .cover-doc-type {
+    font-size: 10px;
+    color: rgba(255,255,255,0.35);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .cover-tagline {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 12px;
+    line-height: 1.6;
+    max-width: 130mm;
+  }
+
+  .cover-meta {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10mm;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .cover-meta-label {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.25);
+  }
+  .cover-meta-val {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+    margin-top: 3px;
+  }
+
+  .tag-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 16mm;
+  }
+
+  /* ── CLOSING PAGE ── */
+  .closing-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .big-check {
+    font-size: 52px;
+    margin-bottom: 14px;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 6mm 0;
+  }
+  .col-box {
+    background: var(--dark2);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 10px;
+    padding: 14px;
+  }
+  .col-box h4 {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+  .col-box p, .col-box li {
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.6;
+    list-style: none;
+    padding: 2px 0;
+  }
+  .col-box li::before { content: '– '; color: var(--blue); }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     PÁGINA 1 — CAPA
+════════════════════════════════════════════════ -->
+<div class="page dark">
+  <div class="bar-top"></div>
+  <div class="glow-top"></div>
+  <div class="glow-br"></div>
+
+  <div class="content">
+    <div class="cover-eyebrow">
+      <span class="cover-logo">Gestor Kelvin</span>
+      <span class="cover-sep"></span>
+      <span class="cover-doc-type">Guia do Cliente</span>
+    </div>
+
+    <div class="kicker">Gestão de Tráfego Pago · Body Piercing</div>
+    <h1 class="hero">
+      Guia de<br>
+      <span>Sazonalidade</span><br>
+      do Mercado
+    </h1>
+
+    <p class="cover-tagline">
+      Tudo o que você precisa entender sobre os picos e vales do mercado —
+      e como transformar os meses difíceis em oportunidade real.
+    </p>
+
+    <div class="tag-row">
+      <span class="chip chip-dark">Comportamento do Lead</span>
+      <span class="chip chip-dark">Calendário Jun–Dez</span>
+      <span class="chip chip-dark">Plano de Ação</span>
+    </div>
+
+    <div class="cover-meta">
+      <div>
+        <div class="cover-meta-label">Preparado por</div>
+        <div class="cover-meta-val">Kelvin Ulrich</div>
+      </div>
+      <div style="text-align:center">
+        <div class="cover-meta-label">Segmento</div>
+        <div class="cover-meta-val">Body Piercing</div>
+      </div>
+      <div style="text-align:right">
+        <div class="cover-meta-label">Válido para</div>
+        <div class="cover-meta-val">2025 · 2026</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Documento Confidencial — Uso Exclusivo do Cliente</span>
+    <span class="footer-brand">GESTOR KELVIN</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     PÁGINA 2 — INTRODUÇÃO: O ANÚNCIO NÃO QUEBROU
+════════════════════════════════════════════════ -->
+<div class="page dark">
+  <div class="bar-top"></div>
+
+  <div class="content">
+    <div class="kicker">Introdução</div>
+    <h2 class="section-title">O anúncio não quebrou.<br>O mercado tem ondas.</h2>
+    <p class="subtitle">E entender isso muda tudo na sua relação com o tráfego pago.</p>
+
+    <div class="divider"></div>
+
+    <p style="font-size:12.5px; color:rgba(255,255,255,0.75); line-height:1.75; margin-bottom:10px;">
+      Quando os resultados caem, a primeira reação é buscar o culpado — o anúncio, a plataforma,
+      o gestor. É humano. Mas essa busca pelo culpado tira o foco de onde ele precisa estar:
+      <strong style="color:#fff;">no que você pode fazer agora.</strong>
+    </p>
+
+    <p style="font-size:12.5px; color:rgba(255,255,255,0.75); line-height:1.75; margin-bottom:14px;">
+      A verdade é que o tráfego pago funciona como um amplificador. Ele pega o comportamento
+      que <em>já existe</em> no mercado e aumenta o volume. Quando o mercado está aquecido,
+      os anúncios trazem mais. Quando o mercado esfria, eles trazem menos — e nenhum
+      orçamento no mundo muda isso completamente.
+    </p>
+
+    <div class="highlight-box">
+      <p>
+        <strong>Analogia simples:</strong> imagine que o tráfego é um megafone. Ele amplifica
+        sua voz. Mas se não há ninguém na rua para ouvir, nem o melhor megafone do mundo
+        resolve. Nosso trabalho conjunto é garantir que, quando as pessoas voltarem à rua,
+        <strong>seu nome seja o primeiro que elas lembram.</strong>
+      </p>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-box">
+        <div class="num">3</div>
+        <div class="label">fases em todo mês<br>(início, meio, fim)</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">12</div>
+        <div class="label">meses com<br>comportamentos distintos</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">1</div>
+        <div class="label">estratégia adaptada<br>para cada fase</div>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      "Resultados ruins em dias ruins não são falha do anúncio.
+      São a realidade do mercado — e nós estamos preparados para ela."
+    </div>
+
+    <p style="font-size:12px; color:rgba(255,255,255,0.5); line-height:1.7; margin-top: 4mm;">
+      Este guia foi criado para que você entenda o ciclo do mercado, reconheça os sinais
+      corretos, e saiba exatamente o que fazer em cada momento — especialmente quando
+      os leads somem e a agenda esvazia.
+    </p>
+  </div>
+
+  <div class="footer">
+    <span>Guia de Sazonalidade</span>
+    <span class="footer-brand">GESTOR KELVIN</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     PÁGINA 3 — O CICLO DO MÊS
+════════════════════════════════════════════════ -->
+<div class="page dark">
+  <div class="bar-top"></div>
+
+  <div class="content">
+    <div class="kicker">Comportamento Mensal</div>
+    <h2 class="section-title">O ritmo dentro de cada mês</h2>
+    <p class="subtitle">Não é o mercado de piercing. É o mercado como um todo. Todos seguem esse ciclo.</p>
+
+    <div class="divider"></div>
+
+    <!-- Wave graphic -->
+    <div class="wave-container">
+      <div class="wave-label">Temperatura de compra — ciclo mensal</div>
+      <div class="wave-bar-row">
+        <div class="wave-bar high" style="height:80%"></div>
+        <div class="wave-bar high" style="height:90%"></div>
+        <div class="wave-bar high" style="height:95%"></div>
+        <div class="wave-bar med" style="height:75%"></div>
+        <div class="wave-bar med" style="height:65%"></div>
+        <div class="wave-bar med" style="height:55%"></div>
+        <div class="wave-bar med" style="height:48%"></div>
+        <div class="wave-bar low" style="height:30%"></div>
+        <div class="wave-bar low" style="height:20%"></div>
+        <div class="wave-bar low" style="height:22%"></div>
+        <div class="wave-bar low" style="height:28%"></div>
+        <div class="wave-bar med" style="height:38%"></div>
+      </div>
+      <div class="wave-months">
+        <div class="wave-month">Dia 1</div>
+        <div class="wave-month">Dia 3</div>
+        <div class="wave-month">Dia 7</div>
+        <div class="wave-month">Dia 10</div>
+        <div class="wave-month">Dia 12</div>
+        <div class="wave-month">Dia 14</div>
+        <div class="wave-month">Dia 16</div>
+        <div class="wave-month">Dia 20</div>
+        <div class="wave-month">Dia 23</div>
+        <div class="wave-month">Dia 25</div>
+        <div class="wave-month">Dia 27</div>
+        <div class="wave-month">Dia 30</div>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-top:6mm;">
+      <div class="col-box" style="border-color:rgba(56,189,248,0.3); background:rgba(56,189,248,0.06);">
+        <h4>🟢 Dias 05 a 15 — Janela de Ouro</h4>
+        <p>Salários e pagamentos chegam. O cartão foi renovado. As pessoas estão dispostas a gastar em autocuidado. <strong style="color:var(--blue);">Nosso budget vai a topo aqui.</strong></p>
+      </div>
+      <div class="col-box">
+        <h4>🟡 Dias 15 a 20 — Estabilidade</h4>
+        <p>Ritmo constante. Quem compra agora já planejou. Leads de qualidade ainda chegam, mas com menos urgência de fechamento imediato.</p>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="col-box">
+        <h4>🔴 Dias 20 a 30 — Maré Baixa</h4>
+        <p>Limite de crédito estourado. Pessoas pesquisam preço para se planejar. Baixamos o orçamento para não desperdiçar verba nesse período.</p>
+      </div>
+      <div class="col-box" style="border-color:rgba(56,189,248,0.3); background:rgba(56,189,248,0.06);">
+        <h4>♻️ Dia 01 — Reinício</h4>
+        <p>O ciclo recomeça. Quem pesquisou preço no dia 25 e recebeu no dia 30 está pronto para fechar. <strong style="color:var(--blue);">Campanhas sobem novamente.</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Guia de Sazonalidade</span>
+    <span class="footer-brand">GESTOR KELVIN</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     PÁGINA 4 — QUEBRA DE OBJEÇÕES (PARTE 1)
+════════════════════════════════════════════════ -->
+<div class="page dark">
+  <div class="bar-top"></div>
+
+  <div class="content">
+    <div class="kicker">Comportamento do Lead</div>
+    <h2 class="section-title">Por que os leads agem assim?</h2>
+    <p class="subtitle">Entender o comportamento do consumidor tira o peso das suas costas — e coloca a estratégia no lugar certo.</p>
+
+    <div class="divider"></div>
+
+    <!-- Objeção 1 -->
+    <div class="objection-card">
+      <div class="quote">"Só vem curioso perguntando preço"</div>
+      <div class="answer">
+        <strong>Isso é ouro disfarçado.</strong> Quem pergunta preço está no processo de decisão —
+        não está perdendo tempo, está se preparando. O lead viu seu anúncio, gostou, clicou, abriu
+        a conversa. Ele <em>quer</em> fazer o piercing. O que ainda falta é o momento certo (geralmente
+        o dia 5 do próximo mês). <strong>Atenda bem, mande foto do estúdio, mostre o titânio, gere confiança.</strong>
+        Esse lead que perguntou hoje fecha amanhã — ou no mês que vem. Mas só fecha com quem
+        deixou uma boa impressão.
+      </div>
+    </div>
+
+    <!-- Objeção 2 -->
+    <div class="objection-card">
+      <div class="quote">"O anúncio parou de funcionar"</div>
+      <div class="answer">
+        O anúncio está funcionando — mas o <strong>mercado mudou de fase.</strong> Quando estamos
+        nos dias 22 ao 30, o algoritmo encontra menos pessoas dispostas a converter, então o custo
+        por resultado sobe e o volume cai. Esse é o momento de <strong>reduzir o orçamento
+        estrategicamente</strong> (o que já fazemos) e de usar a energia para as ações que só você
+        pode fazer: resgatar leads antigos, produzir conteúdo, construir autoridade. O anúncio
+        volta a performar quando o mercado volta a aquecer.
+      </div>
+    </div>
+
+    <div class="highlight-box" style="margin-top:auto;">
+      <p>
+        <strong>Lembre-se:</strong> nenhuma campanha do mundo converte uma pessoa que está com o cartão
+        no limite. O que fazemos nesse período é <strong>plantar sementes</strong> para colher na virada do mês.
+      </p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Guia de Sazonalidade</span>
+    <span class="footer-brand">GESTOR KELVIN</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     PÁGINA 5 — QUEBRA DE OBJEÇÕES (PARTE 2)
+════════════════════════════════════════════════ -->
+<div class="page dark">
+  <div class="bar-top"></div>
+
+  <div class="content">
+    <div class="kicker">Comportamento do Lead · Continuação</div>
+    <h2 class="section-title">O lead some no meio da conversa?</h2>
+    <p class="subtitle">Isso tem uma explicação muito mais simples — e mais tranquilizadora — do que parece.</p>
+
+    <div class="divider"></div>
+
+    <div class="objection-card" style="margin-bottom:14px;">
+      <div class="quote">"Mando o valor e a pessoa some / Para de responder"</div>
+      <div class="answer">
+        Existe um padrão fortíssimo nisso: <strong>a maioria dos sumiços acontece entre os dias 20 e 30.</strong>
+        O lead tem desejo real — ele clicou, perguntou, engajou. Mas quando chega o momento de
+        confirmar, ele olha pro cartão e vê que não dá agora. Em vez de explicar a situação
+        (o que é constrangedor), ele simplesmente some. <strong>Não é falta de interesse. É falta de saldo.</strong>
+        <br><br>
+        Esses leads são seus melhores leads para o começo do mês seguinte. Guarde o contato.
+        No dia 4 ou 5, uma mensagem simples de retomada converte uma parcela significativa deles.
+      </div>
+    </div>
+
+    <!-- Ciclo do lead -->
+    <div style="margin: 6mm 0 4mm;">
+      <div class="wave-label" style="margin-bottom:8px;">O ciclo real do lead que some</div>
+      <div class="cycle-row">
+        <div class="cycle-item active">
+          <div class="c-icon">👀</div>
+          <div class="c-label">Vê o anúncio</div>
+          <div class="c-note">Dia 22–28</div>
+        </div>
+        <div class="cycle-item active">
+          <div class="c-icon">💬</div>
+          <div class="c-label">Pergunta preço</div>
+          <div class="c-note">Mesmo dia</div>
+        </div>
+        <div class="cycle-item">
+          <div class="c-icon">😶</div>
+          <div class="c-label">Vê o valor e some</div>
+          <div class="c-note">Cartão no limite</div>
+        </div>
+        <div class="cycle-item active">
+          <div class="c-icon">💰</div>
+          <div class="c-label">Recebe salário</div>
+          <div class="c-note">Dia 1–5</div>
+        </div>
+        <div class="cycle-item active">
+          <div class="c-icon">✅</div>
+          <div class="c-label">Está pronto pra fechar</div>
+          <div class="c-note">Com quem atendeu bem</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      "O atendimento que você dá hoje na maré baixa define quem fecha na maré alta."
+    </div>
+
+    <p style="font-size:12px; color:rgba(255,255,255,0.5); line-height:1.7;">
+      Por isso, jamais trate leads frios com descaso. A memória emocional do consumidor é forte:
+      ele lembra de quem foi gentil, profissional e transmitiu segurança — mesmo que não tenha fechado
+      na hora.
+    </p>
+  </div>
+
+  <div class="footer">
+    <span>Guia de Sazonalidade</span>
+    <span class="footer-brand">GESTOR KELVIN</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     PÁGINA 6 — CALENDÁRIO: JUNHO E JULHO
+════════════════════════════════════════════════ -->
+<div class="page dark">
+  <div class="bar-top"></div>
+
+  <div class="content">
+    <div class="kicker">Calendário de Sazonalidade</div>
+    <h2 class="section-title">Junho e Julho: o verão de quem planeja</h2>
+    <p class="subtitle">Os dois primeiros meses do nosso calendário trazem datas estratégicas únicas para o nicho de body piercing.</p>
+
+    <div class="divider"></div>
+
+    <div class="cal-grid">
+      <div class="cal-card highlight-cal">
+        <div class="month">Junho · 12</div>
+        <div class="event">Dia dos Namorados 💑</div>
+        <div class="desc">
+          Um dos picos mais fortes do ano. Casais que querem fazer piercing juntos,
+          pedidos de presente, experiências compartilhadas. Comece a ativar campanha
+          específica <strong style="color:var(--blue-light);">10 dias antes.</strong>
+          Copy foco: "presenteie com uma experiência".
+        </div>
+      </div>
+
+      <div class="cal-card highlight-cal">
+        <div class="month">Junho · 28</div>
+        <div class="event">Dia Intl. do Body Piercing 🏆</div>
+        <div class="desc">
+          <strong style="color:var(--blue-light);">Nossa Black Friday particular.</strong>
+          A única data do calendário criada especificamente para o nosso mercado.
+          Momento de criar ações exclusivas, gerar conteúdo comemorativo e
+          mobilizar a comunidade. Quem planta aqui, colhe muito.
+        </div>
+      </div>
+
+      <div class="cal-card">
+        <div class="month">Julho · Férias Escolares</div>
+        <div class="event">Estudantes em movimento 🎒</div>
+        <div class="desc">
+          Público jovem com tempo livre e disposição para cuidar da cicatrização
+          sem conflito com escola ou trabalho. Foco em: primeira vez,
+          piercings que precisam de cuidado especial, mães acompanhando filhos.
+          Linguagem: acolhedora e segura.
+        </div>
+      </div>
+
+      <div class="cal-card">
+        <div class="month">Junho · Todo mês</div>
+        <div class="event">Atenção ao ciclo mensal 📅</div>
+        <div class="desc">
+          Mesmo com datas fortes, o padrão de dias 05–15 aquecido e dias 20–30
+          frio continua valendo. Planejamos o budget de campanha para maximizar
+          a janela de ouro em torno das datas comemorativas.
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <p>
+        <strong>Ação para Junho:</strong> prepare pelo menos 2 criativos para o Dia dos Namorados
+        e 1 criativo comemorativo para o Dia 28. Conteúdo orgânico no feed complementa
+        os anúncios — e não custa nada além de tempo.
+      </p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Guia de Sazonalidade</span>
+    <span class="footer-brand">GESTOR KELVIN</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     PÁGINA 7 — CALENDÁRIO: AGOSTO A OUTUBRO
+════════════════════════════════════════════════ -->
+<div class="page dark">
+  <div class="bar-top"></div>
+
+  <div class="content">
+    <div class="kicker">Calendário de Sazonalidade</div>
+    <h2 class="section-title">Agosto a Outubro: constância com picos certeiros</h2>
+    <p class="subtitle">Esses três meses exigem consistência — e atenção especial a uma data que muitos ignoram.</p>
+
+    <div class="divider"></div>
+
+    <div class="cal-grid">
+      <div class="cal-card">
+        <div class="month">Agosto</div>
+        <div class="event">Mês de Constância ⚙️</div>
+        <div class="desc">
+          Sem grandes datas sazonais. O foco é manter a consistência:
+          responder bem, produzir conteúdo de qualidade, e aproveitar
+          a janela de ouro dos dias 05–15 com campanhas rodando no budget ideal.
+        </div>
+      </div>
+
+      <div class="cal-card">
+        <div class="month">Setembro</div>
+        <div class="event">Primavera chegando 🌸</div>
+        <div class="desc">
+          Com o calor voltando, o desejo por piercings visíveis aumenta.
+          Foco em piercings de orelha, umbigo e facial. É uma boa época para
+          ativar campanhas de check-up de cicatrização para clientes antigos.
+        </div>
+      </div>
+
+      <div class="cal-card highlight-cal">
+        <div class="month">Outubro · 31</div>
+        <div class="event">Halloween 🎃</div>
+        <div class="desc">
+          Oportunidade subestimada. Pessoas querendo looks diferenciados,
+          piercings como parte da estética do evento, posts temáticos que
+          viralizam. <strong style="color:var(--blue-light);">Crie 1 post criativo e rode como impulsionado</strong>
+          na semana anterior.
+        </div>
+      </div>
+
+      <div class="cal-card">
+        <div class="month">Ago → Out · Todo mês</div>
+        <div class="event">Padrão Mensal ativo 📊</div>
+        <div class="desc">
+          Dias 05–15: budget alto, atendimento ágil, foco em conversão.
+          Dias 20–30: budget reduzido, foco em conteúdo, plantio de sementes
+          e resgate de leads antigos. Repita o ciclo.
+        </div>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      "Consistência bate criatividade quando o mercado está em constância.
+      O diferencial é quem aparece todos os dias — mesmo nos dias quietos."
+    </div>
+
+    <p style="font-size:12px; color:rgba(255,255,255,0.5); line-height:1.7;">
+      Durante esses meses, o trabalho de autoridade que você faz nas redes sociais tem peso
+      tão grande quanto os anúncios. Um feed organizado e confiável converte leads que chegam
+      pelo orgânico e reforça a decisão de quem chegou pelo pago.
+    </p>
+  </div>
+
+  <div class="footer">
+    <span>Guia de Sazonalidade</span>
+    <span class="footer-brand">GESTOR KELVIN</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     PÁGINA 8 — CALENDÁRIO: NOVEMBRO E DEZEMBRO
+════════════════════════════════════════════════ -->
+<div class="page dark">
+  <div class="bar-top"></div>
+  <div class="glow-top" style="opacity:0.6;"></div>
+
+  <div class="content">
+    <div class="kicker">Calendário de Sazonalidade</div>
+    <h2 class="section-title">Novembro e Dezembro: a grande onda</h2>
+    <p class="subtitle">Os dois meses mais poderosos do ano para conversão. Aqui é onde o planejamento anterior se paga.</p>
+
+    <div class="divider"></div>
+
+    <div class="cal-card highlight-cal" style="margin-bottom:10px;">
+      <div class="month">Novembro · Black Friday</div>
+      <div class="event">⚡ Combos inteligentes, não descontos rasos</div>
+      <div class="desc" style="color:rgba(255,255,255,0.7);">
+        O erro mais comum na Black Friday do piercing é oferecer "perfuração gratuita" e perder margem.
+        A estratégia certa é criar <strong style="color:var(--blue-light);">combos de valor percebido alto:</strong>
+        perfuração + joia premium + desconto na troca de haste (downsize). O cliente sente que está
+        ganhando muito mais do que um serviço simples gratuito.
+        <br><br>
+        <strong style="color:var(--blue-light);">Exemplos de combos:</strong> "Perfuração + joia de titânio G23 + consulta de cicatrização incluída"
+        · "2 perfurações pelo preço de 1 (joia por fora)" · "Kit Cicatrização Black Friday".
+      </div>
+    </div>
+
+    <div class="cal-card highlight-cal">
+      <div class="month">Dezembro · Verão + 13º Salário</div>
+      <div class="event">🌊 Onda de alta conversão</div>
+      <div class="desc" style="color:rgba(255,255,255,0.7);">
+        A combinação mais poderosa do calendário: dinheiro extra no bolso (13º) + verão chegando
+        (desejo de mostrar o corpo) + festas de fim de ano (presentes, looks especiais).
+        <br><br>
+        É o momento de ter o estúdio 100% preparado: joias premium em estoque, agenda organizada,
+        atendimento ágil. <strong style="color:var(--blue-light);">Quem não consegue atender a demanda aqui perde dinheiro real.</strong>
+        Alinhe sua capacidade de atendimento antes de subir o budget ao máximo.
+      </div>
+    </div>
+
+    <div class="highlight-box" style="margin-top:auto;">
+      <p>
+        <strong>Aviso importante:</strong> Novembro e Dezembro exigem orçamento de anúncio maior —
+        mas também mais <strong>concorrência</strong> na plataforma. Todos sobem o budget ao mesmo tempo.
+        Por isso, a qualidade do criativo e da oferta vai determinar quem vence o leilão.
+      </p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Guia de Sazonalidade</span>
+    <span class="footer-brand">GESTOR KELVIN</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     PÁGINA 9 — PLANO DE AÇÃO: LIÇÃO DE CASA
+════════════════════════════════════════════════ -->
+<div class="page light-gray">
+  <div class="bar-top-light"></div>
+
+  <div class="content">
+    <div class="kicker" style="color:#0284c7;">Plano de Ação</div>
+    <h2 class="section-title-light">A lição de casa na baixa temporada</h2>
+    <p class="subtitle-light">Quando reduzimos o orçamento dos anúncios para não desperdiçar verba, existem 4 ações que só <em>você</em> pode fazer — e que fazem toda a diferença.</p>
+
+    <div class="divider-light"></div>
+
+    <ul class="action-list-light">
+      <li>
+        <div class="icon">💬</div>
+        <div>
+          <strong>Resgate de leads antigos no WhatsApp</strong>
+          Abra sua conversa com quem perguntou preço e sumiu nos últimos 30 dias.
+          Mande uma mensagem simples: <em>"Oi [nome], vi que você se interessou pelo piercing.
+          Começamos o mês com agenda aberta — posso te ajudar a agendar?"</em>
+          Sem pressão, sem discurso de vendas. Uma parte desses leads estava esperando
+          só por essa abertura.
+        </div>
+      </li>
+      <li>
+        <div class="icon">🔄</div>
+        <div>
+          <strong>Campanha de check-up de cicatrização</strong>
+          Seus clientes antigos são o ativo mais subestimado do estúdio. Mande uma
+          mensagem para quem fez piercing nos últimos 3–6 meses: <em>"Tá cicatrizando bem?
+          Já está na hora de avaliar o downsize."</em> Isso gera retorno ao estúdio,
+          venda de joias premium, e indicações. Custo zero. Retorno alto.
+        </div>
+      </li>
+      <li>
+        <div class="icon">📱</div>
+        <div>
+          <strong>Conteúdo de bastidores que gera autoridade</strong>
+          Mostre a autoclave funcionando. Filme a embalagem estéril sendo aberta.
+          Mostre o certificado do titânio G23. Explique por que você usa a marca X
+          de joia. Esse tipo de conteúdo não vende diretamente — mas <em>elimina objeções
+          antes que elas apareçam</em> e faz com que o lead que vê seu anúncio já chegue
+          no WhatsApp com 80% da decisão feita.
+        </div>
+      </li>
+      <li>
+        <div class="icon">🤝</div>
+        <div>
+          <strong>Parcerias locais com outros profissionais</strong>
+          Tatuadores, lash designers, cabeleireiros, esteticistas — todos atendem
+          um público que se cuida e valoriza estética. Uma parceria simples (indicação
+          mútua, post conjunto, card de desconto cruzado) expande seu alcance sem
+          investir em anúncio. A baixa temporada é o momento perfeito para construir
+          essa rede.
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-light">
+    <span>Guia de Sazonalidade</span>
+    <span style="color:#0284c7; font-weight:700;">GESTOR KELVIN</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     PÁGINA 10 — RESUMO VISUAL / NOSSA PARCERIA
+════════════════════════════════════════════════ -->
+<div class="page dark">
+  <div class="bar-top"></div>
+  <div class="glow-top" style="opacity:0.5;"></div>
+
+  <div class="content">
+    <div class="kicker">Resumo</div>
+    <h2 class="section-title">O que cada lado faz</h2>
+    <p class="subtitle">A parceria funciona quando os dois lados cumprem seu papel. Aqui está o acordo claro:</p>
+
+    <div class="divider"></div>
+
+    <div class="two-col">
+      <div class="col-box" style="border-color:rgba(56,189,248,0.3); background:rgba(56,189,248,0.06);">
+        <h4>📊 Gestor Kelvin faz</h4>
+        <ul>
+          <li>Gerencia orçamento por fase do mês</li>
+          <li>Cria e testa criativos por sazonalidade</li>
+          <li>Monitora CPL e custo por resultado</li>
+          <li>Reduz budget na maré baixa (sem desperdiçar)</li>
+          <li>Aumenta budget na janela de ouro</li>
+          <li>Relatórios e ajustes estratégicos</li>
+        </ul>
+      </div>
+      <div class="col-box">
+        <h4>💪 Você faz</h4>
+        <ul>
+          <li>Atende leads com agilidade e cuidado</li>
+          <li>Produz conteúdo de bastidores e autoridade</li>
+          <li>Resgata leads antigos na maré baixa</li>
+          <li>Oferece combos em datas estratégicas</li>
+          <li>Faz check-up com clientes antigos</li>
+          <li>Cuida da cicatrização → gera recompra</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="highlight-box" style="margin: 6mm 0;">
+      <p>
+        <strong>Resultado disso:</strong> você para de se desesperar nos dias ruins, para de
+        achar que o anúncio quebrou, e começa a usar a maré baixa de forma produtiva.
+        E quando a maré sobe, ela encontra um estúdio preparado — com leads aquecidos,
+        conteúdo rodando e agenda organizada.
+      </p>
+    </div>
+
+    <div class="pull-quote">
+      "O mercado tem ondas. Surfadores não fogem delas — aprendem a ler o mar."
+    </div>
+
+    <p style="font-size:11.5px; color:rgba(255,255,255,0.4); line-height:1.7; margin-top:auto;">
+      Qualquer dúvida sobre o comportamento dos resultados ou sobre o que fazer em determinado
+      período, chame no WhatsApp. Estamos juntos nessa.
+    </p>
+  </div>
+
+  <div class="footer">
+    <span>Guia de Sazonalidade · Confidencial</span>
+    <span class="footer-brand">GESTOR KELVIN</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     PÁGINA 11 — CONTRACAPA
+════════════════════════════════════════════════ -->
+<div class="page dark" style="min-height:297mm;">
+  <div class="bar-top"></div>
+  <div class="glow-top"></div>
+
+  <div class="content">
+    <div class="closing-center">
+      <div class="big-check">📍</div>
+      <div class="kicker" style="margin-bottom:12px;">Você não está sozinho nessa</div>
+      <h2 class="section-title" style="font-size:28px; text-align:center; margin-bottom:12px;">
+        Navegamos juntos<br>em qualquer maré.
+      </h2>
+      <p style="font-size:13px; color:rgba(255,255,255,0.5); line-height:1.75; max-width:120mm; text-align:center; margin-bottom:14mm;">
+        Este guia existe para que você entenda o mercado como ele realmente é —
+        não como gostaríamos que fosse. Com esse entendimento, cada fase do mês
+        vira uma oportunidade de agir com inteligência.
+      </p>
+
+      <div style="display:flex; flex-direction:column; align-items:center; gap:8px; margin-bottom:14mm;">
+        <span class="chip chip-dark">Kelvin Ulrich · Gestão de Tráfego</span>
+        <span style="font-size:11px; color:rgba(255,255,255,0.3);">Especialista em Body Piercing & Estética</span>
+      </div>
+
+      <div style="text-align:center; border-top:1px solid rgba(255,255,255,0.08); padding-top:8mm; width:100%;">
+        <div style="font-size:9px; text-transform:uppercase; letter-spacing:0.15em; color:rgba(255,255,255,0.2); margin-bottom:6px;">
+          Documento exclusivo para clientes ativos
+        </div>
+        <div style="font-size:11px; font-weight:700; color:var(--blue); letter-spacing:0.08em; text-transform:uppercase;">
+          GESTOR KELVIN
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

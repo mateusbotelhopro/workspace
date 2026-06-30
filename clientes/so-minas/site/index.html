@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laticínios Sô Minas | Tradição, qualidade e confiança</title>
+  <meta name="description" content="Laticínios Sô Minas — desde 2012, fabricando manteigas, cremes de leite, nata, queijo cottage e iogurtes com qualidade e tradição de Minas Gerais.">
+  <link rel="icon" href="img/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --marrom: #663300;
+      --marrom-escuro: #4d2600;
+      --dourado: #DAA71E;
+      --dourado-claro: #F5E6B8;
+      --verde: #587B20;
+      --verde-claro: #7BA23A;
+      --creme: #FFFDF6;
+      --creme-medio: #FDF1D1;
+      --branco: #FFFFFF;
+      --cinza-100: #F9F7F2;
+      --cinza-200: #E8E2D5;
+      --cinza-600: #79522C;
+      --texto: #3D2200;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 16px;
+      background: var(--marrom);
+      color: var(--creme);
+      padding: 12px 24px;
+      border-radius: 0 0 8px 8px;
+      font-weight: 600;
+      font-size: 14px;
+      z-index: 200;
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+
+    .skip-link:focus { top: 0; }
+
+    *:focus-visible {
+      outline: 2px solid var(--dourado);
+      outline-offset: 2px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--texto);
+      background: var(--branco);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; }
+
+    /* ── Header ── */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255, 253, 246, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--cinza-200);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .header.scrolled { box-shadow: 0 2px 20px rgba(102, 51, 0, 0.08); }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-logo img { height: 48px; width: auto; }
+
+    .nav {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--marrom);
+      text-decoration: none;
+      letter-spacing: 0.3px;
+      transition: color 0.2s ease;
+    }
+
+    .nav a:hover { color: var(--dourado); }
+
+    .nav-cta {
+      background: var(--marrom) !important;
+      color: var(--creme) !important;
+      padding: 10px 24px;
+      border-radius: 999px;
+      font-weight: 600 !important;
+      transition: background 0.2s ease !important;
+    }
+
+    .nav-cta:hover { background: var(--marrom-escuro) !important; }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--marrom);
+      margin: 5px 0;
+      transition: all 0.3s ease;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 160px 24px 100px;
+      background: linear-gradient(160deg, var(--creme) 0%, var(--creme-medio) 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(160deg, rgba(255,253,246,0.88) 0%, rgba(253,241,209,0.82) 100%);
+      z-index: 1;
+    }
+
+    .hero > *:not(.hero-video):not(.hero-overlay) {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 120px;
+      background: linear-gradient(to bottom, transparent, var(--branco));
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--dourado);
+      color: var(--marrom);
+      padding: 8px 20px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: 52px;
+      font-weight: 700;
+      color: var(--marrom);
+      line-height: 1.15;
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--texto);
+      max-width: 560px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px 32px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary { background: var(--marrom); color: var(--creme); }
+    .btn-primary:hover { background: var(--marrom-escuro); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--marrom);
+      border: 2px solid var(--marrom);
+    }
+
+    .btn-outline:hover { background: var(--marrom); color: var(--creme); }
+
+    /* ── Sections ── */
+    .section { padding: 100px 24px; }
+
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--dourado);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 38px;
+      font-weight: 600;
+      color: var(--marrom);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .section-subtitle {
+      font-size: 16px;
+      color: var(--cinza-600);
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    /* ── Sobre ── */
+    .sobre { background: var(--cinza-100); }
+
+    .sobre-image {
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 48px;
+      max-height: 400px;
+    }
+
+    .sobre-image img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .sobre-text {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .sobre-text p {
+      font-size: 15px;
+      color: var(--cinza-600);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .sobre-text p:last-child { margin-bottom: 0; }
+
+    /* ── Produtos ── */
+    .produtos-tabs {
+      display: flex;
+      gap: 8px;
+      margin: 40px 0 32px;
+    }
+
+    .tab-btn {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 24px;
+      border-radius: 999px;
+      border: 2px solid var(--cinza-200);
+      background: var(--branco);
+      color: var(--cinza-600);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn.active { border-color: var(--marrom); background: var(--marrom); color: var(--creme); }
+    .tab-btn:hover:not(.active) { border-color: var(--marrom); color: var(--marrom); }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; animation: fadeIn 0.3s ease; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .produtos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .produto-card {
+      background: var(--branco);
+      border: 1px solid var(--cinza-200);
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .produto-card:hover {
+      border-color: var(--dourado);
+      box-shadow: 0 8px 30px rgba(102, 51, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .produto-emoji { font-size: 48px; margin-bottom: 16px; display: block; }
+
+    .produto-nome {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--marrom);
+      margin-bottom: 6px;
+    }
+
+    .produto-peso { font-size: 13px; color: var(--cinza-600); margin-bottom: 12px; }
+
+    .produto-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: var(--dourado-claro);
+      color: #8B6914;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .produto-tag.food { background: #E8F0D8; color: var(--verde); }
+
+    /* ── Food Service ── */
+    .food-service { background: var(--marrom); color: var(--creme); }
+    .food-service .section-label { color: var(--dourado); }
+    .food-service .section-title { color: var(--creme); }
+    .food-service .section-subtitle { color: rgba(255, 253, 246, 0.7); }
+
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .food-card {
+      background: rgba(255, 253, 246, 0.08);
+      border: 1px solid rgba(255, 253, 246, 0.12);
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .food-card:hover { background: rgba(255, 253, 246, 0.12); border-color: rgba(218, 167, 30, 0.3); }
+
+    .food-card-icon { font-size: 36px; margin-bottom: 16px; display: block; }
+
+    .food-card-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .food-card-desc { font-size: 14px; color: rgba(255, 253, 246, 0.6); line-height: 1.6; }
+
+    /* ── Imprensa ── */
+    .imprensa { background: var(--cinza-100); }
+
+    .imprensa-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .imprensa-card {
+      background: var(--branco);
+      border-radius: 16px;
+      padding: 40px 36px;
+      border: 1px solid var(--cinza-200);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .imprensa-card:hover {
+      border-color: var(--dourado);
+      box-shadow: 0 8px 30px rgba(102, 51, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .imprensa-fonte {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--marrom);
+      margin-bottom: 12px;
+    }
+
+    .imprensa-titulo { font-size: 15px; color: var(--cinza-600); line-height: 1.6; margin-bottom: 16px; }
+
+    .imprensa-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--dourado);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .imprensa-link::after { content: '\2192'; }
+
+    /* ── Diferenciais ── */
+    .diferenciais-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .diferencial { text-align: center; padding: 32px 20px; }
+
+    .diferencial-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--dourado-claro);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 24px;
+    }
+
+    .diferencial-title {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--marrom);
+      margin-bottom: 8px;
+    }
+
+    .diferencial-desc { font-size: 13px; color: var(--cinza-600); line-height: 1.6; }
+
+    /* ── CTA ── */
+    .cta-section {
+      padding: 100px 24px;
+      background:
+        linear-gradient(160deg, rgba(255,253,246,0.92) 0%, rgba(253,241,209,0.9) 100%),
+        url('https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      text-align: center;
+    }
+
+    .cta-section .section-title { margin-bottom: 12px; }
+
+    .cta-section p {
+      font-size: 16px;
+      color: var(--cinza-600);
+      margin-bottom: 32px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: var(--marrom-escuro);
+      color: rgba(255, 253, 246, 0.6);
+      padding: 60px 24px 32px;
+    }
+
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand img { height: 52px; margin-bottom: 16px; filter: brightness(1.5); }
+    .footer-brand p { font-size: 14px; line-height: 1.7; max-width: 320px; }
+
+    .footer h4 {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--creme);
+      margin-bottom: 16px;
+    }
+
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 10px; }
+
+    .footer-links a {
+      font-size: 14px;
+      color: rgba(255, 253, 246, 0.6);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover { color: var(--dourado); }
+
+    .footer-social { display: flex; gap: 12px; margin-top: 20px; }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 253, 246, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .footer-social a:hover { border-color: var(--dourado); background: rgba(218, 167, 30, 0.1); }
+    .footer-social svg { width: 18px; height: 18px; fill: rgba(255, 253, 246, 0.7); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 253, 246, 0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-selos {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-selo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+    }
+
+    .footer-selo svg { width: 16px; height: 16px; fill: var(--verde-claro); }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .nav {
+        display: none;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: var(--creme);
+        flex-direction: column;
+        padding: 24px;
+        gap: 16px;
+        border-bottom: 1px solid var(--cinza-200);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      }
+
+      .nav.open { display: flex; }
+      .menu-toggle { display: block; }
+      .hero h1 { font-size: 36px; }
+      .hero p { font-size: 16px; }
+      .sobre-grid { grid-template-columns: 1fr; gap: 40px; }
+      .food-grid { grid-template-columns: 1fr; }
+      .imprensa-grid { grid-template-columns: 1fr; }
+      .diferenciais-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+      .section { padding: 60px 20px; }
+      .section-title { font-size: 30px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero { padding: 120px 20px 60px; }
+      .hero h1 { font-size: 30px; }
+      .hero-buttons { flex-direction: column; align-items: center; }
+      .sobre-stats { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .produtos-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .produto-card { padding: 24px 16px; }
+      .diferenciais-grid { grid-template-columns: 1fr; }
+      .produtos-tabs { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#sobre" class="skip-link">Ir para o conteúdo</a>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="#" class="header-logo">
+        <img src="img/logo.png" alt="Laticínios Sô Minas">
+      </a>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="nav">
+        <a href="#sobre">Sobre</a>
+        <a href="#imprensa">Imprensa</a>
+        <a href="#contato" class="nav-cta">Fale Conosco</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1920&q=80">
+      <source src="https://videos.pexels.com/video-files/10041374/10041374-hd_1920_1080_24fps.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <span class="hero-badge">Desde 2012 &bull; Tradi&ccedil;&atilde;o de Minas</span>
+    <h1>Qualidade e sabor direto do campo para sua mesa</h1>
+    <p>Manteigas, cremes de leite, natas, queijo cottage e iogurtes produzidos com rigorosos padr&otilde;es de qualidade em Minas Gerais.</p>
+    <div class="hero-buttons">
+      <a href="#sobre" class="btn btn-primary">Conhe&ccedil;a nossa hist&oacute;ria</a>
+      <a href="#contato" class="btn btn-outline">Fale Conosco</a>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section class="section sobre" id="sobre">
+    <div class="section-inner">
+      <span class="section-label">Nossa hist&oacute;ria</span>
+      <h2 class="section-title">Sobre a S&ocirc; Minas</h2>
+      <div class="sobre-image">
+        <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1200&q=80" alt="Fazenda de gado leiteiro" loading="lazy">
+      </div>
+      <div class="sobre-text">
+        <p>Fundada em 2012, a S&ocirc; Minas nasceu do sonho de tr&ecirc;s empreendedores que acreditavam na excel&ecirc;ncia dos produtos l&aacute;cteos e no potencial de levar ao mercado alimentos de alta qualidade. Ao longo dos anos, consolidou-se como refer&ecirc;ncia na fabrica&ccedil;&atilde;o de manteigas e cremes de leite, conquistando a confian&ccedil;a de clientes e consumidores por meio da qualidade, inova&ccedil;&atilde;o e compromisso com a excel&ecirc;ncia.</p>
+        <p>Atualmente, a S&ocirc; Minas est&aacute; presente em todos os estados da Regi&atilde;o Sudeste, com forte atua&ccedil;&atilde;o no varejo atrav&eacute;s de sua linha de manteigas de 200 g e 500 g, com e sem sal, al&eacute;m do queijo tipo cottage de 200 g.</p>
+        <p>Nos &uacute;ltimos anos, a empresa tem se especializado cada vez mais no atendimento ao mercado Food Service, oferecendo solu&ccedil;&otilde;es desenvolvidas para atender &agrave;s necessidades de cozinhas profissionais, confeitarias, padarias, restaurantes e ind&uacute;strias aliment&iacute;cias.</p>
+        <p>O compromisso com a qualidade, a sustentabilidade e a satisfa&ccedil;&atilde;o dos clientes &eacute; o que impulsiona a S&ocirc; Minas diariamente. Cada produto &eacute; desenvolvido com rigorosos padr&otilde;es de controle, garantindo sabor, seguran&ccedil;a e desempenho para os mais diversos segmentos do mercado.</p>
+        <p><strong>S&ocirc; Minas: tradi&ccedil;&atilde;o, qualidade e confian&ccedil;a em cada produto.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diferenciais -->
+  <section class="section">
+    <div class="section-inner">
+      <div style="text-align: center;">
+        <span class="section-label">Por que S&ocirc; Minas</span>
+        <h2 class="section-title" style="margin-left: auto; margin-right: auto;">Nosso compromisso</h2>
+      </div>
+      <div class="diferenciais-grid">
+        <div class="diferencial">
+          <div class="diferencial-icon" role="img" aria-label="Troféu">&#127942;</div>
+          <div class="diferencial-title">Qualidade Garantida</div>
+          <div class="diferencial-desc">Rigorosos padr&otilde;es de controle em todas as etapas de produ&ccedil;&atilde;o.</div>
+        </div>
+        <div class="diferencial">
+          <div class="diferencial-icon" role="img" aria-label="Folha">&#127807;</div>
+          <div class="diferencial-title">Frescor do Campo</div>
+          <div class="diferencial-desc">Mat&eacute;ria-prima selecionada, direto das melhores fazendas de Minas.</div>
+        </div>
+        <div class="diferencial">
+          <div class="diferencial-icon" role="img" aria-label="Reciclagem">&#9851;</div>
+          <div class="diferencial-title">Sustentabilidade</div>
+          <div class="diferencial-desc">Parceira euReciclo, comprometida com a log&iacute;stica reversa de embalagens.</div>
+        </div>
+        <div class="diferencial">
+          <div class="diferencial-icon" role="img" aria-label="Aperto de m&atilde;os">&#129309;</div>
+          <div class="diferencial-title">Confian&ccedil;a</div>
+          <div class="diferencial-desc">Presen&ccedil;a consolidada em todo o Sudeste, do varejo ao food service.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Imprensa -->
+  <section class="section imprensa" id="imprensa">
+    <div class="section-inner">
+      <div style="text-align: center;">
+        <span class="section-label">Na imprensa</span>
+        <h2 class="section-title" style="margin-left: auto; margin-right: auto;">Reconhecimento e credibilidade</h2>
+      </div>
+      <div class="imprensa-grid">
+        <a href="https://www.estadao.com.br/paladar/comida/qual-o-melhor-creme-de-leite-fresco-do-brasil/" target="_blank" rel="noopener" class="imprensa-card">
+          <div class="imprensa-fonte">Estad&atilde;o Paladar</div>
+          <div class="imprensa-titulo">Mat&eacute;ria sobre os melhores cremes de leite fresco do Brasil, com destaque para a qualidade dos produtos l&aacute;cteos nacionais.</div>
+          <span class="imprensa-link">Ler mat&eacute;ria</span>
+        </a>
+        <a href="https://embalagemmarca.com.br/embalagem-manteigas/" target="_blank" rel="noopener" class="imprensa-card">
+          <div class="imprensa-fonte">Embalagem Marca</div>
+          <div class="imprensa-titulo">Reportagem sobre o mercado de manteigas no Brasil, embalagens e tend&ecirc;ncias do setor de latic&iacute;nios.</div>
+          <span class="imprensa-link">Ler mat&eacute;ria</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="contato">
+    <span class="section-label">Entre em contato</span>
+    <h2 class="section-title">Quer conhecer nossos produtos?</h2>
+    <p>Entre em contato para informa&ccedil;&otilde;es sobre distribui&ccedil;&atilde;o, parcerias comerciais ou pedidos para food service.</p>
+    <div class="hero-buttons">
+      <a href="https://www.instagram.com/laticinios.sominas" target="_blank" rel="noopener" class="btn btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.06 2.42.33 3.27 1.18.85.85 1.12 2.1 1.18 3.27.06 1.25.07 1.65.07 4.85s0 3.6-.07 4.85c-.06 1.17-.33 2.42-1.18 3.27-.85.85-2.1 1.12-3.27 1.18-1.25.06-1.65.07-4.85.07s-3.6 0-4.85-.07c-1.17-.06-2.42-.33-3.27-1.18-.85-.85-1.12-2.1-1.18-3.27C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.85c.06-1.17.33-2.42 1.18-3.27.85-.85 2.1-1.12 3.27-1.18C7.97 2.2 8.37 2.2 12 2.2zm0 1.8c-3.14 0-3.5 0-4.74.07-.96.04-1.48.2-1.83.34-.46.18-.78.39-1.13.74-.35.35-.56.67-.74 1.13-.14.35-.3.87-.34 1.83-.06 1.24-.07 1.6-.07 4.74s0 3.5.07 4.74c.04.96.2 1.48.34 1.83.18.46.39.78.74 1.13.35.35.67.56 1.13.74.35.14.87.3 1.83.34 1.24.06 1.6.07 4.74.07s3.5 0 4.74-.07c.96-.04 1.48-.2 1.83-.34.46-.18.78-.39 1.13-.74.35-.35.56-.67.74-1.13.14-.35.3-.87.34-1.83.06-1.24.07-1.6.07-4.74s0-3.5-.07-4.74c-.04-.96-.2-1.48-.34-1.83-.18-.46-.39-.78-.74-1.13-.35-.35-.67-.56-1.13-.74-.35-.14-.87-.3-1.83-.34C15.5 4 15.14 4 12 4zm0 3.05A4.95 4.95 0 1 1 12 16.95 4.95 4.95 0 0 1 12 7.05zm0 1.8a3.15 3.15 0 1 0 0 6.3 3.15 3.15 0 0 0 0-6.3zm5.15-2.05a1.16 1.16 0 1 1 0 2.32 1.16 1.16 0 0 1 0-2.32z"/></svg>
+        @laticinios.sominas
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="img/logo.png" alt="Laticínios Sô Minas">
+          <p>Tradi&ccedil;&atilde;o, qualidade e confian&ccedil;a em cada produto. Desde 2012 levando o melhor de Minas Gerais para sua mesa.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/laticinios.sominas" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.06 2.42.33 3.27 1.18.85.85 1.12 2.1 1.18 3.27.06 1.25.07 1.65.07 4.85s0 3.6-.07 4.85c-.06 1.17-.33 2.42-1.18 3.27-.85.85-2.1 1.12-3.27 1.18-1.25.06-1.65.07-4.85.07s-3.6 0-4.85-.07c-1.17-.06-2.42-.33-3.27-1.18-.85-.85-1.12-2.1-1.18-3.27C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.85c.06-1.17.33-2.42 1.18-3.27.85-.85 2.1-1.12 3.27-1.18C7.97 2.2 8.37 2.2 12 2.2zm0 1.8c-3.14 0-3.5 0-4.74.07-.96.04-1.48.2-1.83.34-.46.18-.78.39-1.13.74-.35.35-.56.67-.74 1.13-.14.35-.3.87-.34 1.83-.06 1.24-.07 1.6-.07 4.74s0 3.5.07 4.74c.04.96.2 1.48.34 1.83.18.46.39.78.74 1.13.35.35.67.56 1.13.74.35.14.87.3 1.83.34 1.24.06 1.6.07 4.74.07s3.5 0 4.74-.07c.96-.04 1.48-.2 1.83-.34.46-.18.78-.39 1.13-.74.35-.35.56-.67.74-1.13.14-.35.3-.87.34-1.83.06-1.24.07-1.6.07-4.74s0-3.5-.07-4.74c-.04-.96-.2-1.48-.34-1.83-.18-.46-.39-.78-.74-1.13-.35-.35-.67-.56-1.13-.74-.35-.14-.87-.3-1.83-.34C15.5 4 15.14 4 12 4zm0 3.05A4.95 4.95 0 1 1 12 16.95 4.95 4.95 0 0 1 12 7.05zm0 1.8a3.15 3.15 0 1 0 0 6.3 3.15 3.15 0 0 0 0-6.3zm5.15-2.05a1.16 1.16 0 1 1 0 2.32 1.16 1.16 0 0 1 0-2.32z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4>Navega&ccedil;&atilde;o</h4>
+          <ul class="footer-links">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#imprensa">Imprensa</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Redes Sociais</h4>
+          <ul class="footer-links">
+            <li><a href="https://www.instagram.com/laticinios.sominas" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Latic&iacute;nios S&ocirc; Minas. Todos os direitos reservados.</span>
+        <div class="footer-selos">
+          <div class="footer-selo">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span>Parceira euReciclo</span>
+          </div>
+          <div id="ra-verified-seal"><script type="text/javascript" id="ra-embed-verified-seal" src="https://s3.amazonaws.com/raichu-beta/ra-verified/bundle.js" data-id="YU1Rel9nQzRINW85RmdjeTpzby1taW5hc18xMjA1MjA4" data-target="ra-verified-seal" data-model="compact_1"></script></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function () {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    function toggleMenu() {
+      document.getElementById('nav').classList.toggle('open');
+    }
+
+    document.querySelectorAll('.nav a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        document.getElementById('nav').classList.remove('open');
+      });
+    });
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+SCRIPT — ABORDAGEM FRIA (lista fria, nunca teve contato com a Kortex)
+======================================================================
+
+Regra principal: a pessoa não sabe quem você é. A primeira mensagem
+precisa dizer rápido quem fala e por que tá mandando, sem parecer
+spam e sem vender de cara. Sempre curto. Sempre termina com pergunta
+fácil de responder.
+
+----------------------------------------------------------------------
+MENSAGEM 1 — ABERTURA (escolher uma variação conforme o que achar)
+----------------------------------------------------------------------
+
+[Variação A — empresa sem site]
+Oi [Nome], tudo bem? Me chamo [seu nome], trabalho com a Kortex.
+Vi a [Empresa] e reparei que vocês ainda não têm um site — hoje isso
+custa cliente que pesquisa antes de comprar.
+Faço site rápido, fica pronto em poucos dias. Posso te mostrar como
+ficaria o de vocês?
+
+[Variação B — site velho/quebrado]
+Oi [Nome], tudo bem? Me chamo [seu nome], trabalho com a Kortex.
+Vi o site da [Empresa] e reparei que ele tá meio parado/desatualizado
+— isso passa pouca confiança pra quem chega pesquisando.
+Faço esse tipo de coisa rápido, em poucos dias já fica no ar
+atualizado. Posso te mostrar uma ideia?
+
+[Variação C — aparece mal no Google / sem perfil]
+Oi [Nome], tudo bem? Me chamo [seu nome], trabalho com a Kortex.
+Fui pesquisar a [Empresa] no Google e quase não achei nada — sem
+site, sem ficha completa. Isso faz perder cliente que nem chega a
+te conhecer.
+Resolvo esse tipo de coisa rápido. Posso te mostrar como seria?
+
+----------------------------------------------------------------------
+SE RESPONDER "QUEM É VOCÊ" / "COMO ASSIM KORTEX" (lista fria sempre pergunta isso)
+----------------------------------------------------------------------
+Claro! A Kortex monta site, estrutura comercial e automação pra
+empresa vender mais — a gente entra, faz e entrega, sem enrolação.
+Não é agência de pacote nem curso, é implementação mesmo.
+No caso de vocês, o que eu vi foi a questão do site. Faz sentido eu
+te mostrar uma proposta?
+
+----------------------------------------------------------------------
+SE RESPONDER "SIM" / "MANDA" / "PODE FALAR"
+----------------------------------------------------------------------
+Show. Me conta rápido: o que vocês vendem e qual seria o principal
+objetivo do site — vender direto, captar contato, ou só passar
+credibilidade?
+
+----------------------------------------------------------------------
+SE RESPONDER "QUANTO CUSTA"
+----------------------------------------------------------------------
+Depende do tamanho do site, mas pra te dar uma referência: página
+única fica entre R$800-1.500, site institucional completo
+R$1.500-3.000. Fica pronto em 2 a 7 dias.
+Quer que eu monte uma proposta certinha pro seu caso? Me conta
+rapidinho o que vocês fazem.
+
+----------------------------------------------------------------------
+SE NÃO RESPONDER (follow-up único, 24h depois — não insistir mais que isso)
+----------------------------------------------------------------------
+Oi [Nome], só voltando aqui — fica à disposição se quiser ver como
+ficaria o site de vocês. É rápido de implementar e sem compromisso
+pra você ver a proposta. 👍
+
+----------------------------------------------------------------------
+SE RESPONDER "NÃO TENHO INTERESSE" / IGNORAR DE VEZ
+----------------------------------------------------------------------
+Não marcar como objeção a trabalhar — marcar como "frio" e não
+insistir. Lista fria tem taxa de recusa alta, isso é normal.
+
+======================================================================
+LEMBRETES RÁPIDOS
+======================================================================
+- Sempre se identificar (nome + "trabalho com a Kortex") já na
+  primeira mensagem — quem nunca te viu precisa saber quem fala.
+- Nunca mandar mensagem genérica tipo "oi, vi seu perfil" sem
+  observação real sobre o negócio. Lista fria desconfia de mensagem
+  copiada.
+- Nunca usar "marketing digital", "presença digital", "transformação
+  digital".
+- Uma pergunta por vez. Nunca mandar bloco de texto grande.
+- Se a pessoa qualificar (responder com interesse real), seguir pro
+  fluxo normal de qualificação e proposta.

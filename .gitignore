@@ -18,6 +18,13 @@ dados/*.pdf
 dados/*.json
 !dados/README.md
 
+# Arquivos de acesso dos clientes (senhas e credenciais)
+**/Acessos.md
+
 # Sistema
 .DS_Store
 node_modules/
+
+# Repositórios git próprios, aninhados dentro de pastas de cliente
+# (já versionados/hospedados separadamente — não devem ser rastreados aqui)
+clientes/joao-ferret/Elo Jurídico OS/

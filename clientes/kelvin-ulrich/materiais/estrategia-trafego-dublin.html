@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estratégia Meta Ads — Tatuagem Dublin · Gestor Kelvin</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:  #0a0a0a;
+      --ink:    #111111;
+      --soft:   #374151;
+      --muted:  #6b7280;
+      --blue:   #38bdf8;
+      --bdim:   rgba(56,189,248,.15);
+      --bborder:rgba(56,189,248,.25);
+      --bpale:  #f0faff;
+      --border: #e5e7eb;
+      --surface:#f8f8f8;
+      --white:  #ffffff;
+    }
+
+    html { font-family: 'Inter', sans-serif; font-size: 13px; }
+    body { background: #e9e9e9; color: var(--ink); line-height: 1.6; }
+
+    .doc { max-width: 760px; margin: 0 auto; background: var(--white); box-shadow: 0 0 48px rgba(0,0,0,.15); }
+
+    /* CAPA */
+    .cover {
+      background: var(--black); padding: 68px 64px 56px;
+      position: relative; overflow: hidden;
+    }
+    .cover::before {
+      content: ''; position: absolute; top: -80px; right: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(56,189,248,.18) 0%, transparent 65%);
+      border-radius: 50%;
+    }
+    .cover::after {
+      content: ''; position: absolute; bottom: -60px; left: -60px;
+      width: 340px; height: 340px;
+      background: radial-gradient(circle, rgba(56,189,248,.10) 0%, transparent 65%);
+      border-radius: 50%;
+    }
+    .cover-top {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 56px; position: relative; z-index: 1;
+    }
+    .cover-badge {
+      background: var(--bdim); border: 1px solid var(--bborder); color: var(--blue);
+      font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+      padding: 6px 16px; border-radius: 50px;
+    }
+    .cover-meta { font-size: 11px; color: rgba(255,255,255,.25); text-align: right; }
+    .cover-meta strong { display: block; color: rgba(255,255,255,.55); font-weight: 600; font-size: 12px; margin-bottom: 2px; }
+
+    .cover-body { position: relative; z-index: 1; }
+    .cover-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue); margin-bottom: 16px; }
+    .cover-title { color: #fff; font-size: 38px; font-weight: 800; line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 18px; }
+    .cover-title span { color: var(--blue); display: block; }
+    .cover-desc { font-size: 13.5px; color: rgba(255,255,255,.42); line-height: 1.75; max-width: 460px; margin-bottom: 36px; }
+    .cover-pills { display: flex; gap: 10px; flex-wrap: wrap; }
+    .cover-pill {
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+      color: rgba(255,255,255,.42); font-size: 11px; font-weight: 500;
+      padding: 5px 14px; border-radius: 99px;
+    }
+    .cover-footer {
+      margin-top: 48px; padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,.07);
+      display: flex; align-items: center; justify-content: space-between;
+      position: relative; z-index: 1;
+    }
+    .cover-footer-left { display: flex; align-items: center; gap: 12px; }
+    .cover-footer-line { width: 28px; height: 1px; background: rgba(255,255,255,.15); }
+    .cover-footer-text { color: rgba(255,255,255,.2); font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; }
+    .cover-footer-brand { color: var(--blue); font-size: 11px; font-weight: 700; letter-spacing: 1px; }
+
+    /* RULE */
+    .rule { height: 2px; background: linear-gradient(90deg, var(--black) 0%, var(--blue) 50%, var(--black) 100%); }
+
+    /* PAGES */
+    .page { padding: 44px 64px; }
+    .page + .page { border-top: 1px solid var(--border); }
+    .page.alt { background: var(--surface); }
+
+    /* SEC HEADER */
+    .sec-header { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .sec-box {
+      width: 36px; height: 36px; border-radius: 9px;
+      background: var(--black); color: var(--blue);
+      font-size: 11px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .sec-labels { display: flex; flex-direction: column; gap: 1px; }
+    .sec-tag { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--blue); }
+    .sec-title { font-size: 16px; font-weight: 700; color: var(--ink); line-height: 1.2; }
+
+    /* TEXT */
+    .lead { font-size: 13px; color: var(--soft); line-height: 1.8; margin-bottom: 20px; }
+    h3 { font-size: 12.5px; font-weight: 700; color: var(--ink); margin: 20px 0 8px; }
+    p  { font-size: 13px; color: var(--soft); line-height: 1.75; margin-bottom: 10px; }
+    ul, ol { padding-left: 18px; margin-bottom: 12px; }
+    li { font-size: 12.5px; color: var(--soft); line-height: 1.7; margin-bottom: 4px; }
+    li strong { color: var(--ink); }
+    strong { color: var(--ink); }
+
+    /* BOXES */
+    .box-blue {
+      background: var(--bpale); border: 1px solid var(--bborder);
+      border-left: 3px solid var(--blue);
+      border-radius: 10px; padding: 14px 18px; margin: 16px 0;
+    }
+    .box-blue p { color: #0369a1; margin: 0; font-size: 12.5px; }
+    .box-blue p strong { color: #0c4a6e; }
+
+    .box-dark {
+      background: var(--black); border-radius: 12px;
+      padding: 18px 22px; margin: 16px 0;
+    }
+    .box-dark p { color: rgba(255,255,255,.5); margin: 0; font-size: 12.5px; }
+    .box-dark p strong { color: #fff; }
+
+    /* TABLE */
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 12px; }
+    thead tr { background: var(--black); }
+    thead th {
+      padding: 11px 14px; text-align: left; color: #fff;
+      font-size: 9.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    }
+    thead th:first-child { border-radius: 8px 0 0 0; }
+    thead th:last-child  { border-radius: 0 8px 0 0; }
+    tbody tr { border-bottom: 1px solid var(--border); }
+    tbody tr:last-child  { border-bottom: none; }
+    tbody tr:nth-child(even) { background: var(--surface); }
+    td { padding: 10px 14px; color: var(--soft); vertical-align: top; }
+    td:first-child { font-weight: 600; color: var(--ink); }
+
+    /* FRONT CARDS */
+    .fronts { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
+    .front { border-radius: 12px; padding: 20px 22px; }
+    .front.a { background: var(--black); }
+    .front.b { background: var(--surface); border: 1.5px solid var(--border); }
+    .front-tag {
+      font-size: 9px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+      padding: 3px 9px; border-radius: 50px; display: inline-block; margin-bottom: 10px;
+    }
+    .front.a .front-tag { background: var(--bdim); color: var(--blue); }
+    .front.b .front-tag { background: var(--bdim); color: #0284c7; }
+    .front h3 { font-size: 13px; font-weight: 800; margin: 0 0 5px; }
+    .front.a h3 { color: #fff; }
+    .front.b h3 { color: var(--ink); }
+    .front-ticket { font-size: 22px; font-weight: 900; letter-spacing: -1px; line-height: 1; margin-bottom: 12px; }
+    .front.a .front-ticket { color: var(--blue); }
+    .front.b .front-ticket { color: #0284c7; }
+    .front-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 5px; }
+    .front-list li { font-size: 11.5px; line-height: 1.5; margin: 0; display: flex; align-items: flex-start; gap: 7px; }
+    .front.a .front-list li { color: rgba(255,255,255,.6); }
+    .front.b .front-list li { color: var(--soft); }
+    .front-list li::before { content: '—'; font-weight: 700; flex-shrink: 0; }
+    .front.a .front-list li::before { color: var(--blue); }
+    .front.b .front-list li::before { color: #38bdf8; }
+
+    /* ROI */
+    .roi-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 16px 0; }
+    .roi-card { border-radius: 12px; padding: 18px 14px; text-align: center; }
+    .roi-card.a { background: var(--surface); border: 1.5px solid var(--border); }
+    .roi-card.b { background: var(--bpale); border: 1.5px solid var(--bborder); }
+    .roi-card.c { background: var(--black); }
+    .roi-num { font-size: 24px; font-weight: 900; letter-spacing: -1px; line-height: 1; margin-bottom: 4px; }
+    .roi-card.a .roi-num { color: var(--ink); }
+    .roi-card.b .roi-num { color: #0284c7; }
+    .roi-card.c .roi-num { color: var(--blue); }
+    .roi-lbl { font-size: 11px; font-weight: 600; }
+    .roi-card.a .roi-lbl { color: var(--muted); }
+    .roi-card.b .roi-lbl { color: #0369a1; }
+    .roi-card.c .roi-lbl { color: rgba(255,255,255,.45); }
+    .roi-sub { font-size: 10px; margin-top: 4px; }
+    .roi-card.a .roi-sub { color: var(--muted); }
+    .roi-card.b .roi-sub { color: #0369a1; opacity: .75; }
+    .roi-card.c .roi-sub { color: rgba(255,255,255,.28); }
+
+    .roi-equacao {
+      background: var(--black); border-radius: 12px;
+      padding: 22px 26px; margin: 16px 0;
+      display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; align-items: center; gap: 16px;
+    }
+    .roi-equacao-item { text-align: center; }
+    .roi-equacao-num { font-size: 22px; font-weight: 900; color: var(--blue); letter-spacing: -1px; }
+    .roi-equacao-label { font-size: 10.5px; color: rgba(255,255,255,.4); margin-top: 3px; }
+    .roi-equacao-op { font-size: 22px; font-weight: 300; color: rgba(255,255,255,.2); }
+
+    /* SCRIPT */
+    .script-block {
+      background: var(--surface); border: 1.5px solid var(--border);
+      border-radius: 12px; padding: 18px 20px; margin-bottom: 12px;
+    }
+    .script-eyebrow { font-size: 9px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
+    .script-block h3 { font-size: 12px; margin: 0 0 10px; }
+    .msg-bubble {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 8px; padding: 12px 16px;
+      font-size: 12.5px; color: var(--soft); line-height: 1.7; font-style: italic;
+    }
+    .msg-bubble strong { font-style: normal; color: var(--ink); }
+    .script-note { font-size: 11px; color: var(--muted); margin-top: 6px; margin-bottom: 0; }
+
+    /* TIMELINE */
+    .timeline { display: flex; flex-direction: column; }
+    .tl-item { display: flex; gap: 16px; }
+    .tl-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 40px; }
+    .tl-dot {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--surface); border: 1.5px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; font-weight: 800; color: var(--muted); flex-shrink: 0;
+    }
+    .tl-dot.on  { background: var(--black); border-color: var(--black); color: var(--blue); }
+    .tl-dot.go  { background: var(--blue);  border-color: var(--blue);  color: var(--black); }
+    .tl-line { width: 2px; flex: 1; min-height: 14px; background: var(--border); margin: 3px 0; }
+    .tl-item:last-child .tl-line { display: none; }
+    .tl-body { padding: 6px 0 22px; }
+    .tl-day { font-size: 9px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 3px; }
+    .tl-title { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 3px; }
+    .tl-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+    .tl-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 7px; }
+    .chip { background: var(--surface); border: 1px solid var(--border); color: var(--muted); font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 99px; }
+    .chip.hi { background: var(--bdim); border-color: var(--bborder); color: #0284c7; }
+
+    /* FOOTER */
+    .doc-footer {
+      background: var(--black); padding: 22px 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .doc-footer-brand { color: var(--blue); font-size: 11px; font-weight: 700; letter-spacing: 1px; }
+    .doc-footer-right { font-size: 11px; color: rgba(255,255,255,.2); text-align: right; }
+
+    @media print {
+      body { background: white; }
+      .doc { max-width: 100%; box-shadow: none; }
+      .page { padding: 36px 52px; }
+      .cover { padding: 52px 52px 44px; }
+    }
+  </style>
+</head>
+<body>
+<div class="doc">
+
+  <!-- CAPA -->
+  <div class="cover">
+    <div class="cover-top">
+      <div class="cover-badge">Plano de Ação · Meta Ads</div>
+      <div class="cover-meta">
+        <strong>Dublin, Irlanda</strong>
+        Documento Confidencial
+      </div>
+    </div>
+    <div class="cover-body">
+      <div class="cover-eyebrow">Gestão de Tráfego Pago</div>
+      <h1 class="cover-title">
+        Estratégia de Captação<br />de Clientes via
+        <span>Meta Ads</span>
+      </h1>
+      <p class="cover-desc">
+        Anúncios rodando no Brasil, pagos em Real, atraindo clientes em Dublin e recebendo em Euro. Dois públicos, duas frentes, um resultado.
+      </p>
+      <div class="cover-pills">
+        <span class="cover-pill">Instagram & Facebook Ads</span>
+        <span class="cover-pill">Preto e Cinza</span>
+        <span class="cover-pill">Flash Tattoos</span>
+        <span class="cover-pill">Europeus + Brasileiros em Dublin</span>
+      </div>
+    </div>
+    <div class="cover-footer">
+      <div class="cover-footer-left">
+        <div class="cover-footer-line"></div>
+        <div class="cover-footer-text">Para uso exclusivo do cliente</div>
+      </div>
+      <div class="cover-footer-brand">GESTOR KELVIN</div>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <!-- 01 — CENÁRIO -->
+  <div class="page">
+    <div class="sec-header">
+      <div class="sec-box">01</div>
+      <div class="sec-labels">
+        <span class="sec-tag">Cenário e Oportunidade</span>
+        <span class="sec-title">Por que Dublin faz sentido</span>
+      </div>
+    </div>
+
+    <p class="lead">Dublin tem alta renda per capita, cultura de tatuagem consolidada e dois públicos distintos que consomem de formas diferentes — e o portfólio em Preto e Cinza se encaixa perfeitamente nos dois.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Público</th>
+          <th>Perfil</th>
+          <th>O que busca</th>
+          <th>Ticket médio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Irlandeses e Europeus</td>
+          <td>22–45 anos, renda alta, decisão planejada</td>
+          <td>Qualidade técnica, portfólio sólido, artista referência</td>
+          <td>€200 – €500+</td>
+        </tr>
+        <tr>
+          <td>Brasileiros em Dublin</td>
+          <td>Intercambistas e residentes, ativos em redes</td>
+          <td>Conexão cultural, confiança, rapidez</td>
+          <td>€60 – €120</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="box-blue">
+      <p><strong>O diferencial da conta do Brasil:</strong> você anuncia pagando em Real, mas seu cliente paga em Euro. A relação de câmbio (R$ 1 = €0,15) transforma um investimento pequeno em Real num retorno alto em Euro.</p>
+    </div>
+  </div>
+
+  <!-- 02 — ESTRATÉGIA -->
+  <div class="page alt">
+    <div class="sec-header">
+      <div class="sec-box">02</div>
+      <div class="sec-labels">
+        <span class="sec-tag">As Duas Frentes</span>
+        <span class="sec-title">Campanhas rodando em paralelo</span>
+      </div>
+    </div>
+
+    <div class="fronts">
+      <div class="front a">
+        <span class="front-tag">Frente A</span>
+        <h3>Preto e Cinza<br />Alto Ticket</h3>
+        <div class="front-ticket">€200 – €500+</div>
+        <ul class="front-list">
+          <li>Fechamentos, meias-mangas, projetos de sessão múltipla</li>
+          <li>Tom: exclusividade, arte, identidade</li>
+          <li>Público: europeus 25–45 anos</li>
+          <li>Decisão planejada — construção de autoridade</li>
+        </ul>
+      </div>
+      <div class="front b">
+        <span class="front-tag">Frente B</span>
+        <h3>Flash e Rápidas<br />Giro de Caixa</h3>
+        <div class="front-ticket">€60 – €120</div>
+        <ul class="front-list">
+          <li>Minimalistas, palavras, flash disponíveis</li>
+          <li>Tom: urgência, conveniência, agora</li>
+          <li>Público: brasileiros + jovens europeus 18–30</li>
+          <li>Decisão no mesmo dia, fecha no Direct</li>
+        </ul>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr><th>Critério</th><th>Frente A</th><th>Frente B</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Objetivo do anúncio</td><td>Mensagens + tráfego para portfólio</td><td>Mensagens diretas</td></tr>
+        <tr><td>Formato</td><td>Reel de processo + carrossel portfólio</td><td>Foto/vídeo direto + Stories com CTA</td></tr>
+        <tr><td>CTA</td><td>"Solicite seu projeto personalizado"</td><td>"Ainda tenho horário essa semana"</td></tr>
+        <tr><td>Tempo de decisão</td><td>Dias a semanas</td><td>Horas ou mesmo dia</td></tr>
+      </tbody>
+    </table>
+
+    <div class="box-dark">
+      <p><strong>A lógica:</strong> a Frente B paga o investimento mensal com as tattoos pequenas. A Frente A constrói autoridade e traz os projetos grandes que alavancam o faturamento.</p>
+    </div>
+  </div>
+
+  <!-- 03 — CRIATIVOS -->
+  <div class="page">
+    <div class="sec-header">
+      <div class="sec-box">03</div>
+      <div class="sec-labels">
+        <span class="sec-tag">Criativos</span>
+        <span class="sec-title">O que gravar e fotografar</span>
+      </div>
+    </div>
+
+    <p class="lead">Não precisa de equipamento profissional — iPhone com boa iluminação já resolve. O hábito é o que importa: grave sempre que fizer uma tattoo.</p>
+
+    <h3>Frente A — Preto e Cinza</h3>
+    <ul>
+      <li><strong>Close no sombreado em andamento</strong> — 15 a 30s mostrando textura e profundidade</li>
+      <li><strong>Processo do decalque ao resultado final</strong> — antes/depois em carrossel</li>
+      <li><strong>Ambiente do estúdio</strong> — organização e biossegurança transmitem confiança</li>
+      <li><strong>Reel do processo completo</strong> — do esboço ao wrap em 30–60s com música</li>
+    </ul>
+
+    <h3>Frente B — Flash e Rápidas</h3>
+    <ul>
+      <li><strong>Carrossel de flash disponíveis com preço visível</strong> — cliente chega já decidido</li>
+      <li><strong>Reel de 7 a 15s</strong> — tattoo pequena sendo feita, dinâmico e direto</li>
+      <li><strong>Tattoo cicatrizada no cliente</strong> — foto 2 a 4 semanas depois gera confiança</li>
+      <li><strong>Story de disponibilidade</strong> — agenda aberta + CTA para o Direct</li>
+    </ul>
+
+    <div class="box-blue">
+      <p><strong>Regra de ouro:</strong> antes de limpar a tattoo, grave o close. São 30 segundos que viram semanas de conteúdo para os anúncios.</p>
+    </div>
+  </div>
+
+  <!-- 04 — ORÇAMENTO E ROI -->
+  <div class="page alt">
+    <div class="sec-header">
+      <div class="sec-box">04</div>
+      <div class="sec-labels">
+        <span class="sec-tag">Orçamento e Retorno</span>
+        <span class="sec-title">Investimento em Real, retorno em Euro</span>
+      </div>
+    </div>
+
+    <p class="lead">A conta de anúncios fica no Brasil e é cobrada em Real. O público é Dublin — e recebe em Euro. Essa diferença de câmbio é a maior vantagem da operação.</p>
+
+    <div class="roi-row">
+      <div class="roi-card a">
+        <div class="roi-num">R$ 60–100</div>
+        <div class="roi-lbl">por dia em anúncios</div>
+        <div class="roi-sub">≈ €10–15/dia na cotação atual</div>
+      </div>
+      <div class="roi-card b">
+        <div class="roi-num">R$ 1.800–3.000</div>
+        <div class="roi-lbl">investimento mensal</div>
+        <div class="roi-sub">30 dias de campanha ativa</div>
+      </div>
+      <div class="roi-card c">
+        <div class="roi-num">€60–80</div>
+        <div class="roi-lbl">ticket de 1 tattoo pequena</div>
+        <div class="roi-sub">≈ R$ 390–520 por tattoo</div>
+      </div>
+    </div>
+
+    <h3>Como o retorno se paga</h3>
+    <div class="roi-equacao">
+      <div class="roi-equacao-item">
+        <div class="roi-equacao-num">R$ 2.400</div>
+        <div class="roi-equacao-label">investimento/mês</div>
+      </div>
+      <div class="roi-equacao-op">→</div>
+      <div class="roi-equacao-item">
+        <div class="roi-equacao-num">5 tattoos pequenas</div>
+        <div class="roi-equacao-label">€70 × 5 = €350 ≈ R$ 2.275</div>
+      </div>
+      <div class="roi-equacao-op">+</div>
+      <div class="roi-equacao-item">
+        <div class="roi-equacao-num">1 projeto grande</div>
+        <div class="roi-equacao-label">€350 ≈ R$ 2.275</div>
+      </div>
+    </div>
+
+    <div class="box-blue">
+      <p><strong>Resultado estimado no mês:</strong> receita em torno de €700 (≈ R$ 4.550) com investimento de R$ 2.400 — retorno de quase 2x apenas com os mínimos. Projetos maiores ou mais conversões ampliam esse número rapidamente.</p>
+    </div>
+
+    <h3>Escala progressiva</h3>
+    <table>
+      <thead>
+        <tr><th>Fase</th><th>Investimento/dia (R$)</th><th>Equivalente em €</th><th>Objetivo</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Testes</td><td>R$ 60 – R$ 100</td><td>≈ €10 – €15</td><td>Descobrir criativos e públicos que convertem</td></tr>
+        <tr><td>Otimização</td><td>R$ 100 – R$ 160</td><td>≈ €15 – €25</td><td>Escalar o que performou</td></tr>
+        <tr><td>Escala</td><td>R$ 160 – R$ 320+</td><td>≈ €25 – €50+</td><td>Agenda cheia com fluxo constante</td></tr>
+      </tbody>
+    </table>
+
+    <div class="box-dark">
+      <p><strong>Perspectiva:</strong> R$ 2.400/mês é o custo de uma diária de hotel ou um jantar especial. Para um tatuador recebendo em euro em Dublin, é o menor custo de aquisição de cliente possível — e eles chegam qualificados, já interessados no estilo anunciado.</p>
+    </div>
+  </div>
+
+  <!-- 05 — ATENDIMENTO -->
+  <div class="page">
+    <div class="sec-header">
+      <div class="sec-box">05</div>
+      <div class="sec-labels">
+        <span class="sec-tag">Atendimento Comercial</span>
+        <span class="sec-title">Responder certo, na hora certa</span>
+      </div>
+    </div>
+
+    <p class="lead">O anúncio traz a mensagem — o atendimento fecha a venda. Responder em até 2h e com o tom certo para cada público é o que separa quem agenda de quem perde o cliente.</p>
+
+    <h3>Cliente europeu vs. cliente brasileiro</h3>
+    <table>
+      <thead>
+        <tr><th>Aspecto</th><th>Europeu / Irlandês</th><th>Brasileiro</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Tom</td><td>Direto, objetivo, profissional</td><td>Acolhedor, conexão antes de fechar</td></tr>
+        <tr><td>Idioma</td><td>Inglês obrigatório</td><td>Português cria confiança imediata</td></tr>
+        <tr><td>Decisão</td><td>Horas, se gostar do portfólio</td><td>Mais perguntas antes de confirmar</td></tr>
+        <tr><td>CTA que funciona</td><td>Data específica: "quinta e sexta"</td><td>Escassez: "ainda tenho hoje"</td></tr>
+      </tbody>
+    </table>
+
+    <div class="script-block">
+      <div class="script-eyebrow">Script 01 — Para clientes europeus (inglês)</div>
+      <h3>Flash tattoo / trabalho pequeno</h3>
+      <div class="msg-bubble">
+        Hi! Thanks for reaching out. Could you share a reference or describe what you have in mind? What size and placement are you thinking? I still have availability <strong>this week (Thursday and Friday)</strong> — just let me know and we can lock it in!
+      </div>
+      <p class="script-note">Direto ao ponto, datas específicas, próximo passo claro.</p>
+    </div>
+
+    <div class="script-block">
+      <div class="script-eyebrow">Script 02 — Para clientes brasileiros (português)</div>
+      <h3>Tattoo / projeto qualquer</h3>
+      <div class="msg-bubble">
+        Oi! Me conta mais — tamanho, local no corpo e manda uma referência se tiver. Tenho horários <strong>ainda essa semana</strong>, a gente encaixa sim! Qualquer dúvida sobre o processo ou cicatrização pode perguntar à vontade.
+      </div>
+      <p class="script-note">Acolhedor, abre espaço para perguntas, já menciona disponibilidade.</p>
+    </div>
+  </div>
+
+  <!-- 06 — CRONOGRAMA -->
+  <div class="page alt">
+    <div class="sec-header">
+      <div class="sec-box">06</div>
+      <div class="sec-labels">
+        <span class="sec-tag">Cronograma</span>
+        <span class="sec-title">7 dias do zero ao lançamento</span>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot on">D1</div><div class="tl-line"></div></div>
+        <div class="tl-body">
+          <div class="tl-day">Dia 1</div>
+          <div class="tl-title">Perfil e Estratégia</div>
+          <p class="tl-desc">Bio bilíngue (inglês + português), link na bio funcional, destaques organizados (portfólio, processo, flash, localização).</p>
+          <div class="tl-chips"><span class="chip">Bio bilíngue</span><span class="chip">Destaques</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot on">D2</div><div class="tl-line"></div></div>
+        <div class="tl-body">
+          <div class="tl-day">Dia 2</div>
+          <div class="tl-title">Produção de Criativos</div>
+          <p class="tl-desc">Gravar vídeos de processo, selecionar fotos de portfólio, organizar flash disponíveis.</p>
+          <div class="tl-chips"><span class="chip hi">Vídeos</span><span class="chip hi">Carrossel</span><span class="chip hi">Flash</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot">D3</div><div class="tl-line"></div></div>
+        <div class="tl-body">
+          <div class="tl-day">Dia 3</div>
+          <div class="tl-title">Revisão e Aprovação dos Criativos</div>
+          <p class="tl-desc">Ajuste de copies (inglês e português), aprovação final antes da configuração.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot">D4</div><div class="tl-line"></div></div>
+        <div class="tl-body">
+          <div class="tl-day">Dia 4</div>
+          <div class="tl-title">Configuração Técnica</div>
+          <p class="tl-desc">Meta Business Manager: conta em Real (R$), fuso horário Dublin (GMT+1), Meta Pixel, método de pagamento.</p>
+          <div class="tl-chips"><span class="chip">Conta em R$</span><span class="chip">GMT+1</span><span class="chip">Meta Pixel</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot">D5</div><div class="tl-line"></div></div>
+        <div class="tl-body">
+          <div class="tl-day">Dia 5</div>
+          <div class="tl-title">Criação das Campanhas</div>
+          <p class="tl-desc">Frente A (Preto e Cinza) e Frente B (Flash/Rápidas) configuradas, públicos segmentados para Dublin.</p>
+          <div class="tl-chips"><span class="chip hi">Frente A</span><span class="chip hi">Frente B</span><span class="chip hi">Dublin targeting</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot">D6</div><div class="tl-line"></div></div>
+        <div class="tl-body">
+          <div class="tl-day">Dia 6</div>
+          <div class="tl-title">Checklist Final</div>
+          <p class="tl-desc">Links, copies, segmentações, orçamentos e fluxo de atendimento no Direct revisados.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot go">D7</div><div class="tl-line"></div></div>
+        <div class="tl-body">
+          <div class="tl-day">Dia 7</div>
+          <div class="tl-title">Lançamento — Primeiros Clientes</div>
+          <p class="tl-desc">Campanhas no ar. Primeiros 7 dias são de aprendizado do algoritmo — não pausar é fundamental. Otimizações semanais a partir dos dados reais.</p>
+          <div class="tl-chips"><span class="chip hi">Campanhas ativas</span><span class="chip hi">Monitoramento D+1</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="rule"></div>
+  <div class="doc-footer">
+    <div class="doc-footer-brand">GESTOR KELVIN</div>
+    <div class="doc-footer-right">
+      Meta Ads — Dublin, Irlanda · Documento Confidencial
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

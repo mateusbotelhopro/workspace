@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estrategia Google Ads — Mextin Senior</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #091621;
+      --bg-alt: #070D10;
+      --accent: #1565D8;
+      --accent-glow: rgba(21, 101, 216, 0.2);
+      --text: #E9F0F7;
+      --text-secondary: #7E8C9A;
+      --text-muted: #647680;
+      --card-bg: rgba(7, 13, 16, 0.72);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(21, 101, 216, 0.3);
+      --font-display: Georgia, serif;
+      --font-body: 'Inter', Helvetica, Arial, sans-serif;
+      --green: #2ECC71;
+      --green-bg: rgba(46, 204, 113, 0.12);
+      --yellow: #F1C40F;
+      --yellow-bg: rgba(241, 196, 15, 0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Cover ── */
+    .cover {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cover-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+
+    .cover-title {
+      font-family: var(--font-display);
+      font-size: 56px;
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .cover-client {
+      font-family: var(--font-display);
+      font-size: 56px;
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--accent);
+      margin-bottom: 40px;
+    }
+
+    .cover-meta {
+      display: flex;
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+
+    .cover-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .cover-meta-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .cover-meta-value {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .cover-line {
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin-bottom: 32px;
+    }
+
+    .cover-author {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .cover-author strong {
+      color: var(--text);
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .section {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section:last-child { border-bottom: none; }
+
+    /* ── Typography ── */
+    .section-number {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--text);
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+
+    h3 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 16px;
+      margin-top: 40px;
+    }
+
+    h4 {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+      margin-top: 32px;
+    }
+
+    p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    p strong { color: var(--text); }
+
+    /* ── KPI Row ── */
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 32px 0;
+    }
+
+    .kpi-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 16px;
+      text-align: center;
+    }
+
+    .kpi-card:hover {
+      border-color: var(--border-accent);
+      box-shadow: 0 0 30px var(--accent-glow);
+    }
+
+    .kpi-number {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .kpi-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* ── Cards ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .card-grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 24px;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      border-color: var(--border-accent);
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .card-sub {
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .card-text {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ── Lists ── */
+    .list {
+      list-style: none;
+      margin: 16px 0;
+    }
+
+    .list li {
+      font-size: 14px;
+      color: var(--text-secondary);
+      padding: 8px 0 8px 20px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 15px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .list li strong { color: var(--text); }
+
+    /* ── Tables ── */
+    .table-wrap {
+      margin: 24px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead th {
+      background: rgba(21, 101, 216, 0.12);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    tbody td {
+      background: var(--card-bg);
+      font-size: 14px;
+      color: var(--text-secondary);
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    tbody tr:last-child td { border-bottom: none; }
+
+    tbody tr:hover td { background: rgba(21, 101, 216, 0.05); }
+
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 100px;
+      letter-spacing: 0.5px;
+    }
+
+    .tag-high { background: rgba(21, 101, 216, 0.15); color: var(--accent); }
+    .tag-medium { background: rgba(126, 140, 154, 0.15); color: var(--text-secondary); }
+    .tag-pin { background: var(--green-bg); color: var(--green); }
+
+    /* ── Campaign Block ── */
+    .campaign-block {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      margin: 24px 0;
+    }
+
+    .campaign-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .campaign-name {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .campaign-type {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .campaign-budget {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      background: rgba(21, 101, 216, 0.12);
+      padding: 6px 14px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    /* ── Ad Preview ── */
+    .ad-preview {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 16px 0;
+    }
+
+    .ad-url {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .ad-title-line {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .ad-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ── Code Block ── */
+    .code-block {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 13px;
+      color: var(--text-secondary);
+      overflow-x: auto;
+      line-height: 1.6;
+      word-break: break-all;
+    }
+
+    .code-block strong { color: var(--accent); }
+
+    /* ── Divider ── */
+    .inner-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    /* ── Timeline ── */
+    .timeline {
+      margin: 24px 0;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 24px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+
+    .timeline-item:last-child { border-bottom: none; }
+
+    .timeline-phase {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding-top: 2px;
+    }
+
+    .timeline-period {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .timeline-content {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ── Footer ── */
+    .doc-footer {
+      padding: 40px 0;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .doc-footer p {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .doc-footer strong { color: var(--text); }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .cover { padding: 60px 32px; }
+      .cover-title, .cover-client { font-size: 38px; }
+      .container { padding: 0 24px; }
+      .kpi-row { grid-template-columns: 1fr 1fr; }
+      .card-grid, .card-grid-3 { grid-template-columns: 1fr; }
+      .cover-meta { flex-direction: column; gap: 16px; }
+      h2 { font-size: 28px; }
+      .campaign-header { flex-direction: column; gap: 12px; }
+      .timeline-item { grid-template-columns: 1fr; gap: 8px; }
+    }
+
+    @media print {
+      body { background: #fff; color: #1a1a1a; }
+      .cover { min-height: auto; padding: 40px; }
+      .cover::before { display: none; }
+      .cover-title, .cover-client, h2, h3, .kpi-number, .card-title, .campaign-name { color: #1a1a1a; }
+      .cover-client, .section-number, h4, .campaign-budget, .tag-high, .timeline-phase, .ad-title-line { color: #1565D8; }
+      p, .list li, .card-text, tbody td, .timeline-content, .ad-desc { color: #444; }
+      .kpi-card, .card, .campaign-block, .ad-preview, .table-wrap { border-color: #ddd; background: #f9f9f9; }
+      thead th { background: #eef4fd; border-color: #ddd; }
+      tbody td { background: #fafafa; border-color: #eee; }
+      .section { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CAPA -->
+  <div class="cover">
+    <div class="cover-label">Estrategia de Trafego Pago</div>
+    <div class="cover-line"></div>
+    <h1 class="cover-title">Google Ads</h1>
+    <h1 class="cover-client">Mextin Senior</h1>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Cliente</span>
+        <span class="cover-meta-value">Mextin Senior</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Segmento</span>
+        <span class="cover-meta-value">Residencial Geriatrico</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Praca</span>
+        <span class="cover-meta-value">Limeira - SP</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Orcamento</span>
+        <span class="cover-meta-value">R$ 1.500/mes</span>
+      </div>
+    </div>
+    <p class="cover-author">Preparado por <strong>Mateus Botelho</strong> &mdash; Junho 2026</p>
+  </div>
+
+  <div class="container">
+
+    <!-- 01 SUMARIO -->
+    <div class="section">
+      <span class="section-number">01 &mdash; Sumario executivo</span>
+      <h2>Gerar leads qualificados para agendamento de visitas</h2>
+      <p>A Mextin Senior e um residencial geriatrico em Limeira-SP com assistencia 24 horas, Centro Dia e equipe multidisciplinar (fisioterapia, fonoaudiologia, psicologia, nutricao e gerontologia). O posicionamento e de <strong>cuidados humanizados, com afeto e presenca</strong>.</p>
+      <p>O objetivo e capturar familias que buscam ativamente uma solucao de cuidado para idosos na regiao de Limeira e cidades proximas, convertendo cliques em agendamentos de visita pelo formulario do site. Nesta fase, o investimento se concentra 100% na campanha de Residencial Geriatrico (moradia permanente), que tem maior volume de busca real e ticket mais alto. Centro Dia continua como servico no site, sem campanha dedicada por enquanto.</p>
+
+      <div class="kpi-row">
+        <div class="kpi-card">
+          <div class="kpi-number">R$ 1.5k</div>
+          <div class="kpi-label">Orcamento/mes</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-number">1</div>
+          <div class="kpi-label">Campanha Search</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-number">2</div>
+          <div class="kpi-label">Grupos de anuncio</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-number">15-30</div>
+          <div class="kpi-label">Leads estimados/mes</div>
+        </div>
+      </div>
+
+      <h4>Estrutura resumida</h4>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Campanha</th><th>Ad Group</th><th>Orcamento</th></tr>
+          </thead>
+          <tbody>
+            <tr><td rowspan="2"><strong>[SEARCH] [SP] Residencial Geriatrico</strong></td><td>01 - Residencial Geral</td><td rowspan="2">R$ 1.500/mes</td></tr>
+            <tr><td>02 - Alzheimer e Demencia</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 02 ANALISE -->
+    <div class="section">
+      <span class="section-number">02 &mdash; Analise do negocio</span>
+      <h2>Quem e a Mextin Senior e quem compra</h2>
+
+      <h3>Servicos oferecidos</h3>
+      <ul class="list">
+        <li>Residencial geriatrico com assistencia 24 horas (moradia permanente)</li>
+        <li>Centro Dia (periodo diurno para idosos que moram com a familia)</li>
+        <li>Equipe multidisciplinar: Fisioterapia, Fonoaudiologia, Psicologia, Nutricao, Gerontologia</li>
+        <li>Atendimento a pacientes com Alzheimer e outras demencias</li>
+        <li>Cuidado a pessoas acamadas e de alta complexidade</li>
+        <li>Prevencao de quedas, administracao de medicacoes, acompanhamento clinico</li>
+      </ul>
+
+      <h3>Publico-alvo</h3>
+      <p><strong>Quem decide:</strong> Filhos adultos (35-65 anos), netos ou familiares responsaveis pelo idoso. Geralmente mulheres (60-70% das buscas), com renda media-alta, em momento de crise ou transicao: o idoso nao pode mais ficar sozinho, houve uma queda, diagnostico de demencia.</p>
+      <p><strong>Momento da busca:</strong> Alta intencao de conversao. Quem pesquisa "casa de repouso em Limeira" ou "residencial geriatrico perto de mim" ja reconheceu a necessidade e esta comparando opcoes. Ciclo de decisao: 1 a 4 semanas.</p>
+
+      <h3>Regiao de atuacao</h3>
+      <p>Limeira (sede) + raio de 50-60 km: Americana, Santa Barbara d'Oeste, Piracicaba, Rio Claro, Araras, Leme, Iracemapolis, Cordeiropolis, Nova Odessa. Familiares dessas cidades buscam opcoes proximas para facilitar visitas.</p>
+    </div>
+
+    <!-- 03 CONFIGURACOES DAS CAMPANHAS -->
+    <div class="section">
+      <span class="section-number">03 &mdash; Configuracoes das campanhas</span>
+      <h2>Parametros de conta e campanha</h2>
+      <p>Configuracoes que se aplicam a campanha. Com R$ 1.500/mes, foco e 100% em Rede de Pesquisa para capturar demanda existente. Sem dispersar verba em Display ou YouTube nesta fase.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Parametro</th><th>Configuracao</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Rede</strong></td><td>Apenas Pesquisa. Desativar "Parceiros de pesquisa" e "Rede de Display"</td></tr>
+            <tr><td><strong>Estrategia de lance</strong></td><td>Maximizar Cliques com CPC maximo de R$ 5,00. Migrar para CPA Desejado apos acumular 15+ conversoes</td></tr>
+            <tr><td><strong>Localizacao</strong></td><td>Limeira + raio de 50 km (Americana, Piracicaba, Rio Claro, Araras, Leme, Santa Barbara d'Oeste)</td></tr>
+            <tr><td><strong>Modo de localizacao</strong></td><td>"Presenca: pessoas que estao ou frequentam regularmente" (NAO usar "Presenca ou interesse")</td></tr>
+            <tr><td><strong>Idioma</strong></td><td>Portugues</td></tr>
+            <tr><td><strong>Dispositivos</strong></td><td>Todos. Mobile prioridade (70%+ das buscas de saude sao mobile)</td></tr>
+            <tr><td><strong>Programacao</strong></td><td>Seg-Sab: 7h-21h (lance integral). Domingo: 7h-21h (lance -30%)</td></tr>
+            <tr><td><strong>Demografico</strong></td><td>25-65 anos. Excluir faixa 18-24 (baixa probabilidade de decisao)</td></tr>
+            <tr><td><strong>Rotacao de anuncios</strong></td><td>"Otimizar: dar preferencia aos anuncios com melhor desempenho"</td></tr>
+            <tr><td><strong>URL final</strong></td><td>mextinresidencialsenior.com.br</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Template de URL de rastreamento</h4>
+      <p>Aplicar no nivel da campanha para rastrear origem no GA4:</p>
+      <div class="code-block">
+        {lpurl}?<strong>utm_source</strong>=google&<strong>utm_medium</strong>=cpc&<strong>utm_campaign</strong>={_campaign}&<strong>utm_content</strong>={_adgroup}&<strong>utm_term</strong>={keyword}
+      </div>
+
+      <h4>Parametros personalizados</h4>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Campanha</th><th>{_campaign}</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>[SEARCH] [SP] Residencial Geriatrico</td><td>residencial-geriatrico</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Ad Group</th><th>{_adgroup}</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>01 - Residencial Geral</td><td>residencial-geral</td></tr>
+            <tr><td>02 - Alzheimer e Demencia</td><td>alzheimer-demencia</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 04 CAMPANHA 1 -->
+    <div class="section">
+      <span class="section-number">04 &mdash; Campanha</span>
+      <h2>[SEARCH] [SP] Residencial Geriatrico</h2>
+
+      <div class="kpi-row" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="kpi-card">
+          <div class="kpi-number">R$ 1.500</div>
+          <div class="kpi-label">Orcamento mensal</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-number">~R$ 50</div>
+          <div class="kpi-label">Orcamento diario</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-number">2</div>
+          <div class="kpi-label">Grupos de anuncio</div>
+        </div>
+      </div>
+
+      <p>Toda a verba concentrada aqui porque e a maior demanda real de busca e o ticket mais alto (mensalidade recorrente). Dois grupos: keywords gerais de residencial/casa de repouso e keywords especificas de Alzheimer/demencia.</p>
+
+      <!-- Ad Group 01 -->
+      <div class="campaign-block">
+        <div class="campaign-header">
+          <div>
+            <div class="campaign-name">01 - Residencial Geral</div>
+            <div class="campaign-type">Ad Group &mdash; [SEARCH] [SP] Residencial Geriatrico</div>
+          </div>
+          <span class="campaign-budget">Grupo principal</span>
+        </div>
+
+        <h4>Palavras-chave</h4>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Palavra-chave</th>
+                <th>Correspondencia</th>
+                <th>Intencao</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>"residencial geriatrico limeira"</td><td>Frase</td><td><span class="tag tag-high">Alta</span></td></tr>
+              <tr><td>"casa de repouso limeira"</td><td>Frase</td><td><span class="tag tag-high">Alta</span></td></tr>
+              <tr><td>"asilo em limeira"</td><td>Frase</td><td><span class="tag tag-high">Alta</span></td></tr>
+              <tr><td>"lar de idosos limeira"</td><td>Frase</td><td><span class="tag tag-high">Alta</span></td></tr>
+              <tr><td>"casa de repouso perto de mim"</td><td>Frase</td><td><span class="tag tag-high">Alta</span></td></tr>
+              <tr><td>"clinica geriatrica limeira"</td><td>Frase</td><td><span class="tag tag-high">Alta</span></td></tr>
+              <tr><td>"residencial para idosos limeira"</td><td>Frase</td><td><span class="tag tag-high">Alta</span></td></tr>
+              <tr><td>"casa para idosos em limeira"</td><td>Frase</td><td><span class="tag tag-high">Alta</span></td></tr>
+              <tr><td>"casa geriatrica em limeira"</td><td>Frase</td><td><span class="tag tag-high">Alta</span></td></tr>
+              <tr><td>residencial para idosos</td><td>Ampla</td><td><span class="tag tag-medium">Media-Alta</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>Anuncio responsivo (RSA) &mdash; 15 titulos</h4>
+        <p>Max 30 caracteres por titulo. Titulos com PIN fixam a posicao no anuncio.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>#</th><th>Titulo</th><th>Pin</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>Residencial Geriatrico Limeira</td><td><span class="tag tag-pin">PIN H1</span></td></tr>
+              <tr><td>2</td><td>Assistencia 24h Para Idosos</td><td><span class="tag tag-pin">PIN H2</span></td></tr>
+              <tr><td>3</td><td>Agende Uma Visita Hoje</td><td><span class="tag tag-pin">PIN H3</span></td></tr>
+              <tr><td>4</td><td>Casa de Repouso em Limeira</td><td></td></tr>
+              <tr><td>5</td><td>Cuidado Humanizado 24 Horas</td><td></td></tr>
+              <tr><td>6</td><td>Mextin Senior | Limeira</td><td></td></tr>
+              <tr><td>7</td><td>Equipe Multidisciplinar</td><td></td></tr>
+              <tr><td>8</td><td>Ambiente Seguro e Adaptado</td><td></td></tr>
+              <tr><td>9</td><td>Moradia Permanente Para Idosos</td><td></td></tr>
+              <tr><td>10</td><td>Fisioterapia e Nutricao</td><td></td></tr>
+              <tr><td>11</td><td>Supervisao Medica 24h</td><td></td></tr>
+              <tr><td>12</td><td>Prevencao de Quedas</td><td></td></tr>
+              <tr><td>13</td><td>Atendemos Idosos Acamados</td><td></td></tr>
+              <tr><td>14</td><td>Visite Nossa Estrutura</td><td></td></tr>
+              <tr><td>15</td><td>Limeira e Regiao</td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>Descricoes &mdash; 4 descricoes</h4>
+        <p>Max 90 caracteres por descricao.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>#</th><th>Descricao</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>Residencial geriatrico com assistencia 24h em Limeira. Equipe multidisciplinar. Agende.</td></tr>
+              <tr><td>2</td><td>Fisioterapia, nutricao, psicologia e gerontologia. Ambiente seguro para seu familiar.</td></tr>
+              <tr><td>3</td><td>Cuidado humanizado com afeto e presenca. Moradia permanente com supervisao. Venha conhecer.</td></tr>
+              <tr><td>4</td><td>Equipe completa: fisioterapeuta, nutricionista, psicologa e gerontologa. Agende visita.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>Preview do anuncio</h4>
+        <div class="ad-preview">
+          <div class="ad-url">Ad &middot; mextinresidencialsenior.com.br</div>
+          <div class="ad-title-line">Residencial Geriatrico Limeira | Assistencia 24h Para Idosos | Agende Uma Visita Hoje</div>
+          <div class="ad-desc">Residencial geriatrico com assistencia 24h em Limeira. Equipe multidisciplinar. Agende. Fisioterapia, nutricao, psicologia e gerontologia. Ambiente seguro para seu familiar.</div>
+        </div>
+      </div>
+
+      <!-- Ad Group 02 -->
+      <div class="campaign-block">
+        <div class="campaign-header">
+          <div>
+            <div class="campaign-name">02 - Alzheimer e Demencia</div>
+            <div class="campaign-type">Ad Group &mdash; [SEARCH] [SP] Residencial Geriatrico</div>
+          </div>
+          <span class="campaign-budget">Nicho especializado</span>
+        </div>
+
+        <h4>Palavras-chave</h4>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Palavra-chave</th>
+                <th>Correspondencia</th>
+                <th>Intencao</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>"casa de repouso alzheimer"</td><td>Frase</td><td><span class="tag tag-high">Alta</span></td></tr>
+              <tr><td>"residencial para idosos com demencia"</td><td>Frase</td><td><span class="tag tag-high">Alta</span></td></tr>
+              <tr><td>"onde internar idoso com alzheimer"</td><td>Frase</td><td><span class="tag tag-high">Alta</span></td></tr>
+              <tr><td>"casa de repouso demencia limeira"</td><td>Frase</td><td><span class="tag tag-high">Alta</span></td></tr>
+              <tr><td>"residencial alzheimer limeira"</td><td>Frase</td><td><span class="tag tag-high">Alta</span></td></tr>
+              <tr><td>cuidador de idoso com alzheimer</td><td>Ampla</td><td><span class="tag tag-medium">Media</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>Anuncio responsivo (RSA) &mdash; 15 titulos</h4>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>#</th><th>Titulo</th><th>Pin</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>Residencial Para Alzheimer</td><td><span class="tag tag-pin">PIN H1</span></td></tr>
+              <tr><td>2</td><td>Cuidado Especializado 24h</td><td><span class="tag tag-pin">PIN H2</span></td></tr>
+              <tr><td>3</td><td>Agende Uma Visita</td><td><span class="tag tag-pin">PIN H3</span></td></tr>
+              <tr><td>4</td><td>Casa de Repouso Alzheimer</td><td></td></tr>
+              <tr><td>5</td><td>Equipe Para Demencia</td><td></td></tr>
+              <tr><td>6</td><td>Mextin Senior | Limeira</td><td></td></tr>
+              <tr><td>7</td><td>Supervisao 24 Horas</td><td></td></tr>
+              <tr><td>8</td><td>Estimulo Cognitivo Diario</td><td></td></tr>
+              <tr><td>9</td><td>Ambiente Seguro e Adaptado</td><td></td></tr>
+              <tr><td>10</td><td>Psicologa e Gerontologa</td><td></td></tr>
+              <tr><td>11</td><td>Cuidado Humanizado</td><td></td></tr>
+              <tr><td>12</td><td>Equipe Multidisciplinar</td><td></td></tr>
+              <tr><td>13</td><td>Prevencao de Quedas</td><td></td></tr>
+              <tr><td>14</td><td>Estrutura Especializada</td><td></td></tr>
+              <tr><td>15</td><td>Limeira e Regiao</td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>Descricoes &mdash; 4 descricoes</h4>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>#</th><th>Descricao</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>Residencial especializado em Alzheimer e demencias. Equipe multidisciplinar 24h. Agende.</td></tr>
+              <tr><td>2</td><td>Supervisao continua, estimulo cognitivo e ambiente seguro para idosos com demencia.</td></tr>
+              <tr><td>3</td><td>Equipe preparada para cuidar do seu familiar com Alzheimer. Cuidado humanizado em Limeira.</td></tr>
+              <tr><td>4</td><td>Atendemos pacientes de baixa, media e alta complexidade. Estrutura adaptada. Agende visita.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>Preview do anuncio</h4>
+        <div class="ad-preview">
+          <div class="ad-url">Ad &middot; mextinresidencialsenior.com.br</div>
+          <div class="ad-title-line">Residencial Para Alzheimer | Cuidado Especializado 24h | Agende Uma Visita</div>
+          <div class="ad-desc">Residencial especializado em Alzheimer e demencias. Equipe multidisciplinar 24h. Agende. Supervisao continua, estimulo cognitivo e ambiente seguro para idosos com demencia.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 NEGATIVAS -->
+    <div class="section">
+      <span class="section-number">05 &mdash; Palavras-chave negativas</span>
+      <h2>Lista negativa compartilhada</h2>
+      <p>Aplicar como <strong>lista negativa compartilhada</strong> em nivel de conta, vinculada a ambas as campanhas. Revisar e expandir semanalmente com base nos termos de pesquisa reais.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Categoria</th><th>Negativas</th><th>Motivo</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Emprego</strong></td><td>emprego, vaga, trabalhar, trabalho, curriculo, contratacao, cuidadora, tecnico enfermagem</td><td>Candidatos a emprego</td></tr>
+            <tr><td><strong>Educacao</strong></td><td>curso, faculdade, concurso, graduacao, pos graduacao, tcc, apostila, estudo</td><td>Buscas educacionais</td></tr>
+            <tr><td><strong>Gratuito</strong></td><td>gratis, gratuito, sus, publico, governo, municipal, filantropia, beneficente</td><td>Sem intencao de pagar</td></tr>
+            <tr><td><strong>Animais</strong></td><td>cachorro, gato, pet, animal, veterinario, vet</td><td>Clinicas veterinarias</td></tr>
+            <tr><td><strong>Salarios</strong></td><td>salario, quanto ganha, piso salarial, media salarial, remuneracao</td><td>Pesquisa salarial</td></tr>
+            <tr><td><strong>Informacional</strong></td><td>o que e, significado, definicao, como funciona, wikipedia, artigo</td><td>Buscas informacionais puras</td></tr>
+            <tr><td><strong>Negativo</strong></td><td>denuncia, abandono, maus tratos, negligencia, cpi, irregularidade, fiscalizacao</td><td>Contexto negativo</td></tr>
+            <tr><td><strong>Outros</strong></td><td>receita, como fazer, diy, caseiro, simpatia, remedio, cha, plano de saude</td><td>Irrelevante para o servico</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 07 EXTENSOES -->
+    <div class="section">
+      <span class="section-number">06 &mdash; Extensoes de anuncio</span>
+      <h2>Maximizar espaco e informacao no resultado</h2>
+      <p>Configurar em nivel de conta para que se apliquem a campanha.</p>
+
+      <h3>Sitelinks</h3>
+      <p>Max 25 caracteres no titulo, 35 caracteres por linha de descricao.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Titulo</th><th>Descricao Linha 1</th><th>Descricao Linha 2</th><th>URL</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Agende Uma Visita</strong></td><td>Formulario rapido pelo site</td><td>Resposta em ate 24 horas</td><td>/contato</td></tr>
+            <tr><td><strong>Equipe Profissional</strong></td><td>Fisio, nutricao e psicologia</td><td>Equipe multidisciplinar 24h</td><td>/equipe</td></tr>
+            <tr><td><strong>Nossa Estrutura</strong></td><td>Ambiente seguro e adaptado</td><td>Quartos para todo nivel</td><td>/estrutura</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Callouts</h3>
+      <p>Max 25 caracteres cada. Sem link.</p>
+      <div class="card-grid-3">
+        <div class="card" style="padding: 16px; text-align: center;">
+          <div class="card-title">Assistencia 24 Horas</div>
+        </div>
+        <div class="card" style="padding: 16px; text-align: center;">
+          <div class="card-title">Equipe Multidisciplinar</div>
+        </div>
+        <div class="card" style="padding: 16px; text-align: center;">
+          <div class="card-title">Ambiente Adaptado</div>
+        </div>
+        <div class="card" style="padding: 16px; text-align: center;">
+          <div class="card-title">Cuidado Humanizado</div>
+        </div>
+        <div class="card" style="padding: 16px; text-align: center;">
+          <div class="card-title">Prevencao de Quedas</div>
+        </div>
+        <div class="card" style="padding: 16px; text-align: center;">
+          <div class="card-title">Fisioterapia Incluida</div>
+        </div>
+      </div>
+
+      <h3>Snippets Estruturados</h3>
+      <div class="card">
+        <div class="card-title">Tipo: Servicos</div>
+        <div class="card-text" style="margin-top: 8px;">Residencial 24h, Centro Dia, Fisioterapia, Fonoaudiologia, Psicologia, Nutricao</div>
+      </div>
+
+      <h3>Extensao de Local + Chamada</h3>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-title">Extensao de Local</div>
+          <div class="card-text" style="margin-top: 8px;">Vincular Google Meu Negocio<br>Rua Guararapes 476, Limeira - SP<br>CEP 13480-405</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Extensao de Chamada</div>
+          <div class="card-text" style="margin-top: 8px;">Telefone: (19) 99228-4360<br>Exibir apenas no horario de atendimento<br>Seg-Sab 7h-21h</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 08 CONVERSAO -->
+    <div class="section">
+      <span class="section-number">07 &mdash; Conversao e rastreamento</span>
+      <h2>Sem tracking nao ha otimizacao</h2>
+      <p>Configurar <strong>antes</strong> de ativar as campanhas:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Acao de conversao</th><th>Tipo</th><th>Categoria</th><th>Contagem</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Envio do formulario "Agende uma visita"</strong></td><td>Primaria</td><td>Lead/Envio de formulario</td><td>Uma (por clique)</td></tr>
+            <tr><td><strong>Clique no botao de WhatsApp</strong></td><td>Secundaria</td><td>Lead/Outro</td><td>Uma (por clique)</td></tr>
+            <tr><td><strong>Clique no telefone</strong></td><td>Secundaria</td><td>Lead/Ligacao telefonica</td><td>Uma (por clique)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Infraestrutura necessaria</h4>
+      <ul class="list">
+        <li><strong>Google Tag Manager:</strong> Instalar no site para gerenciar tags sem depender de dev. Criar tag de conversao do Google Ads + tag de evento do GA4</li>
+        <li><strong>Google Analytics 4:</strong> Vincular a conta de Ads para dados de comportamento e listas de remarketing futuras</li>
+        <li><strong>Google Meu Negocio:</strong> Vincular para extensao de local e dados de visita a loja</li>
+        <li><strong>Conversao avancada:</strong> Configurar se possivel (hash de email/telefone) para melhorar atribuicao</li>
+      </ul>
+    </div>
+
+    <!-- 09 CRONOGRAMA -->
+    <div class="section">
+      <span class="section-number">08 &mdash; Cronograma</span>
+      <h2>Da implementacao a escala</h2>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div>
+            <div class="timeline-phase">Setup</div>
+            <div class="timeline-period">Semana 1</div>
+          </div>
+          <div class="timeline-content">Criar conta Google Ads, instalar GTM e tags de conversao, configurar GA4, criar a campanha com 2 ad groups, extensoes e lista de negativas. Vincular Google Meu Negocio. Verificar que o formulario do site dispara conversao corretamente.</div>
+        </div>
+        <div class="timeline-item">
+          <div>
+            <div class="timeline-phase">Aprendizado</div>
+            <div class="timeline-period">Semanas 2-4</div>
+          </div>
+          <div class="timeline-content">Campanhas ativas, coletar dados de impressao, clique e conversao. Monitorar search terms diariamente, adicionar negativos. Nao mexer em lances nem pausar keywords nessa fase. Objetivo: acumular dados.</div>
+        </div>
+        <div class="timeline-item">
+          <div>
+            <div class="timeline-phase">Otimizacao</div>
+            <div class="timeline-period">Mes 2</div>
+          </div>
+          <div class="timeline-content">Analisar CPL por ad group, pausar keywords com custo alto e zero conversao, testar novos titulos/descricoes no RSA, ajustar lances por dispositivo e horario. Se 15+ conversoes: migrar para CPA Desejado.</div>
+        </div>
+        <div class="timeline-item">
+          <div>
+            <div class="timeline-phase">Escala</div>
+            <div class="timeline-period">Mes 3+</div>
+          </div>
+          <div class="timeline-content">Redistribuir orcamento pro ad group com menor CPL. Testar novos grupos de keywords. Avaliar aumento de verba se CPL estiver abaixo de R$ 60. Considerar remarketing em Display e Performance Max apos 30+ conversoes.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10 METAS -->
+    <div class="section">
+      <span class="section-number">09 &mdash; Metas e KPIs</span>
+      <h2>Evolucao projetada por mes</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>KPI</th><th>Mes 1</th><th>Mes 3</th><th>Mes 6</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Impressoes</strong></td><td>2.200-3.800</td><td>3.800-6.000</td><td>6.000-9.000</td></tr>
+            <tr><td><strong>Cliques</strong></td><td>150-220</td><td>220-300</td><td>300-450</td></tr>
+            <tr><td><strong>CTR</strong></td><td>5-8%</td><td>8-12%</td><td>10-15%</td></tr>
+            <tr><td><strong>Leads</strong></td><td>10-20</td><td>18-26</td><td>25-35</td></tr>
+            <tr><td><strong>Custo por Lead</strong></td><td>R$ 80-130</td><td>R$ 55-80</td><td>R$ 40-60</td></tr>
+            <tr><td><strong>Taxa de Conversao</strong></td><td>5-8%</td><td>8-12%</td><td>10-15%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Metas do mes 1 sao conservadoras porque o algoritmo esta em fase de aprendizado. A otimizacao progressiva melhora o CPL conforme acumulamos dados de conversao.</p>
+    </div>
+
+    <!-- 11 RECOMENDACOES -->
+    <div class="section">
+      <span class="section-number">10 &mdash; Recomendacoes</span>
+      <h2>O que mais fazer para maximizar resultado</h2>
+
+      <h3>Landing Page</h3>
+      <p>O site atual ja tem boa estrutura. Para melhorar conversao:</p>
+      <ul class="list">
+        <li>Criar pagina de destino especifica para Google Ads (sem menu de navegacao, foco no formulario)</li>
+        <li>Adicionar depoimentos de familiares (prova social)</li>
+        <li>Botao de WhatsApp flutuante para contato imediato</li>
+        <li>Formulario simplificado: Nome, Telefone e "Qual cuidado precisa?"</li>
+      </ul>
+
+      <h3>Google Meu Negocio</h3>
+      <ul class="list">
+        <li>Manter perfil atualizado com fotos, horarios e servicos</li>
+        <li>Responder todas as avaliacoes (positivas e negativas)</li>
+        <li>Publicar posts semanais (atividades, dicas, equipe)</li>
+        <li>Avaliacoes impactam diretamente o Quality Score dos anuncios</li>
+      </ul>
+
+      <h3>Proximos passos apos validacao</h3>
+      <ul class="list">
+        <li>Remarketing em Display para quem visitou o site mas nao converteu</li>
+        <li>Performance Max apos acumular 30+ conversoes</li>
+        <li>Aumento de verba se CPL ficar abaixo de R$ 60 consistentemente</li>
+        <li>Anuncios em video (YouTube) com tour da estrutura para remarketing</li>
+        <li>Campanha de marca ("Mextin") e campanha de Centro Dia ficam de reserva: baixo custo e baixo volume de busca, vale testar quando houver folga de orcamento</li>
+      </ul>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="doc-footer">
+      <p>Documento preparado por <strong>Mateus Botelho</strong> &mdash; Gestao de Trafego Pago &mdash; Junho 2026</p>
+    </div>
+  </div>
+
+</body>
+</html>

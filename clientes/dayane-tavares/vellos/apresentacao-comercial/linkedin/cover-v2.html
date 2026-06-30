@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 1584px;
+    height: 396px;
+    overflow: hidden;
+    font-family: 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+  .canvas {
+    position: relative;
+    width: 1584px;
+    height: 396px;
+    background-color: #0d1f1c;
+    overflow: hidden;
+  }
+  .photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 62% 50%;
+  }
+  /* flat dark scrim on the left for text legibility — single, simple gradient */
+  .scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(10,21,18,0.92) 0%, rgba(10,21,18,0.78) 32%, rgba(10,21,18,0.20) 62%, rgba(10,21,18,0.0) 80%);
+  }
+
+  .content {
+    position: absolute;
+    left: 96px;
+    top: 0;
+    height: 396px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .logo-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 30px;
+  }
+  .logo-mark {
+    width: 34px;
+    height: 44px;
+    display: block;
+  }
+  .logo-text {
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: #f5faf9;
+  }
+  .logo-text .dot { color: #00c9a7; }
+
+  .tagline {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #f5faf9;
+    max-width: 560px;
+    letter-spacing: -0.3px;
+  }
+  .tagline .accent { color: #00c9a7; }
+</style>
+</head>
+<body>
+  <div class="canvas">
+    <img class="photo" src="duotone-handshake3.jpg" alt="">
+    <div class="scrim"></div>
+
+    <div class="content">
+      <div class="logo-row">
+        <svg class="logo-mark" viewBox="0 0 34 44" fill="none">
+          <circle cx="17" cy="7" r="4" fill="#00c9a7"/>
+          <polyline points="5,16 17,38 29,16" stroke="#00c9a7" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        <span class="logo-text">VELLOS<span class="dot">.</span></span>
+      </div>
+
+      <div class="tagline">Reuniões qualificadas com decisores B2B, <span class="accent">todo mês</span>.</div>
+    </div>
+  </div>
+</body>
+</html>

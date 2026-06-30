@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapa Estratégico — Universo Jump</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #111111;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  /* ── CAPA ── */
+  .cover {
+    width: 100%;
+    height: 100vh;
+    min-height: 297mm;
+    background: #0a0a0a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    page-break-after: always;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 420px; height: 420px;
+    background: radial-gradient(circle, rgba(56,189,248,0.18) 0%, transparent 65%);
+    border-radius: 50%;
+  }
+
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 360px; height: 360px;
+    background: radial-gradient(circle, rgba(56,189,248,0.10) 0%, transparent 65%);
+    border-radius: 50%;
+  }
+
+  .cover-line {
+    position: absolute;
+    top: 50%;
+    left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(56,189,248,0.12), transparent);
+  }
+
+  .cover-badge {
+    background: rgba(56,189,248,0.1);
+    border: 1px solid rgba(56,189,248,0.35);
+    color: #38bdf8;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    padding: 7px 22px;
+    border-radius: 50px;
+    margin-bottom: 36px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-title {
+    color: #ffffff;
+    font-size: 38px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.12;
+    max-width: 600px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 12px;
+  }
+
+  .cover-title span {
+    color: #38bdf8;
+    display: block;
+  }
+
+  .cover-subtitle {
+    color: rgba(255,255,255,0.42);
+    font-size: 14.5px;
+    font-weight: 400;
+    text-align: center;
+    max-width: 480px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 56px;
+    line-height: 1.65;
+  }
+
+  .cover-divider {
+    width: 56px;
+    height: 3px;
+    background: linear-gradient(90deg, #38bdf8, #7dd3fc);
+    border-radius: 2px;
+    margin: 0 auto 56px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-meta {
+    display: flex;
+    gap: 32px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 56px;
+  }
+
+  .cover-meta-item {
+    text-align: center;
+  }
+
+  .cover-meta-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+    margin-bottom: 4px;
+  }
+
+  .cover-meta-value {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .cover-meta-sep {
+    width: 1px;
+    background: rgba(255,255,255,0.08);
+    align-self: stretch;
+  }
+
+  .cover-footer {
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    z-index: 1;
+  }
+
+  .cover-footer-line { width: 36px; height: 1px; background: rgba(255,255,255,0.15); }
+
+  .cover-footer-text {
+    color: rgba(255,255,255,0.25);
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+  }
+
+  /* ── LAYOUT PRINCIPAL ── */
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 60px 60px;
+  }
+
+  /* ── CABEÇALHO DE SEÇÃO ── */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+    margin-top: 48px;
+  }
+
+  .section-header:first-child { margin-top: 0; }
+
+  .section-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .icon-dark { background: #111111; border: 1px solid #222; }
+  .icon-blue { background: rgba(56,189,248,0.1); border: 1px solid rgba(56,189,248,0.2); }
+  .icon-green { background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2); }
+
+  .section-label { display: flex; flex-direction: column; gap: 2px; }
+
+  .section-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #38bdf8;
+  }
+
+  .section-tag.green { color: #16a34a; }
+
+  .section-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: #0a0a0a;
+    line-height: 1.2;
+  }
+
+  /* ── FUNIL VISUAL ── */
+  .funnel-row {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin-bottom: 8px;
+  }
+
+  .funnel-card {
+    flex: 1;
+    border-radius: 12px;
+    padding: 20px 18px;
+    position: relative;
+  }
+
+  .funnel-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    color: #cbd5e1;
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  .funnel-attract  { background: #f0faff; border: 1px solid rgba(56,189,248,0.3); }
+  .funnel-validate { background: #fefce8; border: 1px solid rgba(234,179,8,0.3); }
+  .funnel-scale    { background: #f0fdf4; border: 1px solid rgba(34,197,94,0.3); }
+
+  .funnel-tag {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .tag-blue   { color: #0284c7; }
+  .tag-yellow { color: #b45309; }
+  .tag-green  { color: #16a34a; }
+
+  .funnel-product {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0a0a0a;
+    margin-bottom: 4px;
+  }
+
+  .funnel-ticket {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+
+  .ticket-blue   { color: #0284c7; }
+  .ticket-yellow { color: #b45309; }
+  .ticket-green  { color: #16a34a; }
+
+  .funnel-desc {
+    font-size: 11px;
+    color: #6b7280;
+    line-height: 1.55;
+  }
+
+  /* ── ALERTAS ── */
+  .alert-grid { display: grid; gap: 14px; margin-bottom: 8px; }
+
+  .alert-card {
+    border-radius: 12px;
+    padding: 18px 20px;
+    border-left: 3px solid;
+  }
+
+  .alert-card.black-red   { border-color: #ef4444; background: #fafafa; }
+  .alert-card.black-amber { border-color: #f59e0b; background: #fafafa; }
+  .alert-card.black-blue  { border-color: #38bdf8; background: #f0faff; }
+  .alert-card.black-green { border-color: #22c55e; background: #f0fdf4; }
+
+  .alert-card-title {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #0a0a0a;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .badge {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 50px;
+  }
+
+  .badge-red   { background: rgba(239,68,68,0.1);  color: #dc2626; }
+  .badge-amber { background: rgba(245,158,11,0.12); color: #b45309; }
+  .badge-blue  { background: rgba(56,189,248,0.15); color: #0284c7; }
+  .badge-green { background: rgba(34,197,94,0.15);  color: #16a34a; }
+
+  .alert-card-body { font-size: 12.5px; color: #4b5563; line-height: 1.65; }
+
+  /* ── CHECKLIST ── */
+  .checklist { display: grid; gap: 14px; margin-bottom: 8px; }
+
+  .check-card {
+    border-radius: 12px;
+    padding: 20px 22px;
+    background: #f8f8f8;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+  }
+
+  .check-number {
+    width: 38px; height: 38px;
+    background: #0a0a0a;
+    color: #38bdf8;
+    font-size: 14px;
+    font-weight: 800;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .check-box {
+    width: 20px; height: 20px;
+    border: 2px solid #d1d5db;
+    border-radius: 5px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    background: #fff;
+  }
+
+  .check-content { flex: 1; }
+
+  .check-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0a0a0a;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .check-body {
+    font-size: 12px;
+    color: #6b7280;
+    line-height: 1.65;
+  }
+
+  .check-body strong { color: #374151; font-weight: 600; }
+
+  /* ── PASSOS ── */
+  .steps-list { display: grid; gap: 12px; margin-bottom: 8px; }
+
+  .step-card {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 16px 18px;
+    background: #f8f8f8;
+    border: 1px solid #e9e9e9;
+    border-radius: 12px;
+  }
+
+  .step-number {
+    width: 34px; height: 34px;
+    background: #0a0a0a;
+    color: #38bdf8;
+    font-size: 13px;
+    font-weight: 800;
+    border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .step-content { flex: 1; }
+  .step-title { font-size: 12.5px; font-weight: 700; color: #0a0a0a; margin-bottom: 4px; }
+  .step-body  { font-size: 12px; color: #6b7280; line-height: 1.6; }
+  .step-body strong { color: #374151; font-weight: 600; }
+
+  /* ── DESTAQUE CRITICO ── */
+  .critical-box {
+    background: #0a0a0a;
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin: 16px 0;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+  }
+
+  .critical-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .critical-content {}
+
+  .critical-label {
+    font-size: 9.5px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #38bdf8;
+    margin-bottom: 6px;
+  }
+
+  .critical-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+  }
+
+  .critical-body {
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+  }
+
+  .critical-body strong { color: #38bdf8; font-weight: 600; }
+
+  /* ── FUNIL DE QUALIFICAÇÃO ── */
+  .qual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 8px;
+  }
+
+  .qual-card {
+    border-radius: 12px;
+    padding: 18px 20px;
+    background: #f8f8f8;
+    border: 1px solid #e5e7eb;
+  }
+
+  .qual-card-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #0a0a0a;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .qual-card-body { font-size: 12px; color: #6b7280; line-height: 1.6; }
+
+  /* ── TIMELINE PRÓXIMOS PASSOS ── */
+  .timeline { display: grid; gap: 0; margin-bottom: 8px; }
+
+  .timeline-item {
+    display: flex;
+    gap: 18px;
+    padding-bottom: 20px;
+    position: relative;
+  }
+
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-item:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 17px;
+    top: 38px;
+    bottom: 0;
+    width: 2px;
+    background: #e5e7eb;
+  }
+
+  .timeline-dot {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    font-weight: 800;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .dot-pending  { background: #f3f4f6; border: 2px solid #d1d5db; color: #6b7280; }
+  .dot-action   { background: #0a0a0a; color: #38bdf8; border: 2px solid #0a0a0a; }
+  .dot-wait     { background: rgba(56,189,248,0.1); border: 2px solid rgba(56,189,248,0.3); color: #0284c7; }
+
+  .timeline-content {
+    flex: 1;
+    padding-top: 6px;
+  }
+
+  .timeline-title { font-size: 13px; font-weight: 700; color: #0a0a0a; margin-bottom: 3px; }
+  .timeline-body  { font-size: 12px; color: #6b7280; line-height: 1.6; }
+  .timeline-body strong { color: #374151; font-weight: 600; }
+
+  /* ── RODAPÉ ── */
+  .footer {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-left  { font-size: 11px; color: #aaa; }
+  .footer-right { font-size: 11px; font-weight: 700; color: #0a0a0a; letter-spacing: 1px; }
+
+  /* ── DIVISÓRIA ── */
+  .section-divider {
+    height: 1px;
+    background: #f3f4f6;
+    margin: 40px 0;
+  }
+
+  /* ── PAGE BREAK ── */
+  .break-before { page-break-before: always; padding-top: 60px; }
+
+  p.intro {
+    font-size: 12.5px;
+    color: #6b7280;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  p.intro strong { color: #111; font-weight: 600; }
+
+  @page { margin: 0; size: A4; }
+
+  @media print {
+    .cover { page-break-after: always; min-height: 100vh; }
+    .check-card  { page-break-inside: avoid; }
+    .step-card   { page-break-inside: avoid; }
+    .alert-card  { page-break-inside: avoid; }
+    .critical-box{ page-break-inside: avoid; }
+    .timeline-item { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ CAPA ═══ -->
+<div class="cover">
+  <div class="cover-line"></div>
+  <div class="cover-badge">Universo Jump</div>
+  <div class="cover-title">
+    Mapa Estratégico
+    <span>do Funil de Vendas</span>
+  </div>
+  <div class="cover-subtitle">Alinhamento de operação, expectativas e checklist de ativação do tráfego pago</div>
+  <div class="cover-divider"></div>
+
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">Destinatárias</div>
+      <div class="cover-meta-value">Ju &amp; Cris Paterson</div>
+    </div>
+    <div class="cover-meta-sep"></div>
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">Elaborado por</div>
+      <div class="cover-meta-value">Gestão de Tráfego e Estratégia</div>
+    </div>
+    <div class="cover-meta-sep"></div>
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">Data</div>
+      <div class="cover-meta-value">Junho de 2026</div>
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <div class="cover-footer-line"></div>
+    <div class="cover-footer-text">Uso interno — Gestor Kelvin</div>
+    <div class="cover-footer-line"></div>
+  </div>
+</div>
+
+<!-- ═══ CONTEÚDO ═══ -->
+<div class="page">
+
+  <!-- ── 1. A GRANDE VISÃO ── -->
+  <div class="section-header">
+    <div class="section-icon icon-blue">🚀</div>
+    <div class="section-label">
+      <div class="section-tag">Visão geral</div>
+      <div class="section-title">A Grande Visão — A Esteira Completa</div>
+    </div>
+  </div>
+
+  <p class="intro">
+    O que estamos construindo vai além de uma campanha de anúncios. É uma <strong>esteira de crescimento escalonável</strong> — uma estrutura que transforma desconhecidos em clientes de alto ticket de forma previsível, organizada e progressiva.
+  </p>
+
+  <div class="funnel-row">
+    <div class="funnel-card funnel-attract">
+      <div class="funnel-tag tag-blue">01 — Atrair</div>
+      <div class="funnel-product">Desafio 30 Dias para Destravar</div>
+      <div class="funnel-ticket ticket-blue">Gratuito</div>
+      <div class="funnel-desc">Entregue automaticamente via ManyChat no direct do Instagram. Gera volume de leads e aciona o gatilho da reciprocidade.</div>
+    </div>
+    <div class="funnel-arrow">→</div>
+    <div class="funnel-card funnel-validate">
+      <div class="funnel-tag tag-yellow">02 — Validar e Gerar Caixa</div>
+      <div class="funnel-product">PowerUp</div>
+      <div class="funnel-ticket ticket-yellow">R$ 197 – R$ 497</div>
+      <div class="funnel-desc">Venda consultiva via WhatsApp (1 a 1). Checkout na Kiwify. Gera receita imediata e qualifica a base para o próximo nível.</div>
+    </div>
+    <div class="funnel-arrow">→</div>
+    <div class="funnel-card funnel-scale">
+      <div class="funnel-tag tag-green">03 — Escalar</div>
+      <div class="funnel-product">Mentoria Principal</div>
+      <div class="funnel-ticket ticket-green">R$ 9.000</div>
+      <div class="funnel-desc">Produto de maior impacto. Não é empurrado — é conquistado por quem demonstrar comprometimento ao longo do funil.</div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ── 2. STATUS ATUAL ── -->
+  <div class="section-header">
+    <div class="section-icon icon-green">✅</div>
+    <div class="section-label">
+      <div class="section-tag green">O que já está pronto</div>
+      <div class="section-title">Status Atual da Operação</div>
+    </div>
+  </div>
+
+  <p class="intro">
+    A equipe de gestão já finalizou todo o lado técnico e estratégico da operação. <strong>A máquina está montada.</strong> O que está aguardando é o conteúdo e os criativos de vocês.
+  </p>
+
+  <div class="alert-grid">
+    <div class="alert-card black-green">
+      <div class="alert-card-title">
+        Produto "PowerUp" 100% estruturado na Kiwify
+        <span class="badge badge-green">Concluído</span>
+      </div>
+      <div class="alert-card-body">Módulos cadastrados, produto organizado e checkout configurado e operacional para receber as primeiras compras assim que o tráfego for ativado.</div>
+    </div>
+
+    <div class="alert-card black-green">
+      <div class="alert-card-title">
+        Automação no ManyChat estruturada
+        <span class="badge badge-green">Aguardando ativação</span>
+      </div>
+      <div class="alert-card-body">O fluxo de entrega automática do Desafio Gratuito no direct do Instagram está 100% configurado. Basta o sinal verde para ativar — <strong>zero trabalho manual nessa etapa.</strong></div>
+    </div>
+
+    <div class="alert-card black-blue">
+      <div class="alert-card-title">
+        Arquitetura do funil mapeada
+        <span class="badge badge-blue">Documentado</span>
+      </div>
+      <div class="alert-card-body">O fluxo completo de jornada do cliente — desde o primeiro contato até o convite para a mentoria — está definido, estruturado e documentado neste mapa.</div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ── 3. CHECKLIST ── -->
+  <div class="section-header break-before">
+    <div class="section-icon icon-dark">📋</div>
+    <div class="section-label">
+      <div class="section-tag">Pré-requisito obrigatório</div>
+      <div class="section-title">Checklist de Bloqueio — Dever de Casa</div>
+    </div>
+  </div>
+
+  <p class="intro">
+    As três tarefas abaixo são <strong>pré-requisitos absolutos para a ativação do tráfego pago.</strong> Nenhuma campanha será ligada enquanto estes itens estiverem pendentes. Isso não é burocracia — é proteção do investimento de vocês.
+  </p>
+
+  <div class="checklist">
+
+    <div class="check-card">
+      <div class="check-number">1</div>
+      <div class="check-box"></div>
+      <div class="check-content">
+        <div class="check-title">
+          Finalizar o conteúdo do Desafio Gratuito
+          <span class="badge badge-amber">Urgente</span>
+        </div>
+        <div class="check-body">
+          O <em>"Desafio 30 Dias para Destravar"</em> precisa ter seus entregáveis definidos e prontos para distribuição. O ManyChat já está configurado para entregá-lo automaticamente — vocês precisam garantir que <strong>o material existe e está completo.</strong> Sem conteúdo, a automação não tem o que entregar.
+        </div>
+      </div>
+    </div>
+
+    <div class="check-card">
+      <div class="check-number">2</div>
+      <div class="check-box"></div>
+      <div class="check-content">
+        <div class="check-title">
+          Finalizar os entregáveis do PowerUp
+          <span class="badge badge-amber">Urgente</span>
+        </div>
+        <div class="check-body">
+          O produto já está cadastrado na plataforma, mas o conteúdo que será entregue ao aluno precisa estar finalizado. A aluna que comprar o PowerUp precisa ter <strong>uma experiência completa desde o primeiro acesso.</strong> Esta é a etapa que valida a confiança e planta a semente para os R$ 9.000.
+        </div>
+      </div>
+    </div>
+
+    <div class="check-card">
+      <div class="check-number">3</div>
+      <div class="check-box"></div>
+      <div class="check-content">
+        <div class="check-title">
+          Gravar os criativos (vídeos) dos anúncios
+          <span class="badge badge-red">Bloqueador principal</span>
+        </div>
+        <div class="check-body">
+          Esta é a peça que move todo o funil. <strong>Sem criativos, não há tráfego. Sem tráfego, não há leads.</strong> Precisamos de vídeos gravados por vocês — autênticos, diretos e alinhados à estratégia de comunicação definida. Formatos, roteiros e orientações específicas serão passados pela equipe de gestão conforme alinhamento prévio.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ── 4. FLUXO DE BATALHA ── -->
+  <div class="section-header">
+    <div class="section-icon icon-blue">⚔️</div>
+    <div class="section-label">
+      <div class="section-tag">Operação dia a dia</div>
+      <div class="section-title">O Fluxo de Batalha — Como o Funil Funciona</div>
+    </div>
+  </div>
+
+  <div class="steps-list">
+    <div class="step-card">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <div class="step-title">Atração via Tráfego Pago e Orgânico</div>
+        <div class="step-body">Os anúncios e conteúdos orgânicos direcionam o público para interagir com os posts ou seguir o perfil do Universo Jump no Instagram. É aqui que o funil começa a ser alimentado.</div>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <div class="step-title">Ativação Automática do ManyChat</div>
+        <div class="step-body">Ao seguir o perfil ou comentar em posts estratégicos, o ManyChat dispara automaticamente uma mensagem no direct entregando o Desafio Gratuito. <strong>Zero trabalho manual nessa etapa.</strong> A automação trabalha por vocês 24h por dia.</div>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <div class="step-title">Abordagem Consultiva no WhatsApp (PowerUp)</div>
+        <div class="step-body">Leads que demonstrarem interesse no PowerUp são direcionados para o WhatsApp, onde a venda é feita de forma consultiva — <strong>com personalidade, com presença e com timing.</strong> Esta etapa exige atenção de vocês.</div>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        <div class="step-title">Resgate e Retenção dos Leads que Não Compraram</div>
+        <div class="step-body">Para leads que não converteram no PowerUp, o Desafio Gratuito é utilizado como <strong>ferramenta de retenção e aquecimento contínuo.</strong> O lead permanece na base, recebendo valor, até que esteja pronto para comprar. Ninguém é descartado.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="critical-box">
+    <div class="critical-icon">⏱️</div>
+    <div class="critical-content">
+      <div class="critical-label">Ponto crítico de conversão</div>
+      <div class="critical-title">A Regra dos 5 Minutos — O Gargalo do WhatsApp</div>
+      <div class="critical-body">
+        A janela de conversão no WhatsApp é estreita. Um lead que demonstrou interesse está no pico do impulso de compra. <strong>O tempo de resposta deve ser inferior a 5 minutos.</strong> Leads respondidos fora dessa janela esfriaram — e com eles, a taxa de conversão cai drasticamente. Este é o único ponto do funil que exige atenção humana imediata de vocês. A velocidade aqui não é opcional — é a diferença entre fechar ou perder a venda.
+      </div>
+    </div>
+  </div>
+
+  <div class="alert-card black-blue" style="margin-top: 14px; margin-bottom: 8px;">
+    <div class="alert-card-title">
+      Visão de Futuro — Automação Total da Entrada
+      <span class="badge badge-blue">Próxima fase</span>
+    </div>
+    <div class="alert-card-body">
+      A venda 1 a 1 no WhatsApp é a <strong>fase de validação.</strong> Assim que entendermos as principais objeções e ajustarmos a comunicação, a venda do PowerUp migrará para uma <strong>Landing Page (Página de Vendas)</strong>, tornando o processo completamente automatizado — sem depender da disponibilidade de resposta de vocês para gerar receita.
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ── 5. A PONTE PARA OS 9K ── -->
+  <div class="section-header break-before">
+    <div class="section-icon icon-dark">💎</div>
+    <div class="section-label">
+      <div class="section-tag">High ticket</div>
+      <div class="section-title">A Ponte para o High Ticket — A Estratégia dos R$ 9.000</div>
+    </div>
+  </div>
+
+  <p class="intro">
+    A mentoria de R$ 9.000 não será oferecida para todas. <strong>Ela será conquistada por quem demonstrar estar pronta.</strong> A transição não será empurrada — será natural, estratégica e baseada em qualificação.
+  </p>
+
+  <div class="steps-list">
+    <div class="step-card">
+      <div class="step-number">→</div>
+      <div class="step-content">
+        <div class="step-title">Convite Natural ao Final do PowerUp</div>
+        <div class="step-body">Ao final da entrega do PowerUp, faremos um convite não invasivo convidando as alunas a se candidatarem à Mentoria Principal. <strong>Não é uma venda forçada — é uma oportunidade apresentada no momento de maior engajamento.</strong></div>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-number">→</div>
+      <div class="step-content">
+        <div class="step-title">Formulário de Qualificação Estratégica</div>
+        <div class="step-body">O convite direciona para um <strong>formulário condicional de qualificação.</strong> Ele filtra candidatas com o perfil ideal (comprometimento, momento de vida, capacidade de investimento) e identifica dores e objetivos antes da reunião de vendas. A reunião deixa de ser uma tentativa de convencer e passa a ser uma <strong>conversa entre pessoas que já se entendem.</strong></div>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-number">→</div>
+      <div class="step-content">
+        <div class="step-title">Reunião de Vendas Apenas com Perfis Qualificados</div>
+        <div class="step-body">Vocês só realizarão reuniões de vendas no WhatsApp com <strong>perfis pré-qualificados e pré-aquecidos.</strong> Isso significa menos tempo desperdiçado com leads desalinhados e uma taxa de fechamento significativamente maior. O formulário trabalha por vocês antes da conversa começar.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qual-grid">
+    <div class="qual-card">
+      <div class="qual-card-title">🎯 O que o formulário filtra</div>
+      <div class="qual-card-body">Comprometimento com resultados, momento de vida e disponibilidade de investimento. Perfis desalinhados são descartados antes de chegarem até vocês.</div>
+    </div>
+    <div class="qual-card">
+      <div class="qual-card-title">⚡ O que vocês ganham</div>
+      <div class="qual-card-body">Tempo protegido, reuniões de alta qualidade e conversas com pessoas que <em>já querem</em> a mentoria — não com quem ainda precisa ser convencido do valor.</div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ── 6. PRÓXIMOS PASSOS ── -->
+  <div class="section-header">
+    <div class="section-icon icon-blue">📍</div>
+    <div class="section-label">
+      <div class="section-tag">Protocolo de ativação</div>
+      <div class="section-title">Próximos Passos — O Caminho até o Lançamento</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-dot dot-action">✦</div>
+      <div class="timeline-content">
+        <div class="timeline-title">Vocês entregam o Checklist de Bloqueio</div>
+        <div class="timeline-body">Conteúdo do Desafio finalizado, entregáveis do PowerUp prontos e criativos gravados. <strong>Este passo está 100% nas mãos de vocês.</strong></div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot dot-pending">2</div>
+      <div class="timeline-content">
+        <div class="timeline-title">Equipe de Gestão recebe, revisa e valida os materiais</div>
+        <div class="timeline-body">Os criativos e conteúdos passam por uma revisão estratégica para garantir que estão alinhados com a comunicação do funil antes de subir para as campanhas.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot dot-pending">3</div>
+      <div class="timeline-content">
+        <div class="timeline-title">Campanhas ativadas — ManyChat em operação</div>
+        <div class="timeline-body">O tráfego começa a correr. O ManyChat entra em operação automática. As primeiras leads começam a chegar no WhatsApp de vocês.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot dot-wait">4</div>
+      <div class="timeline-content">
+        <div class="timeline-title">Monitoramento conjunto na primeira semana</div>
+        <div class="timeline-body">Acompanhamos os números em tempo real e fazemos os ajustes necessários antes de <strong>escalar o investimento.</strong> A primeira semana é de observação e calibração.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="critical-box" style="margin-top: 28px;">
+    <div class="critical-icon">🎯</div>
+    <div class="critical-content">
+      <div class="critical-label">Conclusão</div>
+      <div class="critical-title">A estrutura está pronta. Agora é execução.</div>
+      <div class="critical-body">
+        Toda a tecnologia está configurada. O produto está na plataforma. O funil está desenhado. A estratégia está validada. <strong>Falta apenas o conteúdo de vocês para que tudo entre em movimento.</strong> Com o checklist concluído, a operação estará pronta para escalar.
+      </div>
+    </div>
+  </div>
+
+  <!-- RODAPÉ -->
+  <div class="footer">
+    <div class="footer-left">Mapa Estratégico — Uso Interno · Universo Jump</div>
+    <div class="footer-right">GESTOR KELVIN</div>
+  </div>
+
+</div>
+</body>
+</html>
