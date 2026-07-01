@@ -43,7 +43,14 @@ Por padrão segue `_contexto/preferencias.md` do sistema principal. Se esse clie
 
 ## Identidade visual
 
-Se o cliente tiver marca própria (logo, cores, fontes), guardar em `marca/` dentro dessa pasta e referenciar aqui. Caso contrário, tarefas visuais (proposta, carrossel, landing page) seguem `marca/design-guide.md` do sistema principal.
+Marca própria, arquivos em [marca/](marca/):
+- `rda-maia-logo-positivo.png` — logo (assinatura + wordmark "rdamaia") em preto sobre fundo claro
+- `rda-maia-logo-negativo.png` — mesma logo em branco sobre fundo preto
+
+**Paleta:** preto/branco (contraste principal) + dourado/bege (detalhe no "da" do wordmark)
+**Estilo da marca:** assinatura em pincelada (brush stroke) acima do wordmark, tipografia sans-serif fina e minimalista — visual sofisticado/alto padrão, condizente com imobiliária.
+
+Tarefas visuais (posts, carrossel, proposta) devem usar essas logos e paleta como referência.
 
 ## Tarefas
 
