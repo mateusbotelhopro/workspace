@@ -22,7 +22,7 @@
 
 ## Acessos e contas conectadas
 
-- Google Ads — Customer ID: [a definir]
+- Google Ads — Customer ID: 682-001-8995
 - E-mail de acesso: mextinsenior@gmail.com
 - Senha: salva fora do repositório (não versionar)
 - Instagram: https://www.instagram.com/mextin_senior

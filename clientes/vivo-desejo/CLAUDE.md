@@ -3,8 +3,9 @@
 ## Quem é esse cliente
 
 - **Nome:** Vivo Desejo
-- **Segmento:** Festas corporativas, infantis e de casamento de alto padrão
+- **Segmento:** Decoradora/produtora de eventos de alto padrão — 15 anos, casamentos, infantil/temático e corporativo. Foco atual de tráfego pago é **pessoa física** (15 anos, casamento, infantil); corporativo fora do escopo por enquanto
 - **Praça:** São Paulo capital
+- **Site:** vivodesejo.com.br
 - **Contato principal:** [a definir]
 - **Início do trabalho:** junho/2026
 
@@ -18,7 +19,7 @@ Detalhes completos do negócio, objetivo, público e histórico estão em [brief
 ## Acessos e contas conectadas
 
 - Google Ads — Customer ID: 864-258-3160
-- Meta Ads — Ad Account ID: [a definir]
+- Meta Ads — Ad Account ID: 503076366427013
 - Instagram/Facebook Page: [a definir]
 
 ## Tom de voz deste cliente
@@ -35,7 +36,10 @@ Detalhes completos do negócio, objetivo, público e histórico estão em [brief
 
 ## Estratégia e histórico
 
-[a definir]
+- **Objetivo:** vender mais festas (conversão direta, não lead frio nem reconhecimento de marca)
+- **Filtro de qualificação:** cliente ideal tem capacidade de pagar R$8.000 a R$12.000 na decoração da festa
+- Região/faixa etária/perfil de decisor por segmento: [a definir]
+- Histórico de tráfego/marketing, budget de mídia, concorrentes e prazo/meta: [a definir]
 
 ---
 
