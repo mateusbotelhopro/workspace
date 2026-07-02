@@ -340,6 +340,20 @@ img { max-width: 100%; display: block; }
     .hero-photo-tag { left: 16px; }
 }
 
+.hero-graphic-frame {
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+}
+
+.hero-graphic-frame .hero-graphic-svg {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/5;
+}
+
 /* ==========================================================================
    PROVA SOCIAL
    ========================================================================== */
@@ -566,6 +580,85 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 480px) {
     .virada-section { padding: 72px 20px; }
+}
+
+/* ==========================================================================
+   COMO FUNCIONA (OPERAÇÃO)
+   ========================================================================== */
+.funciona-section {
+    background: var(--offwhite);
+    padding: 100px 24px;
+    border-top: 2px solid var(--black);
+}
+
+.funciona-container { max-width: 1200px; margin: 0 auto; }
+
+.funciona-intro {
+    color: var(--gray-dark);
+    font-size: 1.02rem;
+    line-height: 1.65;
+    max-width: 620px;
+    margin-bottom: 48px;
+}
+
+.funciona-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.funciona-card {
+    background: var(--white);
+    border: 2px solid var(--black);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-hard-sm);
+    padding: 28px 22px;
+    transition: var(--transition);
+}
+
+.funciona-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 7px 7px 0 var(--blue);
+}
+
+.funciona-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--font-sub);
+    font-size: 0.95rem;
+    margin-bottom: 18px;
+}
+
+.funciona-card h3 {
+    font-family: var(--font-sub);
+    font-size: 1.02rem;
+    text-transform: uppercase;
+    color: var(--black);
+    margin-bottom: 10px;
+    line-height: 1.25;
+}
+
+.funciona-card p {
+    font-size: 0.92rem;
+    color: var(--gray-dark);
+    line-height: 1.6;
+}
+
+@media (max-width: 980px) {
+    .funciona-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+    .funciona-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .funciona-section { padding: 72px 20px; }
 }
 
 /* ==========================================================================

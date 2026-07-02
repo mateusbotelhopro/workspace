@@ -53,7 +53,7 @@ Confira a planta do Blumenau Hill Residence e garanta o seu antes do lançamento
 
 Condições, plantas, valores e disponibilidade de lotes. Fale direto com a Rdamaia. 📞
 
-(47) 98864-7604
+(47) 98864-8604
 (47) 99600-6227
 
 Ligue ou chame no WhatsApp agora mesmo!

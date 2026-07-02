@@ -33,7 +33,7 @@ Detalhes completos do negócio, objetivo, público e histórico estão em [brief
 - Meta Ads — Ad Account ID: [xxx]
 - Instagram/Facebook Page: [xxx]
 - Site: rdamaia.com.br
-- Telefones de contato: (47) 98864-7604 e (47) 99600-6227
+- Telefones de contato: (47) 98864-8604 e (47) 99600-6227
 - Outros: [xxx]
 
 ## Tom de voz deste cliente
