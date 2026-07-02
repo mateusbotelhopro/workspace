@@ -2,11 +2,10 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1000">
 <title>Contrato de Prestação de Serviços — André Mattos</title>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  @page { size: A4; margin: 0; }
+  @page { size: A4; margin: 22mm 18mm 20mm; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: 'Archivo', system-ui, sans-serif;
@@ -15,20 +14,10 @@
     background: #fff;
   }
 
-  .page {
-    width: 794px;
-    min-height: 1123px;
-    position: relative;
-    overflow: hidden;
-    page-break-after: always;
-    background: #fff;
-  }
-  .page:last-child { page-break-after: avoid; }
-
-  .doc-title-block { padding: 48px 48px 0; }
+  .doc-title-block { margin-bottom: 24px; }
   .doc-title {
     font-family: 'Anton', sans-serif;
-    font-size: 32px;
+    font-size: 30px;
     color: #0A0A0A;
     letter-spacing: 0.02em;
     line-height: 1;
@@ -37,298 +26,256 @@
   .doc-sub { font-size: 11px; color: #a3a3a3; letter-spacing: 0.04em; margin-top: 6px; }
   .doc-title-rule { height: 3px; background: #2438E8; width: 56px; margin-top: 16px; }
 
-  .inner-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding-bottom: 16px;
-    margin-bottom: 28px;
-    border-bottom: 1px solid #e5e5e5;
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-bottom: 24px;
+    page-break-inside: avoid;
   }
-  .inner-header-title { font-family: 'Anton', sans-serif; font-size: 16px; color: #0A0A0A; letter-spacing: 0.04em; }
-  .inner-page-label { font-size: 10px; color: #a3a3a3; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
-
-  .content { padding: 32px 48px 80px; }
-
-  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-bottom: 28px; }
   .info-row { display: flex; align-items: baseline; padding: 9px 0; border-bottom: 1px solid #eee; gap: 8px; }
-  .info-row.full { grid-column: 1 / -1; }
   .info-label { font-size: 10px; font-weight: 700; color: #0A0A0A; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; flex-shrink: 0; }
-  .info-value { font-size: 12px; color: #404040; flex: 1; border-bottom: 1px dotted #ccc; padding-bottom: 1px; min-height: 16px; }
-  .info-value.filled { color: #0A0A0A; font-weight: 600; border-bottom-color: transparent; }
+  .info-value { font-size: 12px; color: #0A0A0A; font-weight: 600; flex: 1; }
 
-  .clause-block { border: 1px solid #e5e5e5; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .clause-block {
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    page-break-inside: avoid;
+  }
   .clause-block-header { background: #0A0A0A; padding: 10px 20px; display: flex; align-items: baseline; gap: 8px; }
-  .clause-block-number { font-family: 'Anton', sans-serif; font-size: 20px; color: #2438E8; line-height: 1; }
-  .clause-block-title { font-family: 'Anton', sans-serif; font-size: 16px; color: #fff; letter-spacing: 0.06em; line-height: 1; }
-  .clause-block-body { padding: 16px 20px; font-size: 12px; color: #404040; line-height: 1.8; background: #fff; }
-  .clause-block-body p { margin-bottom: 8px; }
+  .clause-block-number { font-family: 'Anton', sans-serif; font-size: 18px; color: #2438E8; line-height: 1; }
+  .clause-block-title { font-family: 'Anton', sans-serif; font-size: 14px; color: #fff; letter-spacing: 0.06em; line-height: 1; }
+  .clause-block-body { padding: 14px 20px; font-size: 11.5px; color: #404040; line-height: 1.7; background: #fff; }
+  .clause-block-body p { margin-bottom: 7px; }
   .clause-block-body p:last-child { margin-bottom: 0; }
 
-  .field { display: inline; background: rgba(36,56,232,0.06); border-bottom: 1.5px solid #2438E8; padding: 1px 6px; font-weight: 600; color: #171717; border-radius: 2px; font-size: 12px; }
-
-  .sub-item { display: flex; gap: 8px; margin-bottom: 6px; font-size: 12px; color: #404040; line-height: 1.7; }
+  .sub-item { display: flex; gap: 8px; margin-bottom: 5px; font-size: 11.5px; color: #404040; line-height: 1.6; }
   .sub-item-marker { color: #2438E8; font-weight: 700; font-size: 11px; min-width: 16px; padding-top: 1px; }
 
-  .info-box { background: rgba(36,56,232,0.04); border-left: 3px solid #2438E8; border-radius: 0 8px 8px 0; padding: 14px 20px; margin: 12px 0; font-size: 11px; color: #525252; line-height: 1.7; }
-  .info-box strong { color: #171717; }
+  .info-box {
+    background: rgba(36,56,232,0.04);
+    border-left: 3px solid #2438E8;
+    border-radius: 0 8px 8px 0;
+    padding: 12px 18px;
+    margin: -2px 0 14px;
+    font-size: 10.5px;
+    color: #525252;
+    line-height: 1.6;
+    page-break-inside: avoid;
+  }
+  .field { display: inline; background: rgba(36,56,232,0.06); border-bottom: 1.5px solid #2438E8; padding: 1px 6px; font-weight: 600; color: #171717; border-radius: 2px; }
 
-  .section-sep { height: 1px; background: linear-gradient(to right, #2438E8, transparent 50%); margin: 24px 0; }
+  .section-sep { height: 1px; background: linear-gradient(to right, #2438E8, transparent 50%); margin: 20px 0; }
 
-  .sig-section { margin-top: 36px; }
+  .sig-section { margin-top: 24px; page-break-inside: avoid; }
   .sig-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 20px; }
   .sig-block { display: flex; flex-direction: column; gap: 6px; }
   .sig-line { width: 100%; height: 1px; background: #ccc; margin-top: 48px; }
   .sig-name { font-size: 13px; font-weight: 700; color: #171717; }
   .sig-role { font-size: 11px; color: #737373; }
   .sig-doc { font-size: 10px; color: #a3a3a3; }
-
-  .page-footer { position: absolute; bottom: 0; left: 0; right: 0; padding: 0 48px 20px; display: flex; justify-content: space-between; align-items: center; font-size: 9px; color: #ccc; }
-  .page-footer-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(to right, #2438E8, transparent 40%); }
 </style>
 </head>
 <body>
 
-<!-- ============ PAGINA 1 ============ -->
-<div class="page">
-  <div class="doc-title-block">
-    <div class="doc-title">CONTRATO DE PRESTAÇÃO DE <span>SERVIÇOS</span></div>
-    <div class="doc-sub">MR Botelho Marketing Direto — mateusbotelho.com</div>
-    <div class="doc-title-rule"></div>
-  </div>
-
-  <div class="content">
-
-    <div class="info-grid">
-      <div class="info-row"><span class="info-label">Cliente:</span><span class="info-value filled">André Luiz Rapchan Mattos</span></div>
-      <div class="info-row"><span class="info-label">Serviço:</span><span class="info-value filled">Social media (gestão de conteúdo)</span></div>
-      <div class="info-row"><span class="info-label">Data:</span><span class="info-value filled">02/07/2026</span></div>
-      <div class="info-row"><span class="info-label">Mensalidade:</span><span class="info-value filled">R$ 650,00</span></div>
-    </div>
-
-    <!-- CLAUSULA 1 -->
-    <div class="clause-block">
-      <div class="clause-block-header">
-        <span class="clause-block-number">01</span>
-        <span class="clause-block-title">DAS PARTES</span>
-      </div>
-      <div class="clause-block-body">
-        <p><strong>CONTRATADA:</strong> MR Botelho Marketing Direto, pessoa jurídica de direito privado, inscrita no CNPJ sob o n. 67.137.260/0001-84, com sede na Rua Rio Grande do Norte, nº 1435, Sala 708 PVMTO 7, Bairro Savassi, Belo Horizonte - MG, CEP 30.130-138, neste ato representada por seu sócio-administrador Mateus Ramos Botelho, doravante denominada <strong>CONTRATADA</strong>.</p>
-        <p><strong>CONTRATANTE:</strong> André Luiz Rapchan Mattos, pessoa física, inscrito no CPF sob o n. 097.498.137-07, doravante denominado <strong>CONTRATANTE</strong>.</p>
-      </div>
-    </div>
-
-    <!-- CLAUSULA 2 -->
-    <div class="clause-block">
-      <div class="clause-block-header">
-        <span class="clause-block-number">02</span>
-        <span class="clause-block-title">DO OBJETO</span>
-      </div>
-      <div class="clause-block-body">
-        <p>O presente contrato tem por objeto a prestação de serviços de <strong>gestão de social media</strong> pela CONTRATADA ao CONTRATANTE, para o perfil profissional do consultório odontológico do CONTRATANTE, compreendendo:</p>
-        <div class="sub-item"><span class="sub-item-marker">a)</span> Produção e publicação de 3 (três) posts por semana no Instagram do consultório;</div>
-        <div class="sub-item"><span class="sub-item-marker">b)</span> Roteiros e dicas de conteúdo para Stories e Reels;</div>
-        <div class="sub-item"><span class="sub-item-marker">c)</span> Planejamento de linha editorial alinhada ao posicionamento do CONTRATANTE.</div>
-        <p>Os serviços serão prestados de forma <strong>contínua e recorrente</strong>, mediante pagamento de mensalidade, conforme Cláusula 5.</p>
-      </div>
-    </div>
-
-    <!-- CLAUSULA 3 -->
-    <div class="clause-block">
-      <div class="clause-block-header">
-        <span class="clause-block-number">03</span>
-        <span class="clause-block-title">DO ESCOPO E EXCLUSÕES</span>
-      </div>
-      <div class="clause-block-body">
-        <p>3.1. O escopo dos serviços compreende exclusivamente os itens descritos na Cláusula 2. Serviços adicionais não previstos (ex: gravação em vídeo presencial, edição avançada, gestão de tráfego pago, criação de site) serão tratados como aditivo contratual, com valor a ser negociado separadamente.</p>
-        <p>3.2. Não estão inclusos neste contrato, salvo acordo expresso em contrário:</p>
-        <div class="sub-item"><span class="sub-item-marker">a)</span> Investimento em impulsionamento pago (mídia paga) dos posts;</div>
-        <div class="sub-item"><span class="sub-item-marker">b)</span> Produção fotográfica ou audiovisual profissional (equipe própria de captação);</div>
-        <div class="sub-item"><span class="sub-item-marker">c)</span> Resposta a comentários e mensagens diretas do perfil;</div>
-        <div class="sub-item"><span class="sub-item-marker">d)</span> Gestão de outras redes além do Instagram, salvo acordo em contrário.</div>
-      </div>
-    </div>
-
-    <!-- CLAUSULA 4 -->
-    <div class="clause-block">
-      <div class="clause-block-header">
-        <span class="clause-block-number">04</span>
-        <span class="clause-block-title">DO MATERIAL DE BASE</span>
-      </div>
-      <div class="clause-block-body">
-        <p>4.1. Fotos, vídeos brutos e demais materiais de captação necessários pra produção dos posts, Stories e Reels são de responsabilidade do CONTRATANTE, salvo acordo em contrário.</p>
-        <p>4.2. A CONTRATADA orientará o CONTRATANTE sobre o tipo de material necessário para cada peça de conteúdo.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="page-footer">
-    <span>André Mattos — Contrato de Prestação de Serviços</span>
-    <span>Página 1</span>
-  </div>
-  <div class="page-footer-bar"></div>
+<div class="doc-title-block">
+  <div class="doc-title">CONTRATO DE PRESTAÇÃO DE <span>SERVIÇOS</span></div>
+  <div class="doc-sub">MR Botelho Marketing Direto — mateusbotelho.com</div>
+  <div class="doc-title-rule"></div>
 </div>
 
-<!-- ============ PAGINA 2 ============ -->
-<div class="page">
-  <div class="content" style="padding-top:40px;">
-    <div class="inner-header">
-      <span class="inner-header-title">CONTRATO DE PRESTAÇÃO DE SERVIÇOS</span>
-      <span class="inner-page-label">André Mattos</span>
-    </div>
-
-    <!-- CLAUSULA 5 -->
-    <div class="clause-block">
-      <div class="clause-block-header">
-        <span class="clause-block-number">05</span>
-        <span class="clause-block-title">DA MENSALIDADE E PAGAMENTO</span>
-      </div>
-      <div class="clause-block-body">
-        <p>5.1. Pelos serviços descritos na Cláusula 2, o CONTRATANTE pagará à CONTRATADA o valor mensal de <strong>R$ 650,00 (seiscentos e cinquenta reais)</strong>.</p>
-        <p>5.2. O pagamento referente ao presente contrato é devido no ato da assinatura, e as mensalidades seguintes seguem a mesma condição de pagamento adiantado, referentes ao mês de prestação de serviço.</p>
-        <p>5.3. Os pagamentos serão realizados via Pix, na chave <strong>12477143654</strong> (titular: Mateus Ramos Botelho).</p>
-        <p>5.4. O atraso no pagamento da mensalidade acarretará multa de 2% sobre o valor em atraso, acrescido de juros de 1% ao mês, calculados pro rata die, podendo a CONTRATADA suspender a produção de conteúdo até a regularização.</p>
-      </div>
-    </div>
-
-    <div class="info-box">
-      <strong>Dados de pagamento da CONTRATADA:</strong><br>
-      PIX: <span class="field">12477143654</span> | Titular: Mateus Ramos Botelho
-    </div>
-
-    <!-- CLAUSULA 6 -->
-    <div class="clause-block">
-      <div class="clause-block-header">
-        <span class="clause-block-number">06</span>
-        <span class="clause-block-title">DO PRAZO E VIGÊNCIA</span>
-      </div>
-      <div class="clause-block-body">
-        <p>6.1. Este contrato vigora pelo prazo de <strong>3 (três) meses</strong>, contados a partir da data de assinatura, <strong>sem fidelidade</strong> — podendo ser cancelado por qualquer das partes a qualquer momento, conforme Cláusula 11, sem incidência de multa por rescisão antecipada.</p>
-        <p>6.2. Ao final do prazo de 3 meses, o contrato poderá ser renovado mediante acordo entre as partes.</p>
-      </div>
-    </div>
-
-    <!-- CLAUSULA 7 -->
-    <div class="clause-block">
-      <div class="clause-block-header">
-        <span class="clause-block-number">07</span>
-        <span class="clause-block-title">DAS OBRIGAÇÕES DO CONTRATANTE</span>
-      </div>
-      <div class="clause-block-body">
-        <div class="sub-item"><span class="sub-item-marker">a)</span> Fornecer acesso ao perfil do Instagram do consultório e demais materiais necessários (fotos, informações, aprovações);</div>
-        <div class="sub-item"><span class="sub-item-marker">b)</span> Aprovar ou solicitar ajustes nos conteúdos em tempo hábil, sem atrasar o calendário de postagens;</div>
-        <div class="sub-item"><span class="sub-item-marker">c)</span> Realizar os pagamentos da mensalidade nas datas pactuadas.</div>
-      </div>
-    </div>
-
-    <!-- CLAUSULA 8 -->
-    <div class="clause-block">
-      <div class="clause-block-header">
-        <span class="clause-block-number">08</span>
-        <span class="clause-block-title">DAS OBRIGAÇÕES DA CONTRATADA</span>
-      </div>
-      <div class="clause-block-body">
-        <div class="sub-item"><span class="sub-item-marker">a)</span> Produzir e publicar 3 (três) posts por semana, conforme calendário editorial acordado;</div>
-        <div class="sub-item"><span class="sub-item-marker">b)</span> Fornecer roteiros e dicas de conteúdo para Stories e Reels periodicamente;</div>
-        <div class="sub-item"><span class="sub-item-marker">c)</span> Manter o CONTRATANTE informado sobre o calendário e a linha editorial do perfil;</div>
-        <div class="sub-item"><span class="sub-item-marker">d)</span> Manter sigilo sobre os dados e informações do CONTRATANTE, conforme Cláusula 10.</div>
-      </div>
-    </div>
-
-    <!-- CLAUSULA 9 -->
-    <div class="clause-block">
-      <div class="clause-block-header">
-        <span class="clause-block-number">09</span>
-        <span class="clause-block-title">DA AUSÊNCIA DE GARANTIA DE RESULTADOS</span>
-      </div>
-      <div class="clause-block-body">
-        <p>9.1. A CONTRATADA se compromete a empregar as melhores práticas de mercado na produção e publicação de conteúdo, mas <strong>não garante resultados numéricos específicos</strong> (número de seguidores, engajamento, agendamentos ou faturamento), uma vez que dependem de fatores externos à sua atuação, como algoritmo da plataforma, sazonalidade e capacidade de conversão do CONTRATANTE.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="page-footer">
-    <span>André Mattos — Contrato de Prestação de Serviços</span>
-    <span>Página 2</span>
-  </div>
-  <div class="page-footer-bar"></div>
+<div class="info-grid">
+  <div class="info-row"><span class="info-label">Cliente:</span><span class="info-value">André Luiz Rapchan Mattos</span></div>
+  <div class="info-row"><span class="info-label">Serviço:</span><span class="info-value">Social media (gestão de conteúdo)</span></div>
+  <div class="info-row"><span class="info-label">Data:</span><span class="info-value">02/07/2026</span></div>
+  <div class="info-row"><span class="info-label">Mensalidade:</span><span class="info-value">R$ 650,00</span></div>
 </div>
 
-<!-- ============ PAGINA 3 ============ -->
-<div class="page">
-  <div class="content" style="padding-top:40px;">
-    <div class="inner-header">
-      <span class="inner-header-title">CONTRATO DE PRESTAÇÃO DE SERVIÇOS</span>
-      <span class="inner-page-label">André Mattos</span>
+<!-- CLAUSULA 1 -->
+<div class="clause-block">
+  <div class="clause-block-header">
+    <span class="clause-block-number">01</span>
+    <span class="clause-block-title">DAS PARTES</span>
+  </div>
+  <div class="clause-block-body">
+    <p><strong>CONTRATADA:</strong> MR Botelho Marketing Direto, pessoa jurídica de direito privado, inscrita no CNPJ sob o n. 67.137.260/0001-84, com sede na Rua Rio Grande do Norte, nº 1435, Sala 708 PVMTO 7, Bairro Savassi, Belo Horizonte - MG, CEP 30.130-138, neste ato representada por seu sócio-administrador Mateus Ramos Botelho, doravante denominada <strong>CONTRATADA</strong>.</p>
+    <p><strong>CONTRATANTE:</strong> André Luiz Rapchan Mattos, pessoa física, inscrito no CPF sob o n. 097.498.137-07, doravante denominado <strong>CONTRATANTE</strong>.</p>
+  </div>
+</div>
+
+<!-- CLAUSULA 2 -->
+<div class="clause-block">
+  <div class="clause-block-header">
+    <span class="clause-block-number">02</span>
+    <span class="clause-block-title">DO OBJETO</span>
+  </div>
+  <div class="clause-block-body">
+    <p>O presente contrato tem por objeto a prestação de serviços de <strong>gestão de social media</strong> pela CONTRATADA ao CONTRATANTE, para o perfil profissional do consultório odontológico do CONTRATANTE, compreendendo:</p>
+    <div class="sub-item"><span class="sub-item-marker">a)</span> Produção e publicação de 3 (três) posts por semana no Instagram do consultório;</div>
+    <div class="sub-item"><span class="sub-item-marker">b)</span> Roteiros e dicas de conteúdo para Stories e Reels;</div>
+    <div class="sub-item"><span class="sub-item-marker">c)</span> Planejamento de linha editorial alinhada ao posicionamento do CONTRATANTE.</div>
+    <p>Os serviços serão prestados de forma <strong>contínua e recorrente</strong>, mediante pagamento de mensalidade, conforme Cláusula 5.</p>
+  </div>
+</div>
+
+<!-- CLAUSULA 3 -->
+<div class="clause-block">
+  <div class="clause-block-header">
+    <span class="clause-block-number">03</span>
+    <span class="clause-block-title">DO ESCOPO E EXCLUSÕES</span>
+  </div>
+  <div class="clause-block-body">
+    <p>3.1. O escopo dos serviços compreende exclusivamente os itens descritos na Cláusula 2. Serviços adicionais não previstos (ex: gravação em vídeo presencial, edição avançada, gestão de tráfego pago, criação de site) serão tratados como aditivo contratual, com valor a ser negociado separadamente.</p>
+    <p>3.2. Não estão inclusos neste contrato, salvo acordo expresso em contrário:</p>
+    <div class="sub-item"><span class="sub-item-marker">a)</span> Investimento em impulsionamento pago (mídia paga) dos posts;</div>
+    <div class="sub-item"><span class="sub-item-marker">b)</span> Produção fotográfica ou audiovisual profissional (equipe própria de captação);</div>
+    <div class="sub-item"><span class="sub-item-marker">c)</span> Resposta a comentários e mensagens diretas do perfil;</div>
+    <div class="sub-item"><span class="sub-item-marker">d)</span> Gestão de outras redes além do Instagram, salvo acordo em contrário.</div>
+  </div>
+</div>
+
+<!-- CLAUSULA 4 -->
+<div class="clause-block">
+  <div class="clause-block-header">
+    <span class="clause-block-number">04</span>
+    <span class="clause-block-title">DO MATERIAL DE BASE</span>
+  </div>
+  <div class="clause-block-body">
+    <p>4.1. Fotos, vídeos brutos e demais materiais de captação necessários pra produção dos posts, Stories e Reels são de responsabilidade do CONTRATANTE, salvo acordo em contrário.</p>
+    <p>4.2. A CONTRATADA orientará o CONTRATANTE sobre o tipo de material necessário para cada peça de conteúdo.</p>
+  </div>
+</div>
+
+<!-- CLAUSULA 5 -->
+<div class="clause-block">
+  <div class="clause-block-header">
+    <span class="clause-block-number">05</span>
+    <span class="clause-block-title">DA MENSALIDADE E PAGAMENTO</span>
+  </div>
+  <div class="clause-block-body">
+    <p>5.1. Pelos serviços descritos na Cláusula 2, o CONTRATANTE pagará à CONTRATADA o valor mensal de <strong>R$ 650,00 (seiscentos e cinquenta reais)</strong>.</p>
+    <p>5.2. O pagamento referente ao presente contrato é devido no ato da assinatura, e as mensalidades seguintes seguem a mesma condição de pagamento adiantado, referentes ao mês de prestação de serviço.</p>
+    <p>5.3. Os pagamentos serão realizados via Pix, na chave <strong>12477143654</strong> (titular: Mateus Ramos Botelho).</p>
+    <p>5.4. O atraso no pagamento da mensalidade acarretará multa de 2% sobre o valor em atraso, acrescido de juros de 1% ao mês, calculados pro rata die, podendo a CONTRATADA suspender a produção de conteúdo até a regularização.</p>
+  </div>
+</div>
+
+<div class="info-box">
+  <strong>Dados de pagamento da CONTRATADA:</strong><br>
+  PIX: <span class="field">12477143654</span> | Titular: Mateus Ramos Botelho
+</div>
+
+<!-- CLAUSULA 6 -->
+<div class="clause-block">
+  <div class="clause-block-header">
+    <span class="clause-block-number">06</span>
+    <span class="clause-block-title">DO PRAZO E VIGÊNCIA</span>
+  </div>
+  <div class="clause-block-body">
+    <p>6.1. Este contrato vigora pelo prazo de <strong>3 (três) meses</strong>, contados a partir da data de assinatura, <strong>sem fidelidade</strong> — podendo ser cancelado por qualquer das partes a qualquer momento, conforme Cláusula 11, sem incidência de multa por rescisão antecipada.</p>
+    <p>6.2. Ao final do prazo de 3 meses, o contrato poderá ser renovado mediante acordo entre as partes.</p>
+  </div>
+</div>
+
+<!-- CLAUSULA 7 -->
+<div class="clause-block">
+  <div class="clause-block-header">
+    <span class="clause-block-number">07</span>
+    <span class="clause-block-title">DAS OBRIGAÇÕES DO CONTRATANTE</span>
+  </div>
+  <div class="clause-block-body">
+    <div class="sub-item"><span class="sub-item-marker">a)</span> Fornecer acesso ao perfil do Instagram do consultório e demais materiais necessários (fotos, informações, aprovações);</div>
+    <div class="sub-item"><span class="sub-item-marker">b)</span> Aprovar ou solicitar ajustes nos conteúdos em tempo hábil, sem atrasar o calendário de postagens;</div>
+    <div class="sub-item"><span class="sub-item-marker">c)</span> Realizar os pagamentos da mensalidade nas datas pactuadas.</div>
+  </div>
+</div>
+
+<!-- CLAUSULA 8 -->
+<div class="clause-block">
+  <div class="clause-block-header">
+    <span class="clause-block-number">08</span>
+    <span class="clause-block-title">DAS OBRIGAÇÕES DA CONTRATADA</span>
+  </div>
+  <div class="clause-block-body">
+    <div class="sub-item"><span class="sub-item-marker">a)</span> Produzir e publicar 3 (três) posts por semana, conforme calendário editorial acordado;</div>
+    <div class="sub-item"><span class="sub-item-marker">b)</span> Fornecer roteiros e dicas de conteúdo para Stories e Reels periodicamente;</div>
+    <div class="sub-item"><span class="sub-item-marker">c)</span> Manter o CONTRATANTE informado sobre o calendário e a linha editorial do perfil;</div>
+    <div class="sub-item"><span class="sub-item-marker">d)</span> Manter sigilo sobre os dados e informações do CONTRATANTE, conforme Cláusula 10.</div>
+  </div>
+</div>
+
+<!-- CLAUSULA 9 -->
+<div class="clause-block">
+  <div class="clause-block-header">
+    <span class="clause-block-number">09</span>
+    <span class="clause-block-title">DA AUSÊNCIA DE GARANTIA DE RESULTADOS</span>
+  </div>
+  <div class="clause-block-body">
+    <p>9.1. A CONTRATADA se compromete a empregar as melhores práticas de mercado na produção e publicação de conteúdo, mas <strong>não garante resultados numéricos específicos</strong> (número de seguidores, engajamento, agendamentos ou faturamento), uma vez que dependem de fatores externos à sua atuação, como algoritmo da plataforma, sazonalidade e capacidade de conversão do CONTRATANTE.</p>
+  </div>
+</div>
+
+<!-- CLAUSULA 10 -->
+<div class="clause-block">
+  <div class="clause-block-header">
+    <span class="clause-block-number">10</span>
+    <span class="clause-block-title">DA CONFIDENCIALIDADE</span>
+  </div>
+  <div class="clause-block-body">
+    <p>10.1. Ambas as partes se comprometem a manter sigilo sobre todas as informações confidenciais a que tiverem acesso durante a vigência deste contrato, incluindo dados de pacientes, estratégias de negócio, senhas e credenciais de acesso.</p>
+    <p>10.2. Esta obrigação permanece vigente por 2 (dois) anos após o encerramento do contrato.</p>
+  </div>
+</div>
+
+<!-- CLAUSULA 11 -->
+<div class="clause-block">
+  <div class="clause-block-header">
+    <span class="clause-block-number">11</span>
+    <span class="clause-block-title">DA RESCISÃO</span>
+  </div>
+  <div class="clause-block-body">
+    <p>11.1. Por não haver fidelidade (Cláusula 6), o presente contrato poderá ser rescindido por qualquer das partes a qualquer momento, mediante comunicação por escrito com antecedência mínima de 15 (quinze) dias, sem incidência de multa.</p>
+    <p>11.2. Mensalidades já pagas referentes a período de serviço não prestado, em caso de rescisão pela CONTRATADA, serão devolvidas de forma proporcional em até 15 dias úteis.</p>
+    <p>11.3. O inadimplemento de qualquer obrigação contratual por qualquer das partes, não sanado em 10 dias após notificação, configura justa causa para rescisão imediata.</p>
+  </div>
+</div>
+
+<!-- CLAUSULA 12 -->
+<div class="clause-block">
+  <div class="clause-block-header">
+    <span class="clause-block-number">12</span>
+    <span class="clause-block-title">DAS DISPOSIÇÕES GERAIS</span>
+  </div>
+  <div class="clause-block-body">
+    <p>12.1. As partes declaram que este contrato foi celebrado de livre e espontânea vontade, sem qualquer vício de consentimento.</p>
+    <p>12.2. Eventuais tolerâncias quanto ao descumprimento de cláusulas não constituem novação ou renúncia de direitos.</p>
+    <p>12.3. Fica eleito o foro da comarca de <strong>Belo Horizonte/MG</strong> para dirimir quaisquer controvérsias oriundas deste contrato, com renúncia expressa a qualquer outro, por mais privilegiado que seja.</p>
+  </div>
+</div>
+
+<div class="section-sep"></div>
+
+<!-- ASSINATURAS -->
+<div class="sig-section">
+  <p style="font-size:12px;color:#404040;margin-bottom:4px;">E por estarem de acordo, as partes firmam o presente instrumento.</p>
+  <p style="font-size:12px;color:#a3a3a3;">Belo Horizonte/MG, 02 de julho de 2026.</p>
+
+  <div class="sig-grid">
+    <div class="sig-block">
+      <div class="sig-line"></div>
+      <div class="sig-name">MR Botelho Marketing Direto</div>
+      <div class="sig-role">CONTRATADA — Mateus Ramos Botelho</div>
+      <div class="sig-doc">CNPJ: 67.137.260/0001-84</div>
     </div>
-
-    <!-- CLAUSULA 10 -->
-    <div class="clause-block">
-      <div class="clause-block-header">
-        <span class="clause-block-number">10</span>
-        <span class="clause-block-title">DA CONFIDENCIALIDADE</span>
-      </div>
-      <div class="clause-block-body">
-        <p>10.1. Ambas as partes se comprometem a manter sigilo sobre todas as informações confidenciais a que tiverem acesso durante a vigência deste contrato, incluindo dados de pacientes, estratégias de negócio, senhas e credenciais de acesso.</p>
-        <p>10.2. Esta obrigação permanece vigente por 2 (dois) anos após o encerramento do contrato.</p>
-      </div>
-    </div>
-
-    <!-- CLAUSULA 11 -->
-    <div class="clause-block">
-      <div class="clause-block-header">
-        <span class="clause-block-number">11</span>
-        <span class="clause-block-title">DA RESCISÃO</span>
-      </div>
-      <div class="clause-block-body">
-        <p>11.1. Por não haver fidelidade (Cláusula 6), o presente contrato poderá ser rescindido por qualquer das partes a qualquer momento, mediante comunicação por escrito com antecedência mínima de 15 (quinze) dias, sem incidência de multa.</p>
-        <p>11.2. Mensalidades já pagas referentes a período de serviço não prestado, em caso de rescisão pela CONTRATADA, serão devolvidas de forma proporcional em até 15 dias úteis.</p>
-        <p>11.3. O inadimplemento de qualquer obrigação contratual por qualquer das partes, não sanado em 10 dias após notificação, configura justa causa para rescisão imediata.</p>
-      </div>
-    </div>
-
-    <!-- CLAUSULA 12 -->
-    <div class="clause-block">
-      <div class="clause-block-header">
-        <span class="clause-block-number">12</span>
-        <span class="clause-block-title">DAS DISPOSIÇÕES GERAIS</span>
-      </div>
-      <div class="clause-block-body">
-        <p>12.1. As partes declaram que este contrato foi celebrado de livre e espontânea vontade, sem qualquer vício de consentimento.</p>
-        <p>12.2. Eventuais tolerâncias quanto ao descumprimento de cláusulas não constituem novação ou renúncia de direitos.</p>
-        <p>12.3. Fica eleito o foro da comarca de <strong>Belo Horizonte/MG</strong> para dirimir quaisquer controvérsias oriundas deste contrato, com renúncia expressa a qualquer outro, por mais privilegiado que seja.</p>
-      </div>
-    </div>
-
-    <div class="section-sep"></div>
-
-    <!-- ASSINATURAS -->
-    <div class="sig-section">
-      <p style="font-size:12px;color:#404040;margin-bottom:4px;">E por estarem de acordo, as partes firmam o presente instrumento.</p>
-      <p style="font-size:12px;color:#a3a3a3;"><span class="field">[CIDADE/UF]</span>, 02 de julho de 2026.</p>
-
-      <div class="sig-grid">
-        <div class="sig-block">
-          <div class="sig-line"></div>
-          <div class="sig-name">MR Botelho Marketing Direto</div>
-          <div class="sig-role">CONTRATADA — Mateus Ramos Botelho</div>
-          <div class="sig-doc">CNPJ: 67.137.260/0001-84</div>
-        </div>
-        <div class="sig-block">
-          <div class="sig-line"></div>
-          <div class="sig-name">André Luiz Rapchan Mattos</div>
-          <div class="sig-role">CONTRATANTE</div>
-          <div class="sig-doc">CPF: 097.498.137-07</div>
-        </div>
-      </div>
+    <div class="sig-block">
+      <div class="sig-line"></div>
+      <div class="sig-name">André Luiz Rapchan Mattos</div>
+      <div class="sig-role">CONTRATANTE</div>
+      <div class="sig-doc">CPF: 097.498.137-07</div>
     </div>
   </div>
-
-  <div class="page-footer">
-    <span>André Mattos — Contrato de Prestação de Serviços</span>
-    <span>Página 3</span>
-  </div>
-  <div class="page-footer-bar"></div>
 </div>
 
 </body>
