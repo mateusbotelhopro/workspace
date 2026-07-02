@@ -277,6 +277,78 @@
       line-height: 1.7;
     }
 
+    /* ── Prêmio ── */
+    .premio { background: var(--branco); }
+
+    .premio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .premio-image img {
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+      box-shadow: 0 24px 60px rgba(102, 51, 0, 0.14);
+    }
+
+    .premio-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--dourado-claro);
+      color: #8B6914;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .premio-lead {
+      font-size: 17px;
+      color: var(--texto);
+      line-height: 1.75;
+      margin: 16px 0 24px;
+    }
+
+    .premio-list {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+
+    .premio-list li {
+      position: relative;
+      padding-left: 26px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: var(--cinza-600);
+      line-height: 1.6;
+    }
+
+    .premio-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--verde);
+      font-weight: 700;
+    }
+
+    .premio-quote {
+      border-left: 3px solid var(--dourado);
+      padding-left: 20px;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 17px;
+      color: var(--marrom);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
     /* ── Sobre ── */
     .sobre { background: var(--cinza-100); }
 
@@ -632,6 +704,7 @@
       .hero h1 { font-size: 36px; }
       .hero p { font-size: 16px; }
       .sobre-grid { grid-template-columns: 1fr; gap: 40px; }
+      .premio-grid { grid-template-columns: 1fr; gap: 32px; }
       .food-grid { grid-template-columns: 1fr; }
       .imprensa-grid { grid-template-columns: 1fr; }
       .diferenciais-grid { grid-template-columns: 1fr 1fr; }
@@ -667,6 +740,7 @@
         <span></span><span></span><span></span>
       </button>
       <nav class="nav" id="nav">
+        <a href="#premio">Prêmio</a>
         <a href="#sobre">Sobre</a>
         <a href="#imprensa">Imprensa</a>
         <a href="#contato" class="nav-cta">Fale Conosco</a>
@@ -686,6 +760,31 @@
     <div class="hero-buttons">
       <a href="#sobre" class="btn btn-primary">Conhe&ccedil;a nossa hist&oacute;ria</a>
       <a href="#contato" class="btn btn-outline">Fale Conosco</a>
+    </div>
+  </section>
+
+  <!-- Prêmio -->
+  <section class="section premio" id="premio">
+    <div class="section-inner">
+      <div class="premio-grid">
+        <div class="premio-image">
+          <img src="img/premio-paladar-2025/produto-selo-bronze.jpg" alt="Creme de leite S&ocirc; Minas ao lado do Selo Bronze do Pr&ecirc;mio Paladar 2025" loading="lazy">
+        </div>
+        <div class="premio-content">
+          <span class="premio-badge">Selo Bronze &bull; Pr&ecirc;mio Paladar 2025</span>
+          <span class="section-label">Reconhecimento nacional</span>
+          <h2 class="section-title">3&ordm; melhor creme de leite fresco do Brasil</h2>
+          <p class="premio-lead">A S&ocirc; Minas Latic&iacute;nios subiu ao p&oacute;dio do Pr&ecirc;mio Paladar 2025, do Estad&atilde;o, com seu creme de leite fresco eleito o 3&ordm; melhor do Brasil. O j&uacute;ri t&eacute;cnico destacou textura excepcional, ponto de chantilly firme e sabor equilibrado &mdash; atributos que j&aacute; fazem do produto queridinho de quem trabalha com sobremesas, gelatos e molhos cremosos.</p>
+          <ul class="premio-list">
+            <li><strong>Previsibilidade:</strong> o mesmo ponto de chantilly hoje, amanh&atilde; e no m&ecirc;s que vem.</li>
+            <li><strong>Sabor discreto e elegante:</strong> valoriza a receita, n&atilde;o disputa com ela.</li>
+            <li><strong>Versatilidade real:</strong> do ganache ao molho de frigideira, do sorbetto ao entremet.</li>
+            <li><strong>Frescor de origem:</strong> da Zona da Mata mineira direto para a bancada profissional.</li>
+          </ul>
+          <blockquote class="premio-quote">&ldquo;Textura excepcional, extremamente lisa e cremosa&rdquo; &mdash; j&uacute;ri do Pr&ecirc;mio Paladar 2025</blockquote>
+          <a href="https://www.estadao.com.br/paladar/comida/qual-o-melhor-creme-de-leite-fresco-do-brasil/" target="_blank" rel="noopener" class="btn btn-outline">Ler mat&eacute;ria no Estad&atilde;o</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -790,6 +889,7 @@
         <div>
           <h4>Navega&ccedil;&atilde;o</h4>
           <ul class="footer-links">
+            <li><a href="#premio">Pr&ecirc;mio</a></li>
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#imprensa">Imprensa</a></li>
             <li><a href="#contato">Contato</a></li>
