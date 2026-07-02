@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1350px; overflow: hidden; font-family: 'Montserrat', sans-serif; }
+
+  .canvas {
+    position: relative;
+    width: 1080px;
+    height: 1350px;
+    background: #060606;
+  }
+
+  .bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 38%;
+    opacity: 0.8;
+  }
+
+  .color-grade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(18,14,42,0.55) 0%, rgba(14,12,30,0.38) 28%, rgba(8,7,16,0.22) 50%, rgba(6,6,6,0.35) 100%);
+    mix-blend-mode: multiply;
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at center 42%, rgba(6,6,6,0.2) 0%, rgba(6,6,6,0.62) 62%, rgba(6,6,6,0.9) 100%),
+      linear-gradient(180deg, rgba(6,6,6,0.45) 0%, rgba(6,6,6,0.18) 22%, rgba(6,6,6,0.45) 55%, rgba(6,6,6,0.88) 100%);
+  }
+
+  .sparkle {
+    position: absolute;
+    color: #A49074;
+    opacity: 0.85;
+  }
+
+  .sparkle.tr { top: 64px; right: 70px; font-size: 34px; }
+  .sparkle.bl { bottom: 340px; left: 60px; font-size: 22px; opacity: 0.6; }
+
+  .content {
+    position: absolute;
+    left: 0; right: 0;
+    top: 130px;
+    text-align: center;
+  }
+
+  .logo {
+    height: 180px;
+  }
+
+  .logo-sub {
+    margin-top: 6px;
+    color: #A49074;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+  }
+
+  .headline-block {
+    margin-top: 130px;
+  }
+
+  .attention {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 108px;
+    line-height: 1;
+    color: #F7F5F1;
+    letter-spacing: 2px;
+  }
+
+  .prelaunch {
+    margin-top: 10px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 54px;
+    letter-spacing: 6px;
+    color: #A49074;
+  }
+
+  .divider {
+    width: 80px;
+    height: 2px;
+    background: rgba(164,144,116,0.6);
+    margin: 34px auto;
+  }
+
+  .subline {
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #A49074;
+    text-transform: uppercase;
+    padding: 0 60px;
+    line-height: 1.35;
+  }
+
+  .cta-line {
+    margin-top: 30px;
+    display: inline-block;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #FFD23D;
+    text-transform: uppercase;
+    padding: 14px 34px;
+    border: 3px solid #FFD23D;
+    border-radius: 50px;
+    background: rgba(0,0,0,0.28);
+  }
+
+  .contact-block {
+    position: absolute;
+    left: 0; right: 0;
+    bottom: 110px;
+    text-align: center;
+  }
+
+  .phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .phone:last-child { margin-bottom: 0; }
+
+  .phone .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .phone .icon svg { width: 21px; height: 21px; }
+
+  .phone .number {
+    color: #F7F5F1;
+    font-size: 42px;
+    font-weight: 500;
+  }
+
+  .footer {
+    position: absolute;
+    left: 0; right: 0;
+    bottom: 40px;
+    text-align: center;
+    color: #6b6558;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+</style>
+</head>
+<body>
+  <div class="canvas">
+    <img class="bg" src="assets/hero.jpg">
+    <div class="color-grade"></div>
+    <div class="overlay"></div>
+
+    <div class="sparkle tr">&#10022;</div>
+    <div class="sparkle bl">&#10022;</div>
+
+    <div class="content">
+      <img class="logo" src="assets/logo-dourado.png">
+      <div class="logo-sub">Imóveis</div>
+
+      <div class="headline-block">
+        <div class="attention">ATENÇÃO</div>
+        <div class="prelaunch">PRÉ-LANÇAMENTO</div>
+        <div class="divider"></div>
+        <div class="subline">Primeiro condomínio fechado<br>no bairro Fortaleza</div>
+        <div class="cta-line">Entre em contato para mais informações</div>
+      </div>
+    </div>
+
+    <div class="contact-block">
+      <div class="phone">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="#0e0e0e"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.85.505 3.58 1.383 5.06L2 22l5.06-1.373A9.94 9.94 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.677 0-3.24-.48-4.56-1.31l-.327-.194-3.106.843.83-3.028-.212-.34A8.18 8.18 0 013.8 12c0-4.53 3.67-8.2 8.2-8.2s8.2 3.67 8.2 8.2-3.67 8.2-8.2 8.2z"/></svg>
+        </div>
+        <div class="number">(47) 98864-8604</div>
+      </div>
+      <div class="phone">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="#0e0e0e"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.85.505 3.58 1.383 5.06L2 22l5.06-1.373A9.94 9.94 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.677 0-3.24-.48-4.56-1.31l-.327-.194-3.106.843.83-3.028-.212-.34A8.18 8.18 0 013.8 12c0-4.53 3.67-8.2 8.2-8.2s8.2 3.67 8.2 8.2-3.67 8.2-8.2 8.2z"/></svg>
+        </div>
+        <div class="number">(47) 99600-6227</div>
+      </div>
+    </div>
+
+    <div class="footer">CRECI 06676 J</div>
+  </div>
+</body>
+</html>

@@ -68,6 +68,7 @@ Auditoria feita em 2026-06-21:
 - Política de Privacidade tinha a linha "Site:" duplicada na seção de contato/DPO, e mencionava "o e-mail que consta no rodapé do site" — mas o rodapé não tinha nenhum e-mail, só WhatsApp e site. Removida a duplicata. E-mail oficial definido pela Dayane em 2026-06-21: `contato@vellosleads.com.br` — adicionado no rodapé de todas as páginas, nas seções de contato/DPO da Política e dos Termos, e no `contactPoint` do schema.org.
 - Formulário de onboarding (`onboarding.html`) envia pro e-mail pessoal `dayaneelizabetee@gmail.com` via FormSubmit — funcional, mas vale confirmar se é esse o e-mail definitivo de recebimento de leads/onboarding.
 - Proposta comercial (`apresentacao-comercial/index.html` e o PDF gerado) consistente com o conteúdo do site, sem erros de conteúdo encontrados.
+- 2026-07-02: Melhorada a qualidade das imagens do LinkedIn (`vellos/apresentacao-comercial/linkedin/`). A capa com foto (`cover-v2.html` → `vellos-linkedin-capa.png`) usava um duotone verde feito com corte/threshold agressivo, que quebrava a foto em blocos e perdia todo o detalhe. Refeito o duotone com mapeamento de gradiente sobre a escala de cinza (preserva detalhe da foto) e re-renderizadas as 3 imagens (capa com foto, capa v2 com grafo abstrato, foto de perfil) em 3x de resolução via headless browser — antes estavam em 2x. Arquivos antigos substituídos no lugar; imagem-fonte nova é `duotone-handshake-final.jpg`.
 
 ### Identidade visual — Dayelle
 

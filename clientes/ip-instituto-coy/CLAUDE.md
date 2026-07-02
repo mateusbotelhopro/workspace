@@ -41,6 +41,8 @@ Marca própria recebida — logo em duas versões em `imagens/logo/`:
 - `logo-preto.jpeg` — versão preta sobre fundo branco
 - `logo-dourado.jpeg` — versão dourada sobre fundo branco
 
+Os originais só existem em JPEG (fundo branco sólido, sem transparência). Em `site/imagens/logo/` foram geradas versões `.png` com fundo removido (transparência real) — são as usadas no header/footer/páginas do site pra evitar a caixa branca atrás da logo em fundo escuro. Se precisar da logo sem fundo em outro material, usar essas PNGs como base.
+
 Paleta sugerida pela marca: dourado + preto/branco, estilo clean/premium. Confirmar com o cliente se há paleta de cores e fonte oficial definidas, ou se cabe definir junto na landing page.
 
 Demais materiais visuais em `imagens/`:

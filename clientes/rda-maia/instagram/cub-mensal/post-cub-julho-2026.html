@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1350px; overflow: hidden; font-family: 'Montserrat', sans-serif; }
+
+  .canvas {
+    position: relative;
+    width: 1080px;
+    height: 1350px;
+    background: linear-gradient(160deg, #0B3054 0%, #041E37 55%, #03162A 100%);
+  }
+
+  .logo {
+    position: absolute;
+    top: 62px;
+    right: 56px;
+    height: 92px;
+  }
+
+  .header {
+    position: absolute;
+    top: 74px;
+    left: 56px;
+  }
+
+  .cub {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 118px;
+    line-height: 0.95;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+  }
+
+  .state {
+    margin-top: 2px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 62px;
+    line-height: 1;
+    color: #F0A835;
+    letter-spacing: 1px;
+  }
+
+  .month-pill {
+    margin-top: 28px;
+    display: inline-block;
+    background: #F0A835;
+    color: #141414;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 30px;
+    letter-spacing: 1px;
+    padding: 13px 28px;
+    border-radius: 12px;
+  }
+
+  .photo-band {
+    position: absolute;
+    top: 430px;
+    left: 0;
+    right: 0;
+    height: 470px;
+    overflow: hidden;
+  }
+
+  .photo-band img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+  }
+
+  .photo-scrim {
+    position: absolute;
+    top: 430px;
+    left: 0; right: 0;
+    height: 470px;
+    background: linear-gradient(180deg, rgba(4,30,55,0) 60%, rgba(3,22,42,0.92) 100%);
+  }
+
+  .card {
+    position: absolute;
+    left: 44px;
+    right: 44px;
+    top: 852px;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  }
+
+  .card-top {
+    display: flex;
+    align-items: stretch;
+    background: #041E37;
+    padding: 32px 40px;
+  }
+
+  .card-col {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .card-col.right { padding-left: 34px; }
+
+  .icon-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 3px solid #F0A835;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .card-label {
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 1.25;
+    text-transform: uppercase;
+  }
+
+  .divider-v {
+    width: 2px;
+    background: rgba(255,255,255,0.25);
+    margin: 0 10px;
+  }
+
+  .card-bottom {
+    display: flex;
+    align-items: center;
+    background: #FFFFFF;
+    padding: 28px 40px;
+  }
+
+  .value-block {
+    flex: 1;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .value {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 52px;
+    color: #041E37;
+  }
+
+  .unit {
+    font-size: 24px;
+    font-weight: 600;
+    color: #041E37;
+  }
+
+  .evolution-block {
+    flex: 1;
+    padding-left: 34px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .evolution {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 44px;
+    color: #041E37;
+  }
+
+  .ref-pill {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 1178px;
+    background: #FFFFFF;
+    border: 3px solid #F0A835;
+    border-radius: 40px;
+    padding: 13px 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    color: #041E37;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .footer {
+    position: absolute;
+    left: 0; right: 0;
+    bottom: 44px;
+    text-align: center;
+    color: rgba(255,255,255,0.45);
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+</style>
+</head>
+<body>
+  <div class="canvas">
+    <img class="logo" src="assets/logo-negativo-transparent-cropped.png">
+
+    <div class="header">
+      <div class="cub">CUB</div>
+      <div class="state">SANTA CATARINA</div>
+      <div class="month-pill">JULHO/2026</div>
+    </div>
+
+    <div class="photo-band">
+      <img src="assets/bg-camboriu.jpg">
+    </div>
+    <div class="photo-scrim"></div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="card-col">
+          <div class="icon-circle">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="12" width="4" height="9" rx="1" fill="#F0A835"/><rect x="10" y="7" width="4" height="14" rx="1" fill="#F0A835"/><rect x="17" y="2" width="4" height="19" rx="1" fill="#F0A835"/></svg>
+          </div>
+          <div class="card-label">VALOR DO<br>CUB MÉDIO</div>
+        </div>
+        <div class="divider-v"></div>
+        <div class="card-col right">
+          <div class="card-label">EVOLUÇÃO EM<br>RELAÇÃO A JUNHO/2026</div>
+        </div>
+      </div>
+      <div class="card-bottom">
+        <div class="value-block">
+          <div class="value">R$ 3.121,62</div>
+          <div class="unit">/m²</div>
+        </div>
+        <div class="evolution-block">
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none"><path d="M4 16L14 6M14 6H7M14 6V13" stroke="#F0A835" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="evolution">+ 0,82%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ref-pill">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="#F0A835" stroke-width="2"/><path d="M3 9H21" stroke="#F0A835" stroke-width="2"/><path d="M8 3V6" stroke="#F0A835" stroke-width="2" stroke-linecap="round"/><path d="M16 3V6" stroke="#F0A835" stroke-width="2" stroke-linecap="round"/></svg>
+      REFERÊNCIA: JULHO/2026
+    </div>
+
+    <div class="footer">CRECI 06676 J</div>
+  </div>
+</body>
+</html>

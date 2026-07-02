@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1350px; overflow: hidden; font-family: 'Montserrat', sans-serif; }
+
+  .canvas {
+    position: relative;
+    width: 1080px;
+    height: 1350px;
+    background: #F2EEE7;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 560px;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+  }
+
+  .hero-fade {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 200px;
+    background: linear-gradient(to bottom, rgba(14,14,14,0) 0%, rgba(14,14,14,0.55) 100%);
+  }
+
+  .logo-corner {
+    position: absolute;
+    top: 40px;
+    left: 44px;
+    height: 148px;
+  }
+
+  /* WHITE CARD OVERLAP */
+  .info-card {
+    position: relative;
+    margin-top: -70px;
+    background: #F2EEE7;
+    border-radius: 28px 28px 0 0;
+    padding: 44px 56px 0 56px;
+  }
+
+  .tag {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .tag .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #A49074;
+  }
+
+  .tag span {
+    color: #8a6f4e;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+  }
+
+  .headline {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 56px;
+    line-height: 1.05;
+    color: #0e0e0e;
+    letter-spacing: -0.5px;
+  }
+
+  /* PRICE RIBBON */
+  .price-block {
+    margin-top: 30px;
+    background: #0e0e0e;
+    border-radius: 6px;
+    padding: 26px 36px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .price-old {
+    color: #9a968d;
+    font-size: 24px;
+    font-weight: 400;
+    text-decoration: line-through;
+  }
+
+  .price-label {
+    color: #D8D3C9;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .price-new {
+    color: #A49074;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 44px;
+    letter-spacing: -0.5px;
+  }
+
+  /* CONTACT ROWS */
+  .contact-rows {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .contact-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .contact-row .icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #A49074;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-row .icon svg { width: 17px; height: 17px; }
+
+  .contact-row .text {
+    color: #2a2a28;
+    font-size: 23px;
+    font-weight: 500;
+  }
+
+  .contact-row .text.address {
+    font-weight: 400;
+    line-height: 1.35;
+  }
+
+  /* PHOTO GRID */
+  .grid {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4px;
+    height: 190px;
+  }
+
+  .grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 22px 56px 40px 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(14,14,14,0.12);
+    margin-top: 16px;
+  }
+
+  .footer .condicoes {
+    color: #8a6f4e;
+    font-size: 19px;
+    font-weight: 600;
+  }
+
+  .footer .validade {
+    color: #8c8880;
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 4px;
+  }
+
+  .footer-right {
+    text-align: right;
+  }
+
+  .footer-right .site {
+    color: #0e0e0e;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .footer-right .creci {
+    color: #8c8880;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-top: 4px;
+  }
+</style>
+</head>
+<body>
+  <div class="canvas">
+
+    <div class="hero">
+      <img class="hero-bg" src="assets/hero.jpg">
+      <div class="hero-fade"></div>
+      <img class="logo-corner" src="assets/logo-negativo-cropped.png">
+    </div>
+
+    <div class="info-card">
+      <div class="tag"><div class="dot"></div><span>Oportunidade exclusiva</span></div>
+      <div class="headline">Casa pronta<br>pra morar.</div>
+
+      <div class="price-block">
+        <div>
+          <div class="price-old">De R$ 458.000,00</div>
+          <div class="price-label">Por apenas</div>
+        </div>
+        <div class="price-new">R$ 435.100,00</div>
+      </div>
+
+      <div class="contact-rows">
+        <div class="contact-row">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0e0e0e" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div class="text">(47) 98864-7604</div>
+        </div>
+        <div class="contact-row">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0e0e0e" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="text address">Rua Edmundo Goldacker, 52, Fortaleza, Blumenau/SC</div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <img src="assets/grid-1.jpg">
+        <img src="assets/grid-2.jpg">
+        <img src="assets/grid-3.jpg">
+      </div>
+
+      <div class="footer">
+        <div>
+          <div class="condicoes">Consulte condições</div>
+          <div class="validade">Válido até 31/08/2026</div>
+        </div>
+        <div class="footer-right">
+          <div class="site">rdamaia.com.br</div>
+          <div class="creci">CRECI 06676 J</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
