@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relatório Instagram — Gomes & Medeiros | Junho 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #2438E8;
+    --blue-light: #4F6BFF;
+    --blue-deep: #0E1A8C;
+    --black: #0A0A0B;
+    --offwhite: #F4F4F2;
+    --gray: #8A8A92;
+    --gray-dark: #54545C;
+    --white: #FFFFFF;
+    --font-display: 'Anton', Arial, sans-serif;
+    --font-sub: 'Archivo Black', Arial, sans-serif;
+    --font-editorial: 'Playfair Display', Georgia, serif;
+    --font-body: 'Archivo', Arial, sans-serif;
+    --radius: 20px;
+    --radius-sm: 14px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--offwhite); color: var(--black); font-family: var(--font-body); line-height: 1.6; }
+
+  .container { max-width: 1040px; margin: 0 auto; padding: 56px 32px; }
+
+  /* ---- HEADER ---- */
+  .header { text-align: center; margin-bottom: 64px; padding-bottom: 48px; border-bottom: 2px solid var(--black); }
+  .header .tag { display: inline-flex; align-items: center; font-family: var(--font-body); font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); background: var(--blue); border: 2px solid var(--black); padding: 6px 16px; border-radius: 100px; margin-bottom: 22px; }
+  .header h1 { font-family: var(--font-display); text-transform: uppercase; font-size: 48px; line-height: 1.05; letter-spacing: 0.5px; margin-bottom: 14px; color: var(--black); }
+  .header .sub { color: var(--gray-dark); font-size: 16px; margin-bottom: 6px; }
+  .header .domain { color: var(--gray); font-size: 14px; }
+  .header .period-row { display: flex; justify-content: center; gap: 14px; margin-top: 26px; flex-wrap: wrap; }
+  .header .period-pill { padding: 8px 20px; border-radius: 100px; font-size: 13px; font-weight: 700; border: 2px solid var(--black); }
+  .period-blue { background: var(--blue); color: var(--white); }
+  .period-ghost { background: var(--white); color: var(--black); }
+
+  /* ---- SECTIONS ---- */
+  .section { margin-bottom: 56px; }
+  .section-head { display: flex; align-items: center; gap: 14px; margin-bottom: 26px; }
+  .section-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--black); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .section-title { font-family: var(--font-sub); text-transform: uppercase; font-size: 22px; letter-spacing: 0.02em; color: var(--black); }
+  .section-desc { color: var(--gray-dark); font-size: 14px; margin-top: -14px; margin-bottom: 22px; margin-left: 54px; }
+
+  /* ---- KPI CARDS ---- */
+  .kpi-row { display: grid; gap: 18px; margin-bottom: 28px; }
+  .kpi-5 { grid-template-columns: repeat(5, 1fr); }
+  .kpi-4 { grid-template-columns: repeat(4, 1fr); }
+  .kpi-3 { grid-template-columns: repeat(3, 1fr); }
+  .kpi { background: var(--white); border: 2px solid var(--black); border-radius: var(--radius-sm); padding: 20px 18px; box-shadow: 4px 4px 0 var(--black); transition: all 0.25s cubic-bezier(0.16,1,0.3,1); }
+  .kpi:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--black); }
+  .kpi-label { font-family: var(--font-body); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray-dark); font-weight: 800; margin-bottom: 8px; }
+  .kpi-val { font-family: var(--font-display); font-size: 32px; line-height: 1.05; color: var(--black); }
+  .kpi-sub { font-size: 12px; color: var(--gray-dark); margin-top: 6px; line-height: 1.4; }
+  .kpi.accent { background: var(--blue); box-shadow: 4px 4px 0 var(--black); }
+  .kpi.accent:hover { box-shadow: 6px 6px 0 var(--black); }
+  .kpi.accent .kpi-val, .kpi.accent .kpi-label, .kpi.accent .kpi-sub { color: var(--white); }
+
+  /* ---- TABLE ---- */
+  .tbl-wrap { background: var(--white); border: 2px solid var(--black); border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 24px; box-shadow: 6px 6px 0 var(--black); }
+  .tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .tbl th { text-align: left; padding: 14px 18px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--white); font-weight: 800; background: var(--black); }
+  .tbl th:not(:first-child) { text-align: right; }
+  .tbl td { padding: 14px 18px; border-bottom: 1px solid rgba(10,10,11,0.08); color: var(--black); }
+  .tbl td:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+  .tbl tr:last-child td { border-bottom: none; }
+  .tbl tr:hover { background: rgba(36,56,232,0.05); }
+  .tbl .bold { font-weight: 800; }
+  .tbl .muted { color: var(--gray); font-size: 11px; }
+
+  /* ---- BADGES ---- */
+  .badge { display: inline-block; padding: 4px 12px; border-radius: 100px; font-size: 10px; font-weight: 800; letter-spacing: 0.04em; border: 2px solid var(--black); }
+  .b-blue { background: var(--blue); color: var(--white); }
+  .b-ghost { background: var(--white); color: var(--black); }
+
+  /* ---- CHART BOX ---- */
+  .chart-box { background: var(--white); border: 2px solid var(--black); border-radius: var(--radius-sm); padding: 26px 24px; margin-bottom: 24px; box-shadow: 6px 6px 0 var(--black); }
+  .chart-label-top { font-family: var(--font-sub); font-size: 11px; color: var(--gray-dark); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  /* ---- LINE CHART ---- */
+  .line-axis { display: flex; justify-content: space-between; font-size: 11px; color: var(--gray); margin-top: 10px; font-weight: 600; }
+  .line-peak-tag { font-family: var(--font-body); font-size: 10px; font-weight: 700; }
+
+  /* ---- DONUT ---- */
+  .donut-flex { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
+  .donut-svg { width: 200px; height: 200px; flex-shrink: 0; }
+  .donut-leg { flex: 1; min-width: 220px; }
+  .dl-item { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(10,10,11,0.08); }
+  .dl-item:last-child { border-bottom: none; }
+  .dl-dot { width: 12px; height: 12px; border-radius: 3px; border: 2px solid var(--black); flex-shrink: 0; }
+  .dl-name { flex: 1; font-size: 14px; font-weight: 600; }
+  .dl-val { font-weight: 800; font-size: 14px; color: var(--black); font-variant-numeric: tabular-nums; }
+  .dl-pct { font-size: 13px; color: var(--gray-dark); width: 50px; text-align: right; font-weight: 700; }
+
+  /* ---- INSIGHT ---- */
+  .insight { background: var(--white); border: 2px solid var(--black); border-radius: var(--radius-sm); padding: 22px 26px; margin-bottom: 24px; box-shadow: 6px 6px 0 var(--blue); }
+  .insight .it { font-family: var(--font-sub); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--blue); font-weight: 800; margin-bottom: 10px; }
+  .insight p { font-size: 14px; line-height: 1.7; color: var(--black); }
+  .insight ul { list-style: none; margin-top: 6px; }
+  .insight li { font-size: 14px; padding: 6px 0 6px 20px; position: relative; line-height: 1.6; color: var(--black); }
+  .insight li::before { content: ''; position: absolute; left: 0; top: 14px; width: 7px; height: 7px; border-radius: 2px; background: var(--blue); }
+
+  .divider { height: 2px; background: var(--black); margin: 48px 0; }
+
+  /* ---- FOOTER ---- */
+  .footer { text-align: center; padding: 40px 24px 32px; border-top: 2px solid var(--black); margin-top: 56px; background: var(--black); border-radius: var(--radius-sm); }
+  .footer .brand { font-family: var(--font-display); text-transform: uppercase; font-size: 20px; margin-bottom: 8px; color: var(--white); }
+  .footer .meta { font-size: 12px; color: #B8BBC4; }
+
+  @media (max-width: 768px) {
+    .header h1 { font-size: 32px; }
+    .kpi-5 { grid-template-columns: repeat(2, 1fr); }
+    .kpi-4 { grid-template-columns: repeat(2, 1fr); }
+    .kpi-3 { grid-template-columns: 1fr; }
+    .kpi-val { font-size: 26px; }
+    .donut-flex { flex-direction: column; align-items: center; }
+    .container { padding: 32px 16px; }
+    .tbl { font-size: 12px; }
+    .tbl th, .tbl td { padding: 10px 12px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ============ HEADER ============ -->
+  <header class="header">
+    <div class="tag">Relatório de Redes Sociais</div>
+    <h1>Gomes & Medeiros</h1>
+    <div class="sub">Instagram — @gomesemedeirosadv</div>
+    <div class="domain">gomesemedeiros.adv.br</div>
+    <div class="period-row">
+      <span class="period-pill period-blue">2 de junho a 1 de julho de 2026</span>
+      <span class="period-pill period-ghost">Primeiro mês de operação</span>
+    </div>
+  </header>
+
+  <!-- ============ 1. VISAO GERAL ============ -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-icon">&#x1f4ca;</div>
+      <div class="section-title">Visão Geral</div>
+    </div>
+
+    <div class="kpi-row kpi-5">
+      <div class="kpi accent">
+        <div class="kpi-label">Visualizações</div>
+        <div class="kpi-val">1.061</div>
+        <div class="kpi-sub">em todo o conteúdo do mês</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Alcance</div>
+        <div class="kpi-val">407</div>
+        <div class="kpi-sub">contas únicas alcançadas</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Interações</div>
+        <div class="kpi-val">125</div>
+        <div class="kpi-sub">curtidas, comentários, salvamentos e envios</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Novos Seguidores</div>
+        <div class="kpi-val">+107</div>
+        <div class="kpi-sub">crescimento líquido no período</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Conteúdo Publicado</div>
+        <div class="kpi-val">15</div>
+        <div class="kpi-sub">posts, reels e stories</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. EVOLUCAO ============ -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-icon">&#x1f4c8;</div>
+      <div class="section-title">Evolução de Visualizações</div>
+    </div>
+    <div class="section-desc">Visualizações diárias ao longo do mês</div>
+
+    <div class="chart-box">
+      <div class="chart-label-top">Visualizações por dia</div>
+      <svg viewBox="0 0 720 220" width="100%" height="220" preserveAspectRatio="none">
+        <line x1="0" y1="10" x2="720" y2="10" stroke="rgba(10,10,11,0.12)" stroke-width="1"/>
+        <line x1="0" y1="105" x2="720" y2="105" stroke="rgba(10,10,11,0.12)" stroke-width="1"/>
+        <line x1="0" y1="200" x2="720" y2="200" stroke="rgba(10,10,11,0.3)" stroke-width="1"/>
+        <text x="4" y="7" class="line-peak-tag" fill="#8A8A92" font-weight="700">212</text>
+        <text x="4" y="102" class="line-peak-tag" fill="#8A8A92" font-weight="700">106</text>
+        <text x="4" y="197" class="line-peak-tag" fill="#8A8A92" font-weight="700">0</text>
+
+        <polyline fill="none" stroke="#2438E8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"
+          points="10,195 45,180 80,190 115,175 150,192 185,60 220,10 255,150 290,185 325,70 360,95 395,55 430,50 465,140 500,175 535,192 570,196 605,170 640,195 675,198 710,180" />
+        <circle cx="220" cy="10" r="5" fill="#0A0A0B" stroke="#2438E8" stroke-width="2"/>
+      </svg>
+      <div class="line-axis">
+        <span>2 de jun</span>
+        <span>16 de jun</span>
+        <span>30 de jun</span>
+      </div>
+    </div>
+
+    <div class="insight">
+      <div class="it">Leitura</div>
+      <p>O mês começou com visualizações baixas, típico de um perfil ainda construindo audiência, e teve um <strong>pico de 212 visualizações em um único dia</strong> na primeira quinzena — sinal de que uma peça específica, provavelmente um Reel, teve bom desempenho orgânico. Um segundo platô mais alto se formou entre a segunda e a terceira semana, antes de estabilizar de novo perto do fim do mês. Esse tipo de curva é esperado no primeiro mês de um perfil: picos pontuais puxados por conteúdo em formato de vídeo, ainda sem uma base de audiência recorrente.</p>
+    </div>
+  </section>
+
+  <!-- ============ 3. CONTEUDO POR FORMATO ============ -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-icon">&#x1f3ac;</div>
+      <div class="section-title">Conteúdo por Formato</div>
+    </div>
+    <div class="section-desc">De onde vieram as visualizações do mês</div>
+
+    <div class="chart-box">
+      <div class="donut-flex">
+        <svg class="donut-svg" viewBox="0 0 120 120">
+          <circle cx="60" cy="60" r="48" fill="none" stroke="rgba(10,10,11,0.08)" stroke-width="16"/>
+          <circle cx="60" cy="60" r="48" fill="none" stroke="#2438E8" stroke-width="16"
+                  stroke-dasharray="170.9 301.6" stroke-dashoffset="0" transform="rotate(-90 60 60)"/>
+          <circle cx="60" cy="60" r="48" fill="none" stroke="#4F6BFF" stroke-width="16"
+                  stroke-dasharray="73.8 301.6" stroke-dashoffset="-170.9" transform="rotate(-90 60 60)"/>
+          <circle cx="60" cy="60" r="48" fill="none" stroke="#0A0A0B" stroke-width="16"
+                  stroke-dasharray="56.9 301.6" stroke-dashoffset="-244.7" transform="rotate(-90 60 60)"/>
+          <text x="60" y="55" text-anchor="middle" fill="#0A0A0B" font-family="'Anton',Arial,sans-serif" font-size="22">57%</text>
+          <text x="60" y="70" text-anchor="middle" fill="#8A8A92" font-size="9" font-weight="700">REELS</text>
+        </svg>
+        <div class="donut-leg">
+          <div class="dl-item"><div class="dl-dot" style="background:#2438E8;"></div><span class="dl-name">Reels</span><span class="dl-val">595</span><span class="dl-pct">56,7%</span></div>
+          <div class="dl-item"><div class="dl-dot" style="background:#4F6BFF;"></div><span class="dl-name">Stories</span><span class="dl-val">257</span><span class="dl-pct">24,5%</span></div>
+          <div class="dl-item"><div class="dl-dot" style="background:#0A0A0B;"></div><span class="dl-name">Posts</span><span class="dl-val">198</span><span class="dl-pct">18,9%</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight">
+      <div class="it">Leitura</div>
+      <p><strong>Reels concentram mais da metade das visualizações do mês</strong>, mesmo sem ser o formato mais publicado. É o formato com maior potencial de alcançar quem ainda não segue o perfil — importante pra um escritório que está construindo audiência do zero.</p>
+    </div>
+  </section>
+
+  <!-- ============ 4. QUEM VIU O CONTEUDO ============ -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-icon">&#x1f465;</div>
+      <div class="section-title">Quem Viu o Conteúdo</div>
+    </div>
+    <div class="section-desc">Alcance por seguidores x não seguidores</div>
+
+    <div class="chart-box">
+      <div class="donut-flex">
+        <svg class="donut-svg" viewBox="0 0 120 120">
+          <circle cx="60" cy="60" r="48" fill="none" stroke="rgba(10,10,11,0.08)" stroke-width="16"/>
+          <circle cx="60" cy="60" r="48" fill="none" stroke="#0A0A0B" stroke-width="16"
+                  stroke-dasharray="100.7 301.6" stroke-dashoffset="0" transform="rotate(-90 60 60)"/>
+          <circle cx="60" cy="60" r="48" fill="none" stroke="#2438E8" stroke-width="16"
+                  stroke-dasharray="200.9 301.6" stroke-dashoffset="-100.7" transform="rotate(-90 60 60)"/>
+          <text x="60" y="55" text-anchor="middle" fill="#0A0A0B" font-family="'Anton',Arial,sans-serif" font-size="20">66,6%</text>
+          <text x="60" y="70" text-anchor="middle" fill="#8A8A92" font-size="9" font-weight="700">NÃO SEGUEM</text>
+        </svg>
+        <div class="donut-leg">
+          <div class="dl-item"><div class="dl-dot" style="background:#0A0A0B;"></div><span class="dl-name">Seguidores</span><span class="dl-pct">33,4%</span></div>
+          <div class="dl-item"><div class="dl-dot" style="background:#2438E8;"></div><span class="dl-name">Não seguidores</span><span class="dl-pct">66,6%</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight">
+      <div class="it">Leitura</div>
+      <p><strong>2 em cada 3 contas alcançadas ainda não seguiam o perfil.</strong> Isso mostra que o conteúdo está circulando pra fora da base atual de seguidores, o que é o que gerou os +107 novos seguidores do mês — o alcance orgânico está funcionando como porta de entrada, não só como reforço pra quem já segue.</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ============ 5. LEITURA DO MES ============ -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-icon">&#x1f4a1;</div>
+      <div class="section-title">Leitura do Mês</div>
+    </div>
+
+    <div class="insight">
+      <div class="it">Resumo</div>
+      <ul>
+        <li>Cada conteúdo publicado gerou em média <strong>~71 visualizações</strong> (1.061 ÷ 15 publicações) — número saudável pra um perfil no primeiro mês de operação.</li>
+        <li>O escritório fechou o mês com <strong>+107 seguidores</strong>, puxado majoritariamente por alcance fora da base atual (66,6% de contas não seguidoras).</li>
+        <li><strong>Reels</strong> é o formato que mais entrega visualização e mais atrai quem não segue o perfil.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="brand">Mateus Botelho</div>
+    <div class="meta">Relatório gerado em 2 de julho de 2026</div>
+  </footer>
+
+</div>
+</body>
+</html>

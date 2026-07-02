@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1350px; overflow: hidden; font-family: 'Montserrat', sans-serif; }
+
+  .canvas {
+    position: relative;
+    width: 1080px;
+    height: 1350px;
+    background: #03080f;
+  }
+
+  .bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    filter: saturate(1.0) contrast(1.02);
+  }
+
+  .gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+      rgba(2,7,13,0.66) 0%,
+      rgba(2,7,13,0.42) 18%,
+      rgba(2,7,13,0.46) 40%,
+      rgba(2,7,13,0.62) 58%,
+      rgba(2,7,13,0.90) 78%,
+      rgba(2,7,13,0.98) 100%);
+  }
+
+  .frame {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo {
+    height: 58px;
+    margin-top: 78px;
+  }
+
+  .location {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 18px;
+    color: rgba(255,255,255,0.6);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .cub-title {
+    margin-top: 64px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 132px;
+    line-height: 0.9;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+  }
+
+  .cub-title span {
+    color: #F0A835;
+  }
+
+  .month {
+    margin-top: 16px;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 9px;
+    color: rgba(255,255,255,0.85);
+    text-transform: uppercase;
+  }
+
+  .rule {
+    margin-top: 56px;
+    width: 130px;
+    height: 3px;
+    background: #F0A835;
+    border-radius: 2px;
+  }
+
+  .price-row {
+    margin-top: 40px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .price {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 78px;
+    color: #FFFFFF;
+    letter-spacing: -0.5px;
+  }
+
+  .price-unit {
+    font-size: 28px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .stats-row {
+    margin-top: 52px;
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+
+  .stat-value {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 46px;
+    color: #F0A835;
+  }
+
+  .stat-label {
+    margin-top: 6px;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.65);
+    text-transform: uppercase;
+    line-height: 1.35;
+  }
+
+  .divider-v {
+    width: 1px;
+    height: 64px;
+    background: rgba(255,255,255,0.25);
+  }
+
+  .stat-value--sm {
+    font-size: 28px;
+    margin-top: 9px;
+  }
+
+  .footer {
+    margin-top: auto;
+    margin-bottom: 46px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255,255,255,0.5);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  .footer .sep {
+    color: rgba(240,168,53,0.6);
+  }
+</style>
+</head>
+<body>
+  <div class="canvas">
+    <img class="bg" src="assets/bg-vila-germanica.jpg" alt="Vila Germânica, Blumenau/SC">
+    <div class="gradient"></div>
+
+    <div class="frame">
+      <img class="logo" src="assets/logo-negativo-transparent-cropped.png" alt="R da Maia">
+      <div class="location">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-7.58 7-13A7 7 0 0 0 5 9c0 5.42 7 13 7 13Z" stroke="#F0A835" stroke-width="2"/><circle cx="12" cy="9" r="2.5" stroke="#F0A835" stroke-width="2"/></svg>
+        Vila Germânica · Blumenau/SC
+      </div>
+
+      <div class="cub-title">CUB<span>/SC</span></div>
+      <div class="month">Julho 2026</div>
+
+      <div class="rule"></div>
+
+      <div class="price-row">
+        <div class="price">R$ 3.121,62</div>
+        <div class="price-unit">/ m²</div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat">
+          <div class="stat-value">+ 0,82%</div>
+          <div class="stat-label">Variação<br>ao mês</div>
+        </div>
+        <div class="divider-v"></div>
+        <div class="stat">
+          <div class="stat-value stat-value--sm">Residencial</div>
+          <div class="stat-label">Médio (com<br>desoneração)</div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <span>rdamaia.com.br</span>
+        <span class="sep">·</span>
+        <span>(47) 98864-7604</span>
+        <span class="sep">·</span>
+        <span>CRECI 06676 J</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

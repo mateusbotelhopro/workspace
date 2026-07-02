@@ -46,6 +46,10 @@ Por padrão segue `_contexto/preferencias.md` do sistema principal. Se esse clie
 
 Se o cliente tiver marca própria (logo, cores, fontes), guardar em `marca/` dentro dessa pasta e referenciar aqui. Caso contrário, tarefas visuais (proposta, carrossel, landing page) seguem `marca/design-guide.md` do sistema principal.
 
+## Conteúdo e relatórios
+
+Lotes de conteúdo (roteiros de postagens, scripts) vão em `conteudo/` dentro dessa pasta — tanto o arquivo final quanto a nota de trabalho interna (contagem, distribuição, gap-analysis), separados da raiz do cliente. Relatórios de métricas/performance ficam soltos na raiz (ex: `relatorio-instagram-[mes-ano].html`).
+
 ## Tarefas
 
 Tarefas desse cliente ficam em [tarefas.md](tarefas.md) (gerado a partir de `tarefas-modelo.md`). Manter atualizado: mover entre "A fazer", "Em andamento" e "Feito" conforme o trabalho avança.

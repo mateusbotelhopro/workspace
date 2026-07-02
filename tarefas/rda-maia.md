@@ -7,4 +7,4 @@
 - [ ]
 
 ## Feito
-- [x] 4 posts estáticos (single post) do lançamento Blumenau Hill Residence — `clientes/rda-maia/instagram/blumenau-hill/`
+- [x] 4 posts estáticos (single post) do lançamento Blumenau Hill Residence — `clientes/rda-maia/conteudo/blumenau-hill/`

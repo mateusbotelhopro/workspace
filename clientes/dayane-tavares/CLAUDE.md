@@ -48,13 +48,15 @@ clientes/dayane-tavares/
     vellosleads.com.br/           — site institucional (landing, onboarding de cliente, política/termos)
     apresentacao-comercial/       — proposta comercial (HTML + PDF) e materiais de capa/avatar do LinkedIn
   datameet/                       — captação de contratos fechados (modelo João Ferret), marketing
+    minuta-contrato/               — minuta genérica de contrato (HTML + PDF), sem dados de cliente — usar como base pra cada novo fechamento
+    prospeccao/                    — script de geração de material de prospecção (generate_prospect_html.py)
   dayelle/                        — loja de roupa feminina (Recife), site/sistema, tráfego pago
     identidade-visual/
       logos/                      — logo completa (wordmark + símbolo + tagline) e símbolo isolado
   _geral/                         — arquivos transversais que não pertencem a uma frente só
 ```
 
-Pastas criadas em 2026-06-21. Datameet e _geral ainda vazias — popular conforme os arquivos de cada empresa forem recebidos/organizados.
+Pastas criadas em 2026-06-21. _geral ainda vazia — popular conforme os arquivos de cada empresa forem recebidos/organizados.
 
 ### Site e proposta — Vellos
 
@@ -69,6 +71,10 @@ Auditoria feita em 2026-06-21:
 - Formulário de onboarding (`onboarding.html`) envia pro e-mail pessoal `dayaneelizabetee@gmail.com` via FormSubmit — funcional, mas vale confirmar se é esse o e-mail definitivo de recebimento de leads/onboarding.
 - Proposta comercial (`apresentacao-comercial/index.html` e o PDF gerado) consistente com o conteúdo do site, sem erros de conteúdo encontrados.
 - 2026-07-02: Melhorada a qualidade das imagens do LinkedIn (`vellos/apresentacao-comercial/linkedin/`). A capa com foto (`cover-v2.html` → `vellos-linkedin-capa.png`) usava um duotone verde feito com corte/threshold agressivo, que quebrava a foto em blocos e perdia todo o detalhe. Refeito o duotone com mapeamento de gradiente sobre a escala de cinza (preserva detalhe da foto) e re-renderizadas as 3 imagens (capa com foto, capa v2 com grafo abstrato, foto de perfil) em 3x de resolução via headless browser — antes estavam em 2x. Arquivos antigos substituídos no lugar; imagem-fonte nova é `duotone-handshake-final.jpg`.
+
+### Minuta de contrato — Datameet
+
+2026-07-02: gerada `datameet/minuta-contrato/minuta-do-contrato.html` (+ PDF) a partir do contrato real fechado com o Dr. Sinval Andrade (Sinval Andrade Sociedade de Advogados, direito previdenciário/BPC-LOAS, 15/05/2026). Removidos todos os dados pessoais do contratante e os termos específicos daquele fechamento (área de atuação, quantidade de contratos, valor, forma de pagamento) — viraram placeholders. Mantidos os dados fixos da Data Meet Soluções (CNPJ, endereço, contato) e a estrutura jurídica das 10 cláusulas, pra reaproveitar em qualquer novo fechamento (não só previdenciário). Arquivo original do Sinval e a lista/views de prospecção de WhatsApp (`Lista_...xlsx`, `prospeccao_whatsapp_lista_*.html`) foram excluídos a pedido — o script `prospeccao/generate_prospect_html.py` foi mantido pra gerar novas views quando precisar.
 
 ### Identidade visual — Dayelle
 
