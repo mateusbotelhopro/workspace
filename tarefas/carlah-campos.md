@@ -10,4 +10,4 @@
 - [ ] Lançamento Neuroaroma Pro — tráfego Meta Ads + Google Ads
 
 ## Feito
-- [x] Estruturar pasta da cliente no Kortex OS
+- [x] Estruturar pasta da cliente no BotelhoOS

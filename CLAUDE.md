@@ -80,7 +80,7 @@ Ao concluir uma tarefa que não tinha skill mas parece repetível, perguntar se 
 ## Regras do sistema
 
 - Cada cliente tem sua pasta em `clientes/[nome-cliente]/` (briefing.md gerado por `/onboarding-cliente`)
-- Cada cliente também tem seu próprio `CLAUDE.md` (copiado de `clientes/_modelo-cliente/CLAUDE.md`, gerado junto com o briefing por `/onboarding-cliente`). Isso é necessário porque o Mateus às vezes abre a pasta do cliente sozinha, direto como workspace no Claude Code, sem o resto do Kortex OS — esse CLAUDE.md do cliente garante que o contexto (negócio, serviços contratados, tom de voz, contas conectadas) não se perca nesse caso. Manter esse arquivo atualizado conforme o cliente evolui (não só o briefing.md)
+- Cada cliente também tem seu próprio `CLAUDE.md` (copiado de `clientes/_modelo-cliente/CLAUDE.md`, gerado junto com o briefing por `/onboarding-cliente`). Isso é necessário porque o Mateus às vezes abre a pasta do cliente sozinha, direto como workspace no Claude Code, sem o resto do BotelhoOS — esse CLAUDE.md do cliente garante que o contexto (negócio, serviços contratados, tom de voz, contas conectadas) não se perca nesse caso. Manter esse arquivo atualizado conforme o cliente evolui (não só o briefing.md)
 - Propostas de cliente salvar em `clientes/[nome-cliente]/proposta.pdf` (gerada por `/proposta-comercial`)
 - Operação interna própria vai em `interno/[area]/`
 - Conteúdo vai em `conteudo/`

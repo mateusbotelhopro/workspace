@@ -7,7 +7,7 @@ redirects = []
 [functions."*"]
 
 [build]
-publish = "C:\\Users\\mateu\\Desktop\\Kortex OS"
+publish = "C:\\Users\\mateu\\Desktop\\BotelhoOS"
 publishOrigin = "default"
 
 [build.environment]

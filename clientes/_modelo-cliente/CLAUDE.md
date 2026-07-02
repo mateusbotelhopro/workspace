@@ -2,7 +2,7 @@
 
 > Copiar esse arquivo pra `clientes/[nome-cliente]/CLAUDE.md` quando o cliente entrar (a skill `/onboarding-cliente` já faz isso). Preencher os campos entre `[ ]`.
 
-Esse CLAUDE.md existe porque essa pasta às vezes é aberta **separada**, direto como workspace no Claude Code (não dentro do Kortex OS completo). Por isso ele precisa se bastar: além do contexto deste cliente, ele também aponta de volta pro contexto geral do negócio, caso o Claude precise ler.
+Esse CLAUDE.md existe porque essa pasta às vezes é aberta **separada**, direto como workspace no Claude Code (não dentro do BotelhoOS completo). Por isso ele precisa se bastar: além do contexto deste cliente, ele também aponta de volta pro contexto geral do negócio, caso o Claude precise ler.
 
 ---
 
@@ -60,7 +60,7 @@ Registrar aqui decisões importantes de estratégia, mudanças de direção, ou 
 
 ## Contexto do sistema principal
 
-Essa pasta vive dentro do Kortex OS (`c:\Users\mateu\Desktop\Kortex OS`). Se for aberta como workspace separado, esses arquivos do sistema principal continuam valendo e devem ser lidos quando relevante:
+Essa pasta vive dentro do BotelhoOS (`c:\Users\mateu\Desktop\BotelhoOS`). Se for aberta como workspace separado, esses arquivos do sistema principal continuam valendo e devem ser lidos quando relevante:
 
 - `../../_contexto/empresa.md` — quem presta o serviço, como o negócio funciona
 - `../../_contexto/preferencias.md` — tom de voz e estilo padrão (a menos que sobrescrito acima)
@@ -68,7 +68,7 @@ Essa pasta vive dentro do Kortex OS (`c:\Users\mateu\Desktop\Kortex OS`). Se for
 - `../../marca/design-guide.md` — identidade visual padrão pra tarefas visuais
 - `../../templates/ferramentas/catalogo.md` — APIs e ferramentas disponíveis (Google Ads, Meta Ads, WhatsApp, N8N etc.)
 
-Se esses caminhos não existirem (pasta movida ou copiada pra fora do Kortex OS), ignorar e trabalhar só com o que está documentado aqui e em `briefing.md`.
+Se esses caminhos não existirem (pasta movida ou copiada pra fora do BotelhoOS), ignorar e trabalhar só com o que está documentado aqui e em `briefing.md`.
 
 ## Regras
 

@@ -52,7 +52,7 @@ Site entregue em junho/2026. Escopo limitado a criação do site (link-in-bio). 
 
 ## Contexto do sistema principal
 
-Essa pasta vive dentro do Kortex OS (`c:\Users\mateu\Desktop\Kortex OS`). Se for aberta como workspace separado, esses arquivos do sistema principal continuam valendo e devem ser lidos quando relevante:
+Essa pasta vive dentro do BotelhoOS (`c:\Users\mateu\Desktop\BotelhoOS`). Se for aberta como workspace separado, esses arquivos do sistema principal continuam valendo e devem ser lidos quando relevante:
 
 - `../../_contexto/empresa.md` — quem presta o serviço, como o negócio funciona
 - `../../_contexto/preferencias.md` — tom de voz e estilo padrão (a menos que sobrescrito acima)
@@ -60,7 +60,7 @@ Essa pasta vive dentro do Kortex OS (`c:\Users\mateu\Desktop\Kortex OS`). Se for
 - `../../marca/design-guide.md` — identidade visual padrão pra tarefas visuais
 - `../../templates/ferramentas/catalogo.md` — APIs e ferramentas disponíveis
 
-Se esses caminhos não existirem (pasta movida ou copiada pra fora do Kortex OS), ignorar e trabalhar só com o que está documentado aqui.
+Se esses caminhos não existirem (pasta movida ou copiada pra fora do BotelhoOS), ignorar e trabalhar só com o que está documentado aqui.
 
 ## Regras
 

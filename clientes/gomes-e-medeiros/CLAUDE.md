@@ -62,7 +62,7 @@ Tarefas desse cliente ficam em [tarefas.md](tarefas.md).
 
 ## Contexto do sistema principal
 
-Essa pasta vive dentro do Kortex OS (`c:\Users\mateu\Desktop\Kortex OS`). Se for aberta como workspace separado, esses arquivos do sistema principal continuam valendo e devem ser lidos quando relevante:
+Essa pasta vive dentro do BotelhoOS (`c:\Users\mateu\Desktop\BotelhoOS`). Se for aberta como workspace separado, esses arquivos do sistema principal continuam valendo e devem ser lidos quando relevante:
 
 - `../../_contexto/empresa.md` — quem presta o serviço, como o negócio funciona
 - `../../_contexto/preferencias.md` — tom de voz e estilo padrão (a menos que sobrescrito acima)
