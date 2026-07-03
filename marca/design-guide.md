@@ -26,7 +26,7 @@
 - **Corpo de texto:** Archivo (Google Fonts, pesos 400/500/600/700/800)
 - **Destaque editorial (itálico, citações):** Playfair Display itálico (Google Fonts, `ital@1`) — cor azul, usado com moderação em aspas/frases de efeito
 - **Google Fonts import:** `https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swap`
-- **Fontes locais legadas (não usar mais):** Freight Big Pro e Helvetica em `marca/fontes/` — mantidas só como histórico, não refletem a marca atual
+- **Fontes locais legadas (não usar mais):** Freight Big Pro, Helvetica e Bomstad Display em `marca/fontes/legado/` — mantidas só como histórico, não refletem a marca atual
 
 ---
 
@@ -60,7 +60,13 @@ Visual neobrutalista: fundo off-white como base, preto para texto e bordas, azul
 
 ## Logo
 
-- **Tipo:** logotipo textual ("Mateus Botelho" em Anton uppercase), favicon com "M" azul sobre fundo preto arredondado
+- **Tipo:** logotipo textual ("Mateus Botelho" em Anton uppercase), favicon com marca azul sobre fundo off-white arredondado
+- **Arquivos:** `marca/logo/`
+  - `logo-positiva.svg` / `.png` — versão para fundo claro
+  - `logo-negativa.svg` — versão para fundo escuro
+  - `favicon.svg` — ícone com cantos arredondados, fundo off-white
+  - `icone-mark.svg` — só a marca, sem fundo
+  - `quadrado-off-white.svg`, `quadrado-preto.svg`, `quadrado-azul.svg` — variações de fundo para foto de perfil/redes sociais
 - **Onde usar:** navbar, footer, slide final do carrossel (CTA), header de propostas e relatórios
 - **Tamanho sugerido:** largura entre 120-200px nos HTMLs
 
@@ -72,8 +78,8 @@ Visual neobrutalista: fundo off-white como base, preto para texto e bordas, azul
 
 - **Nome:** Mateus Botelho
 - **Handle:** @mateusbotelhopro
-- **Foto frontal:** `marca/mateus-botelho-frontal.jpeg`
-- **Foto perfil:** `marca/mateus-botelho-perfil.jpeg`
+- **Foto frontal:** `marca/fotos/mateus-botelho-frontal.jpeg`
+- **Foto perfil:** `marca/fotos/mateus-botelho-perfil.jpeg`
 - **Badge verificado:** não
 
 ---
@@ -81,3 +87,5 @@ Visual neobrutalista: fundo off-white como base, preto para texto e bordas, azul
 ## Observações adicionais
 
 Identidade extraída do site institucional atual (`interno/site/mateusbotelho.com/`, `style.css`). Substituiu a fase anterior azul/Freight Big Pro (meados de 2026) e a fase intermediária preto/vermelho/Bebas Neue — nenhuma das duas reflete a marca em uso. Fontes via Google Fonts (Anton + Archivo Black + Archivo + Playfair Display itálico). Atualizado em julho de 2026 para refletir o redesign neobrutalista (azul elétrico + preto + off-white, bordas e sombras duras).
+
+Pasta `marca/` reorganizada em 03/07/2026: logo final em `marca/logo/`, fotos em `marca/fotos/`, fontes em `marca/fontes/` com legadas movidas para `marca/fontes/legado/`. Removidos arquivos de rascunho (previews HTML/PNG de teste, path_extract.txt, ícone.svg duplicado) que não eram mais necessários.
