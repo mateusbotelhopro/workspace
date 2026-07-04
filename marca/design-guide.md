@@ -91,4 +91,4 @@ Identidade extraída do site institucional atual (`interno/site/mateusbotelho.co
 
 Pasta `marca/` reorganizada em 03/07/2026: logo final em `marca/logo/`, fotos em `marca/fotos/`, fontes em `marca/fontes/` com legadas movidas para `marca/fontes/legado/`. Removidos arquivos de rascunho (previews HTML/PNG de teste, path_extract.txt, ícone.svg duplicado) que não eram mais necessários.
 
-Em 04/07/2026, trocado o font-display do site de Anton para Bomstad Display Black (fonte local, antes classificada como legado). Anton removida do import do Google Fonts.
+Em 04/07/2026, trocado o font-display do site de Anton para Bomstad Display Black (fonte local, antes classificada como legado). Anton removida do import do Google Fonts. Corrigido também o favicon do site, que estava com uma versão improvisada (fundo preto, "M" solto) em vez do arquivo real `marca/logo/favicon.svg` (fundo off-white, marca azul) — arquivo copiado pra `assets/favicon.svg` do site.
