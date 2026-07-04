@@ -68,11 +68,11 @@ Acolhedor, empático, focado na família que decide. Fala com filhos/netos que b
 - `marca/` — logos e manual de marca (Mextin Care + Mextin Sênior)
 - `instagram/setup-care/` — 3 posts de setup pro @mextin_care + legendas
 - `instagram/setup-senior/` — 3 posts de setup pro @mextin_senior + legendas + bio sugerida
-- `estrategia-google-ads.pdf` — estratégia de Google Ads
+- `google-ads/` — estratégia de Google Ads (`estrategia-google-ads.pdf`/`.html`), cópia rápida de anúncios (`google-ads-copia-rapida.html`) e script auxiliar de conversão html→pdf (`to-pdf.py`)
 
 ## Estratégia e histórico
 
-- Estratégia de Google Ads definida em `estrategia-google-ads.pdf`
+- Estratégia de Google Ads definida em `google-ads/estrategia-google-ads.pdf`
 - Setup de Instagram pronto para publicação (posts + legendas em `instagram/`)
 
 ---

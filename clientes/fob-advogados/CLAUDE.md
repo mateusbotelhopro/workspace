@@ -71,6 +71,16 @@ Tarefas desse cliente ficam em [tarefas.md](tarefas.md). Manter atualizado: move
 - Pendente: cliente precisa melhorar landing page (prova social, FAQ, PageSpeed, schema markup)
 - Revisão de performance prevista para ~01/07/2026
 
+**Diagnóstico "curiosos" 2026-07-03:**
+- Cliente reclamou de leads não qualificados chegando pelo WhatsApp
+- Achado: grupo "01 - Busca e Apreensão" inverteu de melhor pra pior performer nos últimos 10 dias (30 cliques, 1 conversão, CPConv R$132 vs histórico ~R$27). "02 - Juros Abusivos" melhorou (CPConv R$36 vs histórico ~R$83)
+- Causa raiz: vazamento de busca informacional ("o que fazer", "como resolver", "como sei", "processo de", "ver busca e apreensão") que sobreviveu à limpeza de negativas de 23/06 — a negativa "consulta" funcionou bem, mas o Google gera variações novas da mesma intenção
+- Causa estrutural: landing page não tem nenhum filtro de qualificação antes do WhatsApp (confirmado ao vivo) — qualquer clique vira "conversão" no Google Ads, mesmo sendo só curiosidade
+- Ações aplicadas na conta: 5 negativas novas (campanha) — "o que fazer" (broad), "como resolver" (broad), "como sei" (broad), "processo de busca e apreensão" (frase), "ver busca e apreensão" (frase). Pausada a keyword "busca e apreensão veículo" em correspondência de frase (mantida só a EXATA) pra reduzir variações abertas
+- Pendente (fora do escopo de Google Ads, repassar pro cliente): adicionar pergunta de qualificação antes do WhatsApp na landing page (ex: "já recebeu notificação/mandado do banco?"); FAQ ainda não implementado
+- Achado secundário (hygiene, sem impacto de custo): conta tem 2 campanhas pausadas de outro nicho (recuperação de conta Instagram/Facebook hackeado) misturadas — vale limpar em algum momento
+- Próxima revisão: acompanhar CPConv do grupo Busca e Apreensão em ~7-10 dias pra ver se as negativas normalizaram a performance
+
 ---
 
 ## Contexto do sistema principal

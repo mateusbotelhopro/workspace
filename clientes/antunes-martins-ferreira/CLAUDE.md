@@ -29,7 +29,7 @@ Detalhes completos do negócio, objetivo, público e histórico estão em [brief
 
 *(preencher conforme for configurando — IDs de conta, não credenciais/senhas)*
 
-- Google Ads — Customer ID: [xxx]
+- Google Ads — Customer ID: 8646409603 (conta "Antunes Advocacia" — não está sob o MCC padrão, acesso direto; ver nota em `contas.yaml` da skill google-ads-ratos)
 - Meta Ads — Ad Account ID: [xxx]
 - Instagram/Facebook Page: [xxx]
 - Hostinger — login: rhayane@martinsferreiraadv.com.br (senha em gerenciador de senhas, não aqui)
@@ -48,7 +48,7 @@ Se o cliente tiver marca própria (logo, cores, fontes), guardar em `marca/` den
 
 ## Tarefas
 
-Tarefas desse cliente ficam em [tarefas.md](tarefas.md) (gerado a partir de `tarefas-modelo.md`). Manter atualizado: mover entre "A fazer", "Em andamento" e "Feito" conforme o trabalho avança.
+Tarefas desse cliente ficam em [../../tarefas/antunes-martins-ferreira.md](../../tarefas/antunes-martins-ferreira.md) (segue o padrão do sistema principal: tarefas por cliente vivem em `tarefas/`, não dentro da pasta do cliente). Manter atualizado: mover entre "A fazer", "Em andamento" e "Feito" conforme o trabalho avança.
 
 ## Landing pages
 

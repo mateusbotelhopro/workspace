@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Guia de Otimização de Perfil — Dra. Claudia Mara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0a;
+    --accent:#38bdf8;
+    --white:#ffffff;
+    --muted:#9ca3af;
+    --red:#ef4444;
+    --green:#22c55e;
+  }
+  *{ box-sizing: border-box; }
+  body{
+    margin:0; padding:0;
+    background:#050505;
+    color:var(--white);
+    font-family:'Inter', sans-serif;
+  }
+  .page{
+    width: 794px;
+    min-height: 1123px;
+    padding: 56px 64px;
+    position: relative;
+    background: var(--bg);
+    background-image: radial-gradient(circle at 80% 0%, rgba(56,189,248,0.16), transparent 60%),
+                       radial-gradient(circle at 0% 100%, rgba(56,189,248,0.10), transparent 55%);
+    margin: 0 auto 24px auto;
+    page-break-after: always;
+  }
+  .page:last-child{ page-break-after: auto; }
+
+  /* COVER */
+  .cover{ display:flex; flex-direction:column; justify-content:center; align-items:flex-start; }
+  .cover .tag{
+    color: var(--accent);
+    font-weight:700;
+    letter-spacing: 2px;
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    border: 1px solid rgba(56,189,248,0.4);
+    padding: 6px 14px;
+    border-radius: 999px;
+  }
+  .cover h1{
+    font-size: 46px;
+    font-weight: 900;
+    line-height: 1.15;
+    margin: 0 0 18px 0;
+  }
+  .cover h1 span{ color: var(--accent); }
+  .cover p.lead{
+    font-size: 16.5px;
+    color: var(--muted);
+    max-width: 580px;
+    line-height: 1.65;
+    margin-bottom: 30px;
+  }
+  .cover .box{
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 22px 26px;
+    max-width: 600px;
+    background: rgba(255,255,255,0.02);
+    margin-bottom: 28px;
+  }
+  .cover .box p{ margin: 0; font-size: 14.5px; color: var(--white); line-height: 1.6; }
+  .cover .box p + p{ margin-top: 10px; }
+  .cover .box b{ color: var(--accent); }
+  .legend{
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 22px;
+    width: 100%;
+  }
+  .legend h3{ font-size: 12px; color: var(--muted); letter-spacing:1px; text-transform:uppercase; margin-bottom: 14px;}
+  .legend-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+  }
+  .legend-item{
+    font-size: 12.5px;
+    color: var(--white);
+    display:flex;
+    gap:8px;
+    align-items:flex-start;
+  }
+  .legend-item .sw{ width:14px; height:14px; border-radius:4px; margin-top:2px; flex-shrink:0; }
+  .footer-brand{
+    position:absolute;
+    bottom: 40px; left: 64px;
+    font-size: 12px; color: var(--muted);
+  }
+  .footer-brand b{ color: var(--white); }
+
+  /* CONTENT PAGES */
+  .header-row{
+    display:flex; justify-content:space-between; align-items:flex-start;
+    margin-bottom: 22px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 18px;
+  }
+  .header-row .num{
+    font-size: 12px; color: var(--accent); font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
+    margin-bottom: 6px;
+  }
+  .header-row .title{
+    font-size: 26px; font-weight: 800;
+  }
+  .pagefoot{
+    position:absolute; bottom: 24px; right: 64px;
+    font-size: 11px; color: var(--muted);
+  }
+
+  /* mockup elements */
+  .mock-wrap{
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 22px;
+    background: #0d0d0d;
+    margin-bottom: 14px;
+  }
+  .mock-label{
+    position:absolute; top:-11px; left:20px;
+    background: var(--bg); padding: 0 10px;
+    font-size: 11px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase;
+  }
+  .real-img{ width:100%; display:block; border-radius:8px; }
+
+  .block{
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 12px;
+    margin-bottom: 12px;
+  }
+  .block .k{
+    font-size: 11px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; margin-bottom: 8px;
+  }
+  .block.melhorar .k{ color: var(--red); }
+  .block.porque .k{ color: var(--muted); }
+  .block.como .k{ color: var(--green); }
+  .block p{ font-size: 13.5px; line-height:1.6; color: var(--white); margin:0; }
+  .block ul{ margin: 6px 0 0 0; padding-left: 18px; font-size: 13.5px; line-height:1.6; }
+  .block li{ margin-bottom: 6px; }
+  .block b{ color: var(--accent); }
+
+  .keep-box{
+    border: 1px solid rgba(34,197,94,0.35);
+    background: rgba(34,197,94,0.06);
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 13px;
+    line-height: 1.55;
+    margin-bottom: 18px;
+  }
+  .keep-box b{ color: var(--green); }
+
+  .cta-final{
+    margin-top: 6px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 14px;
+  }
+  .cta-final .box{
+    border: 1px solid rgba(56,189,248,0.35);
+    background: rgba(56,189,248,0.06);
+    border-radius: 12px;
+    padding: 18px 26px;
+  }
+  .cta-final h3{ font-size:16px; margin:0 0 10px 0; color:var(--accent); }
+  .cta-final p{ font-size:13.5px; line-height:1.6; margin:0; color:var(--white); }
+</style>
+</head>
+<body>
+
+<!-- CAPA -->
+<div class="page cover">
+  <div class="tag">Auditoria de Perfil · Instagram</div>
+  <h1>Guia de Otimização de Perfil<br><span>Mais Conversão para Quem Já Chega pelo Anúncio</span></h1>
+  <p class="lead">
+    Um raio-x visual do @dra.claudiamaralrv, com ajustes para o perfil converter ainda mais o tráfego que os
+    anúncios já estão trazendo.
+  </p>
+  <div class="box">
+    <p><b>Por que otimizar o perfil com a campanha já rodando?</b></p>
+    <p>Os anúncios já estão trazendo <b>visitantes</b> novos até o perfil todos os dias. Mas quem transforma
+    esse visitante em paciente agendado não é o anúncio — é o que a pessoa encontra quando chega até você.
+    Este guia organiza o perfil em três pilares que aumentam a conversão de quem já está chegando: <b>autoridade</b>
+    (quem é a Dra. Claudia), <b>segurança</b> (o espaço, os cuidados, a experiência) e <b>clareza</b> (o que
+    oferece e como agendar). Com a vitrine mais forte, o mesmo investimento em anúncio rende mais.</p>
+  </div>
+  <div class="legend">
+    <h3>Marcações usadas neste guia</h3>
+    <div class="legend-grid">
+      <div class="legend-item"><span class="sw" style="background:var(--accent)"></span>Seta azul — área a construir (destaques, autoridade)</div>
+      <div class="legend-item"><span class="sw" style="background:var(--red)"></span>Seta vermelha — ponto de atenção no feed atual</div>
+      <div class="legend-item"><span class="sw" style="background:var(--green)"></span>Seta verde — criativo validado, já funciona</div>
+    </div>
+  </div>
+  <div class="footer-brand"><b>Gestor Kelvin</b> — Auditoria Visual de Perfil</div>
+</div>
+
+<!-- SEÇÃO 2 — A VITRINE -->
+<div class="page">
+  <div class="header-row">
+    <div>
+      <div class="num">Seção 01 · A Vitrine</div>
+      <div class="title">Bio e Destaques</div>
+    </div>
+  </div>
+
+  <div class="mock-wrap">
+    <div class="mock-label">Perfil atual</div>
+    <img class="real-img" style="max-height:300px; width:auto; margin:0 auto;" src="anotado/01-vitrine-bio-destaques.jpg" alt="Print da bio e destaques do perfil @dra.claudiamaralrv, com marcação indicando que apenas 2 destaques estão fixados">
+  </div>
+
+  <div class="keep-box">
+    <b>O que manter:</b> o @ e o nome em negrito ("Dra. Claudia Mara / Harmonização Orofacial") estão ótimos —
+    ajudam o Instagram a entender do que se trata o perfil e facilitam a busca. O link direto para o WhatsApp
+    na bio também está correto: tira atrito de quem já decidiu agendar.
+  </div>
+
+  <div class="block melhorar">
+    <div class="k">O que melhorar</div>
+    <p>Hoje existem apenas 2 destaques fixados (Lábios e Joias). Para quem chega pelo anúncio sem nunca ter
+    ouvido falar da clínica, faltam os destaques que constroem confiança antes da primeira mensagem.</p>
+  </div>
+  <div class="block porque">
+    <div class="k">Por que melhorar</div>
+    <p>Um visitante vindo do anúncio (lead frio) não agenda no primeiro contato — ele investiga o perfil primeiro.
+    Sem destaques de autoridade e prova social, ele sai sem se aquecer, e o investimento em tráfego perde força.</p>
+  </div>
+  <div class="block como">
+    <div class="k">Como deve ficar</div>
+    <ul>
+      <li><b>A Clínica</b> — fotos/vídeos do espaço, higiene e conforto no Jd. Amazonas. Reduz a insegurança de "não conheço o lugar".</li>
+      <li><b>Quem Sou</b> — formação, CRO e especializações. Constrói autoridade técnica.</li>
+      <li><b>Pacientes</b> — feedbacks e depoimentos reais. É a prova social que sustenta o preço.</li>
+      <li><b>Joias (manter e otimizar)</b> — o piercing é um ótimo produto de entrada, de ticket mais baixo. Ele traz fluxo novo ao estúdio, e de lá é possível apresentar os serviços de HOF, de ticket mais alto, para quem já conheceu o espaço pessoalmente.</li>
+    </ul>
+  </div>
+  <div class="pagefoot">Gestor Kelvin · Auditoria Dra. Claudia Mara</div>
+</div>
+
+<!-- SEÇÃO 3 — POSTS FIXADOS -->
+<div class="page">
+  <div class="header-row">
+    <div>
+      <div class="num">Seção 02 · Topo do Funil</div>
+      <div class="title">Posts Fixados</div>
+    </div>
+  </div>
+
+  <div class="mock-wrap">
+    <div class="mock-label">Primeira linha do feed — atual</div>
+    <img class="real-img" src="anotado/02-posts-fixados.jpg" alt="Print da grade do perfil com caixa vermelha ao redor dos 3 primeiros posts fixados, todos close de lábios">
+  </div>
+
+  <div class="block porque">
+    <div class="k">Por que melhorar</div>
+    <p>Fixar 3 fotos do mesmo procedimento comunica um único assunto: preenchimento labial. Isso atrai um
+    público que compara preço de boca a boca, e deixa de fora o público de 35 a 55+ anos com maior poder
+    aquisitivo, que busca rejuvenescimento facial completo — e decide muito mais por confiança e autoridade
+    do que por valor do procedimento.</p>
+  </div>
+  <div class="block como">
+    <div class="k">Como deve ficar</div>
+    <ul>
+      <li><b>Post 1 — Vídeo de apresentação:</b> a Dra. Claudia se apresentando, mostrando a clínica e explicando
+      a importância de uma avaliação individualizada antes de qualquer procedimento.</li>
+      <li><b>Post 2 — Procedimento de maior valor:</b> fios de sustentação ou bioestimulador, com foco no
+      resultado elegante e natural (não no processo).</li>
+      <li><b>Post 3 — Preenchimento labial:</b> pode ficar, funciona bem como atrativo visual — mas como 1 dos 3, não os 3.</li>
+    </ul>
+  </div>
+  <div class="pagefoot">Gestor Kelvin · Auditoria Dra. Claudia Mara</div>
+</div>
+
+<!-- SEÇÃO 3 — MINA DE OURO -->
+<div class="page">
+  <div class="header-row">
+    <div>
+      <div class="num">Seção 03 · Oportunidade</div>
+      <div class="title">A Mina de Ouro: Criativos Já Validados</div>
+    </div>
+  </div>
+
+  <div class="mock-wrap">
+    <div class="mock-label">Reels de alta performance — atual</div>
+    <img class="real-img" style="width:auto; max-height:360px; margin:0 auto;" src="anotado/03-mina-de-ouro-reels.jpg" alt="Print da grade de reels com seta verde apontando para o vídeo de jaleco com 39,6 mil views e para o vídeo do paciente masculino com 10,8 mil views">
+  </div>
+
+  <div class="block">
+    <div class="k" style="color:var(--green)">A estratégia de tráfego</div>
+    <p>Esses dois vídeos já foram validados pelo próprio público — o alcance orgânico deles mostra que retêm
+    atenção e transmitem postura profissional. Não são só o conteúdo com mais views: são a prova de que esse
+    formato funciona com essa audiência específica de Lucas do Rio Verde.</p>
+    <p style="margin-top:10px;">Eles serão os principais <b>"soldados"</b> da campanha de Engajamento para o
+    WhatsApp — usados como estão, sem precisar de produção nova para começar a rodar.</p>
+  </div>
+
+  <div class="block como">
+    <div class="k">Recomendação de novo conteúdo</div>
+    <p>Gravar vídeos novos replicando exatamente a energia e o formato do vídeo de 39,6 mil views (jaleco,
+    ambiente da clínica, tom direto), sempre encerrando com uma chamada para ação clara:</p>
+    <p style="margin-top:10px; color:var(--accent); font-weight:600;">"Agende sua avaliação no Jd. Amazonas."</p>
+  </div>
+
+  <div class="cta-final">
+    <div class="box">
+      <h3>Próximo passo</h3>
+      <p>Com a bio, os destaques e os posts fixados ajustados como orientado aqui, os anúncios que já estão no
+      ar passam a converter mais — os mesmos visitantes chegam a um perfil que já constrói confiança sozinho,
+      antes mesmo da primeira mensagem no WhatsApp.</p>
+    </div>
+  </div>
+  <div class="pagefoot">Gestor Kelvin · Auditoria Dra. Claudia Mara</div>
+</div>
+
+</body>
+</html>
