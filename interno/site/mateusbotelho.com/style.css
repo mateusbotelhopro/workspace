@@ -3,6 +3,14 @@
    Direção visual: ousado, direto, técnico — azul elétrico + preto + off-white
    ========================================================================== */
 
+@font-face {
+    font-family: 'Bomstad Display';
+    src: url('assets/fonts/BomstadDisplay-Black.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     --blue: #2438E8;
     --blue-light: #4F6BFF;
@@ -13,7 +21,7 @@
     --gray-dark: #54545C;
     --white: #FFFFFF;
 
-    --font-display: 'Anton', Arial, sans-serif;
+    --font-display: 'Bomstad Display', Arial, sans-serif;
     --font-sub: 'Archivo Black', Arial, sans-serif;
     --font-editorial: 'Playfair Display', Georgia, serif;
     --font-body: 'Archivo', Arial, sans-serif;
