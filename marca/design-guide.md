@@ -67,6 +67,7 @@ Visual neobrutalista: fundo off-white como base, preto para texto e bordas, azul
   - `logo-negativa.svg` — versão para fundo escuro
   - `favicon.svg` — ícone com cantos arredondados, fundo off-white
   - `icone-mark.svg` — só a marca, sem fundo
+- **Variações:** `marca/variacoes-logo/`
   - `quadrado-off-white.svg`, `quadrado-preto.svg`, `quadrado-azul.svg` — variações de fundo para foto de perfil/redes sociais
 - **Onde usar:** navbar, footer, slide final do carrossel (CTA), header de propostas e relatórios
 - **Tamanho sugerido:** largura entre 120-200px nos HTMLs
