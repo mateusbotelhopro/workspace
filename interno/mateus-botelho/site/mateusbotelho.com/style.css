@@ -73,7 +73,6 @@ img { max-width: 100%; display: block; }
     margin-bottom: 14px;
 }
 
-.eyebrow--on-blue { color: var(--white); }
 .eyebrow--on-dark { color: var(--blue-light); }
 
 .section-title {
@@ -88,15 +87,6 @@ img { max-width: 100%; display: block; }
 }
 
 .section-title--on-dark { color: var(--white); }
-
-.lede {
-    font-size: 1.05rem;
-    color: var(--gray-dark);
-    line-height: 1.65;
-    max-width: 620px;
-}
-
-.lede--on-dark { color: #C7CBD6; }
 
 /* Buttons */
 .btn {
@@ -176,14 +166,6 @@ img { max-width: 100%; display: block; }
 
 .tag--blue { background: var(--blue); color: var(--white); }
 .tag--ghost { background: var(--white); color: var(--black); }
-
-/* Editorial italic accent */
-.editorial {
-    font-family: var(--font-editorial);
-    font-style: italic;
-    font-weight: 700;
-    color: var(--blue);
-}
 
 /* ==========================================================================
    NAVBAR
