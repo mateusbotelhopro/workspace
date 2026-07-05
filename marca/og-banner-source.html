@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#2438E8; --black:#0A0A0B; --offwhite:#F4F4F2;
+    --gray-dark:#54545C; --white:#FFFFFF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:1200px;height:630px;overflow:hidden;}
+  body{
+    background:var(--offwhite);
+    font-family:'Archivo',Arial,sans-serif;
+    color:var(--black);
+    position:relative;
+  }
+  .content{
+    display:flex;
+    align-items:center;
+    gap:56px;
+    height:566px;              /* deixa 64px pra barra inferior */
+    padding:56px 64px;
+  }
+  .col-text{flex:1;min-width:0;}
+  .brand{
+    font-family:'Archivo Black',Arial,sans-serif;
+    font-size:30px;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    color:var(--black);
+  }
+  .eyebrow{
+    font-family:'Archivo',sans-serif;
+    font-weight:800;
+    font-size:15px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--blue);
+    margin-top:8px;
+  }
+  .headline{
+    font-family:'Bricolage Grotesque',Arial,sans-serif;
+    font-weight:800;
+    text-transform:uppercase;
+    font-size:82px;
+    line-height:0.98;
+    letter-spacing:-0.5px;
+    margin-top:36px;
+  }
+  .headline .l2{color:var(--blue);}
+  .sub{
+    font-size:23px;
+    line-height:1.4;
+    color:var(--gray-dark);
+    margin-top:28px;
+    max-width:520px;
+  }
+  /* card do dashboard */
+  .col-visual{flex:0 0 auto;}
+  .card{
+    width:340px;
+    background:var(--white);
+    border:2px solid var(--black);
+    border-radius:22px;
+    box-shadow:12px 12px 0 var(--blue);
+    padding:22px;
+  }
+  .card svg{display:block;width:100%;height:auto;}
+  /* barra inferior */
+  .bar{
+    position:absolute;
+    left:0;bottom:0;
+    width:100%;height:64px;
+    background:var(--blue);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    color:var(--white);
+    font-family:'Archivo Black',Arial,sans-serif;
+    font-size:19px;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+  }
+</style>
+</head>
+<body>
+  <div class="content">
+    <div class="col-text">
+      <div class="brand">Mateus Botelho</div>
+      <div class="eyebrow">Operação de Tráfego Pago</div>
+      <div class="headline">Mais caso,<br><span class="l2">não curtida.</span></div>
+      <p class="sub">Gestão de tráfego pago para advogados, dentro das normas da OAB.</p>
+    </div>
+    <div class="col-visual">
+      <div class="card">
+        <svg viewBox="0 0 320 400" role="img" aria-label="Painel da operação">
+          <circle cx="24" cy="28" r="6" fill="#0A0A0B" opacity="0.15"/>
+          <circle cx="44" cy="28" r="6" fill="#0A0A0B" opacity="0.15"/>
+          <circle cx="64" cy="28" r="6" fill="#2438E8"/>
+          <text x="90" y="32" font-family="Archivo, Arial, sans-serif" font-size="11" font-weight="800" letter-spacing="1" fill="#54545C">OPERAÇÃO ATIVA</text>
+          <line x1="20" y1="52" x2="300" y2="52" stroke="#0A0A0B" stroke-width="1.5" opacity="0.15"/>
+
+          <rect x="20" y="70" width="34" height="34" rx="8" fill="#2438E8"/>
+          <text x="66" y="84" font-family="Archivo, Arial, sans-serif" font-size="14" font-weight="800" fill="#0A0A0B">Meta Ads</text>
+          <text x="66" y="101" font-family="Archivo, Arial, sans-serif" font-size="11" fill="#54545C">Campanha ativa</text>
+          <circle cx="284" cy="87" r="5" fill="#22C55E"/>
+
+          <rect x="20" y="118" width="34" height="34" rx="8" fill="#0A0A0B"/>
+          <text x="66" y="132" font-family="Archivo, Arial, sans-serif" font-size="14" font-weight="800" fill="#0A0A0B">Google Ads</text>
+          <text x="66" y="149" font-family="Archivo, Arial, sans-serif" font-size="11" fill="#54545C">Campanha ativa</text>
+          <circle cx="284" cy="135" r="5" fill="#22C55E"/>
+
+          <line x1="20" y1="168" x2="300" y2="168" stroke="#0A0A0B" stroke-width="1.5" opacity="0.15"/>
+
+          <line x1="20" y1="250" x2="300" y2="250" stroke="#54545C" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.35"/>
+          <polyline points="20,235 68,225 116,230 164,205 212,190 260,165 300,150" fill="none" stroke="#2438E8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="300" cy="150" r="6" fill="#2438E8"/>
+          <text x="20" y="272" font-family="Archivo, Arial, sans-serif" font-size="11" font-weight="800" letter-spacing="0.5" fill="#54545C">CONTATOS QUALIFICADOS POR SEMANA</text>
+
+          <line x1="20" y1="290" x2="300" y2="290" stroke="#0A0A0B" stroke-width="1.5" opacity="0.15"/>
+
+          <text x="20" y="335" font-family="Archivo, Arial, sans-serif" font-size="42" font-weight="900" fill="#0A0A0B">+147</text>
+          <text x="20" y="355" font-family="Archivo, Arial, sans-serif" font-size="12" font-weight="800" letter-spacing="0.5" fill="#54545C">CONTATOS GERADOS ESSE MÊS</text>
+
+          <rect x="20" y="372" width="280" height="10" rx="5" fill="#F4F4F2" stroke="#0A0A0B" stroke-width="1.5"/>
+          <rect x="20" y="372" width="228" height="10" rx="5" fill="#2438E8"/>
+          <text x="20" y="396" font-family="Archivo, Arial, sans-serif" font-size="10" font-weight="700" fill="#54545C">ORÇAMENTO OTIMIZADO EM TEMPO REAL</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="bar">~R$ 1 MILHÃO EM ADS GERENCIADOS · MATEUSBOTELHO.COM</div>
+</body>
+</html>
