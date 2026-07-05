@@ -668,6 +668,122 @@ img { max-width: 100%; display: block; }
 }
 
 /* ==========================================================================
+   BIO — QUEM CUIDA DA SUA VERBA
+   ========================================================================== */
+.bio-section {
+    background: var(--offwhite);
+    padding: 100px 24px;
+    border-top: 2px solid var(--black);
+}
+
+.bio-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 56px;
+    align-items: center;
+}
+
+.bio-photo-frame {
+    width: 100%;
+    max-width: 340px;
+    border: 2px solid var(--black);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-hard);
+    overflow: hidden;
+    background: var(--black);
+}
+
+.bio-photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 4/5;
+    display: block;
+}
+
+.bio-text p {
+    margin-top: 18px;
+    color: var(--gray-dark);
+    line-height: 1.65;
+}
+
+.bio-text p strong { color: var(--black); }
+
+@media (max-width: 900px) {
+    .bio-container { grid-template-columns: 1fr; gap: 36px; }
+    .bio-photo-frame { max-width: 280px; }
+}
+
+@media (max-width: 480px) {
+    .bio-section { padding: 72px 20px; }
+}
+
+/* ==========================================================================
+   FAQ
+   ========================================================================== */
+.faq-section {
+    background: var(--offwhite);
+    padding: 100px 24px;
+    border-top: 2px solid var(--black);
+}
+
+.faq-container { max-width: 820px; margin: 0 auto; }
+
+.faq-list {
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-item {
+    border: 2px solid var(--black);
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    box-shadow: 4px 4px 0 var(--black);
+}
+
+.faq-item summary {
+    cursor: pointer;
+    padding: 18px 22px;
+    font-family: var(--font-sub);
+    text-transform: uppercase;
+    font-size: 0.92rem;
+    letter-spacing: 0.3px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item summary::after {
+    content: "+";
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--blue);
+    flex-shrink: 0;
+}
+
+.faq-item[open] summary::after { content: "−"; }
+
+.faq-item p {
+    padding: 0 22px 20px;
+    color: var(--gray-dark);
+    line-height: 1.65;
+}
+
+@media (max-width: 480px) {
+    .faq-section { padding: 72px 20px; }
+    .faq-item summary { padding: 16px 18px; font-size: 0.85rem; }
+}
+
+/* ==========================================================================
    PRA QUEM É
    ========================================================================== */
 .paraquem-section {

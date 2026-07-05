@@ -29,9 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. ViewContent — seções estratégicas ao entrarem na viewport
     const sectionsToTrack = [
         { id: 'virada',  name: 'A Virada'  },
+        { id: 'quem-cuida', name: 'Bio' },
         { id: 'pra-quem', name: 'Pra Quem É' },
         { id: 'pacote',  name: 'O Pacote'  },
         { id: 'objecao', name: 'Objeção'   },
+        { id: 'faq',     name: 'FAQ'       },
     ];
 
     const viewedSections = new Set();
