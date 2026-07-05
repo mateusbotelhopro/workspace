@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sectionsToTrack = [
         { id: 'virada',  name: 'A Virada'  },
         { id: 'quem-cuida', name: 'Bio' },
+        { id: 'resultados', name: 'Resultados' },
         { id: 'pra-quem', name: 'Pra Quem É' },
         { id: 'pacote',  name: 'O Pacote'  },
         { id: 'objecao', name: 'Objeção'   },

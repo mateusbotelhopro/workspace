@@ -784,6 +784,82 @@ img { max-width: 100%; display: block; }
 }
 
 /* ==========================================================================
+   RESULTADOS
+   ========================================================================== */
+.resultados-section {
+    background: var(--offwhite);
+    padding: 100px 24px;
+    border-top: 2px solid var(--black);
+}
+
+.resultados-container { max-width: 1100px; margin: 0 auto; }
+
+.resultados-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.resultado-card {
+    background: var(--white);
+    border: 2px solid var(--black);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-hard-sm);
+    padding: 28px 24px;
+    transition: var(--transition);
+}
+
+.resultado-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 7px 7px 0 var(--blue);
+}
+
+.resultado-tag {
+    display: inline-block;
+    font-family: var(--font-sub);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--white);
+    background: var(--black);
+    border-radius: 100px;
+    padding: 6px 14px;
+    margin-bottom: 18px;
+}
+
+.resultado-num {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+    text-transform: uppercase;
+    line-height: 1;
+    color: var(--blue);
+    margin-bottom: 12px;
+}
+
+.resultado-card p {
+    font-size: 0.92rem;
+    color: var(--gray-dark);
+    line-height: 1.6;
+}
+
+.resultados-sigilo {
+    margin-top: 28px;
+    font-size: 0.88rem;
+    color: var(--gray-dark);
+    font-style: italic;
+}
+
+@media (max-width: 900px) {
+    .resultados-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .resultados-section { padding: 72px 20px; }
+}
+
+/* ==========================================================================
    PRA QUEM É
    ========================================================================== */
 .paraquem-section {
