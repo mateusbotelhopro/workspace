@@ -3,14 +3,6 @@
    Direção visual: ousado, direto, técnico — azul elétrico + preto + off-white
    ========================================================================== */
 
-@font-face {
-    font-family: 'Bomstad Display';
-    src: url('assets/fonts/BomstadDisplay-Black.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
 :root {
     --blue: #2438E8;
     --blue-light: #4F6BFF;
@@ -21,7 +13,7 @@
     --gray-dark: #54545C;
     --white: #FFFFFF;
 
-    --font-display: 'Bomstad Display', Arial, sans-serif;
+    --font-display: 'Bricolage Grotesque', Arial, sans-serif;
     --font-sub: 'Archivo Black', Arial, sans-serif;
     --font-editorial: 'Playfair Display', Georgia, serif;
     --font-body: 'Archivo', Arial, sans-serif;
@@ -86,6 +78,7 @@ img { max-width: 100%; display: block; }
 
 .section-title {
     font-family: var(--font-display);
+    font-weight: 800;
     text-transform: uppercase;
     line-height: 1.05;
     letter-spacing: 0.5px;
@@ -285,6 +278,7 @@ img { max-width: 100%; display: block; }
 
 .hero-title {
     font-family: var(--font-display);
+    font-weight: 800;
     text-transform: uppercase;
     font-size: clamp(2.4rem, 5vw, 3.6rem);
     line-height: 1.05;
@@ -381,6 +375,7 @@ img { max-width: 100%; display: block; }
 
 .prova-number {
     font-family: var(--font-display);
+    font-weight: 800;
     font-size: clamp(4.5rem, 12vw, 8rem);
     line-height: 0.9;
     color: var(--white);
@@ -831,6 +826,7 @@ img { max-width: 100%; display: block; }
 .resultado-num {
     display: block;
     font-family: var(--font-display);
+    font-weight: 800;
     font-size: clamp(1.9rem, 3.5vw, 2.6rem);
     text-transform: uppercase;
     line-height: 1;
@@ -1020,6 +1016,7 @@ img { max-width: 100%; display: block; }
 
 .cta-final-title {
     font-family: var(--font-display);
+    font-weight: 800;
     text-transform: uppercase;
     font-size: clamp(2rem, 4.5vw, 3.2rem);
     line-height: 1.1;
@@ -1175,6 +1172,7 @@ img { max-width: 100%; display: block; }
 
 .obrigado-title {
     font-family: var(--font-display);
+    font-weight: 800;
     text-transform: uppercase;
     font-size: clamp(1.8rem, 4vw, 2.6rem);
     color: var(--white);
@@ -1246,6 +1244,7 @@ img { max-width: 100%; display: block; }
 
 .legal-hero h1 {
     font-family: var(--font-display);
+    font-weight: 800;
     text-transform: uppercase;
     font-size: clamp(1.8rem, 4vw, 2.6rem);
     color: var(--white);

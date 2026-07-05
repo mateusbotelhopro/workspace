@@ -21,13 +21,13 @@
 
 ## Tipografia
 
-- **Títulos de destaque (display):** Bomstad Display Black (fonte local, `marca/fontes/BomstadDisplay-Black.ttf`) — uppercase, usado em hero, section-title, CTA final. Substituiu Anton
+- **Títulos de destaque (display):** Bricolage Grotesque peso 800 (Google Fonts) — grotesca contemporânea, uppercase, usada em hero, section-title, prova, CTA final. Substituiu Bomstad Display Black (05/07/2026). É variável (eixos `opsz`+`wght`); nos títulos usa peso 800 pra manter o impacto black da fase anterior
 - **Subtítulos/labels/botões:** Archivo Black (Google Fonts) — uppercase, letter-spacing leve
 - **Corpo de texto:** Archivo (Google Fonts, pesos 400/500/600/700/800)
 - **Destaque editorial (itálico, citações):** Playfair Display itálico (Google Fonts, `ital@1`) — cor azul, usado com moderação em aspas/frases de efeito
-- **Google Fonts import:** `https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swap`
-- **Fonte local ativa:** Bomstad Display Black — arquivo em `marca/fontes/BomstadDisplay-Black.ttf` e replicado em `interno/site/mateusbotelho.com/assets/fonts/` para o `@font-face` do site
-- **Fontes locais legadas (não usar mais):** Freight Big Pro e Helvetica em `marca/fontes/legado/` — mantidas só como histórico, não refletem a marca atual. As demais variações de peso do Bomstad Display (Bold, ExtraBold, Light etc.) também seguem em `legado/`, só a Black está ativa
+- **Google Fonts import:** `https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Playfair+Display:ital@1&display=swap`
+- **Sem fontes locais no site:** desde 05/07/2026 o site não hospeda nenhum `.ttf`/`.otf` — toda a tipografia vem do Google Fonts e a pasta `assets/fonts/` do site foi removida
+- **Fontes locais legadas (não usar mais):** Bomstad Display (todas as variações, incluindo a Black), Freight Big Pro e Helvetica em `marca/fontes/legado/` — mantidas só como histórico, não refletem a marca atual
 
 ---
 
@@ -88,7 +88,9 @@ Visual neobrutalista: fundo off-white como base, preto para texto e bordas, azul
 
 ## Observações adicionais
 
-Identidade extraída do site institucional atual (`interno/site/mateusbotelho.com/`, `style.css`). Substituiu a fase anterior azul/Freight Big Pro (meados de 2026) e a fase intermediária preto/vermelho/Bebas Neue — nenhuma das duas reflete a marca em uso. Fontes via Google Fonts (Anton + Archivo Black + Archivo + Playfair Display itálico). Atualizado em julho de 2026 para refletir o redesign neobrutalista (azul elétrico + preto + off-white, bordas e sombras duras).
+Identidade extraída do site institucional atual (`interno/mateus-botelho/site/mateusbotelho.com/`, `style.css`). Substituiu a fase anterior azul/Freight Big Pro (meados de 2026) e a fase intermediária preto/vermelho/Bebas Neue — nenhuma das duas reflete a marca em uso. Fontes via Google Fonts (Bricolage Grotesque display + Archivo Black + Archivo + Playfair Display itálico). Atualizado em julho de 2026 para refletir o redesign neobrutalista (azul elétrico + preto + off-white, bordas e sombras duras).
+
+Em 05/07/2026, a fonte de display foi trocada de Bomstad Display Black (fonte comercial local, risco de licença de webfont) para Bricolage Grotesque peso 800 (Google Fonts, aberta). Nessa troca o site deixou de hospedar qualquer fonte local: a pasta `assets/fonts/` do site foi removida e o `@font-face` da Bomstad substituído pelo import do Google Fonts. A Bomstad (todas as variações) ficou em `marca/fontes/legado/`.
 
 Pasta `marca/` reorganizada em 03/07/2026: logo final em `marca/logo/`, fotos em `marca/fotos/`, fontes em `marca/fontes/` com legadas movidas para `marca/fontes/legado/`. Removidos arquivos de rascunho (previews HTML/PNG de teste, path_extract.txt, ícone.svg duplicado) que não eram mais necessários.
 
