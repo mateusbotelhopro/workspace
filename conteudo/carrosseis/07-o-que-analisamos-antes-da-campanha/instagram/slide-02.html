@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root{ --ink:#0A0A0B; --blue:#2438E8; --blue-l:#4F6BFF; --white:#fff; }
+  html,body{ width:1080px; height:1350px; }
+  body{ background:var(--ink); color:var(--white); font-family:'Archivo',sans-serif;
+    padding:80px 76px; display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden; }
+  .tag{ align-self:flex-start; font-family:'Archivo Black',sans-serif; font-size:20px; text-transform:uppercase; letter-spacing:2px; color:var(--blue-l); }
+  .mid{ margin-top:auto; margin-bottom:auto; }
+  .mid p{ font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:56px; line-height:1.16; letter-spacing:-1px; }
+  .mid em{ font-style:normal; color:var(--blue-l); }
+  .foot{ display:flex; justify-content:space-between; align-items:flex-end; }
+  .brand{ font-family:'Archivo Black',sans-serif; font-size:18px; letter-spacing:.5px; text-transform:uppercase; opacity:.55; }
+  .count{ font-family:'Archivo Black',sans-serif; font-size:20px; opacity:.55; }
+  .progress{ position:absolute; left:0; bottom:0; height:6px; width:28.6%; background:var(--blue); }
+</style>
+</head>
+<body>
+  <span class="tag">O motivo</span>
+  <div class="mid">
+    <p>Tem agência que liga o anúncio na primeira reunião.<br><br>A gente prefere gastar uma semana entendendo o escritório antes de gastar um real em tráfego. Campanha sem diagnóstico é dinheiro correndo atrás de um <em>alvo que ninguém desenhou</em>.</p>
+  </div>
+  <div class="foot">
+    <span class="brand">Botelho · Marketing Jurídico</span>
+    <span class="count">02 / 07</span>
+  </div>
+  <div class="progress"></div>
+</body>
+</html>

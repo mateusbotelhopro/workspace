@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root{ --bg:#F4F4F2; --ink:#0A0A0B; --blue:#2438E8; --white:#fff; --gray:#54545C; }
+  html,body{ width:1080px; height:1350px; }
+  body{ background:var(--bg); color:var(--ink); font-family:'Archivo',sans-serif;
+    padding:80px 76px; display:flex; flex-direction:column; position:relative; overflow:hidden; }
+  .stepnum{ font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:150px; line-height:1; color:var(--blue); letter-spacing:-4px; }
+  .label{ margin-top:6px; display:inline-flex; align-self:flex-start; align-items:center; border:2px solid var(--ink); border-radius:100px;
+    padding:11px 24px; background:var(--white); box-shadow:5px 5px 0 var(--ink);
+    font-family:'Archivo Black',sans-serif; font-size:19px; text-transform:uppercase; letter-spacing:1.5px; }
+  h2{ font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:56px; line-height:1.08; letter-spacing:-1px; text-transform:uppercase; margin:34px 0 30px; }
+  .body-text{ font-size:37px; line-height:1.42; font-weight:500; max-width:900px; color:var(--ink); }
+  .body-text b{ font-weight:800; color:var(--blue); }
+  .spacer{ flex:1; }
+  .foot{ display:flex; justify-content:space-between; align-items:flex-end; }
+  .brand{ font-family:'Archivo Black',sans-serif; font-size:18px; letter-spacing:.5px; text-transform:uppercase; color:var(--gray); }
+  .count{ font-family:'Archivo Black',sans-serif; font-size:20px; color:var(--gray); }
+  .progress{ position:absolute; left:0; bottom:0; height:6px; width:40%; background:var(--blue); }
+</style>
+</head>
+<body>
+  <div class="stepnum">01</div>
+  <span class="label">Clareza</span>
+  <h2>Você sabe exatamente o que está sendo feito</h2>
+  <p class="body-text">Sem relatório genérico, sem termo técnico jogado sem explicação. Toda decisão de campanha, eu explico o porquê, na <b>linguagem do seu negócio</b>, não na do meu.</p>
+  <div class="spacer"></div>
+  <div class="foot">
+    <span class="brand">Botelho · Marketing Jurídico</span>
+    <span class="count">02 / 05</span>
+  </div>
+  <div class="progress"></div>
+</body>
+</html>

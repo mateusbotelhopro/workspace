@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root{ --ink:#0A0A0B; --blue:#2438E8; --blue-l:#4F6BFF; --white:#fff; }
+  html,body{ width:1080px; height:1350px; }
+  body{ background:var(--ink); color:var(--white); font-family:'Archivo',sans-serif;
+    padding:80px 76px; display:flex; flex-direction:column; position:relative; overflow:hidden; }
+  .label{ align-self:flex-start; display:inline-flex; align-items:center; border:2px solid var(--white); border-radius:100px;
+    padding:11px 24px; background:transparent; color:var(--white); box-shadow:5px 5px 0 var(--blue);
+    font-family:'Archivo Black',sans-serif; font-size:20px; text-transform:uppercase; letter-spacing:1.5px; }
+  h2{ font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:62px; line-height:1.05; letter-spacing:-1.5px; text-transform:uppercase; margin:26px 0 44px; }
+  ul{ list-style:none; display:flex; flex-direction:column; gap:26px; }
+  li{ display:flex; align-items:flex-start; gap:24px; }
+  .xk{ flex:none; width:56px; height:56px; border-radius:50%; background:transparent; border:2px solid var(--blue-l);
+    box-shadow:4px 4px 0 var(--blue); display:flex; align-items:center; justify-content:center; color:var(--blue-l); font-size:28px; font-weight:800; }
+  li span{ font-size:33px; line-height:1.28; font-weight:500; padding-top:6px; }
+  .spacer{ flex:1; }
+  .foot{ display:flex; justify-content:space-between; align-items:flex-end; }
+  .brand{ font-family:'Archivo Black',sans-serif; font-size:18px; letter-spacing:.5px; text-transform:uppercase; opacity:.55; }
+  .count{ font-family:'Archivo Black',sans-serif; font-size:20px; opacity:.55; }
+  .progress{ position:absolute; left:0; bottom:0; height:6px; width:66.6%; background:var(--blue); }
+</style>
+</head>
+<body>
+  <span class="label">Não pode</span>
+  <h2>Na prática, o que derruba você</h2>
+  <ul>
+    <li><span class="xk">✕</span><span>Anúncio prometendo "ganhar a causa" ou vitória certa</span></li>
+    <li><span class="xk">✕</span><span>"Consulta grátis" ou desconto usado como isca</span></li>
+    <li><span class="xk">✕</span><span>Comparação direta com outro advogado ou escritório</span></li>
+    <li><span class="xk">✕</span><span>Abordar direto quem já está com um processo aberto</span></li>
+  </ul>
+  <div class="spacer"></div>
+  <div class="foot">
+    <span class="brand">Botelho · Marketing Jurídico</span>
+    <span class="count">04 / 06</span>
+  </div>
+  <div class="progress"></div>
+</body>
+</html>

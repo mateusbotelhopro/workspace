@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root{ --bg:#F4F4F2; --ink:#0A0A0B; --blue:#2438E8; --white:#fff; --gray:#54545C; }
+  html,body{ width:1080px; height:1350px; }
+  body{ background:var(--bg); color:var(--ink); font-family:'Archivo',sans-serif;
+    padding:80px 76px; display:flex; flex-direction:column; position:relative; overflow:hidden; }
+  .label{ align-self:flex-start; display:inline-flex; align-items:center; border:2px solid var(--ink); border-radius:100px;
+    padding:11px 24px; background:var(--white); box-shadow:5px 5px 0 var(--ink);
+    font-family:'Archivo Black',sans-serif; font-size:19px; text-transform:uppercase; letter-spacing:1.5px; }
+  h2{ font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:60px; line-height:1.06; letter-spacing:-1px; text-transform:uppercase; margin:32px 0 40px; }
+  .card{ border:2px solid var(--ink); border-radius:20px; background:var(--white); padding:48px 44px; box-shadow:6px 6px 0 var(--blue); }
+  .card p{ font-size:36px; line-height:1.42; font-weight:500; }
+  .card b{ font-weight:800; color:var(--blue); }
+  .spacer{ flex:1; }
+  .foot{ display:flex; justify-content:space-between; align-items:flex-end; }
+  .brand{ font-family:'Archivo Black',sans-serif; font-size:18px; letter-spacing:.5px; text-transform:uppercase; color:var(--gray); }
+  .count{ font-family:'Archivo Black',sans-serif; font-size:20px; color:var(--gray); }
+  .progress{ position:absolute; left:0; bottom:0; height:6px; width:42.9%; background:var(--blue); }
+</style>
+</head>
+<body>
+  <span class="label">O problema 1</span>
+  <h2>Quem decide se você recebe cliente é outra pessoa</h2>
+  <div class="card">
+    <p>Depende de um colega lembrar de você numa conversa, de um cliente antigo comentar seu nome no momento certo. Isso não é uma máquina que você liga quando precisa. É <b>sorte organizada</b>, e sorte não tem hora pra chegar.</p>
+  </div>
+  <div class="spacer"></div>
+  <div class="foot">
+    <span class="brand">Botelho · Marketing Jurídico</span>
+    <span class="count">03 / 07</span>
+  </div>
+  <div class="progress"></div>
+</body>
+</html>
