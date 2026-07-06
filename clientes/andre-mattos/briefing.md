@@ -1,7 +1,7 @@
 # Briefing — André Mattos
 
 ## Negócio
-Consultório odontológico do Dr. André Luiz Rapchan Mattos (dentista).
+Consultório odontológico do Dr. André Luiz Rapchan Mattos (dentista). Está se especializando em Cirurgia Facial e Bucomaxilofacial. Atua também com Implantes, Prótese e Facetas em resina.
 
 ## Objetivo principal
 Atrair mais pacientes através das redes sociais.

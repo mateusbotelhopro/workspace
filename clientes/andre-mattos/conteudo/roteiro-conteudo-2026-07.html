@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Roteiro de Conteúdo — André Mattos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #F4F4F2;
+    color: #0A0A0B;
+    font-family: 'Archivo', sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    padding: 0;
+  }
+  .page {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 56px 40px 80px;
+  }
+  header.doc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px solid #0A0A0B;
+    padding-bottom: 24px;
+    margin-bottom: 40px;
+  }
+  .brand-tag {
+    display: inline-block;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: #2438E8;
+    color: #FFFFFF;
+    border: 2px solid #0A0A0B;
+    border-radius: 100px;
+    padding: 6px 16px;
+    box-shadow: 4px 4px 0 #0A0A0B;
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: 34px;
+    text-transform: uppercase;
+    line-height: 1.05;
+  }
+  .doc-meta {
+    text-align: right;
+    font-size: 13px;
+    color: #54545C;
+    font-weight: 600;
+  }
+  .doc-meta strong { color: #0A0A0B; }
+
+  .intro {
+    background: #FFFFFF;
+    border: 2px solid #0A0A0B;
+    border-radius: 20px;
+    box-shadow: 6px 6px 0 #2438E8;
+    padding: 24px 28px;
+    margin-bottom: 48px;
+    font-size: 15px;
+    color: #54545C;
+  }
+  .intro strong { color: #0A0A0B; }
+
+  section { margin-bottom: 56px; }
+
+  .section-label {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #2438E8;
+    margin-bottom: 6px;
+  }
+  h2 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: 26px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .section-desc {
+    color: #54545C;
+    font-size: 14px;
+    max-width: 640px;
+    margin-bottom: 28px;
+  }
+
+  /* Stories grid */
+  .stories-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .story-card {
+    background: #FFFFFF;
+    border: 2px solid #0A0A0B;
+    border-radius: 14px;
+    box-shadow: 4px 4px 0 #0A0A0B;
+    padding: 18px 20px;
+    break-inside: avoid;
+  }
+  .story-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background: #0A0A0B;
+    color: #FFFFFF;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 11px;
+    border-radius: 100px;
+    margin-right: 8px;
+  }
+  .story-format {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .story-gancho {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #2438E8;
+    font-size: 14.5px;
+    margin-bottom: 10px;
+  }
+  .story-how {
+    font-size: 13px;
+    color: #54545C;
+  }
+  .story-how b { color: #0A0A0B; font-weight: 700; }
+
+  /* Approval cards (posts) */
+  .approval-card {
+    background: #FFFFFF;
+    border: 2px solid #0A0A0B;
+    border-radius: 20px;
+    box-shadow: 6px 6px 0 #0A0A0B;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+  }
+  .approval-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .tag {
+    display: inline-block;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border: 2px solid #0A0A0B;
+    border-radius: 100px;
+    padding: 4px 14px;
+  }
+  .tag--blue { background: #2438E8; color: #FFFFFF; }
+  .tag--ghost { background: #FFFFFF; color: #0A0A0B; }
+  .approval-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: 19px;
+    text-transform: uppercase;
+  }
+  .approval-check {
+    font-size: 12px;
+    font-weight: 700;
+    color: #54545C;
+    border: 2px dashed #8A8A92;
+    border-radius: 100px;
+    padding: 4px 14px;
+  }
+  .content-index {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    color: #8A8A92;
+    margin-bottom: 4px;
+  }
+  .field-label {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #8A8A92;
+    margin-top: 16px;
+    margin-bottom: 6px;
+  }
+  .field-label:first-of-type { margin-top: 0; }
+  .caption-box {
+    background: #F4F4F2;
+    border: 2px solid #0A0A0B;
+    border-radius: 14px;
+    padding: 16px 18px;
+    font-size: 14.5px;
+    white-space: pre-line;
+  }
+  .hashtags {
+    font-size: 13px;
+    color: #2438E8;
+    font-weight: 700;
+  }
+  .cta-line {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  /* Reels timeline */
+  .reels-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .reels-beat {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 18px;
+    padding: 14px 0;
+    border-top: 2px solid #0A0A0B;
+  }
+  .reels-beat:first-child { border-top: none; }
+  .reels-time {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 13px;
+    color: #FFFFFF;
+    background: #0A0A0B;
+    border-radius: 10px;
+    height: fit-content;
+    padding: 6px 10px;
+    text-align: center;
+  }
+  .reels-beat:nth-child(1) .reels-time { background: #2438E8; }
+  .reels-beat-label {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #8A8A92;
+    margin-bottom: 4px;
+  }
+  .reels-beat-text {
+    font-size: 14.5px;
+  }
+
+  footer.doc-footer {
+    margin-top: 64px;
+    padding-top: 20px;
+    border-top: 2px solid #0A0A0B;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #8A8A92;
+    font-weight: 600;
+  }
+
+  @media print {
+    body { background: #FFFFFF; }
+    .page { padding: 24px; }
+    .approval-card, .story-card, .intro { box-shadow: none; }
+    .approval-card, .story-card { break-inside: avoid; page-break-inside: avoid; }
+    h2, .section-label { break-after: avoid; page-break-after: avoid; }
+  }
+  @media (max-width: 640px) {
+    .stories-grid { grid-template-columns: 1fr; }
+    .reels-beat { grid-template-columns: 70px 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="doc-header">
+    <div>
+      <span class="brand-tag">Mateus Botelho · Conteúdo</span>
+      <h1>Roteiro de Conteúdo</h1>
+    </div>
+    <div class="doc-meta">
+      Cliente: <strong>André Mattos</strong><br>
+      Julho de 2026
+    </div>
+  </header>
+
+  <div class="intro">
+    Este documento tem duas partes. A primeira é um <strong>roteiro de stories para o dia a dia</strong>: formatos fixos que o Dr. André pode gravar sozinho, sem depender de aprovação, pra manter o perfil ativo entre um post e outro. A segunda é o <strong>roteiro de aprovação do mês</strong>: 12 conteúdos entre posts estáticos e reels, cobrindo as 4 frentes do consultório (Cirurgia Facial/Bucomaxilofacial, Implantes, Prótese e Facetas em resina), com legenda e roteiro prontos, aguardando validação antes de produzir a arte e gravar o vídeo.
+  </div>
+
+  <section>
+    <div class="section-label">Parte 1</div>
+    <h2>Roteiro de Stories · Dia a Dia</h2>
+    <p class="section-desc">Formatos recorrentes, não precisam de aprovação prévia. A ideia é ter sempre um desses à mão pra gravar entre um atendimento e outro.</p>
+
+    <div class="stories-grid">
+
+      <div class="story-card">
+        <div class="story-format"><span class="story-num">1</span>Bastidor de abertura</div>
+        <div class="story-gancho">"Preparando o consultório pra receber vocês hoje."</div>
+        <div class="story-how"><b>Como gravar:</b> esterilização de material ou organização da sala antes do primeiro paciente. Não precisa falar, só mostrar.</div>
+      </div>
+
+      <div class="story-card">
+        <div class="story-format"><span class="story-num">2</span>Primeiro atendimento</div>
+        <div class="story-gancho">"Primeiro paciente já confirmado, bora começar o dia."</div>
+        <div class="story-how"><b>Como gravar:</b> cadeira pronta ou recepção. Pode usar sticker de horário.</div>
+      </div>
+
+      <div class="story-card">
+        <div class="story-format"><span class="story-num">3</span>Dica rápida</div>
+        <div class="story-gancho">"Uma dica que muita gente esquece: troca a escova a cada 3 meses, mesmo sem cerdas gastas."</div>
+        <div class="story-how"><b>Como gravar:</b> fala direto pra câmera, 10 a 15 segundos, tom de conversa.</div>
+      </div>
+
+      <div class="story-card">
+        <div class="story-format"><span class="story-num">4</span>Mito ou verdade</div>
+        <div class="story-gancho">"Escovar o dente na hora depois de comer é sempre a melhor opção?"</div>
+        <div class="story-how"><b>Como gravar:</b> sticker de enquete (Sim/Não) e, no story seguinte, a resposta explicando o motivo (esperar uns 30 minutos por causa do ácido dos alimentos).</div>
+      </div>
+
+      <div class="story-card">
+        <div class="story-format"><span class="story-num">5</span>Caixa de perguntas</div>
+        <div class="story-gancho">"Deixa aqui sua dúvida sobre [tratamento] que eu respondo amanhã."</div>
+        <div class="story-how"><b>Como gravar:</b> sticker de perguntas, escolher um tema (implante, prótese, faceta em resina, cirurgia facial) pra direcionar as respostas.</div>
+      </div>
+
+      <div class="story-card">
+        <div class="story-format"><span class="story-num">6</span>Bastidor de procedimento</div>
+        <div class="story-gancho">"Um pouquinho do que rola aqui dentro."</div>
+        <div class="story-how"><b>Como gravar:</b> com autorização do paciente, um trecho do atendimento (não precisa mostrar rosto).</div>
+      </div>
+
+      <div class="story-card">
+        <div class="story-format"><span class="story-num">7</span>Depoimento rápido</div>
+        <div class="story-gancho">"Como foi a consulta de hoje?"</div>
+        <div class="story-how"><b>Como gravar:</b> pergunte pro paciente na saída se topa gravar 5 segundos contando a experiência.</div>
+      </div>
+
+      <div class="story-card">
+        <div class="story-format"><span class="story-num">8</span>Convite pra agendar</div>
+        <div class="story-gancho">"Ainda tenho horário essa semana pra quem quiser fazer uma avaliação."</div>
+        <div class="story-how"><b>Como gravar:</b> fala direto pra câmera ou sticker de link/WhatsApp pra agendar.</div>
+      </div>
+
+      <div class="story-card">
+        <div class="story-format"><span class="story-num">9</span>Encerramento do dia</div>
+        <div class="story-gancho">"Mais um dia de sorrisos por aqui. Até amanhã."</div>
+        <div class="story-how"><b>Como gravar:</b> saindo do consultório ou arrumando a sala no fim do expediente.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Parte 2</div>
+    <h2>Roteiro de Aprovação</h2>
+    <p class="section-desc">12 conteúdos, alternando post estático e reels, organizados pelas 4 frentes do consultório: Cirurgia Facial e Bucomaxilofacial (especialização em andamento), Implantes, Prótese e Facetas em resina.</p>
+
+    <div class="approval-card">
+      <div class="approval-head">
+        <div>
+          <div class="content-index">01 / 12</div>
+          <span class="tag tag--blue">Post estático</span>
+          <div class="approval-title">O que é Cirurgia Bucomaxilofacial</div>
+        </div>
+        <span class="approval-check">Aprovar / Ajustar</span>
+      </div>
+
+      <div class="field-label">Conceito visual</div>
+      <div>Foto do Dr. André no consultório, sorrindo, ambiente bem iluminado.</div>
+
+      <div class="field-label">Legenda</div>
+      <div class="caption-box">Voltamos, e com uma novidade.
+
+Além do consultório que vocês já conhecem, tenho me dedicado a uma área que exige bastante estudo: a Cirurgia Facial e Bucomaxilofacial. É a especialização que trata desde questões relacionadas aos dentes e ossos da face até procedimentos mais complexos na região da boca, maxilar e rosto.
+
+Isso significa que, além do cuidado de rotina que você já conhece, também estou me aprofundando pra acompanhar casos que vão além do consultório tradicional.
+
+Nas próximas semanas vou usar esse espaço pra explicar melhor cada uma dessas frentes: cirurgia facial, implantes, prótese e facetas em resina. Fica de olho.</div>
+
+      <div class="field-label">CTA + hashtags</div>
+      <div class="cta-line">Segue o perfil pra acompanhar / manda sua dúvida no direct.</div>
+      <div class="hashtags">#cirurgiabucomaxilofacial #cirurgiafacial #odontologia #dentista #implantedentario #protesedentaria #facetasderesina</div>
+    </div>
+
+    <div class="approval-card">
+      <div class="approval-head">
+        <div>
+          <div class="content-index">02 / 12</div>
+          <span class="tag tag--ghost">Reels</span>
+          <div class="approval-title">Bastidor dos estudos de especialização</div>
+        </div>
+        <span class="approval-check">Aprovar / Ajustar</span>
+      </div>
+
+      <div class="field-label">Objetivo</div>
+      <div>Humanizar e justificar a especialização em andamento, gerando autoridade sem soar pretensioso (ele está se especializando, não é o foco vender como "especialista formado").</div>
+
+      <div class="field-label" style="margin-top:20px;">Roteiro (até 60s)</div>
+      <div class="reels-timeline">
+        <div class="reels-beat">
+          <div class="reels-time">0-3s</div>
+          <div>
+            <div class="reels-beat-label">Hook</div>
+            <div class="reels-beat-text">Dr. André entre material de estudo, ou saindo de uma aula/curso. Frase de abertura: <em>"Por que resolvi voltar pra sala de aula depois de formado."</em></div>
+          </div>
+        </div>
+        <div class="reels-beat">
+          <div class="reels-time">4-20s</div>
+          <div>
+            <div class="reels-beat-label">O problema</div>
+            <div class="reels-beat-text">"Fazer faculdade de odontologia dá uma base boa, mas tem casos que pedem um olhar mais profundo, principalmente quando envolve a estrutura óssea da face."</div>
+          </div>
+        </div>
+        <div class="reels-beat">
+          <div class="reels-time">21-45s</div>
+          <div>
+            <div class="reels-beat-label">A resposta</div>
+            <div class="reels-beat-text">"Por isso decidi me especializar em Cirurgia Facial e Bucomaxilofacial. É um estudo pesado, mas que amplia bastante o tipo de cuidado que consigo oferecer."</div>
+          </div>
+        </div>
+        <div class="reels-beat">
+          <div class="reels-time">46-60s</div>
+          <div>
+            <div class="reels-beat-label">Conclusão + CTA</div>
+            <div class="reels-beat-text">"Se você tem alguma dúvida sobre o que essa especialização trata, deixa aqui nos comentários que eu respondo."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="approval-card">
+      <div class="approval-head">
+        <div>
+          <div class="content-index">03 / 12</div>
+          <span class="tag tag--blue">Post estático</span>
+          <div class="approval-title">Como funciona o implante dentário</div>
+        </div>
+        <span class="approval-check">Aprovar / Ajustar</span>
+      </div>
+
+      <div class="field-label">Conceito visual</div>
+      <div>Card educativo com as 4 etapas numeradas, ou foto do consultório.</div>
+
+      <div class="field-label">Legenda</div>
+      <div class="caption-box">Como funciona um implante dentário, sem enrolação:
+
+1. Avaliação, com raio-x ou tomografia, pra ver se o osso está em condição
+2. Colocação do implante (o "parafuso" que substitui a raiz do dente)
+3. Período de cicatrização, que varia de pessoa pra pessoa
+4. Colocação da coroa, a parte visível que faz o papel do dente
+
+Cada etapa é conversada com calma antes de avançar pra próxima. Nenhuma surpresa no meio do caminho.
+
+Se você perdeu um dente e não sabe por onde começar, essa é a deixa pra marcar uma avaliação.</div>
+
+      <div class="field-label">CTA + hashtags</div>
+      <div class="cta-line">Marcar avaliação.</div>
+      <div class="hashtags">#implantedentario #odontologia #dentista #saudebucal #consultorioodontologico</div>
+    </div>
+
+    <div class="approval-card">
+      <div class="approval-head">
+        <div>
+          <div class="content-index">04 / 12</div>
+          <span class="tag tag--ghost">Reels</span>
+          <div class="approval-title">Dói colocar implante?</div>
+        </div>
+        <span class="approval-check">Aprovar / Ajustar</span>
+      </div>
+
+      <div class="field-label">Objetivo</div>
+      <div>Quebrar a objeção mais comum sobre implante dentário.</div>
+
+      <div class="field-label" style="margin-top:20px;">Roteiro (até 60s)</div>
+      <div class="reels-timeline">
+        <div class="reels-beat">
+          <div class="reels-time">0-3s</div>
+          <div>
+            <div class="reels-beat-label">Hook</div>
+            <div class="reels-beat-text">"'Doutor, colocar implante dói?' Outra pergunta que aparece toda semana."</div>
+          </div>
+        </div>
+        <div class="reels-beat">
+          <div class="reels-time">4-20s</div>
+          <div>
+            <div class="reels-beat-label">O problema</div>
+            <div class="reels-beat-text">"Com anestesia local bem aplicada, o procedimento em si não dói. O que costuma incomodar é o período logo depois, parecido com um pós-operatório comum."</div>
+          </div>
+        </div>
+        <div class="reels-beat">
+          <div class="reels-time">21-45s</div>
+          <div>
+            <div class="reels-beat-label">A resposta</div>
+            <div class="reels-beat-text">"Esse desconforto é controlado com analgésico simples, na maioria dos casos. Não é nada perto do medo que a palavra 'implante' costuma causar."</div>
+          </div>
+        </div>
+        <div class="reels-beat">
+          <div class="reels-time">46-60s</div>
+          <div>
+            <div class="reels-beat-label">Conclusão + CTA</div>
+            <div class="reels-beat-text">"O medo da palavra geralmente é maior que o procedimento em si. Bora conversar sobre o seu caso?"</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="approval-card">
+      <div class="approval-head">
+        <div>
+          <div class="content-index">05 / 12</div>
+          <span class="tag tag--blue">Post estático</span>
+          <div class="approval-title">Prótese fixa ou removível</div>
+        </div>
+        <span class="approval-check">Aprovar / Ajustar</span>
+      </div>
+
+      <div class="field-label">Conceito visual</div>
+      <div>Card comparativo (fixa x removível) ou foto do consultório.</div>
+
+      <div class="field-label">Legenda</div>
+      <div class="caption-box">Prótese fixa ou removível? Depende do seu caso.
+
+A prótese fixa é presa permanentemente, geralmente sobre implantes ou dentes já preparados. Não sai da boca.
+
+A prótese removível é a que você tira pra higienizar, indicada em outras situações, geralmente quando faltam mais dentes ou quando o osso não permite fixar de outro jeito.
+
+Nenhuma das duas é "melhor" no geral. A indicação certa depende de uma avaliação, olhando pro seu caso específico.
+
+Se você usa prótese há anos e sente que já não está confortável, vale reavaliar.</div>
+
+      <div class="field-label">CTA + hashtags</div>
+      <div class="cta-line">Marcar avaliação.</div>
+      <div class="hashtags">#protesedentaria #odontologia #dentista #saudebucal #consultorioodontologico</div>
+    </div>
+
+    <div class="approval-card">
+      <div class="approval-head">
+        <div>
+          <div class="content-index">06 / 12</div>
+          <span class="tag tag--ghost">Reels</span>
+          <div class="approval-title">Como funciona a faceta em resina</div>
+        </div>
+        <span class="approval-check">Aprovar / Ajustar</span>
+      </div>
+
+      <div class="field-label">Objetivo</div>
+      <div>Desmistificar o procedimento estético mais popular do consultório, mostrando o passo a passo.</div>
+
+      <div class="field-label" style="margin-top:20px;">Roteiro (até 60s)</div>
+      <div class="reels-timeline">
+        <div class="reels-beat">
+          <div class="reels-time">0-3s</div>
+          <div>
+            <div class="reels-beat-label">Hook</div>
+            <div class="reels-beat-text">"Como funciona uma faceta em resina, direto ao ponto."</div>
+          </div>
+        </div>
+        <div class="reels-beat">
+          <div class="reels-time">4-20s</div>
+          <div>
+            <div class="reels-beat-label">O problema</div>
+            <div class="reels-beat-text">"Primeiro, a gente avalia a cor, o formato e o alinhamento dos seus dentes, pra entender o que faz sentido mudar."</div>
+          </div>
+        </div>
+        <div class="reels-beat">
+          <div class="reels-time">21-45s</div>
+          <div>
+            <div class="reels-beat-label">A resposta</div>
+            <div class="reels-beat-text">"A resina é aplicada em camadas, moldada ainda na boca, sem precisar desgastar muito o dente natural na maioria dos casos."</div>
+          </div>
+        </div>
+        <div class="reels-beat">
+          <div class="reels-time">46-60s</div>
+          <div>
+            <div class="reels-beat-label">Conclusão + CTA</div>
+            <div class="reels-beat-text">"O resultado sai na mesma sessão, na maior parte das vezes. Se você já se incomoda com algo no seu sorriso, vale uma avaliação pra entender se a faceta é o caminho."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="approval-card">
+      <div class="approval-head">
+        <div>
+          <div class="content-index">07 / 12</div>
+          <span class="tag tag--blue">Post estático</span>
+          <div class="approval-title">Mito da faceta em resina</div>
+        </div>
+        <span class="approval-check">Aprovar / Ajustar</span>
+      </div>
+
+      <div class="field-label">Conceito visual</div>
+      <div>Card "mito ou verdade" com destaque textual.</div>
+
+      <div class="field-label">Legenda</div>
+      <div class="caption-box">"Faceta em resina estraga o dente." Um dos mitos mais repetidos por aí.
+
+Quando bem indicada e bem feita, a faceta não compromete o dente natural. Na maioria dos casos, o desgaste é mínimo ou nem existe.
+
+O que realmente compromete um dente é falta de manutenção e de acompanhamento, com ou sem faceta.
+
+Se você evita fazer por causa desse mito, talvez seja hora de tirar a dúvida direto com quem acompanha o seu caso.</div>
+
+      <div class="field-label">CTA + hashtags</div>
+      <div class="cta-line">Marcar avaliação / tirar dúvida no direct.</div>
+      <div class="hashtags">#facetasderesina #odontologiaestetica #sorriso #dentista #consultorioodontologico</div>
+    </div>
+
+    <div class="approval-card">
+      <div class="approval-head">
+        <div>
+          <div class="content-index">08 / 12</div>
+          <span class="tag tag--ghost">Reels</span>
+          <div class="approval-title">Recuperação pós-cirurgia facial</div>
+        </div>
+        <span class="approval-check">Aprovar / Ajustar</span>
+      </div>
+
+      <div class="field-label">Objetivo</div>
+      <div>Educar sobre o processo de recuperação de forma genérica, reduzindo o medo em torno da Cirurgia Facial/Bucomaxilofacial. Roteiro fala em termos gerais, sem depender de imagem de paciente específico.</div>
+
+      <div class="field-label" style="margin-top:20px;">Roteiro (até 60s)</div>
+      <div class="reels-timeline">
+        <div class="reels-beat">
+          <div class="reels-time">0-3s</div>
+          <div>
+            <div class="reels-beat-label">Hook</div>
+            <div class="reels-beat-text">"O que esperar da recuperação de uma cirurgia facial ou bucomaxilofacial."</div>
+          </div>
+        </div>
+        <div class="reels-beat">
+          <div class="reels-time">4-20s</div>
+          <div>
+            <div class="reels-beat-label">O problema</div>
+            <div class="reels-beat-text">"É normal ter inchaço e um pouco de desconforto nos primeiros dias. Isso faz parte do processo e tende a diminuir aos poucos."</div>
+          </div>
+        </div>
+        <div class="reels-beat">
+          <div class="reels-time">21-45s</div>
+          <div>
+            <div class="reels-beat-label">A resposta</div>
+            <div class="reels-beat-text">"O acompanhamento nesse período é tão importante quanto o procedimento em si: curativo, retorno pra avaliação, cuidados específicos indicados caso a caso."</div>
+          </div>
+        </div>
+        <div class="reels-beat">
+          <div class="reels-time">46-60s</div>
+          <div>
+            <div class="reels-beat-label">Conclusão + CTA</div>
+            <div class="reels-beat-text">"Cada recuperação tem seu tempo. O que garante um resultado tranquilo é seguir as orientações combinadas. Qualquer dúvida durante esse processo, é só chamar."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="approval-card">
+      <div class="approval-head">
+        <div>
+          <div class="content-index">09 / 12</div>
+          <span class="tag tag--blue">Post estático</span>
+          <div class="approval-title">Quando o implante é indicado</div>
+        </div>
+        <span class="approval-check">Aprovar / Ajustar</span>
+      </div>
+
+      <div class="field-label">Conceito visual</div>
+      <div>Card com lista ou foto do consultório.</div>
+
+      <div class="field-label">Legenda</div>
+      <div class="caption-box">Quando o implante entra como opção:
+
+Perdeu um dente há pouco tempo ou há anos, faz diferença nos dois casos
+Sente que a prótese que usa hoje não está mais confortável
+Tem vergonha de sorrir por causa de um espaço vazio
+
+Não existe "tarde demais" pra avaliar. O que muda é o planejamento, que é sempre feito depois de examinar o seu caso com calma.</div>
+
+      <div class="field-label">CTA + hashtags</div>
+      <div class="cta-line">Marcar avaliação.</div>
+      <div class="hashtags">#implantedentario #odontologia #dentista #saudebucal</div>
+    </div>
+
+    <div class="approval-card">
+      <div class="approval-head">
+        <div>
+          <div class="content-index">10 / 12</div>
+          <span class="tag tag--ghost">Reels</span>
+          <div class="approval-title">Quando a prótese é a melhor solução</div>
+        </div>
+        <span class="approval-check">Aprovar / Ajustar</span>
+      </div>
+
+      <div class="field-label">Objetivo</div>
+      <div>Mostrar que prótese não é "segunda opção", e sim a solução certa em determinados casos.</div>
+
+      <div class="field-label" style="margin-top:20px;">Roteiro (até 60s)</div>
+      <div class="reels-timeline">
+        <div class="reels-beat">
+          <div class="reels-time">0-3s</div>
+          <div>
+            <div class="reels-beat-label">Hook</div>
+            <div class="reels-beat-text">"Quando a prótese dentária é realmente a melhor escolha."</div>
+          </div>
+        </div>
+        <div class="reels-beat">
+          <div class="reels-time">4-20s</div>
+          <div>
+            <div class="reels-beat-label">O problema</div>
+            <div class="reels-beat-text">"Nem sempre implante é a opção mais indicada. Em alguns casos, principalmente quando falta bastante estrutura óssea ou o tratamento demora mais, a prótese resolve com segurança."</div>
+          </div>
+        </div>
+        <div class="reels-beat">
+          <div class="reels-time">21-45s</div>
+          <div>
+            <div class="reels-beat-label">A resposta</div>
+            <div class="reels-beat-text">"O ponto principal é adaptação: uma prótese bem feita, ajustada ao seu caso, devolve função e conforto no dia a dia, sem depender só de implante."</div>
+          </div>
+        </div>
+        <div class="reels-beat">
+          <div class="reels-time">46-60s</div>
+          <div>
+            <div class="reels-beat-label">Conclusão + CTA</div>
+            <div class="reels-beat-text">"Se você já usa prótese ou está pensando em uma, marca uma avaliação pra entender qual encaixa melhor no seu caso."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="approval-card">
+      <div class="approval-head">
+        <div>
+          <div class="content-index">11 / 12</div>
+          <span class="tag tag--blue">Post estático</span>
+          <div class="approval-title">Cuidados com a prótese</div>
+        </div>
+        <span class="approval-check">Aprovar / Ajustar</span>
+      </div>
+
+      <div class="field-label">Conceito visual</div>
+      <div>Card com lista de cuidados, tipografia grande.</div>
+
+      <div class="field-label">Legenda</div>
+      <div class="caption-box">3 cuidados simples pra quem usa prótese dentária:
+
+1. Limpar todos os dias, mesmo quando ela não está na boca
+2. Guardar em local seco ou na solução indicada, nunca em papel toalha
+3. Voltar pra reavaliação periódica, mesmo sem sentir nada de errado
+
+Prótese boa não é só a que fica bem posicionada no dia da entrega. É a que continua confortável meses depois, porque teve manutenção.</div>
+
+      <div class="field-label">CTA + hashtags</div>
+      <div class="cta-line">Marcar reavaliação.</div>
+      <div class="hashtags">#protesedentaria #odontologia #dentista #saudebucal</div>
+    </div>
+
+    <div class="approval-card">
+      <div class="approval-head">
+        <div>
+          <div class="content-index">12 / 12</div>
+          <span class="tag tag--ghost">Reels</span>
+          <div class="approval-title">Antes e depois de facetas em resina</div>
+        </div>
+        <span class="approval-check">Aprovar / Ajustar</span>
+      </div>
+
+      <div class="field-label">Objetivo</div>
+      <div>Prova social de transformação estética do sorriso. <strong>Roteiro pronto, aguardando paciente com autorização de imagem</strong> pra gravar.</div>
+
+      <div class="field-label" style="margin-top:20px;">Roteiro (até 60s)</div>
+      <div class="reels-timeline">
+        <div class="reels-beat">
+          <div class="reels-time">0-3s</div>
+          <div>
+            <div class="reels-beat-label">Hook</div>
+            <div class="reels-beat-text">Foto/vídeo do sorriso antes da faceta. Frase de abertura: <em>"Esse foi o antes."</em></div>
+          </div>
+        </div>
+        <div class="reels-beat">
+          <div class="reels-time">4-20s</div>
+          <div>
+            <div class="reels-beat-label">O processo</div>
+            <div class="reels-beat-text">Corte rápido do procedimento (se o paciente permitir gravar), ou direto pra transição antes/depois.</div>
+          </div>
+        </div>
+        <div class="reels-beat">
+          <div class="reels-time">21-45s</div>
+          <div>
+            <div class="reels-beat-label">O depois</div>
+            <div class="reels-beat-text">Revela o resultado com o sorriso finalizado. <em>"Esse é o depois."</em></div>
+          </div>
+        </div>
+        <div class="reels-beat">
+          <div class="reels-time">46-60s</div>
+          <div>
+            <div class="reels-beat-label">Conclusão + CTA</div>
+            <div class="reels-beat-text">"Se tem algo no seu sorriso que te incomoda, talvez a solução seja mais simples do que parece. Marca sua avaliação."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <footer class="doc-footer">
+    <span>Mateus Botelho · Conteúdo &amp; Redes Sociais</span>
+    <span>André Mattos · Julho 2026</span>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -8,7 +8,7 @@ Esse CLAUDE.md existe porque essa pasta às vezes é aberta **separada**, direto
 
 - **Nome:** André Mattos (nome completo: André Luiz Rapchan Mattos)
 - **CPF:** 097.498.137-07
-- **Segmento:** Odontologia — consultório odontológico próprio
+- **Segmento:** Odontologia — consultório odontológico próprio. Especializando em Cirurgia Facial e Bucomaxilofacial. Também atua com Implantes, Prótese e Facetas em resina
 - **Contato principal:** André Luiz Rapchan Mattos (dentista, dono do consultório)
 - **Início do trabalho:** 2026-07-02
 
@@ -32,8 +32,10 @@ Detalhes completos do negócio, objetivo, público e histórico estão em [brief
 
 - Google Ads — Customer ID: [xxx]
 - Meta Ads — Ad Account ID: [xxx]
-- Instagram/Facebook Page: [xxx]
+- Instagram: @dr_andremattoss
 - Outros: [xxx]
+
+Credenciais (login/senha) ficam em `Acessos.md` (fora do Git), não aqui.
 
 ## Tom de voz deste cliente
 

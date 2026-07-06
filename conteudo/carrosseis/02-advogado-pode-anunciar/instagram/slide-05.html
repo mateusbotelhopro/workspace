@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root{ --blue:#2438E8; --ink:#0A0A0B; --white:#fff; }
+  html,body{ width:1080px; height:1350px; }
+  body{ background:var(--blue); color:var(--white); font-family:'Archivo',sans-serif;
+    padding:80px 76px; display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden; }
+  .tag{ align-self:flex-start; border:2px solid var(--white); border-radius:100px; padding:11px 24px;
+    font-family:'Archivo Black',sans-serif; font-size:20px; text-transform:uppercase; letter-spacing:2px; }
+  .mid{ margin-top:auto; margin-bottom:auto; }
+  .mid p{ font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:66px; line-height:1.1; letter-spacing:-1px; }
+  .mid .serif{ font-family:'Playfair Display',serif; font-style:italic; font-weight:400; }
+  .mid .hl{ background:var(--ink); padding:2px 14px; border-radius:8px; }
+  .foot{ display:flex; justify-content:space-between; align-items:flex-end; }
+  .brand{ font-family:'Archivo Black',sans-serif; font-size:18px; letter-spacing:.5px; text-transform:uppercase; opacity:.7; }
+  .count{ font-family:'Archivo Black',sans-serif; font-size:20px; opacity:.7; }
+  .progress{ position:absolute; left:0; bottom:0; height:6px; width:83.3%; background:var(--ink); }
+</style>
+</head>
+<body>
+  <span class="tag">A virada</span>
+  <div class="mid">
+    <p>A régua não existe pra te travar. Ela separa quem constrói autoridade de quem trata advocacia como <span class="serif">liquidação.</span><br><br>Respeitar a norma não te deixa pequeno. Deixa você <span class="hl">confiável.</span></p>
+  </div>
+  <div class="foot">
+    <span class="brand">Botelho · Marketing Jurídico</span>
+    <span class="count">05 / 06</span>
+  </div>
+  <div class="progress"></div>
+</body>
+</html>
