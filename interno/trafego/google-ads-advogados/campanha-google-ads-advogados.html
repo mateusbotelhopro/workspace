@@ -23,6 +23,7 @@ h3{font-family:'Archivo Black',Arial,sans-serif;font-size:1.02rem;text-transform
 table{width:100%;border-collapse:collapse;margin:10px 0 4px;font-size:.9rem;}
 th,td{border:1.5px solid var(--black);padding:8px 10px;text-align:left;vertical-align:top;}
 th{background:var(--blue);color:#fff;font-family:'Archivo Black';font-size:.78rem;text-transform:uppercase;letter-spacing:.03em;}
+td{background:var(--white);color:var(--black);}
 tr:nth-child(even) td{background:#F7F8FC;}
 .cc{display:inline-block;font-size:.72rem;font-weight:800;padding:1px 7px;border-radius:20px;margin-left:8px;font-family:'Archivo Black';}
 .cc.ok{background:#dcfce7;color:var(--green);}
@@ -65,16 +66,47 @@ code{background:#EEF1FF;padding:1px 6px;border-radius:5px;font-size:.85em;}
 <tr><th style='width:210px'>Orçamento (ad spend)</th><td><b>R$ 50,00/dia no total</b>, dividido por estágio: <b>Topo R$ 7,50 · Meio R$ 17,50 · Fundo R$ 25,00</b> por dia (15% · 35% · 50%). ≈ R$ 1.500/mês.</td></tr>
 <tr><th style='width:210px'>Landing page</th><td>https://mateusbotelho.com (o próprio site; CTA = WhatsApp). Cada campanha pode apontar pra âncora relevante: #como-funciona, #objecao, #resultados</td></tr>
 </table></section>
-<section class='sec dark'><h2>2. Estrutura geral</h2>
+<section class='sec'><h2>2. Nomenclatura</h2>
+<p class='sub'>Padrão de nomes pra manter a conta organizada e fácil de filtrar. Convenção: <code>BMJ | [Canal] | [Funil] | [Público] | [Geo]</code>.</p>
+<table><tr><th>Campanha</th><th>Nome no Google Ads</th></tr>
+<tr><td>Topo de Funil</td><td><code>BMJ | Search | TOFU | Advogados | BR</code></td></tr>
+<tr><td>Meio de Funil</td><td><code>BMJ | Search | MOFU | Advogados | BR</code></td></tr>
+<tr><td>Fundo de Funil</td><td><code>BMJ | Search | BOFU | Advogados | BR</code></td></tr>
+</table>
+<p class='copyhint' style='margin-top:8px'>Grupos de anúncios seguem <code>[Funil] | [Tema]</code> (ex.: <code>BOFU | Branded</code>) — o nome de cada grupo aparece no bloco da campanha. Sigla <b>BMJ</b> = Botelho Marketing Jurídico; troque <b>BR</b> pela geo se segmentar por cidade (ex.: <code>BH</code>).</p>
+</section>
+<section class='sec dark'><h2>3. Estrutura geral</h2>
 <p class='sub' style='color:#C7CBD6'>Três campanhas separadas — intenção, orçamento e lance diferentes por estágio.</p>
 <table><tr><th>Estágio</th><th>Consciência</th><th>Lance</th><th>Orçamento/dia (R$ 50 total)</th></tr>
 <tr><td>Topo (TOFU)</td><td>Problema</td><td>Maximizar cliques</td><td>R$ 7,50  (15%)</td></tr>
 <tr><td>Meio (MOFU)</td><td>Solução</td><td>Cliques → Conversões</td><td>R$ 17,50  (35%)</td></tr>
 <tr><td>Fundo (BOFU)</td><td>Decisão + Marca</td><td>Conversões / CPA</td><td>R$ 25,00  (50%)</td></tr>
 </table></section>
+<section class='sec'><h2>4. Lances, valores e projeção</h2>
+<p class='sub'>Comece simples pra juntar dados; migre pra conversões quando houver histórico. Valores de partida — <b>calibrar com dados reais</b> após 2–3 semanas.</p>
+<h3>Estratégia de lance por campanha</h3>
+<table><tr><th>Campanha</th><th>Fase 1 (0–3 sem)</th><th>CPC máx.</th><th>Fase 2 (com dados)</th><th>CPA alvo</th></tr>
+<tr><td>Topo (TOFU)</td><td>Maximizar cliques</td><td>R$ 2,50</td><td>Manter cliques — foco em CTR e Índice de Qualidade</td><td>—</td></tr>
+<tr><td>Meio (MOFU)</td><td>Maximizar cliques</td><td>R$ 4,00</td><td>Maximizar conversões (após ~15–30 conv.)</td><td>R$ 70 (CPA alvo)</td></tr>
+<tr><td>Fundo (BOFU)</td><td>Maximizar cliques</td><td>R$ 6,00</td><td>Maximizar conversões → CPA desejado</td><td>R$ 50 (CPA alvo)</td></tr>
+</table>
+<div class='note'>O <b>CPC máx.</b> só limita na fase de Maximizar cliques (evita clique caro enquanto a campanha aprende). O <b>CPA alvo</b> entra depois, no Maximizar conversões, e é o custo por <b>contato no WhatsApp</b> que você topa pagar.</div>
+<h3>Projeção com R$ 50/dia (≈ R$ 1.500/mês)</h3>
+<table><tr><th>Cenário</th><th>CPC médio</th><th>Cliques/mês</th><th>Conv. clique→contato</th><th>Contatos/mês</th><th>Custo/contato</th></tr>
+<tr><td>Conservador</td><td>R$ 4,50</td><td>~330</td><td>4%</td><td>~13</td><td>~R$ 115</td></tr>
+<tr><td>Realista</td><td>R$ 4,00</td><td>~375</td><td>6%</td><td>~22</td><td>~R$ 68</td></tr>
+<tr><td>Otimista</td><td>R$ 3,50</td><td>~430</td><td>9%</td><td>~38</td><td>~R$ 39</td></tr>
+</table>
+<p class='copyhint'>Estimativa ilustrativa (não é promessa). Serve pra definir a meta de CPA e ler se a campanha está saudável.</p>
+<h3>Cronograma de otimização</h3><table><tr><th style='width:130px'>Quando</th><th>O que fazer</th></tr>
+<tr><td><b>Semana 1–2</b></td><td>Subir as 3 campanhas em <b>Maximizar cliques</b> com o CPC máx. definido. Juntar dados, revisar termos de busca 2×/semana e negativar o que não presta.</td></tr>
+<tr><td><b>Semana 3–4</b></td><td>Com ≥15–30 conversões, migrar <b>Meio</b> e <b>Fundo</b> para <b>Maximizar conversões</b> e ativar o <b>CPA desejado</b> no Fundo. Pausar keywords sem contato.</td></tr>
+<tr><td><b>Mês 2+</b></td><td>Ajustar o CPA alvo, escalar o que traz contato e cortar o que não traz. Avaliar ligar/desligar o Topo conforme a sobra de verba.</td></tr>
+</table></section>
 <section class='sec'>
 <span class='stage-tag' style='background:#4F6BFF'>TOFU · Topo de Funil</span>
-<h2 style='margin-top:14px'>3. Campanha — Topo de Funil</h2>
+<h2 style='margin-top:14px'>5. Campanha — Topo de Funil</h2>
+<p style='margin:2px 0 10px'><b>Nome no Google Ads:</b> <code>BMJ | Search | TOFU | Advogados | BR</code></p>
 <p class='sub'>Alcançar advogados <b>conscientes do problema</b> (agenda dependente de indicação, poucos clientes novos) que ainda não procuram “gestor de tráfego”. Educar e capturar a demanda latente.</p>
 <div class='grid2' style='margin:8px 0 6px'>
 <div><b>Intenção:</b> Informacional / problema-consciente</div>
@@ -82,7 +114,7 @@ code{background:#EEF1FF;padding:1px 6px;border-radius:5px;font-size:.85em;}
 <div style='grid-column:1/-1'><b>Lance / orçamento:</b> Maximizar cliques, CPC máx. baixo. Orçamento menor. Meta = descoberta e cliques qualificados, não conversão imediata.</div>
 </div>
 <h3>Grupos de anúncios &amp; palavras-chave</h3>
-<p style='margin:10px 0 4px'><b>▸ Captação de clientes</b></p><table><tr><th>Palavra-chave</th><th style='width:110px'>Correspondência</th></tr>
+<p style='margin:14px 0 4px'><b>▸ Captação de clientes</b> &nbsp; <code>TOFU | Captação</code></p><table><tr><th>Palavra-chave</th><th style='width:110px'>Correspondência</th></tr>
 <tr><td>como conseguir clientes na advocacia</td><td><span class='match m-frase'>Frase</span></td></tr>
 <tr><td>como captar clientes advogado</td><td><span class='match m-frase'>Frase</span></td></tr>
 <tr><td>como atrair clientes para advocacia</td><td><span class='match m-frase'>Frase</span></td></tr>
@@ -97,7 +129,7 @@ code{background:#EEF1FF;padding:1px 6px;border-radius:5px;font-size:.85em;}
 &quot;escritório de advocacia sem clientes&quot;
 advocacia parou de dar cliente</pre></div>
 <p class='copyhint'>Cole no campo de palavras-chave deste grupo. Sintaxe do Google Ads: <code>[exata]</code> · <code>"frase"</code> · <code>ampla</code> (sem símbolo).</p>
-<p style='margin:10px 0 4px'><b>▸ Advogado pode anunciar? (dúvida OAB)</b></p><table><tr><th>Palavra-chave</th><th style='width:110px'>Correspondência</th></tr>
+<p style='margin:14px 0 4px'><b>▸ Advogado pode anunciar? (dúvida OAB)</b> &nbsp; <code>TOFU | Pode Anunciar</code></p><table><tr><th>Palavra-chave</th><th style='width:110px'>Correspondência</th></tr>
 <tr><td>advogado pode anunciar</td><td><span class='match m-frase'>Frase</span></td></tr>
 <tr><td>advogado pode fazer anúncio</td><td><span class='match m-frase'>Frase</span></td></tr>
 <tr><td>publicidade para advogado é permitida</td><td><span class='match m-frase'>Frase</span></td></tr>
@@ -110,7 +142,7 @@ advocacia parou de dar cliente</pre></div>
 &quot;provimento 205 2021 publicidade&quot;
 &quot;marketing jurídico é permitido pela oab&quot;</pre></div>
 <p class='copyhint'>Cole no campo de palavras-chave deste grupo. Sintaxe do Google Ads: <code>[exata]</code> · <code>"frase"</code> · <code>ampla</code> (sem símbolo).</p>
-<p style='margin:10px 0 4px'><b>▸ Marketing jurídico (informacional)</b></p><table><tr><th>Palavra-chave</th><th style='width:110px'>Correspondência</th></tr>
+<p style='margin:14px 0 4px'><b>▸ Marketing jurídico (informacional)</b> &nbsp; <code>TOFU | Marketing Jurídico</code></p><table><tr><th>Palavra-chave</th><th style='width:110px'>Correspondência</th></tr>
 <tr><td>marketing jurídico</td><td><span class='match m-frase'>Frase</span></td></tr>
 <tr><td>marketing para advocacia</td><td><span class='match m-frase'>Frase</span></td></tr>
 <tr><td>como fazer marketing jurídico</td><td><span class='match m-frase'>Frase</span></td></tr>
@@ -149,7 +181,8 @@ advocacia parou de dar cliente</pre></div>
 </section>
 <section class='sec'>
 <span class='stage-tag' style='background:#2438E8'>MOFU · Meio de Funil</span>
-<h2 style='margin-top:14px'>4. Campanha — Meio de Funil</h2>
+<h2 style='margin-top:14px'>6. Campanha — Meio de Funil</h2>
+<p style='margin:2px 0 10px'><b>Nome no Google Ads:</b> <code>BMJ | Search | MOFU | Advogados | BR</code></p>
 <p class='sub'>Alcançar advogados <b>conscientes da solução</b>, que já pesquisam “tráfego pago / anúncios para advogados” e comparam caminhos. Posicionar o serviço como a forma certa e segura (OAB).</p>
 <div class='grid2' style='margin:8px 0 6px'>
 <div><b>Intenção:</b> Consideração / solução-consciente</div>
@@ -157,7 +190,7 @@ advocacia parou de dar cliente</pre></div>
 <div style='grid-column:1/-1'><b>Lance / orçamento:</b> Maximizar cliques no início; migrar para Maximizar conversões após ~15–30 conversões. Orçamento médio.</div>
 </div>
 <h3>Grupos de anúncios &amp; palavras-chave</h3>
-<p style='margin:10px 0 4px'><b>▸ Tráfego pago / anúncios p/ advogado</b></p><table><tr><th>Palavra-chave</th><th style='width:110px'>Correspondência</th></tr>
+<p style='margin:14px 0 4px'><b>▸ Tráfego pago / anúncios p/ advogado</b> &nbsp; <code>MOFU | Tráfego Pago</code></p><table><tr><th>Palavra-chave</th><th style='width:110px'>Correspondência</th></tr>
 <tr><td>tráfego pago para advogados</td><td><span class='match m-frase'>Frase</span></td></tr>
 <tr><td>anúncios para advogados</td><td><span class='match m-frase'>Frase</span></td></tr>
 <tr><td>google ads para advogados</td><td><span class='match m-exata'>Exata</span></td></tr>
@@ -172,7 +205,7 @@ advocacia parou de dar cliente</pre></div>
 &quot;meta ads para advogados&quot;
 &quot;anúncio no google para advogado&quot;</pre></div>
 <p class='copyhint'>Cole no campo de palavras-chave deste grupo. Sintaxe do Google Ads: <code>[exata]</code> · <code>"frase"</code> · <code>ampla</code> (sem símbolo).</p>
-<p style='margin:10px 0 4px'><b>▸ Conseguir clientes com anúncio</b></p><table><tr><th>Palavra-chave</th><th style='width:110px'>Correspondência</th></tr>
+<p style='margin:14px 0 4px'><b>▸ Conseguir clientes com anúncio</b> &nbsp; <code>MOFU | Conseguir Clientes</code></p><table><tr><th>Palavra-chave</th><th style='width:110px'>Correspondência</th></tr>
 <tr><td>como conseguir clientes advogado no google</td><td><span class='match m-frase'>Frase</span></td></tr>
 <tr><td>anúncio para escritório de advocacia</td><td><span class='match m-frase'>Frase</span></td></tr>
 <tr><td>campanha de anúncios para advocacia</td><td><span class='match m-frase'>Frase</span></td></tr>
@@ -183,7 +216,7 @@ advocacia parou de dar cliente</pre></div>
 &quot;campanha de anúncios para advocacia&quot;
 &quot;como fazer anúncio de advogado&quot;</pre></div>
 <p class='copyhint'>Cole no campo de palavras-chave deste grupo. Sintaxe do Google Ads: <code>[exata]</code> · <code>"frase"</code> · <code>ampla</code> (sem símbolo).</p>
-<p style='margin:10px 0 4px'><b>▸ Por área de atuação</b></p><table><tr><th>Palavra-chave</th><th style='width:110px'>Correspondência</th></tr>
+<p style='margin:14px 0 4px'><b>▸ Por área de atuação</b> &nbsp; <code>MOFU | Por Área</code></p><table><tr><th>Palavra-chave</th><th style='width:110px'>Correspondência</th></tr>
 <tr><td>marketing para advogado trabalhista</td><td><span class='match m-frase'>Frase</span></td></tr>
 <tr><td>marketing para advogado previdenciário</td><td><span class='match m-frase'>Frase</span></td></tr>
 <tr><td>marketing para advogado de família</td><td><span class='match m-frase'>Frase</span></td></tr>
@@ -222,7 +255,8 @@ advocacia parou de dar cliente</pre></div>
 </section>
 <section class='sec'>
 <span class='stage-tag' style='background:#0E1A8C'>BOFU · Fundo de Funil</span>
-<h2 style='margin-top:14px'>5. Campanha — Fundo de Funil</h2>
+<h2 style='margin-top:14px'>7. Campanha — Fundo de Funil</h2>
+<p style='margin:2px 0 10px'><b>Nome no Google Ads:</b> <code>BMJ | Search | BOFU | Advogados | BR</code></p>
 <p class='sub'>Alcançar advogados <b>prontos para contratar</b>, procurando fornecedor/serviço (“gestor de tráfego para advogados”, “agência de marketing jurídico”) + tráfego de marca. Maior intenção = maior orçamento e lance.</p>
 <div class='grid2' style='margin:8px 0 6px'>
 <div><b>Intenção:</b> Decisão / fornecedor-consciente + marca</div>
@@ -230,7 +264,7 @@ advocacia parou de dar cliente</pre></div>
 <div style='grid-column:1/-1'><b>Lance / orçamento:</b> Maximizar conversões ou CPA desejado (assim que houver dados). Lances mais altos — é o clique que mais vira contato.</div>
 </div>
 <h3>Grupos de anúncios &amp; palavras-chave</h3>
-<p style='margin:10px 0 4px'><b>▸ Gestor / agência p/ advogado</b></p><table><tr><th>Palavra-chave</th><th style='width:110px'>Correspondência</th></tr>
+<p style='margin:14px 0 4px'><b>▸ Gestor / agência p/ advogado</b> &nbsp; <code>BOFU | Gestor-Agência</code></p><table><tr><th>Palavra-chave</th><th style='width:110px'>Correspondência</th></tr>
 <tr><td>gestor de tráfego para advogados</td><td><span class='match m-exata'>Exata</span></td></tr>
 <tr><td>gestor de tráfego advocacia</td><td><span class='match m-exata'>Exata</span></td></tr>
 <tr><td>agência de marketing jurídico</td><td><span class='match m-exata'>Exata</span></td></tr>
@@ -243,7 +277,7 @@ advocacia parou de dar cliente</pre></div>
 &quot;empresa de marketing para advogados&quot;
 &quot;especialista em google ads para advogados&quot;</pre></div>
 <p class='copyhint'>Cole no campo de palavras-chave deste grupo. Sintaxe do Google Ads: <code>[exata]</code> · <code>"frase"</code> · <code>ampla</code> (sem símbolo).</p>
-<p style='margin:10px 0 4px'><b>▸ Contratar serviço</b></p><table><tr><th>Palavra-chave</th><th style='width:110px'>Correspondência</th></tr>
+<p style='margin:14px 0 4px'><b>▸ Contratar serviço</b> &nbsp; <code>BOFU | Contratar</code></p><table><tr><th>Palavra-chave</th><th style='width:110px'>Correspondência</th></tr>
 <tr><td>contratar gestor de tráfego advogado</td><td><span class='match m-frase'>Frase</span></td></tr>
 <tr><td>serviço de tráfego pago para advocacia</td><td><span class='match m-frase'>Frase</span></td></tr>
 <tr><td>consultoria de marketing jurídico</td><td><span class='match m-frase'>Frase</span></td></tr>
@@ -254,7 +288,7 @@ advocacia parou de dar cliente</pre></div>
 &quot;consultoria de marketing jurídico&quot;
 &quot;quanto custa marketing para advogado&quot;</pre></div>
 <p class='copyhint'>Cole no campo de palavras-chave deste grupo. Sintaxe do Google Ads: <code>[exata]</code> · <code>"frase"</code> · <code>ampla</code> (sem símbolo).</p>
-<p style='margin:10px 0 4px'><b>▸ Marca (branded)</b></p><table><tr><th>Palavra-chave</th><th style='width:110px'>Correspondência</th></tr>
+<p style='margin:14px 0 4px'><b>▸ Marca (branded)</b> &nbsp; <code>BOFU | Branded</code></p><table><tr><th>Palavra-chave</th><th style='width:110px'>Correspondência</th></tr>
 <tr><td>botelho marketing jurídico</td><td><span class='match m-exata'>Exata</span></td></tr>
 <tr><td>mateus botelho tráfego</td><td><span class='match m-exata'>Exata</span></td></tr>
 <tr><td>mateus botelho advogados</td><td><span class='match m-frase'>Frase</span></td></tr>
@@ -289,7 +323,7 @@ advocacia parou de dar cliente</pre></div>
 <tr><td>4</td><td>Estratégia sob medida pra sua área, com contato qualificado chegando e previsível.</td><td><span class="cc ok">82/90</span></td></tr>
 </table>
 </section>
-<section class='sec'><h2>6. Palavras-chave negativas (lista global)</h2>
+<section class='sec'><h2>8. Palavras-chave negativas (lista global)</h2>
 <p class='sub'>Aplicar como <b>lista de negativas compartilhada</b> nas 3 campanhas. Foco: barrar quem busca <b>emprego/curso/gratuito</b> e, principalmente, o <b>cliente final procurando advogado</b> (você quer o advogado, não o cliente dele).</p>
 <div><span class='tag'>grátis</span><span class='tag'>gratuito</span><span class='tag'>gratuita</span><span class='tag'>curso</span><span class='tag'>cursos</span><span class='tag'>download</span><span class='tag'>pdf</span><span class='tag'>apostila</span><span class='tag'>modelo pronto</span><span class='tag'>vaga</span><span class='tag'>vagas</span><span class='tag'>emprego</span><span class='tag'>estágio</span><span class='tag'>estagio</span><span class='tag'>salário</span><span class='tag'>salario</span><span class='tag'>concurso</span><span class='tag'>oab exame</span><span class='tag'>exame de ordem</span><span class='tag'>faculdade</span><span class='tag'>como ser advogado</span><span class='tag'>o que faz um advogado</span><span class='tag'>reclame aqui</span><span class='tag'>advogado perto de mim</span><span class='tag'>preciso de advogado</span><span class='tag'>consulta com advogado</span><span class='tag'>quanto custa advogado</span><span class='tag'>advogado grátis</span><span class='tag'>advogado gratuito</span><span class='tag'>tirar dúvida jurídica</span><span class='tag'>meu direito</span><span class='tag'>tenho direito</span><span class='tag'>processo trabalhista</span><span class='tag'>dar entrada</span><span class='tag'>calcular</span><span class='tag'>simulação</span><span class='tag'>é verdade que</span></div>
 <div class='copybox'><div class='copybar'><span>37 negativas · pronto pra colar</span><button class='copybtn'>Copiar</button></div><pre>grátis
@@ -331,7 +365,7 @@ simulação
 é verdade que</pre></div>
 <p class='copyhint'>Cole como <b>lista de palavras-chave negativas compartilhada</b> e aplique às 3 campanhas (correspondência ampla).</p>
 <div class='note'>Revisar o relatório de <b>Termos de pesquisa</b> 2×/semana no começo e ir adicionando negativas conforme aparecer termo irrelevante.</div></section>
-<section class='sec'><h2>7. Extensões (recursos)</h2>
+<section class='sec'><h2>9. Extensões (recursos)</h2>
 <h3>Sitelinks</h3><table><tr><th>Texto (≤25)</th><th>Descrição (≤35)</th><th>Destino</th></tr>
 <tr><td>Análise gratuita <span class="cc ok">16/25</span></td><td>Quanto investir no seu caso <span class="cc ok">27/35</span></td><td><code>https://wa.me/5531971560883</code></td></tr>
 <tr><td>Como funciona <span class="cc ok">13/25</span></td><td>Diagnóstico, gestão e relatório <span class="cc ok">31/35</span></td><td><code>https://mateusbotelho.com/#como-funciona</code></td></tr>
@@ -343,14 +377,14 @@ simulação
 <p style='margin:8px 0 2px'><b>Serviços:</b> Tráfego pago · Google Ads · Meta Ads · Estratégia · Otimização · Relatórios</p>
 <p style='margin:8px 0 2px'><b>Áreas atendidas:</b> Trabalhista · Previdenciário · Família · Criminal · Cível</p>
 <h3>Extensão de chamada</h3><p>Telefone (31) 97156-0883 — captar ligações além do WhatsApp.</p></section>
-<section class='sec dark'><h2>8. Rastreamento de conversão</h2><ul>
+<section class='sec dark'><h2>10. Rastreamento de conversão</h2><ul>
 <li>Conversão principal: <b>clique no botão de WhatsApp</b> (todos os links wa.me).</li>
 <li>O site já tem GTM (GTM-PFLSM4T8). Criar no GTM um gatilho de clique nos links <code>wa.me</code> → disparar tag de <b>conversão do Google Ads</b> (ou evento GA4 importado como conversão).</li>
 <li>Importante: a tag só dispara após o <b>aceite de cookies</b> (o site é opt-in). Considerar isso na taxa de conversão medida — parte dos contatos não será rastreada se o usuário recusar.</li>
 <li>Marcar a conversão de WhatsApp como <b>Primária</b>; deixar pageviews/scroll como secundárias.</li>
 <li>Opcional: extensão de chamada com o telefone (31) 97156-0883 para captar ligações direto.</li>
 </ul></section>
-<section class='sec'><h2>9. Checklist de lançamento</h2><ul>
+<section class='sec'><h2>11. Checklist de lançamento</h2><ul>
 <li>☐ Conta Google Ads criada e billing configurado</li>
 <li>☐ Conversão de WhatsApp configurada no GTM e testada (modo de visualização)</li>
 <li>☐ 3 campanhas criadas (Topo, Meio, Fundo) com rede só de Pesquisa</li>
@@ -361,7 +395,7 @@ simulação
 <li>☐ Extensões: 4 sitelinks, 6 callouts, 2 conjuntos de snippets, extensão de chamada</li>
 <li>☐ Revisar termos de busca 2×/semana nas 2 primeiras semanas e ir negando o lixo</li>
 </ul></section>
-<section class='sec'><h2>10. Métricas para acompanhar</h2><table><tr><th>Métrica</th><th>Referência / observação</th></tr>
+<section class='sec'><h2>12. Métricas para acompanhar</h2><table><tr><th>Métrica</th><th>Referência / observação</th></tr>
 <tr><td><b>CTR</b></td><td>&gt; 4–6% em Fundo; Topo tende a ser menor</td></tr>
 <tr><td><b>CPC médio</b></td><td>Acompanhar por campanha; Fundo costuma ser mais caro</td></tr>
 <tr><td><b>Contatos (conversões WhatsApp)</b></td><td>Métrica-mãe — é o que vira caso</td></tr>
