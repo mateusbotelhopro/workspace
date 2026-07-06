@@ -1,4 +1,4 @@
-# Posts Táticos — Mateus Botelho (@mateusbotelhopro)
+# Posts Táticos — Mateus Botelho (@botelho.ag)
 
 > 9 posts organizados por etapa de funil. Todos atacam dor de empresário.
 > Mix de carrossel (4) e estático (5).
@@ -41,7 +41,7 @@ Calcular o CAC não exige sistema caro nem dashboard complexo. Uma planilha com 
 **Slide 8 (CTA):**
 Se você nunca calculou o CAC do seu negócio, esse é um bom momento pra começar. E se quiser uma análise completa das suas campanhas, é gratuita. Link na bio.
 
-@mateusbotelhopro
+@botelho.ag
 
 **Legenda Instagram:**
 Você sabe quanto pagou pelo último cliente que entrou no seu negócio?
@@ -69,7 +69,7 @@ MELHOR QUE VOCÊ.
 ELE SÓ SABE DE ONDE
 VÊM OS CLIENTES DELE.
 
-@mateusbotelhopro
+@botelho.ag
 
 **Legenda Instagram:**
 A diferença entre o negócio que cresce e o que fica no mesmo lugar raramente é o produto.
@@ -122,7 +122,7 @@ Esses 5 números cabem numa planilha simples. O difícil é ter a disciplina de 
 
 Quer ajuda pra montar esse painel pro seu negócio? Análise gratuita, link na bio.
 
-@mateusbotelhopro
+@botelho.ag
 
 **Legenda Instagram:**
 Quantos desses números você acompanha hoje?
@@ -176,7 +176,7 @@ Se você já trocou de agência mais de uma vez e o resultado não mudou, talvez
 
 Análise gratuita pra descobrir onde está o gargalo real. Link na bio.
 
-@mateusbotelhopro
+@botelho.ag
 
 **Legenda Instagram:**
 Já trocou de agência e o resultado continuou igual?
@@ -198,7 +198,7 @@ LEAD QUE NÃO VIRA
 CLIENTE É CUSTO,
 NÃO RESULTADO.
 
-@mateusbotelhopro
+@botelho.ag
 
 **Legenda Instagram:**
 Gerar lead é metade do trabalho. A outra metade ninguém quer falar.
@@ -230,7 +230,7 @@ EM ANÚNCIO.
 DESPERDIÇAR O QUE
 JÁ GASTA.
 
-@mateusbotelhopro
+@botelho.ag
 
 **Legenda Instagram:**
 "Preciso aumentar o orçamento pra ter mais resultado."
@@ -292,7 +292,7 @@ Esse é o processo que aplico em todo negócio que atendo. Se você quer entende
 
 Link na bio.
 
-@mateusbotelhopro
+@botelho.ag
 
 **Legenda Instagram:**
 "Quanto tempo leva pra ter resultado?"
@@ -317,7 +317,7 @@ CONTA DE ANÚNCIOS
 AGORA, O QUE EU
 ENCONTRARIA?
 
-@mateusbotelhopro
+@botelho.ag
 
 **Legenda Instagram:**
 Pixel funcionando ou rastreando errado?
@@ -351,7 +351,7 @@ DINHEIRO ESTÁ VAZANDO.
 
 SEM COMPROMISSO. SEM ENROLAÇÃO.
 
-@mateusbotelhopro
+@botelho.ag
 
 **Legenda Instagram:**
 Se você investe em anúncios e sente que o resultado não é proporcional ao que gasta, talvez o problema não seja o orçamento.

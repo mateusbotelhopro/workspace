@@ -79,7 +79,7 @@ Visual neobrutalista: fundo off-white como base, preto para texto e bordas, azul
 > Usado no estilo "tweet" do carrossel.
 
 - **Nome:** Mateus Botelho
-- **Handle:** @mateusbotelhopro
+- **Handle:** @botelho.ag
 - **Foto frontal:** `marca/fotos/mateus-botelho-frontal.jpeg`
 - **Foto perfil:** `marca/fotos/mateus-botelho-perfil.jpeg`
 - **Badge verificado:** não
