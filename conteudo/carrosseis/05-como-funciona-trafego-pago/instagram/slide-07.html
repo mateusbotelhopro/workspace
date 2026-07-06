@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root{ --bg:#F4F4F2; --ink:#0A0A0B; --blue:#2438E8; --white:#fff; --gray:#54545C; }
+  html,body{ width:1080px; height:1350px; }
+  body{ background:var(--bg); color:var(--ink); font-family:'Archivo',sans-serif;
+    padding:80px 76px; display:flex; flex-direction:column; position:relative; overflow:hidden; }
+  .label{ align-self:flex-start; display:inline-flex; align-items:center; border:2px solid var(--ink); border-radius:100px;
+    padding:11px 24px; background:var(--white); box-shadow:5px 5px 0 var(--ink);
+    font-family:'Archivo Black',sans-serif; font-size:19px; text-transform:uppercase; letter-spacing:1.5px; }
+  h2{ font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:58px; line-height:1.06; letter-spacing:-1px; text-transform:uppercase; margin:30px 0 44px; }
+  ul{ list-style:none; display:flex; flex-direction:column; gap:26px; }
+  li{ display:flex; align-items:flex-start; gap:24px; }
+  .ic{ flex:none; width:56px; height:56px; border-radius:50%; background:var(--ink); border:2px solid var(--ink);
+    box-shadow:4px 4px 0 var(--blue); display:flex; align-items:center; justify-content:center; color:var(--white); font-size:22px; font-weight:800; font-family:'Archivo Black',sans-serif; }
+  li span{ font-size:33px; line-height:1.32; font-weight:500; padding-top:8px; }
+  li b{ font-weight:800; }
+  .closing{ margin-top:36px; font-size:33px; line-height:1.4; font-weight:600; max-width:900px; }
+  .spacer{ flex:1; }
+  .foot{ display:flex; justify-content:space-between; align-items:flex-end; }
+  .brand{ font-family:'Archivo Black',sans-serif; font-size:18px; letter-spacing:.5px; text-transform:uppercase; color:var(--gray); }
+  .count{ font-family:'Archivo Black',sans-serif; font-size:20px; color:var(--gray); }
+  .progress{ position:absolute; left:0; bottom:0; height:6px; width:87.5%; background:var(--blue); }
+</style>
+</head>
+<body>
+  <span class="label">Passo 5</span>
+  <h2>Saber o que realmente funcionou</h2>
+  <ul>
+    <li><span class="ic">1</span><span>Quanto <b>custou o clique</b></span></li>
+    <li><span class="ic">2</span><span>Quantos cliques viraram <b>mensagem</b></span></li>
+    <li><span class="ic">3</span><span>Quantas mensagens viraram <b>cliente</b></span></li>
+  </ul>
+  <p class="closing">Sem medir isso, você não sabe se o problema é a campanha, a página ou a demora na resposta. Medir é o que separa "gastei com tráfego" de "sei exatamente o que trouxe cliente".</p>
+  <div class="spacer"></div>
+  <div class="foot">
+    <span class="brand">Botelho · Marketing Jurídico</span>
+    <span class="count">07 / 08</span>
+  </div>
+  <div class="progress"></div>
+</body>
+</html>
