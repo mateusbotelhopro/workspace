@@ -28,3 +28,7 @@ node_modules/
 # Repositórios git próprios, aninhados dentro de pastas de cliente
 # (já versionados/hospedados separadamente — não devem ser rastreados aqui)
 clientes/joao-ferret/Elo Jurídico OS/
+
+# Código do Leady — repositório próprio (github.com/omateusbotelho/leady)
+# Os docs de planejamento (leady/*.md) continuam versionados aqui
+leady/app/
