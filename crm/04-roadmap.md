@@ -8,8 +8,8 @@ Objetivo: decisões tomadas e ambiente pronto.
 
 - [ ] Criar app na Meta (WhatsApp + Webhooks + Marketing API) e iniciar processo de advanced access
 - [ ] Definir nome do produto e domínio (inclui subdomínio do redirecionador de links)
-- [ ] Setup do repositório: Next.js + TS, Supabase, Redis, worker
-- [ ] Modelo de dados inicial (migrations das tabelas core: org, users, channels, contacts, conversations, messages, leads, pipelines)
+- [x] Setup do repositório: Next.js + TS, Supabase, Redis, worker (monorepo em `app/`)
+- [x] Modelo de dados inicial (migration completa em `app/supabase/migrations/0001_schema_inicial.sql`)
 - [ ] Escolher cliente piloto da agência (idealmente um que roda CTWA hoje)
 
 ## Fase 1 — MVP: rastrear, atender, devolver evento (4 a 8 semanas)

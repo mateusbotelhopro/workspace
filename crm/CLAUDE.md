@@ -28,7 +28,19 @@ Ler nessa ordem pra pegar contexto. Ao evoluir o projeto, manter esses arquivos 
 - Cliente piloto
 - Onde hospedar o worker (Railway/Render)
 
+## Código (`app/`)
+
+Monorepo npm workspaces, typecheck e build passando:
+
+- `app/apps/web` — Next.js 15 (App Router). Telas: inbox, pipeline, contatos, relatórios, configurações (placeholders estruturados). Backend real: webhook do WhatsApp (`/api/webhooks/whatsapp`, com validação de assinatura) e redirecionador de links rastreáveis (`/r/[slug]`, registra clique + injeta código na mensagem)
+- `app/apps/worker` — Node + BullMQ (6 filas). Job de mensagem recebida já implementa o fluxo completo: canal → contato → conversa → mensagem → atribuição (CTWA referral > código de link > direto) → lead na etapa de entrada → enfileira evento CAPI. Job de CAPI monta payload com hash SHA-256
+- `app/packages/shared` — tipos de domínio, contratos das filas, constantes, schemas zod
+- `app/supabase/migrations` — schema completo (20+ tabelas, RLS por org)
+- **Stubs de integração Meta** (última etapa): `app/apps/worker/src/integrations/meta/{whatsapp,capi,marketing}.ts` — assinaturas prontas, lançam erro até implementar
+
+Detalhe importante: `ioredis` fixado em `5.10.1` (mesma versão que o bullmq usa internamente); versão divergente duplica o pacote e quebra o typecheck.
+
 ## Convenções
 
-- Documentação de produto em português, código em inglês
-- Quando o desenvolvimento começar, o código vive em subpasta `app/` aqui dentro (ou repositório próprio, decidir na Fase 0)
+- Documentação de produto em português, código em inglês (UI em português)
+- Rodar checagens: `npm run typecheck` e `npm run build` dentro de `app/`
