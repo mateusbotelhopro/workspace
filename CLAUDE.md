@@ -8,7 +8,7 @@ Workspace de trabalho do Mateus Botelho. Aqui ficam os clientes (tráfego pago, 
 - `marca/` — identidade visual e logos (ainda em definição)
 - `clientes/` — uma pasta por cliente; `_modelo-cliente/` é o template (briefing.md, CLAUDE.md, tarefas-modelo.md). Cada cliente tem seu próprio CLAUDE.md porque a pasta às vezes é aberta separada. Inclui `clientes/ip-instituto-coy/` (landing page de lançamento)
 - `interno/` — operação própria, organizada por área (`trafego/`, `comercial/`, `marketing/`)
-- `crm/` — projeto de produto próprio: CRM SaaS de tráfego pago + WhatsApp (base: Kommo + Tintim). Planejamento em `crm/01-visao.md` a `04-roadmap.md`; contexto em `crm/CLAUDE.md`
+- `leady/` — **Leady** (leady.pro), produto próprio: CRM SaaS de tráfego pago + WhatsApp (base: Kommo + Tintim). Planejamento em `leady/01-visao.md` a `04-roadmap.md`; contexto em `leady/CLAUDE.md`; código em `leady/app/`
 - `conteudo/` — produção de conteúdo (próprio ou de cliente)
 - `propostas/` — propostas avulsas antes de virar cliente
 - `dados/` — drop zone pra arquivos analisar (CSV, XLSX, TXT, PDF)
