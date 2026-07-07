@@ -65,7 +65,18 @@ O que fecha o ciclo, o outro pilar do Tintim:
 - Exportação CSV.
 - **Notificação de venda** (estilo Tintim): aviso no WhatsApp/e-mail do gestor quando um card entra em "Vendido", com origem e valor.
 
-## 8. Contas, workspaces e permissões
+## 8. Vendas via checkout (rastreamento web — o que a Utmify faz)
+
+Pro cliente que também vende fora do WhatsApp (landing page com checkout, infoproduto, e-commerce):
+
+- **Pixel Leady (`px.js`):** snippet instalado no site/landing page. Captura UTMs, fbclid e gclid, persiste no navegador (last-touch), reporta a sessão pro Leady e **decora os links de checkout** com os parâmetros + `sck` (id da sessão).
+- **Webhooks de plataformas de checkout:** Kiwify, Hotmart, Kirvano, Eduzz, Monetizze, Perfect Pay, Braip, Cakto, Yampi + payload genérico. Cada conexão gera uma URL de webhook própria (`/api/webhooks/checkout/:token`). Eventos: pix/boleto gerado, aprovada, recusada, reembolsada, chargeback, carrinho abandonado.
+- **Atribuição da venda:** `sck` devolvido pela plataforma casa a venda com a sessão do pixel (e as UTMs dela); UTMs no próprio payload têm prioridade. Comprador com telefone que já é contato do WhatsApp vincula venda ↔ lead (funil híbrido: conversa no WhatsApp, paga no checkout).
+- **Purchase server-side:** venda aprovada dispara Purchase pro Meta via CAPI com email/telefone/nome hasheados e fbc derivado do fbclid da sessão. Reembolso/chargeback ficam registrados pro relatório de lucro real.
+- **Tela de Vendas:** lista com status, plataforma, origem (campanha › conjunto › anúncio), valor e vínculo com lead; KPIs de aprovadas, receita, pix gerado → pago e reembolsos.
+- Futuro: taxa da plataforma e custo do produto pra lucro líquido por anúncio; carrinho abandonado disparando automação de recuperação via WhatsApp (diferencial que a Utmify não tem).
+
+## 9. Contas, workspaces e permissões
 
 - **Multi-tenant:** organização (workspace) por cliente da agência; usuário pode pertencer a vários workspaces (caso do Mateus e de agências).
 - Papéis: admin (tudo), gestor (relatórios + configuração de funil), atendente (inbox e seus leads).

@@ -57,6 +57,19 @@ Objetivo: a ferramenta segura a rotina de atendimento sem gambiarras.
 - [ ] Múltiplos funis por workspace
 - [ ] Relatório de atendimento (tempo de resposta, vendas por atendente)
 
+**Vendas via checkout (paridade Utmify)** — estrutura já criada junto com o esqueleto do app:
+- [x] Schema (web_sessions, checkout_integrations, orders), tipos e fila checkout-order
+- [x] Pixel `px.js` (captura UTMs/fbclid/gclid, decora links de checkout com sck) + endpoint /api/track
+- [x] Webhook `/api/webhooks/checkout/:token` + normalizadores Kiwify/Hotmart/Kirvano + genérico
+- [x] Atribuição sck → sessão do pixel, vínculo comprador ↔ contato/lead do WhatsApp
+- [x] Purchase de venda aprovada via CAPI (em/ph/fn hasheados, fbc da sessão) — envio real depende do stub CAPI
+- [x] Tela de Vendas + cards de pixel/checkout em integrações (mock)
+- [ ] Validar normalizadores contra webhooks reais das plataformas (payload de sandbox/venda de teste)
+- [ ] Assinatura/verificação de webhook por plataforma (secret_enc)
+- [ ] Vendas de checkout no relatório de ROAS (hoje só na tela de Vendas)
+- [ ] Taxas da plataforma e custo de produto → lucro líquido por anúncio
+- [ ] Carrinho abandonado → automação de recuperação via WhatsApp
+
 **Meta da fase:** rodar em 3+ clientes da agência sem suporte manual diário.
 
 ## Fase 3 — Produto vendável (SaaS)

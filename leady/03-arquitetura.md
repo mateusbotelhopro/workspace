@@ -63,7 +63,25 @@ Card movido pra etapa mapeada (ex: "Vendido")
   → retry exponencial em falha; alerta se token expirou
 ```
 
-### 4. Investimento e ROAS
+### 4. Venda no checkout (fora do WhatsApp — paridade Utmify)
+
+```
+Visitante chega na landing page com utm_*/fbclid
+  → pixel Leady (px.js) captura os parâmetros, gera sid e reporta
+    a sessão pro POST /api/track (tabela web_sessions)
+  → clique no botão de compra: pixel decora o link do checkout
+    com utm_* + sck=sid
+  → plataforma processa a venda e chama /api/webhooks/checkout/:token
+  → web: acha a integração pelo token, enfileira e responde 200
+  → worker (fila checkout-order): normaliza o payload da plataforma
+    → casa sck ↔ web_session (herda UTMs/fbclid da sessão)
+    → telefone do comprador bate com contato? vincula venda ↔ lead
+    → upsert em orders (reentrega/mudança de status não duplica)
+    → aprovada: enfileira Purchase pro CAPI (em/ph/fn hasheados,
+      fbc da sessão, action_source website)
+```
+
+### 5. Investimento e ROAS
 
 ```
 Job diário (e sob demanda no dashboard):
@@ -92,8 +110,15 @@ tasks                (lead_id, descrição, prazo, done)
 tags / taggables
 quick_replies
 automations          (gatilho: etapa | inatividade; ações em JSON)
-capi_events          (lead_id, event_name, event_id, payload, status, response)
+capi_events          (lead_id | order_id, event_name, event_id, payload, status, response)
 integr_settings      (por org: dataset_id, capi_token, ad_account_id, tokens)
+
+-- vendas via checkout (0002)
+web_sessions         (sid do pixel, utm_*, fbclid, gclid, referrer, landing_page)
+checkout_integrations(plataforma, webhook_token, secret, active)
+orders               (integração, external_id, status, comprador, valor, taxas,
+                      sck, utm_*, web_session_id, contact_id, lead_id, raw)
+organizations.pixel_key (chave pública do pixel por workspace)
 ```
 
 Todas as tabelas de dados carregam `org_id` com RLS por workspace.
@@ -113,3 +138,4 @@ Todas as tabelas de dados carregam `org_id` com RLS por workspace.
 3. **Aprovação do app Meta** (advanced access pra WhatsApp/Marketing API): processo de review demora; começar cedo, usar contas de teste enquanto isso.
 4. **Custo por conversa da Cloud API** repassado ao cliente do workspace: exibir estimativa de custo no relatório pra não virar surpresa.
 5. **API não-oficial (Z-API/Evolution):** risco de banimento do número é do cliente; deixar contratualmente claro quando esse canal entrar.
+6. **Payloads de checkout heterogêneos:** cada plataforma tem formato e nomes de status próprios, e muda sem avisar. Normalizadores por plataforma (Kiwify/Hotmart/Kirvano prontos) + fallback genérico leniente; payload bruto sempre guardado em `orders.raw` pra reprocessar. Validar contra webhooks reais antes de ativar em cliente.

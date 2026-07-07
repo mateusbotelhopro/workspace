@@ -6,7 +6,8 @@ from urllib.parse import quote
 import pandas as pd
 
 
-SOURCE = Path("Lista_20266308522835.xlsx")
+BASE_DIR = Path(__file__).resolve().parent
+SOURCE = BASE_DIR / "Lista_20267794058433.xlsx"
 PHONE_COLUMNS = ("telefone_1", "telefone_2", "outrosTelefones")
 
 
@@ -72,10 +73,6 @@ def render_item(row, position):
             field("Razao social", legal_name if legal_name != company else ""),
             field("CNPJ", cnpj_format(row.get("cnpj"))),
             field("Cidade", city),
-            field("Abertura", row.get("dataAbertura")),
-            field("Porte", row.get("porte")),
-            field("Faixa faturamento", row.get("faixa_faturamento")),
-            field("Funcionarios", row.get("quantidade_funcionarios")),
             field("Socios", row.get("socios")),
             field("Email", row.get("email")),
         )
@@ -95,7 +92,7 @@ def render_item(row, position):
 """
 
 
-def render_page(rows, title, filename):
+def render_page(rows, title, filename, list_number, list_total):
     total = len(rows)
     cards = "\n".join(render_item(row, i + 1) for i, (_, row) in enumerate(rows.iterrows()))
     content = f"""<!doctype html>
@@ -103,7 +100,7 @@ def render_page(rows, title, filename):
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{html.escape(title)}</title>
+      <title>{html.escape(title)} - Lista {list_number} de {list_total}</title>
   <style>
     :root {{
       --bg: #f6f7f9;
@@ -139,6 +136,21 @@ def render_page(rows, title, filename):
       margin: 0;
       color: var(--muted);
       font-size: 14px;
+    }}
+    header .meta {{
+      margin-top: 10px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }}
+    header .pill {{
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 10px;
+      color: var(--ink);
+      background: #f8fafc;
+      font-size: 12px;
+      font-weight: 700;
     }}
     main {{
       max-width: 1180px;
@@ -222,7 +234,12 @@ def render_page(rows, title, filename):
 <body>
   <header>
     <h1>{html.escape(title)}</h1>
-    <p>{total} contatos com celular valido para WhatsApp. Fixos e contatos apenas com e-mail foram removidos.</p>
+    <p>Somente dados importantes para prospeccao SDR: contato, empresa, localizacao e sinais de potencial.</p>
+    <div class="meta">
+      <span class="pill">Lista {list_number} de {list_total}</span>
+      <span class="pill">{total} leads</span>
+      <span class="pill">WhatsApp valido</span>
+    </div>
   </header>
   <main>
 {cards}
@@ -230,7 +247,7 @@ def render_page(rows, title, filename):
 </body>
 </html>
 """
-    Path(filename).write_text(content, encoding="utf-8")
+    (BASE_DIR / filename).write_text(content, encoding="utf-8")
 
 
 def main():
@@ -243,8 +260,8 @@ def main():
     ).reset_index(drop=True)
 
     half = (len(valid) + 1) // 2
-    render_page(valid.iloc[:half], "Prospeccao WhatsApp - Lista 1", "prospeccao_whatsapp_lista_1.html")
-    render_page(valid.iloc[half:], "Prospeccao WhatsApp - Lista 2", "prospeccao_whatsapp_lista_2.html")
+    render_page(valid.iloc[:half], "Prospeccao SDR - Lista 1", "prospeccao_sdr_lista_1.html", 1, 2)
+    render_page(valid.iloc[half:], "Prospeccao SDR - Lista 2", "prospeccao_sdr_lista_2.html", 2, 2)
     print(f"valid={len(valid)} excluded={len(df) - len(valid)} split={half}/{len(valid) - half}")
 
 

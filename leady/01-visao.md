@@ -18,7 +18,7 @@ Um CRM onde:
 - Cada avanço relevante do funil (lead qualificado, agendamento, venda) **vira evento enviado pro Meta via Conversions API**, com valor de compra quando houver, fechando o ciclo de otimização.
 - Os relatórios mostram **ROAS real por anúncio**: investimento (via Marketing API) x receita registrada no CRM.
 
-Em uma frase: **Kommo + Tintim num produto só.** O CRM conversacional do Kommo com a camada de atribuição e retorno de conversão do Tintim, nativa, sem precisar integrar duas ferramentas.
+Em uma frase: **Kommo + Tintim + Utmify num produto só.** O CRM conversacional do Kommo, a camada de atribuição e retorno de conversão do Tintim, e o rastreamento de vendas web da Utmify — nativos, sem precisar integrar três ferramentas.
 
 ## Benchmark
 
@@ -42,9 +42,18 @@ O que o Kommo **não resolve bem**: atribuição de origem do lead de tráfego e
 
 O que o Tintim **não resolve**: ele não é CRM. Não tem pipeline de verdade, gestão de atendimento, tarefas, automação de funil. Ele rastreia e reporta; quem opera a venda precisa de outra ferramenta.
 
+### Utmify — o que aproveitar
+
+- **Pixel próprio no site/landing page:** captura UTMs, fbclid e gclid, persiste no navegador e injeta os parâmetros nos links de checkout (`sck`), pra plataforma devolver a origem no webhook da venda.
+- **Webhooks das plataformas de checkout** (Kiwify, Hotmart, Kirvano, Eduzz, Monetizze, Perfect Pay, Braip...): pix gerado, venda aprovada, reembolso, chargeback — tudo vira dado de campanha.
+- **Purchase server-side via CAPI** com os dados do comprador, sem depender do pixel do navegador.
+- **Dashboard de receita/lucro por campanha, conjunto e anúncio**, cruzando gasto com as vendas do checkout.
+
+O que a Utmify **não resolve**: o funil que fecha no WhatsApp. Ela enxerga a venda do checkout; a conversa, o atendimento e o lead qualificado ficam fora.
+
 ### A lacuna
 
-Hoje o usuário paga Kommo (ou similar) **mais** Tintim e ainda precisa integrar os dois. A oportunidade é o produto único: o dado de atribuição nasce dentro do CRM e o evento de conversão sai do próprio pipeline (mover o card pra "Vendido" já dispara o Purchase pro Meta).
+Hoje o usuário paga Kommo (ou similar) **mais** Tintim — e, se também vende no checkout, **mais** Utmify — e ainda precisa integrar tudo. A oportunidade é o produto único: o dado de atribuição nasce dentro do CRM, o evento de conversão sai do próprio pipeline (mover o card pra "Vendido" já dispara o Purchase pro Meta) e a venda do checkout entra no mesmo relatório com a mesma origem. Cobre os dois caminhos de conversão do tráfego brasileiro: fecha no WhatsApp ou fecha no checkout.
 
 ## Público-alvo
 
