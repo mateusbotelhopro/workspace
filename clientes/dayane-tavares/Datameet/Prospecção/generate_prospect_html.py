@@ -7,7 +7,7 @@ import pandas as pd
 
 
 BASE_DIR = Path(__file__).resolve().parent
-SOURCE = BASE_DIR / "Lista_20267794058433.xlsx"
+SOURCE = BASE_DIR / "Lista_202679101038820.xlsx"
 PHONE_COLUMNS = ("telefone_1", "telefone_2", "outrosTelefones")
 
 
@@ -260,8 +260,8 @@ def main():
     ).reset_index(drop=True)
 
     half = (len(valid) + 1) // 2
-    render_page(valid.iloc[:half], "Prospeccao SDR - Lista 1", "prospeccao_sdr_lista_1.html", 1, 2)
-    render_page(valid.iloc[half:], "Prospeccao SDR - Lista 2", "prospeccao_sdr_lista_2.html", 2, 2)
+    render_page(valid.iloc[:half], "Prospecção SDR - Lista 1", "Prospecção SDR Lista 1.html", 1, 2)
+    render_page(valid.iloc[half:], "Prospecção SDR - Lista 2", "Prospecção SDR Lista 2.html", 2, 2)
     print(f"valid={len(valid)} excluded={len(df) - len(valid)} split={half}/{len(valid) - half}")
 
 
