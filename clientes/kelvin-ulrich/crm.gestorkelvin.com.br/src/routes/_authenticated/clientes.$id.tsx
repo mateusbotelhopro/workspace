@@ -10,7 +10,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -68,7 +68,9 @@ import {
   getFileSignedUrl,
   deleteClientFile,
 } from "@/lib/client-files.functions";
+import { deleteClient } from "@/lib/clients.functions";
 import type { Database } from "@/integrations/supabase/types";
+import { formatBRL as fmtBRL } from "@/lib/utils";
 
 type ClientRow = Database["public"]["Tables"]["clients"]["Row"];
 type PaymentRow = Database["public"]["Tables"]["payments"]["Row"];
@@ -86,10 +88,8 @@ export const Route = createFileRoute("/_authenticated/clientes/$id")({
   component: ClientDetailPage,
 });
 
-const fmtBRL = (n: number) =>
-  new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(n);
-
 function ClientDetailPage() {
+  const removeClient = useServerFn(deleteClient);
   const { id } = useParams({ from: "/_authenticated/clientes/$id" });
   const [client, setClient] = useState<ClientRow | null>(null);
   const [loading, setLoading] = useState(true);
@@ -132,15 +132,15 @@ function ClientDetailPage() {
 
   const handleDelete = async () => {
     setDeleting(true);
-    // limpar dependentes (sem FK no banco)
-    await supabase.from("client_credentials").delete().eq("client_id", id);
-    await supabase.from("client_files").delete().eq("client_id", id);
-    await supabase.from("payments").delete().eq("client_id", id);
-    const { error } = await supabase.from("clients").delete().eq("id", id);
-    setDeleting(false);
-    if (error) return toast.error(error.message);
-    toast.success("Cliente excluído");
-    navigate({ to: "/clientes" });
+    try {
+      await removeClient({ data: { clientId: id } });
+      toast.success("Cliente excluído");
+      navigate({ to: "/clientes" });
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : "Erro ao excluir cliente");
+    } finally {
+      setDeleting(false);
+    }
   };
 
   if (loading || !client) {
@@ -700,6 +700,14 @@ function VaultTab({ clientId }: { clientId: string }) {
   const [saving, setSaving] = useState(false);
   const [revealed, setRevealed] = useState<Record<string, string>>({});
   const [form, setForm] = useState({ label: "", username: "", password: "", url: "", notes: "" });
+  const revealTimers = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
+
+  useEffect(() => {
+    const timers = revealTimers.current;
+    return () => {
+      Object.values(timers).forEach(clearTimeout);
+    };
+  }, []);
 
   const load = async () => {
     setLoading(true);
@@ -740,6 +748,10 @@ function VaultTab({ clientId }: { clientId: string }) {
   };
 
   const handleReveal = async (id: string) => {
+    if (revealTimers.current[id]) {
+      clearTimeout(revealTimers.current[id]);
+      delete revealTimers.current[id];
+    }
     if (revealed[id]) {
       setRevealed({ ...revealed, [id]: "" });
       return;
@@ -747,7 +759,10 @@ function VaultTab({ clientId }: { clientId: string }) {
     try {
       const { password } = await reveal({ data: { id } });
       setRevealed({ ...revealed, [id]: password });
-      setTimeout(() => setRevealed((r) => ({ ...r, [id]: "" })), 30000);
+      revealTimers.current[id] = setTimeout(() => {
+        setRevealed((r) => ({ ...r, [id]: "" }));
+        delete revealTimers.current[id];
+      }, 30000);
     } catch (e: unknown) {
       toast.error(errMsg(e));
     }

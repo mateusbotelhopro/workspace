@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -32,8 +33,21 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { toast } from "sonner";
-import { Plus, Pencil, Trash2, Loader2, ArrowLeft, ArrowRight, Calendar } from "lucide-react";
+import {
+  Plus,
+  Pencil,
+  Trash2,
+  Loader2,
+  ArrowLeft,
+  ArrowRight,
+  Calendar,
+  RotateCw,
+  Archive,
+  ChevronDown,
+  Undo2,
+} from "lucide-react";
 
 export const Route = createFileRoute("/_authenticated/tarefas")({
   head: () => ({
@@ -56,6 +70,7 @@ type Task = {
   status: Status;
   priority: Priority;
   due_date: string | null;
+  updated_at: string;
   clients: { name: string } | null;
 };
 
@@ -112,7 +127,16 @@ const formatDate = (iso: string) => {
   return new Date(y, m - 1, d).toLocaleDateString("pt-BR");
 };
 
+// Tarefa concluída fora do mês corrente sai do quadro e vai pro arquivo,
+// senão "Concluído" acumula pra sempre e vira uma bagunça (pedido do Kelvin).
+const isDoneThisMonth = (updatedAt: string) => {
+  const d = new Date(updatedAt);
+  const now = new Date();
+  return d.getFullYear() === now.getFullYear() && d.getMonth() === now.getMonth();
+};
+
 function TasksPage() {
+  const qc = useQueryClient();
   const [tasks, setTasks] = useState<Task[]>([]);
   const [clients, setClients] = useState<Client[]>([]);
   const [loading, setLoading] = useState(true);
@@ -128,7 +152,9 @@ function TasksPage() {
     const [tasksRes, clientsRes] = await Promise.all([
       supabase
         .from("tasks")
-        .select("id, client_id, title, description, status, priority, due_date, clients(name)")
+        .select(
+          "id, client_id, title, description, status, priority, due_date, updated_at, clients(name)",
+        )
         .order("created_at", { ascending: false }),
       supabase.from("clients").select("id, name").order("name"),
     ]);
@@ -153,7 +179,14 @@ function TasksPage() {
     [tasks, filterClient],
   );
 
-  const byStatus = (s: Status) => filtered.filter((t) => t.status === s);
+  const byStatus = (s: Status) =>
+    filtered.filter((t) => t.status === s && (s !== "done" || isDoneThisMonth(t.updated_at)));
+
+  const archivedTasks = useMemo(
+    () => filtered.filter((t) => t.status === "done" && !isDoneThisMonth(t.updated_at)),
+    [filtered],
+  );
+  const [archivedOpen, setArchivedOpen] = useState(false);
 
   const openNew = (status: Status = "todo") => {
     setEditing(null);
@@ -210,6 +243,7 @@ function TasksPage() {
     }
     setSaving(false);
     setDialogOpen(false);
+    qc.invalidateQueries({ queryKey: ["dashboard-overview"] });
     load();
   };
 
@@ -221,6 +255,7 @@ function TasksPage() {
     const { error } = await supabase.from("tasks").update({ status: next }).eq("id", t.id);
     if (error) return toast.error(error.message);
     setTasks((prev) => prev.map((x) => (x.id === t.id ? { ...x, status: next } : x)));
+    qc.invalidateQueries({ queryKey: ["dashboard-overview"] });
   };
 
   const handleDelete = async () => {
@@ -229,6 +264,7 @@ function TasksPage() {
     if (error) toast.error(error.message);
     else {
       toast.success("Tarefa removida");
+      qc.invalidateQueries({ queryKey: ["dashboard-overview"] });
       load();
     }
     setDeleteId(null);
@@ -258,6 +294,18 @@ function TasksPage() {
               ))}
             </SelectContent>
           </Select>
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={() => {
+              qc.invalidateQueries({ queryKey: ["dashboard-overview"] });
+              load();
+            }}
+            disabled={loading}
+            title="Atualizar dados"
+          >
+            <RotateCw className={`h-4 w-4 ${loading ? "animate-spin" : ""}`} />
+          </Button>
           <Button onClick={() => openNew()} className="w-full sm:w-auto">
             <Plus className="h-4 w-4 mr-2" /> Nova tarefa
           </Button>
@@ -374,6 +422,68 @@ function TasksPage() {
             );
           })}
         </div>
+      )}
+
+      {archivedTasks.length > 0 && (
+        <Collapsible open={archivedOpen} onOpenChange={setArchivedOpen}>
+          <Card>
+            <CollapsibleTrigger asChild>
+              <CardHeader className="cursor-pointer select-none flex-row items-center justify-between space-y-0">
+                <CardTitle className="text-sm font-medium flex items-center gap-2">
+                  <Archive className="h-4 w-4" />
+                  Arquivadas
+                  <Badge variant="secondary" className="text-xs">
+                    {archivedTasks.length}
+                  </Badge>
+                </CardTitle>
+                <ChevronDown
+                  className={`h-4 w-4 text-muted-foreground transition-transform ${archivedOpen ? "rotate-180" : ""}`}
+                />
+              </CardHeader>
+            </CollapsibleTrigger>
+            <CollapsibleContent>
+              <CardContent className="space-y-2">
+                <p className="text-xs text-muted-foreground pb-1">
+                  Tarefas concluídas em meses anteriores saem do quadro automaticamente e ficam
+                  aqui.
+                </p>
+                {archivedTasks.map((t) => (
+                  <div
+                    key={t.id}
+                    className="flex items-center justify-between gap-2 py-2 border-b last:border-0"
+                  >
+                    <div className="min-w-0">
+                      <p className="text-sm font-medium truncate">{t.title}</p>
+                      <p className="text-xs text-muted-foreground">
+                        {t.clients?.name ? `${t.clients.name} · ` : ""}
+                        Concluída em {new Date(t.updated_at).toLocaleDateString("pt-BR")}
+                      </p>
+                    </div>
+                    <div className="flex gap-0.5 shrink-0">
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="h-7 w-7"
+                        title="Reabrir tarefa"
+                        onClick={() => moveTask(t, -1)}
+                      >
+                        <Undo2 className="h-3.5 w-3.5" />
+                      </Button>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="h-7 w-7"
+                        onClick={() => setDeleteId(t.id)}
+                      >
+                        <Trash2 className="h-3.5 w-3.5" />
+                      </Button>
+                    </div>
+                  </div>
+                ))}
+              </CardContent>
+            </CollapsibleContent>
+          </Card>
+        </Collapsible>
       )}
 
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>

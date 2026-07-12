@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -33,6 +34,7 @@ import {
 import { toast } from "sonner";
 import {
   RefreshCw,
+  RotateCw,
   CheckCircle2,
   Undo2,
   StickyNote,
@@ -53,6 +55,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
+import { formatBRL, buildMonthOptions, monthLabel, currentMonthIso } from "@/lib/utils";
 
 export const Route = createFileRoute("/_authenticated/financeiro")({
   head: () => ({
@@ -77,39 +80,19 @@ type PaymentRow = {
   clients: { name: string } | null;
 };
 
-const formatBRL = (v: number) =>
-  new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(v);
-
 const formatDate = (iso: string) => {
   const [y, m, d] = iso.split("-").map(Number);
   return new Date(y, m - 1, d).toLocaleDateString("pt-BR");
 };
 
-const monthLabel = (iso: string) => {
-  const [y, m] = iso.split("-").map(Number);
-  return new Date(y, m - 1, 1).toLocaleDateString("pt-BR", {
-    month: "long",
-    year: "numeric",
-  });
-};
-
-const buildMonthOptions = () => {
-  const out: { value: string; label: string }[] = [];
-  const now = new Date();
-  for (let i = -6; i <= 6; i++) {
-    const d = new Date(now.getFullYear(), now.getMonth() + i, 1);
-    const value = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-01`;
-    out.push({ value, label: monthLabel(value) });
-  }
-  return out;
-};
-
 function FinanceiroPage() {
-  const monthOptions = useMemo(buildMonthOptions, []);
-  const [month, setMonth] = useState(() => {
-    const d = new Date();
-    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-01`;
-  });
+  const qc = useQueryClient();
+  const invalidateOverview = () => {
+    qc.invalidateQueries({ queryKey: ["dashboard-overview"] });
+    qc.invalidateQueries({ queryKey: ["painel-financeiro"] });
+  };
+  const monthOptions = useMemo(() => buildMonthOptions(), []);
+  const [month, setMonth] = useState(currentMonthIso);
   const [rows, setRows] = useState<PaymentRow[]>([]);
   const [loading, setLoading] = useState(true);
   const [generating, setGenerating] = useState(false);
@@ -133,6 +116,7 @@ function FinanceiroPage() {
     if (error) return toast.error(error.message);
     toast.success("Removido");
     setDeleteRow(null);
+    invalidateOverview();
     load();
   };
 
@@ -170,6 +154,7 @@ function FinanceiroPage() {
         ? `${created} cobrança(s) criada(s) para ${monthLabel(month)}`
         : `Nenhuma nova cobrança a gerar (${monthLabel(month)})`,
     );
+    invalidateOverview();
     load();
   };
 
@@ -180,6 +165,7 @@ function FinanceiroPage() {
       .eq("id", row.id);
     if (error) return toast.error(error.message);
     toast.success("Marcado como pago");
+    invalidateOverview();
     load();
   };
 
@@ -192,6 +178,7 @@ function FinanceiroPage() {
       .eq("id", row.id);
     if (error) return toast.error(error.message);
     toast.success("Pagamento desfeito");
+    invalidateOverview();
     load();
   };
 
@@ -244,6 +231,7 @@ function FinanceiroPage() {
     setEntryAmount("");
     setEntryNotes("");
     setEntryDate(new Date().toISOString().slice(0, 10));
+    invalidateOverview();
     if (refMonth === month) load();
     else setMonth(refMonth);
   };
@@ -288,6 +276,18 @@ function FinanceiroPage() {
               ))}
             </SelectContent>
           </Select>
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={() => {
+              invalidateOverview();
+              load();
+            }}
+            disabled={loading}
+            title="Atualizar dados"
+          >
+            <RotateCw className={`h-4 w-4 ${loading ? "animate-spin" : ""}`} />
+          </Button>
           <Button
             variant="outline"
             onClick={handleGenerate}

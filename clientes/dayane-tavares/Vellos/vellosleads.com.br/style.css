@@ -1113,6 +1113,61 @@ body {
   .form-row { grid-template-columns: 1fr; }
 }
 
+/* ---- FORM OPTIONS (radio / checkbox) ---- */
+.form-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-options.columns-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.form-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #122420;
+  border: 1px solid #1e3532;
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-size: 13.5px;
+  color: var(--light);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.form-option:hover {
+  border-color: #2a4e4a;
+  background: #152a26;
+}
+
+.form-option input[type="radio"],
+.form-option input[type="checkbox"] {
+  accent-color: var(--accent);
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.form-fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-fieldset .form-label {
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .form-options.columns-2 { grid-template-columns: 1fr; }
+}
+
 /* ---- OBRIGADO ---- */
 .thanks {
   background: var(--dark);

@@ -16,6 +16,7 @@ import { Route as AuthenticatedTarefasRouteImport } from './routes/_authenticate
 import { Route as AuthenticatedRelatoriosRouteImport } from './routes/_authenticated/relatorios'
 import { Route as AuthenticatedPrevisaoRouteImport } from './routes/_authenticated/previsao'
 import { Route as AuthenticatedPainelFinanceiroRouteImport } from './routes/_authenticated/painel-financeiro'
+import { Route as AuthenticatedMetasRouteImport } from './routes/_authenticated/metas'
 import { Route as AuthenticatedHistoricoRouteImport } from './routes/_authenticated/historico'
 import { Route as AuthenticatedFinanceiroRouteImport } from './routes/_authenticated/financeiro'
 import { Route as AuthenticatedDespesasRouteImport } from './routes/_authenticated/despesas'
@@ -59,6 +60,11 @@ const AuthenticatedPainelFinanceiroRoute =
     path: '/painel-financeiro',
     getParentRoute: () => AuthenticatedRoute,
   } as any)
+const AuthenticatedMetasRoute = AuthenticatedMetasRouteImport.update({
+  id: '/metas',
+  path: '/metas',
+  getParentRoute: () => AuthenticatedRoute,
+} as any)
 const AuthenticatedHistoricoRoute = AuthenticatedHistoricoRouteImport.update({
   id: '/historico',
   path: '/historico',
@@ -104,6 +110,7 @@ export interface FileRoutesByFullPath {
   '/despesas': typeof AuthenticatedDespesasRoute
   '/financeiro': typeof AuthenticatedFinanceiroRoute
   '/historico': typeof AuthenticatedHistoricoRoute
+  '/metas': typeof AuthenticatedMetasRoute
   '/painel-financeiro': typeof AuthenticatedPainelFinanceiroRoute
   '/previsao': typeof AuthenticatedPrevisaoRoute
   '/relatorios': typeof AuthenticatedRelatoriosRoute
@@ -119,6 +126,7 @@ export interface FileRoutesByTo {
   '/despesas': typeof AuthenticatedDespesasRoute
   '/financeiro': typeof AuthenticatedFinanceiroRoute
   '/historico': typeof AuthenticatedHistoricoRoute
+  '/metas': typeof AuthenticatedMetasRoute
   '/painel-financeiro': typeof AuthenticatedPainelFinanceiroRoute
   '/previsao': typeof AuthenticatedPrevisaoRoute
   '/relatorios': typeof AuthenticatedRelatoriosRoute
@@ -136,6 +144,7 @@ export interface FileRoutesById {
   '/_authenticated/despesas': typeof AuthenticatedDespesasRoute
   '/_authenticated/financeiro': typeof AuthenticatedFinanceiroRoute
   '/_authenticated/historico': typeof AuthenticatedHistoricoRoute
+  '/_authenticated/metas': typeof AuthenticatedMetasRoute
   '/_authenticated/painel-financeiro': typeof AuthenticatedPainelFinanceiroRoute
   '/_authenticated/previsao': typeof AuthenticatedPrevisaoRoute
   '/_authenticated/relatorios': typeof AuthenticatedRelatoriosRoute
@@ -153,6 +162,7 @@ export interface FileRouteTypes {
     | '/despesas'
     | '/financeiro'
     | '/historico'
+    | '/metas'
     | '/painel-financeiro'
     | '/previsao'
     | '/relatorios'
@@ -168,6 +178,7 @@ export interface FileRouteTypes {
     | '/despesas'
     | '/financeiro'
     | '/historico'
+    | '/metas'
     | '/painel-financeiro'
     | '/previsao'
     | '/relatorios'
@@ -184,6 +195,7 @@ export interface FileRouteTypes {
     | '/_authenticated/despesas'
     | '/_authenticated/financeiro'
     | '/_authenticated/historico'
+    | '/_authenticated/metas'
     | '/_authenticated/painel-financeiro'
     | '/_authenticated/previsao'
     | '/_authenticated/relatorios'
@@ -248,6 +260,13 @@ declare module '@tanstack/react-router' {
       path: '/painel-financeiro'
       fullPath: '/painel-financeiro'
       preLoaderRoute: typeof AuthenticatedPainelFinanceiroRouteImport
+      parentRoute: typeof AuthenticatedRoute
+    }
+    '/_authenticated/metas': {
+      id: '/_authenticated/metas'
+      path: '/metas'
+      fullPath: '/metas'
+      preLoaderRoute: typeof AuthenticatedMetasRouteImport
       parentRoute: typeof AuthenticatedRoute
     }
     '/_authenticated/historico': {
@@ -321,6 +340,7 @@ interface AuthenticatedRouteChildren {
   AuthenticatedDespesasRoute: typeof AuthenticatedDespesasRoute
   AuthenticatedFinanceiroRoute: typeof AuthenticatedFinanceiroRoute
   AuthenticatedHistoricoRoute: typeof AuthenticatedHistoricoRoute
+  AuthenticatedMetasRoute: typeof AuthenticatedMetasRoute
   AuthenticatedPainelFinanceiroRoute: typeof AuthenticatedPainelFinanceiroRoute
   AuthenticatedPrevisaoRoute: typeof AuthenticatedPrevisaoRoute
   AuthenticatedRelatoriosRoute: typeof AuthenticatedRelatoriosRoute
@@ -333,6 +353,7 @@ const AuthenticatedRouteChildren: AuthenticatedRouteChildren = {
   AuthenticatedDespesasRoute: AuthenticatedDespesasRoute,
   AuthenticatedFinanceiroRoute: AuthenticatedFinanceiroRoute,
   AuthenticatedHistoricoRoute: AuthenticatedHistoricoRoute,
+  AuthenticatedMetasRoute: AuthenticatedMetasRoute,
   AuthenticatedPainelFinanceiroRoute: AuthenticatedPainelFinanceiroRoute,
   AuthenticatedPrevisaoRoute: AuthenticatedPrevisaoRoute,
   AuthenticatedRelatoriosRoute: AuthenticatedRelatoriosRoute,

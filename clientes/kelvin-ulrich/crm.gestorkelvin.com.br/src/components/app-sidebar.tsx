@@ -7,6 +7,7 @@ import {
   CheckSquare,
   History,
   Receipt,
+  Target,
 } from "lucide-react";
 import {
   Sidebar,
@@ -25,6 +26,7 @@ const items = [
   { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
   { title: "Painel Financeiro", url: "/painel-financeiro", icon: Wallet },
   { title: "Clientes", url: "/clientes", icon: Users },
+  { title: "Meta de Fechamento", url: "/metas", icon: Target },
   { title: "Financeiro", url: "/financeiro", icon: Wallet },
   { title: "Despesas", url: "/despesas", icon: Receipt },
   { title: "Previsão", url: "/previsao", icon: TrendingUp },

@@ -1,4 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
+import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 
 function startOfMonth(d: Date) {
@@ -13,10 +14,17 @@ function ymd(d: Date) {
 
 export const getDashboardOverview = createServerFn({ method: "GET" })
   .middleware([requireSupabaseAuth])
-  .handler(async ({ context }) => {
+  .inputValidator((input: unknown) =>
+    z
+      .object({ referenceMonth: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional() })
+      .parse(input ?? {}),
+  )
+  .handler(async ({ data, context }) => {
     const { supabase, userId } = context;
     const today = new Date();
-    const monthStart = startOfMonth(today);
+    const monthStart = data.referenceMonth
+      ? startOfMonth(new Date(data.referenceMonth + "T00:00:00"))
+      : startOfMonth(today);
     const nextMonth = addMonths(monthStart, 1);
     const sixMonthsAgo = addMonths(monthStart, -5);
 
@@ -88,10 +96,6 @@ export const getDashboardOverview = createServerFn({ method: "GET" })
 
     // Forecast next 3 months from active contracts + recurring expenses
     const activeMRR = clients.reduce((s, c) => s + Number(c.contract_value), 0);
-    const recurringExpense = expenses
-      .filter((e) => e.is_recurring)
-      .reduce((sum, e, _i, arr) => sum + Number(e.amount) / Math.max(arr.length, 1), 0);
-    // simpler: use unique recurring monthly average
     const recurringTotal = expenses
       .filter((e) => e.is_recurring && inMonth(e.expense_date))
       .reduce((s, e) => s + Number(e.amount), 0);

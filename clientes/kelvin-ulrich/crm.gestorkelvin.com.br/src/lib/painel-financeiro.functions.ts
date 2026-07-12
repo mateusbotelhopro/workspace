@@ -1,4 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
+import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 
 function startOfMonth(d: Date) {
@@ -13,10 +14,17 @@ function ymd(d: Date) {
 
 export const getPainelFinanceiro = createServerFn({ method: "GET" })
   .middleware([requireSupabaseAuth])
-  .handler(async ({ context }) => {
+  .inputValidator((input: unknown) =>
+    z
+      .object({ referenceMonth: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional() })
+      .parse(input ?? {}),
+  )
+  .handler(async ({ data, context }) => {
     const { supabase } = context;
     const today = new Date();
-    const monthStart = startOfMonth(today);
+    const monthStart = data.referenceMonth
+      ? startOfMonth(new Date(data.referenceMonth + "T00:00:00"))
+      : startOfMonth(today);
     const nextMonth = addMonths(monthStart, 1);
     const sixMonthsAgo = addMonths(monthStart, -5);
 

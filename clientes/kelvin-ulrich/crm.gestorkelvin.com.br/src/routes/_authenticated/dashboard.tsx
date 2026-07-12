@@ -1,10 +1,18 @@
-import { createFileRoute, Link, useRouter } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { useQuery } from "@tanstack/react-query";
 import { getDashboardOverview } from "@/lib/dashboard.functions";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import {
   TrendingUp,
   TrendingDown,
@@ -15,6 +23,7 @@ import {
   Users,
   ArrowRight,
   Activity,
+  RefreshCw,
 } from "lucide-react";
 import {
   ResponsiveContainer,
@@ -29,20 +38,20 @@ import {
   Line,
 } from "recharts";
 import { PushNotificationsCard } from "@/components/push-notifications-card";
+import { formatBRL as fmtBRL, buildMonthOptions, currentMonthIso } from "@/lib/utils";
 
 export const Route = createFileRoute("/_authenticated/dashboard")({
   head: () => ({ meta: [{ title: "Dashboard | Gestor Kelvin" }] }),
   component: DashboardPage,
 });
 
-const fmtBRL = (n: number) =>
-  new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(n);
-
 function DashboardPage() {
+  const monthOptions = useState(() => buildMonthOptions())[0];
+  const [month, setMonth] = useState(currentMonthIso);
   const fetchOverview = useServerFn(getDashboardOverview);
-  const { data, isLoading, error } = useQuery({
-    queryKey: ["dashboard-overview"],
-    queryFn: () => fetchOverview(),
+  const { data, isLoading, isFetching, error, refetch } = useQuery({
+    queryKey: ["dashboard-overview", month],
+    queryFn: () => fetchOverview({ data: { referenceMonth: month } }),
   });
 
   if (isLoading) {
@@ -72,11 +81,36 @@ function DashboardPage() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Visão geral</h1>
-        <p className="text-muted-foreground mt-1 text-sm sm:text-base">
-          Tudo que importa do seu negócio em uma tela.
-        </p>
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Visão geral</h1>
+          <p className="text-muted-foreground mt-1 text-sm sm:text-base">
+            Tudo que importa do seu negócio em uma tela.
+          </p>
+        </div>
+        <div className="flex items-center gap-2 w-full sm:w-auto">
+          <Select value={month} onValueChange={setMonth}>
+            <SelectTrigger className="w-full sm:w-[200px] capitalize">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {monthOptions.map((m) => (
+                <SelectItem key={m.value} value={m.value} className="capitalize">
+                  {m.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={() => refetch()}
+            disabled={isFetching}
+            title="Atualizar dados"
+          >
+            <RefreshCw className={`h-4 w-4 ${isFetching ? "animate-spin" : ""}`} />
+          </Button>
+        </div>
       </div>
 
       <PushNotificationsCard />

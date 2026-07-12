@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
 import webpush from "web-push";
-import { VAPID_PUBLIC_KEY, VAPID_SUBJECT } from "@/lib/push-config";
+import { normalizeVapidPrivateKey, VAPID_PUBLIC_KEY, VAPID_SUBJECT } from "@/lib/push-config";
 
 type Sub = {
   id: string;
@@ -48,8 +48,7 @@ export const Route = createFileRoute("/api/public/cron/notify-daily")({
           return new Response("Unauthorized", { status: 401 });
         }
 
-        const priv = process.env.VAPID_PRIVATE_KEY;
-        if (!priv) return new Response("VAPID not configured", { status: 500 });
+        const priv = normalizeVapidPrivateKey(process.env.VAPID_PRIVATE_KEY);
         webpush.setVapidDetails(VAPID_SUBJECT, VAPID_PUBLIC_KEY, priv);
 
         const today = new Date().toISOString().slice(0, 10);
@@ -64,30 +63,35 @@ export const Route = createFileRoute("/api/public/cron/notify-daily")({
           byUser.set(uid, b);
         };
 
+        const errors: string[] = [];
+
         // Cobranças vencidas (status pending/overdue, due_date < hoje)
-        const { data: overdue } = await supabaseAdmin
+        const { data: overdue, error: e1 } = await supabaseAdmin
           .from("payments")
           .select("user_id")
           .in("status", ["pending", "overdue"])
           .lt("due_date", today);
+        if (e1) errors.push(`overdue: ${e1.message}`);
         overdue?.forEach((p) => bump(p.user_id, "overdue"));
 
         // Cobranças vencendo nos próximos 3 dias
-        const { data: due3 } = await supabaseAdmin
+        const { data: due3, error: e2 } = await supabaseAdmin
           .from("payments")
           .select("user_id")
           .in("status", ["pending", "overdue"])
           .gte("due_date", today)
           .lte("due_date", in3);
+        if (e2) errors.push(`due3: ${e2.message}`);
         due3?.forEach((p) => bump(p.user_id, "due3"));
 
         // Contratos vencendo em ~30 dias (start_date + contract_months entre hoje e +30)
-        const { data: clients } = await supabaseAdmin
+        const { data: clients, error: e3 } = await supabaseAdmin
           .from("clients")
           .select("user_id, start_date, contract_months, status")
           .eq("status", "active")
           .not("start_date", "is", null)
           .not("contract_months", "is", null);
+        if (e3) errors.push(`clients: ${e3.message}`);
         const now = new Date();
         clients?.forEach((c) => {
           if (!c.start_date || !c.contract_months) return;
@@ -98,12 +102,15 @@ export const Route = createFileRoute("/api/public/cron/notify-daily")({
         });
 
         // Tarefas atrasadas
-        const { data: tasksLate } = await supabaseAdmin
+        const { data: tasksLate, error: e4 } = await supabaseAdmin
           .from("tasks")
           .select("user_id")
           .neq("status", "done")
           .lt("due_date", today);
+        if (e4) errors.push(`tasksLate: ${e4.message}`);
         tasksLate?.forEach((t) => bump(t.user_id, "tasksLate"));
+
+        if (errors.length) console.error("[cron notify-daily] errors:", errors);
 
         let totalSent = 0;
         for (const [userId, b] of byUser.entries()) {
@@ -121,7 +128,7 @@ export const Route = createFileRoute("/api/public/cron/notify-daily")({
           });
         }
 
-        return Response.json({ ok: true, users: byUser.size, sent: totalSent });
+        return Response.json({ ok: errors.length === 0, users: byUser.size, sent: totalSent, errors });
       },
     },
   },

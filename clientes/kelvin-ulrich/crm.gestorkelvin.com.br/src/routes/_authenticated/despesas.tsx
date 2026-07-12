@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { listExpenses, saveExpense, deleteExpense } from "@/lib/expenses.functions";
+import { formatBRL as fmtBRL } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -83,8 +84,6 @@ const CATEGORIES_PF = [
 
 const ALL_CATEGORIES = [...CATEGORIES_PJ, ...CATEGORIES_PF];
 const labelOf = (v: string) => ALL_CATEGORIES.find((c) => c.value === v)?.label ?? v;
-
-const fmtBRL = (n: number) => n.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
 type ExpenseRow = {
   id: string;
@@ -183,7 +182,8 @@ function DespesasPage() {
       toast.success(editing ? "Despesa atualizada" : "Despesa adicionada");
       setOpen(false);
       qc.invalidateQueries({ queryKey: ["expenses"] });
-      qc.invalidateQueries({ queryKey: ["dashboard"] });
+      qc.invalidateQueries({ queryKey: ["dashboard-overview"] });
+      qc.invalidateQueries({ queryKey: ["painel-financeiro"] });
     } catch (err) {
       toast.error((err as Error).message);
     } finally {
@@ -198,7 +198,8 @@ function DespesasPage() {
       await del({ data: { id: deleteId } });
       toast.success("Despesa removida");
       qc.invalidateQueries({ queryKey: ["expenses"] });
-      qc.invalidateQueries({ queryKey: ["dashboard"] });
+      qc.invalidateQueries({ queryKey: ["dashboard-overview"] });
+      qc.invalidateQueries({ queryKey: ["painel-financeiro"] });
       setDeleteId(null);
     } catch (err) {
       toast.error((err as Error).message);

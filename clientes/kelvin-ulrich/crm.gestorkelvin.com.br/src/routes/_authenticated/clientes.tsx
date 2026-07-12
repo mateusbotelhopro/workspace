@@ -1,6 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { useServerFn } from "@tanstack/react-start";
+import { useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
+import { deleteClient } from "@/lib/clients.functions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -30,7 +33,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { toast } from "sonner";
-import { Plus, ExternalLink, Loader2, Search, AlertTriangle, Trash2 } from "lucide-react";
+import { Plus, ExternalLink, Loader2, Search, AlertTriangle, Trash2, RotateCw } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import {
   AlertDialog,
@@ -43,6 +46,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { formatBRL as fmtBRL } from "@/lib/utils";
 
 export const Route = createFileRoute("/_authenticated/clientes")({
   head: () => ({ meta: [{ title: "Clientes | Gestor Kelvin" }] }),
@@ -75,10 +79,9 @@ function contractInfo(start: string | null, months: number | null) {
   return { end, daysLeft };
 }
 
-const fmtBRL = (n: number) =>
-  new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(n);
-
 function ClientsPage() {
+  const qc = useQueryClient();
+  const removeClient = useServerFn(deleteClient);
   const [clients, setClients] = useState<Client[]>([]);
   const [loading, setLoading] = useState(true);
   const [open, setOpen] = useState(false);
@@ -142,6 +145,9 @@ function ClientsPage() {
     setSaving(false);
     if (error) return toast.error(error.message);
     toast.success("Cliente cadastrado");
+    qc.invalidateQueries({ queryKey: ["dashboard-overview"] });
+    qc.invalidateQueries({ queryKey: ["painel-financeiro"] });
+    qc.invalidateQueries({ queryKey: ["monthly-goal"] });
     setOpen(false);
     setForm({
       name: "",
@@ -160,13 +166,16 @@ function ClientsPage() {
   };
 
   const handleDelete = async (clientId: string) => {
-    await supabase.from("client_credentials").delete().eq("client_id", clientId);
-    await supabase.from("client_files").delete().eq("client_id", clientId);
-    await supabase.from("payments").delete().eq("client_id", clientId);
-    const { error } = await supabase.from("clients").delete().eq("id", clientId);
-    if (error) return toast.error(error.message);
-    toast.success("Cliente excluído");
-    setClients((prev) => prev.filter((c) => c.id !== clientId));
+    try {
+      await removeClient({ data: { clientId } });
+      toast.success("Cliente excluído");
+      setClients((prev) => prev.filter((c) => c.id !== clientId));
+      qc.invalidateQueries({ queryKey: ["dashboard-overview"] });
+      qc.invalidateQueries({ queryKey: ["painel-financeiro"] });
+      qc.invalidateQueries({ queryKey: ["monthly-goal"] });
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : "Erro ao excluir cliente");
+    }
   };
 
   const filtered = clients.filter((c) => {
@@ -191,10 +200,25 @@ function ClientsPage() {
             Carteira completa com cadastro 360º.
           </p>
         </div>
-        <Button onClick={() => setOpen(true)} className="w-full sm:w-auto">
-          <Plus className="h-4 w-4 mr-2" />
-          Novo cliente
-        </Button>
+        <div className="flex items-center gap-2 w-full sm:w-auto">
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={() => {
+              qc.invalidateQueries({ queryKey: ["dashboard-overview"] });
+              qc.invalidateQueries({ queryKey: ["painel-financeiro"] });
+              load();
+            }}
+            disabled={loading}
+            title="Atualizar dados"
+          >
+            <RotateCw className={`h-4 w-4 ${loading ? "animate-spin" : ""}`} />
+          </Button>
+          <Button onClick={() => setOpen(true)} className="w-full sm:w-auto">
+            <Plus className="h-4 w-4 mr-2" />
+            Novo cliente
+          </Button>
+        </div>
       </div>
 
       {expiring.length > 0 && (

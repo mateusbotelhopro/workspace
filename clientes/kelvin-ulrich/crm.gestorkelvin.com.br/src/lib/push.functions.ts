@@ -3,12 +3,14 @@ import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
 import webpush from "web-push";
-import { VAPID_PUBLIC_KEY, VAPID_SUBJECT } from "./push-config";
+import { normalizeVapidPrivateKey, VAPID_PUBLIC_KEY, VAPID_SUBJECT } from "./push-config";
 
+let _vapidConfigured = false;
 function configureWebPush() {
-  const priv = process.env.VAPID_PRIVATE_KEY;
-  if (!priv) throw new Error("VAPID_PRIVATE_KEY não configurada");
+  if (_vapidConfigured) return;
+  const priv = normalizeVapidPrivateKey(process.env.VAPID_PRIVATE_KEY);
   webpush.setVapidDetails(VAPID_SUBJECT, VAPID_PUBLIC_KEY, priv);
+  _vapidConfigured = true;
 }
 
 const SubInput = z.object({
@@ -73,9 +75,10 @@ export const sendTestPush = createServerFn({ method: "POST" })
 export const getPushStatus = createServerFn({ method: "GET" })
   .middleware([requireSupabaseAuth])
   .handler(async ({ context }) => {
-    const { supabase } = context;
+    const { supabase, userId } = context;
     const { count } = await supabase
       .from("push_subscriptions")
-      .select("*", { count: "exact", head: true });
+      .select("*", { count: "exact", head: true })
+      .eq("user_id", userId);
     return { devices: count ?? 0 };
   });
