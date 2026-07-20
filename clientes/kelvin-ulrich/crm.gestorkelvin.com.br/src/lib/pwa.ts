@@ -27,12 +27,3 @@ export function registerServiceWorker() {
     .register("/sw.js")
     .catch((err) => console.warn("SW register failed", err));
 }
-
-// Helper para futuro: pedir permissão e assinar push
-export async function ensurePushPermission(): Promise<NotificationPermission> {
-  if (!("Notification" in window)) return "denied";
-  if (Notification.permission === "default") {
-    return await Notification.requestPermission();
-  }
-  return Notification.permission;
-}

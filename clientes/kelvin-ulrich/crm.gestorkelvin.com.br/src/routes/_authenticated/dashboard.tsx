@@ -37,7 +37,6 @@ import {
   LineChart,
   Line,
 } from "recharts";
-import { PushNotificationsCard } from "@/components/push-notifications-card";
 import { formatBRL as fmtBRL, buildMonthOptions, currentMonthIso } from "@/lib/utils";
 
 export const Route = createFileRoute("/_authenticated/dashboard")({
@@ -112,8 +111,6 @@ function DashboardPage() {
           </Button>
         </div>
       </div>
-
-      <PushNotificationsCard />
 
       {/* KPIs */}
       <div className="grid gap-4 grid-cols-2 lg:grid-cols-4">

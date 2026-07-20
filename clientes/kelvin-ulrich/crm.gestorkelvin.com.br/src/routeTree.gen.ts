@@ -23,7 +23,6 @@ import { Route as AuthenticatedDespesasRouteImport } from './routes/_authenticat
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedClientesRouteImport } from './routes/_authenticated/clientes'
 import { Route as AuthenticatedClientesIdRouteImport } from './routes/_authenticated/clientes.$id'
-import { Route as ApiPublicCronNotifyDailyRouteImport } from './routes/api/public/cron/notify-daily'
 
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
@@ -95,12 +94,6 @@ const AuthenticatedClientesIdRoute = AuthenticatedClientesIdRouteImport.update({
   path: '/$id',
   getParentRoute: () => AuthenticatedClientesRoute,
 } as any)
-const ApiPublicCronNotifyDailyRoute =
-  ApiPublicCronNotifyDailyRouteImport.update({
-    id: '/api/public/cron/notify-daily',
-    path: '/api/public/cron/notify-daily',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -116,7 +109,6 @@ export interface FileRoutesByFullPath {
   '/relatorios': typeof AuthenticatedRelatoriosRoute
   '/tarefas': typeof AuthenticatedTarefasRoute
   '/clientes/$id': typeof AuthenticatedClientesIdRoute
-  '/api/public/cron/notify-daily': typeof ApiPublicCronNotifyDailyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -132,7 +124,6 @@ export interface FileRoutesByTo {
   '/relatorios': typeof AuthenticatedRelatoriosRoute
   '/tarefas': typeof AuthenticatedTarefasRoute
   '/clientes/$id': typeof AuthenticatedClientesIdRoute
-  '/api/public/cron/notify-daily': typeof ApiPublicCronNotifyDailyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -150,7 +141,6 @@ export interface FileRoutesById {
   '/_authenticated/relatorios': typeof AuthenticatedRelatoriosRoute
   '/_authenticated/tarefas': typeof AuthenticatedTarefasRoute
   '/_authenticated/clientes/$id': typeof AuthenticatedClientesIdRoute
-  '/api/public/cron/notify-daily': typeof ApiPublicCronNotifyDailyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -168,7 +158,6 @@ export interface FileRouteTypes {
     | '/relatorios'
     | '/tarefas'
     | '/clientes/$id'
-    | '/api/public/cron/notify-daily'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -184,7 +173,6 @@ export interface FileRouteTypes {
     | '/relatorios'
     | '/tarefas'
     | '/clientes/$id'
-    | '/api/public/cron/notify-daily'
   id:
     | '__root__'
     | '/'
@@ -201,14 +189,12 @@ export interface FileRouteTypes {
     | '/_authenticated/relatorios'
     | '/_authenticated/tarefas'
     | '/_authenticated/clientes/$id'
-    | '/api/public/cron/notify-daily'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthenticatedRoute: typeof AuthenticatedRouteWithChildren
   LoginRoute: typeof LoginRoute
-  ApiPublicCronNotifyDailyRoute: typeof ApiPublicCronNotifyDailyRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -311,13 +297,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedClientesIdRouteImport
       parentRoute: typeof AuthenticatedClientesRoute
     }
-    '/api/public/cron/notify-daily': {
-      id: '/api/public/cron/notify-daily'
-      path: '/api/public/cron/notify-daily'
-      fullPath: '/api/public/cron/notify-daily'
-      preLoaderRoute: typeof ApiPublicCronNotifyDailyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -368,7 +347,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRoute: AuthenticatedRouteWithChildren,
   LoginRoute: LoginRoute,
-  ApiPublicCronNotifyDailyRoute: ApiPublicCronNotifyDailyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
