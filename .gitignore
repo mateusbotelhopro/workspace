@@ -10,8 +10,8 @@ _configurar-mcps.md
 *.png
 
 # Ícones PWA do CRM Gestor Kelvin (necessários pro manifest.webmanifest)
-!clientes/kelvin-ulrich/crm.gestorkelvin.com.br/public/icon-192.png
-!clientes/kelvin-ulrich/crm.gestorkelvin.com.br/public/icon-512.png
+!clientes/Kelvin Ulrich/crm.gestorkelvin.com.br/public/icon-192.png
+!clientes/Kelvin Ulrich/crm.gestorkelvin.com.br/public/icon-512.png
 
 # Arquivos de dados do usuário (CSVs, planilhas, etc)
 dados/*.csv

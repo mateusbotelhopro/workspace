@@ -12,8 +12,8 @@ description: >
 
 ## Dependências
 
-- **Briefing do cliente:** `clientes/[nome-cliente]/briefing.md`
-- **Serviços contratados:** `clientes/[nome-cliente]/CLAUDE.md` (pra saber se tem tráfego pago, automação WhatsApp etc.)
+- **Briefing do cliente:** `clientes/[Nome do Cliente]/briefing.md`
+- **Serviços contratados:** `clientes/[Nome do Cliente]/CLAUDE.md` (pra saber se tem tráfego pago, automação WhatsApp etc.)
 
 ---
 
@@ -40,7 +40,7 @@ Se o CLAUDE.md do cliente marcar "Automação WhatsApp" como serviço ativo, ind
 
 ### Passo 4 — Salvar
 
-Salvar em `clientes/[nome-cliente]/funil.md`, em formato de tabela markdown (etapa | canal | ação esperada | métrica).
+Salvar em `clientes/[Nome do Cliente]/funil.md`, em formato de tabela markdown (etapa | canal | ação esperada | métrica).
 
 ### Passo 5 — Confirmar
 

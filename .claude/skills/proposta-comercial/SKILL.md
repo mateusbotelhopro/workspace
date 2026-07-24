@@ -59,7 +59,7 @@ Criar um arquivo HTML completo com as seguintes seções:
 - Seções com espaçamento generoso
 - Valor em destaque visual
 
-Salvar o HTML temporariamente em `clientes/[nome-cliente]/proposta.html`.
+Salvar o HTML temporariamente em `clientes/[Nome do Cliente]/proposta.html`.
 
 ### Passo 4 — Converter pra PDF
 
@@ -68,18 +68,18 @@ Salvar o HTML temporariamente em `clientes/[nome-cliente]/proposta.html`.
 Usar o script `scripts/gerar-pdf.js` desta skill, que renderiza com `printBackground: true`:
 
 ```bash
-node ".claude/skills/proposta-comercial/scripts/gerar-pdf.js" "caminho/absoluto/clientes/[nome-cliente]/proposta.html" "clientes/[nome-cliente]/proposta.pdf"
+node ".claude/skills/proposta-comercial/scripts/gerar-pdf.js" "caminho/absoluto/clientes/[Nome do Cliente]/proposta.html" "clientes/[Nome do Cliente]/proposta.pdf"
 ```
 
 Se o Playwright/Chromium ainda não estiver instalado, instalar antes: `npx playwright install chromium`.
 
 Depois de gerar, se a proposta usar fundo escuro ou colorido em alguma seção, tirar um screenshot do HTML (via Playwright, `page.screenshot()`) e conferir visualmente antes de avisar o usuário que terminou — o Read tool consegue exibir o PNG direto.
 
-O PDF final fica em `clientes/[nome-cliente]/proposta.pdf` — esse é o entregável pro cliente. O HTML fica salvo na mesma pasta como fonte editável pra próxima vez.
+O PDF final fica em `clientes/[Nome do Cliente]/proposta.pdf` — esse é o entregável pro cliente. O HTML fica salvo na mesma pasta como fonte editável pra próxima vez.
 
 ### Passo 5 — Confirmar
 
-Avisar onde o PDF foi salvo: "Proposta gerada em `clientes/[nome-cliente]/proposta.pdf`."
+Avisar onde o PDF foi salvo: "Proposta gerada em `clientes/[Nome do Cliente]/proposta.pdf`."
 
 ---
 
@@ -89,4 +89,4 @@ Avisar onde o PDF foi salvo: "Proposta gerada em `clientes/[nome-cliente]/propos
 - Nunca inventar valor, prazo ou escopo — se não foi fornecido, deixar placeholder claro pra preencher
 - A proposta deve soar como veio de uma pessoa, não de um template corporativo
 - Sem jargão desnecessário ("soluções inovadoras", "entregamos valor", etc)
-- Se a pasta `clientes/[nome-cliente]/` não existir ainda, criar antes de salvar
+- Se a pasta `clientes/[Nome do Cliente]/` não existir ainda, criar antes de salvar

@@ -11,8 +11,8 @@ description: >
 
 ## Dependências
 
-- **Briefing do cliente:** `clientes/[nome-cliente]/briefing.md`
-- **Serviços contratados:** `clientes/[nome-cliente]/CLAUDE.md`
+- **Briefing do cliente:** `clientes/[Nome do Cliente]/briefing.md`
+- **Serviços contratados:** `clientes/[Nome do Cliente]/CLAUDE.md`
 - **Dados do prestador:** `_contexto/empresa.md`
 - **Tom de voz:** `_contexto/preferencias.md`
 
@@ -22,7 +22,7 @@ description: >
 
 ### Passo 1 — Identificar o cliente e puxar contexto
 
-Ler `clientes/[nome-cliente]/briefing.md` e `CLAUDE.md` pra saber serviços contratados, objetivo e qualquer dado já registrado.
+Ler `clientes/[Nome do Cliente]/briefing.md` e `CLAUDE.md` pra saber serviços contratados, objetivo e qualquer dado já registrado.
 
 Se faltar algo essencial pra fechar o contrato (valor, forma de pagamento, prazo/vigência, data de início), perguntar só o que estiver faltando — não travar o fluxo perguntando o que já está documentado.
 
@@ -47,7 +47,7 @@ Gerar um HTML com as cláusulas:
 
 **Estilo visual:** mesmo padrão das propostas — aplicar `marca/design-guide.md` se preenchido, senão visual neutro (fundo branco, texto escuro, tipografia limpa, sem floreio).
 
-Salvar o HTML em `clientes/[nome-cliente]/contrato.html`.
+Salvar o HTML em `clientes/[Nome do Cliente]/contrato.html`.
 
 ### Passo 4 — Converter pra PDF
 
@@ -56,14 +56,14 @@ Salvar o HTML em `clientes/[nome-cliente]/contrato.html`.
 Usar o script `scripts/gerar-pdf.js` desta skill, que renderiza com `printBackground: true`:
 
 ```bash
-node ".claude/skills/contrato-cliente/scripts/gerar-pdf.js" "caminho/absoluto/clientes/[nome-cliente]/contrato.html" "clientes/[nome-cliente]/contrato.pdf"
+node ".claude/skills/contrato-cliente/scripts/gerar-pdf.js" "caminho/absoluto/clientes/[Nome do Cliente]/contrato.html" "clientes/[Nome do Cliente]/contrato.pdf"
 ```
 
 Se Playwright/Chromium não estiver instalado: `npx playwright install chromium`.
 
 ### Passo 5 — Confirmar
 
-Avisar: "Contrato gerado em `clientes/[nome-cliente]/contrato.pdf`." Perguntar se quer que eu prepare um rascunho de email pra enviar junto (usando o MCP do Gmail, se estiver conectado).
+Avisar: "Contrato gerado em `clientes/[Nome do Cliente]/contrato.pdf`." Perguntar se quer que eu prepare um rascunho de email pra enviar junto (usando o MCP do Gmail, se estiver conectado).
 
 ---
 
@@ -72,4 +72,4 @@ Avisar: "Contrato gerado em `clientes/[nome-cliente]/contrato.pdf`." Perguntar s
 - Nunca inventar valor, prazo, cláusula legal ou dado cadastral — deixar `[preencher]` quando não tiver a informação
 - Isso não é um documento validado juridicamente — é um rascunho. Avisar o usuário disso na primeira vez que gerar contrato pra um cliente novo
 - Tom direto, sem juridiquês desnecessário além do que é padrão de contrato
-- Se a pasta `clientes/[nome-cliente]/` não existir, avisar — provavelmente o cliente ainda não passou por `/onboarding-cliente`
+- Se a pasta `clientes/[Nome do Cliente]/` não existir, avisar — provavelmente o cliente ainda não passou por `/onboarding-cliente`

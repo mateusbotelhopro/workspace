@@ -32,4 +32,4 @@ A Vellos atende empresas B2B em geral, mapeando o ICP específico de cada segmen
 
 ## Observações adicionais
 
-Até 2026-07-24, o Vellos era tratado como uma das 3 frentes do cliente Dayane Tavares (junto com Datameet e Dayelle). Passou a ser cliente próprio nessa data — ver `clientes/dayane-tavares/CLAUDE.md` pro histórico anterior à separação.
+Até 2026-07-24, o Vellos era tratado como uma das 3 frentes do cliente Dayane Tavares (junto com Datameet e Dayelle). Passou a ser cliente próprio nessa data — ver `clientes/Dayane Tavares/CLAUDE.md` pro histórico anterior à separação.

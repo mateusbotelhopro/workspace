@@ -22,7 +22,7 @@ description: >
 
 Perguntar: "Qual é o nome do cliente/empresa?"
 
-Verificar se já existe `clientes/[nome-cliente]/`. Se não existir, criar a pasta (copiando a estrutura de `clientes/_modelo-cliente/` se houver, **incluindo o `CLAUDE.md`** — esse arquivo é obrigatório em toda pasta de cliente nova, porque ela às vezes é aberta separada como workspace próprio no Claude Code).
+Verificar se já existe `clientes/[Nome do Cliente]/`. Se não existir, criar a pasta (copiando a estrutura de `clientes/_modelo-cliente/` se houver, **incluindo o `CLAUDE.md`** — esse arquivo é obrigatório em toda pasta de cliente nova, porque ela às vezes é aberta separada como workspace próprio no Claude Code).
 
 ### Passo 2 — Entrevista de descoberta
 
@@ -41,7 +41,7 @@ Se o cliente já mandou essas informações soltas (ex: copiou de um formulário
 
 ### Passo 3 — Consolidar o briefing
 
-Gerar `clientes/[nome-cliente]/briefing.md`:
+Gerar `clientes/[Nome do Cliente]/briefing.md`:
 
 ```markdown
 # Briefing — [Nome do Cliente]
@@ -76,7 +76,7 @@ Gerar `clientes/[nome-cliente]/briefing.md`:
 
 ### Passo 3.5 — Gerar o CLAUDE.md do cliente
 
-Copiar `clientes/_modelo-cliente/CLAUDE.md` pra `clientes/[nome-cliente]/CLAUDE.md`, preenchendo os campos com o que foi coletado na entrevista (nome, segmento, serviços contratados — perguntar se ainda não estiver claro qual serviço foi contratado). Esse arquivo é **obrigatório** em toda pasta de cliente: se essa pasta for aberta separada como workspace, ele é o que garante que o contexto do negócio não se perca.
+Copiar `clientes/_modelo-cliente/CLAUDE.md` pra `clientes/[Nome do Cliente]/CLAUDE.md`, preenchendo os campos com o que foi coletado na entrevista (nome, segmento, serviços contratados — perguntar se ainda não estiver claro qual serviço foi contratado). Esse arquivo é **obrigatório** em toda pasta de cliente: se essa pasta for aberta separada como workspace, ele é o que garante que o contexto do negócio não se perca.
 
 ### Passo 4 — Próximo passo
 

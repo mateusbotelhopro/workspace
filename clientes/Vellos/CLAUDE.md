@@ -46,7 +46,7 @@ Nomes de pasta em Title Case com espaço (não kebab-case), seguindo o padrão j
 
 ### Histórico
 
-- **2026-07-24:** Vellos separado do cliente Dayane Tavares e promovido a cliente próprio — pasta movida de `clientes/dayane-tavares/Vellos/` pra `clientes/Vellos/`. Histórico de trabalho anterior a essa data (auditoria do site, geração de propostas, ajustes de LinkedIn) está registrado em `clientes/dayane-tavares/CLAUDE.md`.
+- **2026-07-24:** Vellos separado do cliente Dayane Tavares e promovido a cliente próprio — pasta movida de `clientes/Dayane Tavares/Vellos/` pra `clientes/Vellos/`. Histórico de trabalho anterior a essa data (auditoria do site, geração de propostas, ajustes de LinkedIn) está registrado em `clientes/Dayane Tavares/CLAUDE.md`.
 
 ## Acessos e contas conectadas
 

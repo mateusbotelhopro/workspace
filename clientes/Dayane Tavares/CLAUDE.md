@@ -42,7 +42,7 @@ Detalhes completos do negócio, objetivo, público e histórico estão em [brief
 Pasta organizada por frente de negócio:
 
 ```text
-clientes/dayane-tavares/
+clientes/Dayane Tavares/
   Datameet/                       — captação de contratos fechados (modelo João Ferret), marketing
     Clientes/                     — todo cliente com contrato fechado, organizado por cliente (ativo ou em distrato) — contrato original e distrato ficam juntos, dentro da pasta do próprio cliente (não numa pasta "Contratos" separada)
       Modelo Distrato.html/pdf     — template genérico pra gerar novos distratos

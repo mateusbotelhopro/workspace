@@ -6,7 +6,7 @@ Workspace de trabalho do Mateus Botelho. Aqui ficam os clientes (tráfego pago, 
 **Estrutura de pastas:**
 - `_contexto/` — memória do sistema (não apagar)
 - `marca/` — identidade visual e logos (ainda em definição)
-- `clientes/` — uma pasta por cliente; `_modelo-cliente/` é o template (briefing.md, CLAUDE.md, tarefas-modelo.md). Cada cliente tem seu próprio CLAUDE.md porque a pasta às vezes é aberta separada. Inclui `clientes/ip-instituto-coy/` (landing page de lançamento), `clientes/Lucro Bom/` (automação de atendimento no WhatsApp via N8N + Evolution API) e `clientes/Vellos/` (BPO de SDR/prospecção B2B — cliente próprio desde 2026-07-24, antes era frente da Dayane Tavares)
+- `clientes/` — uma pasta por cliente; `_modelo-cliente/` é o template (briefing.md, CLAUDE.md, tarefas-modelo.md). Cada cliente tem seu próprio CLAUDE.md porque a pasta às vezes é aberta separada. Nomes de pasta de cliente e subpastas internas seguem Title Case com espaço (ex: `clientes/Dayane Tavares/Datameet/`), sem hífen/kebab-case — exceção pra pastas que espelham domínio real de site (ex: `vellosleads.com.br/`) e pra convenções de sistema (`_modelo-cliente/`, `_contexto/`). Inclui `clientes/IP Instituto Coy/` (landing page de lançamento), `clientes/Lucro Bom/` (automação de atendimento no WhatsApp via N8N + Evolution API) e `clientes/Vellos/` (BPO de SDR/prospecção B2B — cliente próprio desde 2026-07-24, antes era frente da Dayane Tavares)
 - `interno/` — operação própria, organizada por área (`trafego/`, `comercial/`, `marketing/`)
 - `leady/` — **Leady** (leady.pro), produto próprio: CRM SaaS de tráfego pago + WhatsApp (base: Kommo + Tintim). Planejamento em `leady/01-visao.md` a `04-roadmap.md`; contexto em `leady/CLAUDE.md`; código em `leady/app/`
 - `conteudo/` — produção de conteúdo (próprio ou de cliente)
@@ -86,7 +86,7 @@ Ao concluir uma tarefa que não tinha skill mas parece repetível, perguntar se 
 - Propostas de cliente salvar em `clientes/[nome-cliente]/proposta.pdf` (gerada por `/proposta-comercial`)
 - Operação interna própria vai em `interno/[area]/`
 - Conteúdo próprio (não de cliente) vai em `conteudo/`, organizado por plataforma e depois por formato: conteúdo de Instagram vive em `conteudo/instagram/[formato]/` (`carrosseis/`, `posts-estaticos/`, `stories/`). Skills como `carrossel` e `publicar-instagram` devem salvar aí, não na raiz de `conteudo/`
-- Lotes de conteúdo/roteiro de um cliente (ex: roteiros de postagens, scripts de vídeo) vão em `clientes/[nome-cliente]/conteudo/` — arquivo final (o que vai pro cliente) e arquivo de trabalho interno (contagem, distribuição, gap-analysis) ficam juntos nessa subpasta, separados do resto da raiz do cliente (CLAUDE.md, briefing.md, tarefas.md, site)
+- Lotes de conteúdo/roteiro de um cliente (ex: roteiros de postagens, scripts de vídeo) vão em `clientes/[Nome do Cliente]/Conteúdo/` — arquivo final (o que vai pro cliente) e arquivo de trabalho interno (contagem, distribuição, gap-analysis) ficam juntos nessa subpasta, separados do resto da raiz do cliente (CLAUDE.md, briefing.md, site)
 - Tarefas gerais vão em `tarefas/geral.md`; tarefas por cliente vão em `tarefas/[nome-cliente].md` (copiar de `clientes/_modelo-cliente/tarefas-modelo.md`)
 - Projetos de automação WhatsApp (ManyChat/n8n) pra cliente seguem o fluxo de `/novo-projeto`, usando as ferramentas do `templates/ferramentas/catalogo.md` (N8N MCP, WhatsApp Cloud API/Z-API) conforme o que o projeto pedir
 

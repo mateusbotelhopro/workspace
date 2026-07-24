@@ -171,39 +171,45 @@
     margin-bottom: 30px;
   }
 
-  .countdown-badge {
+  .countdown {
     display: inline-flex;
-    align-items: center;
-    gap: 14px;
-    padding: 10px 24px 10px 10px;
-    border: 1px solid var(--hairline);
-    border-radius: 999px;
-    background: rgba(216, 185, 120, 0.06);
-    margin-bottom: 30px;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 32px;
   }
-  .countdown-badge .ring {
-    width: 56px; height: 56px;
-    min-width: 56px;
-    border-radius: 50%;
-    border: 1px solid rgba(216, 185, 120, 0.55);
+  .countdown-unit {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background: rgba(216, 185, 120, 0.08);
+    width: 62px;
+    padding: 12px 4px 10px;
+    border: 1px solid var(--hairline);
+    border-radius: 14px;
+    background: rgba(216, 185, 120, 0.06);
   }
-  .countdown-badge .num {
+  .countdown-unit .num {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 25px;
     line-height: 1;
     color: var(--gold-1);
+    font-variant-numeric: tabular-nums;
   }
-  .countdown-badge .label {
-    font-size: 12.5px;
+  .countdown-unit .label {
+    font-size: 9px;
+    font-weight: 600;
     color: var(--muted-cream);
-    letter-spacing: 0.3px;
-    max-width: 130px;
-    line-height: 1.35;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    margin-top: 7px;
+  }
+  .countdown-sep {
+    color: var(--gold-2);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 20px;
+    opacity: 0.4;
+    padding-top: 14px;
   }
 
   .hero-cta { display: flex; }
@@ -229,6 +235,9 @@
     .hero-logo { width: 220px; }
     .hero-promise { font-size: 15.5px; }
     .hero-cta, .hero .cta-note { text-align: center; justify-content: center; }
+    .countdown { justify-content: center; width: 100%; }
+    .countdown-unit { width: 56px; padding: 10px 3px 8px; }
+    .countdown-unit .num { font-size: 22px; }
   }
 
   /* ---------- Reformulada / Aulas ---------- */
@@ -647,9 +656,14 @@
 
       <div class="hero-date">13 de agosto · 19h · ao vivo pelo Instagram</div>
 
-      <div class="countdown-badge">
-        <span class="ring"><span class="num"><span id="countdown-days">--</span></span></span>
-        <span class="label">dias para a Nova Era</span>
+      <div class="countdown" aria-label="Contagem regressiva para a Nova Era">
+        <div class="countdown-unit"><span class="num" id="cd-days">--</span><span class="label">Dias</span></div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit"><span class="num" id="cd-hours">--</span><span class="label">Horas</span></div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit"><span class="num" id="cd-min">--</span><span class="label">Min</span></div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit"><span class="num" id="cd-sec">--</span><span class="label">Seg</span></div>
       </div>
 
       <div class="hero-cta">
@@ -959,15 +973,24 @@
     });
   })();
 
+  function pad(n) { return String(n).padStart(2, '0'); }
+
   function updateCountdown() {
     const target = new Date('2026-08-13T19:00:00-03:00').getTime();
-    const now = Date.now();
-    const diff = target - now;
-    const days = Math.max(0, Math.ceil(diff / 86400000));
-    document.getElementById('countdown-days').textContent = days;
+    const diff = Math.max(0, target - Date.now());
+
+    const days = Math.floor(diff / 86400000);
+    const hours = Math.floor((diff % 86400000) / 3600000);
+    const minutes = Math.floor((diff % 3600000) / 60000);
+    const seconds = Math.floor((diff % 60000) / 1000);
+
+    document.getElementById('cd-days').textContent = pad(days);
+    document.getElementById('cd-hours').textContent = pad(hours);
+    document.getElementById('cd-min').textContent = pad(minutes);
+    document.getElementById('cd-sec').textContent = pad(seconds);
   }
   updateCountdown();
-  setInterval(updateCountdown, 60 * 60 * 1000);
+  setInterval(updateCountdown, 1000);
 </script>
 
 </body>

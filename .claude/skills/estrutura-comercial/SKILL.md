@@ -12,7 +12,7 @@ description: >
 
 ## Dependências
 
-- **Briefing do cliente:** `clientes/[nome-cliente]/briefing.md` (objetivo, público, ticket, histórico)
+- **Briefing do cliente:** `clientes/[Nome do Cliente]/briefing.md` (objetivo, público, ticket, histórico)
 - **Tom de voz:** `_contexto/preferencias.md`
 
 ---
@@ -23,7 +23,7 @@ description: >
 
 Perguntar (se não estiver claro) se é a estrutura comercial de um cliente específico ou da própria operação do Mateus.
 
-- Cliente → ler `clientes/[nome-cliente]/briefing.md`
+- Cliente → ler `clientes/[Nome do Cliente]/briefing.md`
 - Operação própria → não precisa de briefing externo, usar `_contexto/empresa.md`
 
 ### Passo 2 — Desenhar o pipeline
@@ -53,7 +53,7 @@ Definir quantos contatos, em que intervalo, por qual canal (WhatsApp, email, lig
 
 ### Passo 5 — Salvar
 
-- Cliente → `clientes/[nome-cliente]/estrutura-comercial.md`
+- Cliente → `clientes/[Nome do Cliente]/estrutura-comercial.md`
 - Operação própria → `interno/comercial/estrutura.md`
 
 Usar tabelas markdown pra deixar o pipeline visualmente claro.

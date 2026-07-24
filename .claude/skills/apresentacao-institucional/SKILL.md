@@ -76,7 +76,7 @@ Salvar em `marca/apresentacao-institucional.pptx` (versão master, reutilizável
 
 Perguntar: "Quer que eu gere uma cópia específica pra algum cliente, ou essa versão master já serve pra enviar?"
 
-Se for pra um cliente específico, copiar pra `clientes/[nome-cliente]/apresentacao.pptx` antes de qualquer ajuste pontual.
+Se for pra um cliente específico, copiar pra `clientes/[Nome do Cliente]/apresentacao.pptx` antes de qualquer ajuste pontual.
 
 ---
 
