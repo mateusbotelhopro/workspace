@@ -1,6 +1,6 @@
 # Resumo do Caso — Candido Parente
 
-**Status:** Ativo — contrato fechado, em execução
+**Status:** Ativo — contrato fechado, em execução (distrato padrão preparado, sem pedido de rescisão até o momento)
 
 ## Dados do contrato
 - **Razão social:** Candido Parente — Sociedade Individual de Advocacia
@@ -17,5 +17,9 @@
 ## Situação
 Contrato fechado e assinado. Sem pendências reportadas até o momento.
 
-## Documento
-[Contrato Candido Parente.pdf](Contrato%20Candido%20Parente.pdf)
+## Distrato
+2026-07-16: gerado distrato padrão (não solicitado pelo cliente) como parte da padronização de todos os contratos ativos da Datameet, com prazo de restituição uniformizado em 30 dias úteis. Valor a restituir: R$ 2.000,00 (montante integral pago no ato, considerando nenhum contrato entregue).
+
+## Documentos
+- [Contrato Candido Parente.pdf](Contrato%20Candido%20Parente.pdf)
+- [Distrato Candido Parente.pdf](Distrato%20Candido%20Parente.pdf)

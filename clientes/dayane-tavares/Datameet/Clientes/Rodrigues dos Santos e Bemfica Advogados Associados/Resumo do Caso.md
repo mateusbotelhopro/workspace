@@ -17,5 +17,9 @@
 ## Situação
 Contrato fechado e assinado. Sem pendências reportadas até o momento.
 
-## Documento
-[Contrato Rodrigues dos Santos e Bemfica Advogados Associados.pdf](Contrato%20Rodrigues%20dos%20Santos%20e%20Bemfica%20Advogados%20Associados.pdf)
+## Distrato
+2026-07-16: gerado distrato padrão (não solicitado pelo cliente) como parte da padronização de todos os contratos ativos da Datameet, com prazo de restituição uniformizado em 30 dias úteis. Valor a restituir: R$ 1.900,00 (50% pago no ato, considerando nenhum contrato entregue).
+
+## Documentos
+- [Contrato Rodrigues dos Santos e Bemfica Advogados Associados.pdf](Contrato%20Rodrigues%20dos%20Santos%20e%20Bemfica%20Advogados%20Associados.pdf)
+- [Distrato Rodrigues dos Santos e Bemfica Advogados Associados.pdf](Distrato%20Rodrigues%20dos%20Santos%20e%20Bemfica%20Advogados%20Associados.pdf)

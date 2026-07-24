@@ -17,5 +17,9 @@
 ## Situação
 Contrato fechado e assinado por ambas as partes (relatório de assinaturas ZapSign confirma 2 de 2 assinaturas). Sem pendências reportadas até o momento.
 
-## Documento
-[Contrato Thiago Cantarelli.pdf](Contrato%20Thiago%20Cantarelli.pdf)
+## Distrato
+2026-07-16: gerado distrato padrão (não solicitado pelo cliente) como parte da padronização de todos os contratos ativos da Datameet, com prazo de restituição uniformizado em 30 dias úteis. Valor a restituir: R$ 2.000,00 (montante integral pago no ato, considerando nenhum contrato entregue).
+
+## Documentos
+- [Contrato Thiago Cantarelli.pdf](Contrato%20Thiago%20Cantarelli.pdf)
+- [Distrato Thiago Cantarelli.pdf](Distrato%20Thiago%20Cantarelli.pdf)

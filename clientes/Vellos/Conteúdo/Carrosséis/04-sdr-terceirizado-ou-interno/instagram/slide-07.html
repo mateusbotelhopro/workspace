@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500;1,600&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1080px; height:1350px; overflow:hidden; }
+body {
+  font-family:'Inter',sans-serif;
+  position:relative;
+  background:#0d1f1c;
+  color:#ffffff;
+}
+.noise {
+  position:absolute; inset:0; opacity:0.035; pointer-events:none; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.safe { position:absolute; left:64px; right:64px; }
+.kicker {
+  font-family:'Inter',sans-serif; font-weight:800; font-size:15px; letter-spacing:0.16em;
+  text-transform:uppercase; color:#00c9a7;
+}
+.wordmark {
+  font-family:'Playfair Display',serif; font-weight:700; font-size:22px; letter-spacing:0.02em;
+}
+.pagenum {
+  position:absolute; bottom:56px; right:64px; font-size:14px; font-weight:700; color:rgba(255,255,255,0.45);
+  letter-spacing:0.05em;
+}
+.progress {
+  position:absolute; bottom:0; left:0; height:5px; background:#00c9a7;
+}
+
+body { background:#f5faf9; }
+
+</style></head>
+<body>
+<div class="noise"></div>
+
+<div class="safe" style="top:96px;">
+  <span class="wordmark" style="color:#0d1f1c;">Vellos</span>
+</div>
+<div class="safe" style="left:64px; right:64px; top:0; bottom:0; display:flex; flex-direction:column; justify-content:center;">
+  <div style="font-family:'Playfair Display',serif; font-weight:700; font-size:56px; line-height:1.18; color:#0d1f1c; margin-bottom:32px; max-width:880px;">A pergunta certa não é qual é melhor.</div>
+  <div style="font-size:27px; line-height:1.55; color:#1a3d38; max-width:820px; margin-bottom:48px;">É qual faz sentido pro momento atual da sua empresa. Muita empresa começa terceirizado e só depois internaliza.</div>
+  <div style="display:inline-block; background:#0d1f1c; color:#7eeedd; font-weight:700; font-size:21px; padding:20px 34px; border-radius:100px; width:fit-content;">Ajuda pra decidir? Chama a gente</div>
+</div>
+<div class="safe" style="bottom:64px; font-size:15px; color:#3a6058; font-weight:600;">vellosleads.com.br &nbsp;&middot;&nbsp; (85) 99216-4191</div>
+
+</body></html>

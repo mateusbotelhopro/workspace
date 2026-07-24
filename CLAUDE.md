@@ -6,12 +6,13 @@ Workspace de trabalho do Mateus Botelho. Aqui ficam os clientes (tráfego pago, 
 **Estrutura de pastas:**
 - `_contexto/` — memória do sistema (não apagar)
 - `marca/` — identidade visual e logos (ainda em definição)
-- `clientes/` — uma pasta por cliente; `_modelo-cliente/` é o template (briefing.md, CLAUDE.md, tarefas-modelo.md). Cada cliente tem seu próprio CLAUDE.md porque a pasta às vezes é aberta separada. Inclui `clientes/ip-instituto-coy/` (landing page de lançamento)
+- `clientes/` — uma pasta por cliente; `_modelo-cliente/` é o template (briefing.md, CLAUDE.md, tarefas-modelo.md). Cada cliente tem seu próprio CLAUDE.md porque a pasta às vezes é aberta separada. Inclui `clientes/ip-instituto-coy/` (landing page de lançamento), `clientes/Lucro Bom/` (automação de atendimento no WhatsApp via N8N + Evolution API) e `clientes/Vellos/` (BPO de SDR/prospecção B2B — cliente próprio desde 2026-07-24, antes era frente da Dayane Tavares)
 - `interno/` — operação própria, organizada por área (`trafego/`, `comercial/`, `marketing/`)
 - `leady/` — **Leady** (leady.pro), produto próprio: CRM SaaS de tráfego pago + WhatsApp (base: Kommo + Tintim). Planejamento em `leady/01-visao.md` a `04-roadmap.md`; contexto em `leady/CLAUDE.md`; código em `leady/app/`
 - `conteudo/` — produção de conteúdo (próprio ou de cliente)
 - `propostas/` — propostas avulsas antes de virar cliente
 - `dados/` — drop zone pra arquivos analisar (CSV, XLSX, TXT, PDF)
+- `historico/` — histórico de otimizações por cliente de tráfego pago (ações tomadas, confirmadas/refutadas), usado pelas skills de Ads. Arquivo por cliente: `historico/[nome-cliente].md`
 - `tarefas/` — gestão de tarefas (substitui o Notion). `tarefas/geral.md` é a operação interna; `tarefas/[nome-cliente].md` é por cliente
 - `templates/skills/` — templates de skills prontos pra personalizar com /mapear
 - `templates/ferramentas/catalogo.md` — APIs e ferramentas disponíveis pra usar em skills

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produtos | Laticínios Sô Minas</title>
+  <meta name="description" content="Conheça a linha completa de produtos Sô Minas: manteigas, cremes de leite, nata, queijo cottage e iogurtes, do varejo ao food service.">
+  <link rel="icon" href="img/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --marrom: #663300;
+      --marrom-escuro: #4d2600;
+      --dourado: #DAA71E;
+      --dourado-claro: #F5E6B8;
+      --verde: #587B20;
+      --verde-claro: #7BA23A;
+      --creme: #FFFDF6;
+      --creme-medio: #FDF1D1;
+      --branco: #FFFFFF;
+      --cinza-100: #F9F7F2;
+      --cinza-200: #E8E2D5;
+      --cinza-600: #79522C;
+      --texto: #3D2200;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 16px;
+      background: var(--marrom);
+      color: var(--creme);
+      padding: 12px 24px;
+      border-radius: 0 0 8px 8px;
+      font-weight: 600;
+      font-size: 14px;
+      z-index: 200;
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+
+    .skip-link:focus { top: 0; }
+
+    *:focus-visible {
+      outline: 2px solid var(--dourado);
+      outline-offset: 2px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--texto);
+      background: var(--branco);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; }
+
+    /* ── Header ── */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255, 253, 246, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--cinza-200);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .header.scrolled { box-shadow: 0 2px 20px rgba(102, 51, 0, 0.08); }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-logo img { height: 48px; width: auto; }
+
+    .nav {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--marrom);
+      text-decoration: none;
+      letter-spacing: 0.3px;
+      transition: color 0.2s ease;
+    }
+
+    .nav a:hover { color: var(--dourado); }
+    .nav a.active { color: var(--dourado); }
+
+    .nav-cta {
+      background: var(--marrom) !important;
+      color: var(--creme) !important;
+      padding: 10px 24px;
+      border-radius: 999px;
+      font-weight: 600 !important;
+      transition: background 0.2s ease !important;
+    }
+
+    .nav-cta:hover { background: var(--marrom-escuro) !important; }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--marrom);
+      margin: 5px 0;
+      transition: all 0.3s ease;
+    }
+
+    /* ── Page hero (menor que a home) ── */
+    .page-hero {
+      padding: 150px 24px 80px;
+      background: linear-gradient(160deg, var(--creme) 0%, var(--creme-medio) 100%);
+      text-align: center;
+    }
+
+    .page-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--dourado);
+      color: var(--marrom);
+      padding: 8px 20px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-size: 46px;
+      font-weight: 700;
+      color: var(--marrom);
+      line-height: 1.15;
+      max-width: 720px;
+      margin: 0 auto 18px;
+    }
+
+    .page-hero p {
+      font-size: 17px;
+      color: var(--cinza-600);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ── Sections ── */
+    .section { padding: 90px 24px; }
+
+    .section-inner { max-width: 1180px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--dourado);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 34px;
+      font-weight: 600;
+      color: var(--marrom);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      font-size: 16px;
+      color: var(--cinza-600);
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    /* ── Destaques ── */
+    .destaques { background: var(--branco); }
+
+    .destaques-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .destaque-card {
+      background: var(--cinza-100);
+      border: 1px solid var(--cinza-200);
+      border-radius: 20px;
+      padding: 28px 24px 24px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .destaque-card:hover {
+      border-color: var(--dourado);
+      box-shadow: 0 16px 40px rgba(102, 51, 0, 0.1);
+      transform: translateY(-4px);
+    }
+
+    .destaque-foto {
+      height: 190px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .destaque-foto img {
+      max-height: 100%;
+      width: auto;
+      filter: drop-shadow(0 12px 20px rgba(102, 51, 0, 0.18));
+    }
+
+    .destaque-nome {
+      font-family: var(--font-display);
+      font-size: 19px;
+      font-weight: 600;
+      color: var(--marrom);
+      margin-bottom: 4px;
+    }
+
+    .destaque-peso { font-size: 13px; color: var(--cinza-600); margin-bottom: 10px; }
+
+    .destaque-specs {
+      font-size: 12px;
+      color: var(--cinza-600);
+      border-top: 1px solid var(--cinza-200);
+      padding-top: 12px;
+      margin-bottom: 16px;
+    }
+
+    .destaque-specs strong { color: var(--marrom); font-weight: 600; }
+
+    .destaque-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: var(--dourado-claro);
+      color: #8B6914;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      padding: 100px 24px;
+      background:
+        linear-gradient(160deg, rgba(255,253,246,0.92) 0%, rgba(253,241,209,0.9) 100%),
+        url('https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      text-align: center;
+    }
+
+    .cta-section .section-title { margin-bottom: 12px; }
+
+    .cta-section p {
+      font-size: 16px;
+      color: var(--cinza-600);
+      margin-bottom: 32px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px 32px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary { background: var(--marrom); color: var(--creme); }
+    .btn-primary:hover { background: var(--marrom-escuro); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--marrom);
+      border: 2px solid var(--marrom);
+    }
+
+    .btn-outline:hover { background: var(--marrom); color: var(--creme); }
+
+    /* ── Footer ── */
+    .footer {
+      background: var(--marrom-escuro);
+      color: rgba(255, 253, 246, 0.6);
+      padding: 60px 24px 32px;
+    }
+
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand img { height: 52px; margin-bottom: 16px; filter: brightness(1.5); }
+    .footer-brand p { font-size: 14px; line-height: 1.7; max-width: 320px; }
+
+    .footer h4 {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--creme);
+      margin-bottom: 16px;
+    }
+
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 10px; }
+
+    .footer-links a {
+      font-size: 14px;
+      color: rgba(255, 253, 246, 0.6);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover { color: var(--dourado); }
+
+    .footer-social { display: flex; gap: 12px; margin-top: 20px; }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 253, 246, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .footer-social a:hover { border-color: var(--dourado); background: rgba(218, 167, 30, 0.1); }
+    .footer-social svg { width: 18px; height: 18px; fill: rgba(255, 253, 246, 0.7); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 253, 246, 0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-selos {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-selo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+    }
+
+    .footer-selo svg { width: 16px; height: 16px; fill: var(--verde-claro); }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .nav {
+        display: none;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: var(--creme);
+        flex-direction: column;
+        padding: 24px;
+        gap: 16px;
+        border-bottom: 1px solid var(--cinza-200);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      }
+
+      .nav.open { display: flex; }
+      .menu-toggle { display: block; }
+      .page-hero h1 { font-size: 32px; }
+      .page-hero p { font-size: 15px; }
+      .destaques-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+      .section { padding: 60px 20px; }
+      .section-title { font-size: 28px; }
+      .page-hero { padding: 120px 20px 60px; }
+    }
+
+    @media (max-width: 480px) {
+      .destaques-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .destaque-card { padding: 18px 14px 16px; }
+      .destaque-foto { height: 130px; }
+      .hero-buttons { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#produtos" class="skip-link">Ir para o conteúdo</a>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="img/logo.png" alt="Laticínios Sô Minas">
+      </a>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="nav">
+        <a href="index.html#premio">Prêmio</a>
+        <a href="index.html#sobre">Sobre</a>
+        <a href="produtos.html" class="active">Produtos</a>
+        <a href="index.html#imprensa">Imprensa</a>
+        <a href="index.html#contato" class="nav-cta">Fale Conosco</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <span class="page-hero-badge">Desde 2012 &bull; 15 anos de tradi&ccedil;&atilde;o</span>
+    <h1>Nossa linha de produtos</h1>
+    <p>Manteigas e cremes de leite com o mesmo padr&atilde;o de qualidade que subiu ao p&oacute;dio do Pr&ecirc;mio Paladar 2025, presentes nas g&ocirc;ndolas de todo o Sudeste.</p>
+  </section>
+
+  <!-- Produtos -->
+  <section class="section destaques" id="produtos">
+    <div class="section-inner">
+      <span class="section-label">Cat&aacute;logo</span>
+      <h2 class="section-title">Nossos produtos</h2>
+      <p class="section-subtitle">A linha S&ocirc; Minas de manteigas e cremes de leite, do pote de mesa &agrave; garrafa de 500 g.</p>
+      <div class="destaques-grid">
+        <div class="destaque-card">
+          <div class="destaque-foto"><img src="img/produtos/creme-de-leite-250ml.png" alt="Creme de Leite Pasteurizado S&ocirc; Minas 250g" loading="lazy"></div>
+          <div class="destaque-nome">Creme de Leite Pasteurizado</div>
+          <div class="destaque-peso">Garrafa 250 g</div>
+          <div class="destaque-specs">Validade: <strong>45 dias</strong> &bull; EAN: <strong>7898959612169</strong></div>
+          <span class="destaque-tag">Bate Chantilly</span>
+        </div>
+        <div class="destaque-card">
+          <div class="destaque-foto"><img src="img/produtos/creme-de-leite-500ml.png" alt="Creme de Leite Pasteurizado S&ocirc; Minas 500g" loading="lazy"></div>
+          <div class="destaque-nome">Creme de Leite Pasteurizado</div>
+          <div class="destaque-peso">Garrafa 500 g</div>
+          <div class="destaque-specs">Validade: <strong>45 dias</strong> &bull; EAN: <strong>7898959612084</strong></div>
+          <span class="destaque-tag">35% mat&eacute;ria gorda</span>
+        </div>
+        <div class="destaque-card">
+          <div class="destaque-foto"><img src="img/produtos/manteiga-com-sal-200g.png" alt="Manteiga com Sal S&ocirc; Minas 200g" loading="lazy"></div>
+          <div class="destaque-nome">Manteiga com Sal</div>
+          <div class="destaque-peso">Pote 200 g</div>
+          <div class="destaque-specs">Validade: <strong>120 dias</strong> &bull; EAN: <strong>7898959612015</strong></div>
+          <span class="destaque-tag">Primeira qualidade</span>
+        </div>
+        <div class="destaque-card">
+          <div class="destaque-foto"><img src="img/produtos/manteiga-com-sal-500g.png" alt="Manteiga com Sal S&ocirc; Minas 500g" loading="lazy"></div>
+          <div class="destaque-nome">Manteiga com Sal</div>
+          <div class="destaque-peso">Pote 500 g</div>
+          <div class="destaque-specs">Validade: <strong>120 dias</strong> &bull; EAN: <strong>7898959612022</strong></div>
+          <span class="destaque-tag">Primeira qualidade</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="contato">
+    <span class="section-label">Entre em contato</span>
+    <h2 class="section-title">Quer levar S&ocirc; Minas para o seu neg&oacute;cio?</h2>
+    <p>Fale com a gente para informa&ccedil;&otilde;es sobre distribui&ccedil;&atilde;o, parcerias comerciais ou pedidos para food service.</p>
+    <div class="hero-buttons">
+      <a href="https://www.instagram.com/laticinios.sominas" target="_blank" rel="noopener" class="btn btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.06 2.42.33 3.27 1.18.85.85 1.12 2.1 1.18 3.27.06 1.25.07 1.65.07 4.85s0 3.6-.07 4.85c-.06 1.17-.33 2.42-1.18 3.27-.85.85-2.1 1.12-3.27 1.18-1.25.06-1.65.07-4.85.07s-3.6 0-4.85-.07c-1.17-.06-2.42-.33-3.27-1.18-.85-.85-1.12-2.1-1.18-3.27C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.85c.06-1.17.33-2.42 1.18-3.27.85-.85 2.1-1.12 3.27-1.18C7.97 2.2 8.37 2.2 12 2.2zm0 1.8c-3.14 0-3.5 0-4.74.07-.96.04-1.48.2-1.83.34-.46.18-.78.39-1.13.74-.35.35-.56.67-.74 1.13-.14.35-.3.87-.34 1.83-.06 1.24-.07 1.6-.07 4.74s0 3.5.07 4.74c.04.96.2 1.48.34 1.83.18.46.39.78.74 1.13.35.35.67.56 1.13.74.35.14.87.3 1.83.34 1.24.06 1.6.07 4.74.07s3.5 0 4.74-.07c.96-.04 1.48-.2 1.83-.34.46-.18.78-.39 1.13-.74.35-.35.56-.67.74-1.13.14-.35.3-.87.34-1.83.06-1.24.07-1.6.07-4.74s0-3.5-.07-4.74c-.04-.96-.2-1.48-.34-1.83-.18-.46-.39-.78-.74-1.13-.35-.35-.67-.56-1.13-.74-.35-.14-.87-.3-1.83-.34C15.5 4 15.14 4 12 4zm0 3.05A4.95 4.95 0 1 1 12 16.95 4.95 4.95 0 0 1 12 7.05zm0 1.8a3.15 3.15 0 1 0 0 6.3 3.15 3.15 0 0 0 0-6.3zm5.15-2.05a1.16 1.16 0 1 1 0 2.32 1.16 1.16 0 0 1 0-2.32z"/></svg>
+        @laticinios.sominas
+      </a>
+      <a href="index.html" class="btn btn-outline">Voltar para o in&iacute;cio</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="img/logo.png" alt="Laticínios Sô Minas">
+          <p>Tradi&ccedil;&atilde;o, qualidade e confian&ccedil;a em cada produto. Desde 2012 levando o melhor de Minas Gerais para sua mesa.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/laticinios.sominas" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.06 2.42.33 3.27 1.18.85.85 1.12 2.1 1.18 3.27.06 1.25.07 1.65.07 4.85s0 3.6-.07 4.85c-.06 1.17-.33 2.42-1.18 3.27-.85.85-2.1 1.12-3.27 1.18-1.25.06-1.65.07-4.85.07s-3.6 0-4.85-.07c-1.17-.06-2.42-.33-3.27-1.18-.85-.85-1.12-2.1-1.18-3.27C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.85c.06-1.17.33-2.42 1.18-3.27.85-.85 2.1-1.12 3.27-1.18C7.97 2.2 8.37 2.2 12 2.2zm0 1.8c-3.14 0-3.5 0-4.74.07-.96.04-1.48.2-1.83.34-.46.18-.78.39-1.13.74-.35.35-.56.67-.74 1.13-.14.35-.3.87-.34 1.83-.06 1.24-.07 1.6-.07 4.74s0 3.5.07 4.74c.04.96.2 1.48.34 1.83.18.46.39.78.74 1.13.35.35.67.56 1.13.74.35.14.87.3 1.83.34 1.24.06 1.6.07 4.74.07s3.5 0 4.74-.07c.96-.04 1.48-.2 1.83-.34.46-.18.78-.39 1.13-.74.35-.35.56-.67.74-1.13.14-.35.3-.87.34-1.83.06-1.24.07-1.6.07-4.74s0-3.5-.07-4.74c-.04-.96-.2-1.48-.34-1.83-.18-.46-.39-.78-.74-1.13-.35-.35-.67-.56-1.13-.74-.35-.14-.87-.3-1.83-.34C15.5 4 15.14 4 12 4zm0 3.05A4.95 4.95 0 1 1 12 16.95 4.95 4.95 0 0 1 12 7.05zm0 1.8a3.15 3.15 0 1 0 0 6.3 3.15 3.15 0 0 0 0-6.3zm5.15-2.05a1.16 1.16 0 1 1 0 2.32 1.16 1.16 0 0 1 0-2.32z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4>Navega&ccedil;&atilde;o</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#premio">Pr&ecirc;mio</a></li>
+            <li><a href="index.html#sobre">Sobre</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="index.html#imprensa">Imprensa</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Redes Sociais</h4>
+          <ul class="footer-links">
+            <li><a href="https://www.instagram.com/laticinios.sominas" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Latic&iacute;nios S&ocirc; Minas. Todos os direitos reservados.</span>
+        <div class="footer-selos">
+          <div class="footer-selo">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span>Parceira euReciclo</span>
+          </div>
+          <div id="ra-verified-seal"><script type="text/javascript" id="ra-embed-verified-seal" src="https://s3.amazonaws.com/raichu-beta/ra-verified/bundle.js" data-id="YU1Rel9nQzRINW85RmdjeTpzby1taW5hc18xMjA1MjA4" data-target="ra-verified-seal" data-model="compact_1"></script></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function () {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    function toggleMenu() {
+      document.getElementById('nav').classList.toggle('open');
+    }
+
+    document.querySelectorAll('.nav a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        document.getElementById('nav').classList.remove('open');
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -63,13 +63,17 @@ Salvar o HTML temporariamente em `clientes/[nome-cliente]/proposta.html`.
 
 ### Passo 4 — Converter pra PDF
 
-Renderizar o HTML em PDF com Playwright:
+**Nunca usar `npx playwright pdf` (CLI)** — ele não ativa `printBackground`, então qualquer fundo colorido (headers escuros, caixas de destaque, seções com fundo de cor) some no PDF e texto claro sobre fundo escuro fica invisível, deixando a página com cara de "em branco".
+
+Usar o script `scripts/gerar-pdf.js` desta skill, que renderiza com `printBackground: true`:
 
 ```bash
-npx playwright pdf "file:///caminho/absoluto/clientes/[nome-cliente]/proposta.html" "clientes/[nome-cliente]/proposta.pdf"
+node ".claude/skills/proposta-comercial/scripts/gerar-pdf.js" "caminho/absoluto/clientes/[nome-cliente]/proposta.html" "clientes/[nome-cliente]/proposta.pdf"
 ```
 
 Se o Playwright/Chromium ainda não estiver instalado, instalar antes: `npx playwright install chromium`.
+
+Depois de gerar, se a proposta usar fundo escuro ou colorido em alguma seção, tirar um screenshot do HTML (via Playwright, `page.screenshot()`) e conferir visualmente antes de avisar o usuário que terminou — o Read tool consegue exibir o PNG direto.
 
 O PDF final fica em `clientes/[nome-cliente]/proposta.pdf` — esse é o entregável pro cliente. O HTML fica salvo na mesma pasta como fonte editável pra próxima vez.
 

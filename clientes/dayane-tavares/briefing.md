@@ -4,9 +4,8 @@
 
 ## Estrutura do negócio
 
-Dayane Tavares é um ecossistema com 3 empresas:
+Dayane Tavares é um ecossistema com 2 empresas (o Vellos, 3ª frente original, virou cliente próprio em 2026-07-24 — ver `clientes/Vellos/briefing.md`):
 
-- **Vellos** — prospecção B2B pra empresas via LinkedIn, com marcação de reuniões
 - **Datameet** — mesmo serviço do João Ferret: captação de clientes com contratos fechados, mas contrato geral (não só previdenciário)
 - **Dayelle** — loja de roupa feminina, situada em Recife (vendas online)
 
@@ -14,15 +13,13 @@ Dayane Tavares é um ecossistema com 3 empresas:
 
 Serviço varia por empresa:
 
-- **Vellos** — serviço técnico: criação de site, operacional, edição de contrato, exportação
 - **Datameet** — marketing
 - **Dayelle** — tráfego pago pra vendas de roupas online
 
-Nas três, Mateus criou site e sistema (dev).
+Nas duas, Mateus criou site e sistema (dev).
 
 ## Público / cliente ideal
 
-- **Vellos:** [a definir — clientes da prospecção B2B são empresas, mas não detalhado o ICP]
 - **Datameet:** mesmo público do João Ferret (advogados que buscam contratos fechados), mas contrato geral, não só previdenciário
 - **Dayelle:** mulheres, 18 a 45 anos
 

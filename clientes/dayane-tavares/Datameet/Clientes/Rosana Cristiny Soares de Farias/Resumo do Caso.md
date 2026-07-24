@@ -18,5 +18,9 @@ Contrato fechado e assinado. Sem pendências reportadas até o momento.
 
 ⚠️ **Atenção:** o contrato tem uma inconsistência interna — a Cláusula 3ª define a meta em 5 contratos, mas a Cláusula 8.1 (prazo/rescisão) menciona "10 (dez) contratos" (provável erro de cópia de outro modelo). Confirmar com a Dayane qual é a meta real antes de cobrar da cliente ou considerar o contrato encerrado.
 
-## Documento
-[Contrato Rosana Cristiny Soares de Farias.pdf](Contrato%20Rosana%20Cristiny%20Soares%20de%20Farias.pdf)
+## Distrato
+2026-07-16: gerado distrato padrão (não solicitado pela cliente) como parte da padronização de todos os contratos ativos da Datameet, com prazo de restituição uniformizado em 30 dias úteis. ⚠️ Valor a restituir **não preenchido** — pagamento é parcelado em 7x no cartão e não há registro de quantas parcelas já foram pagas até o momento; confirmar com a Dayane antes de enviar a versão final pra assinatura. Documento mantém placeholder em vermelho no campo do valor.
+
+## Documentos
+- [Contrato Rosana Cristiny Soares de Farias.pdf](Contrato%20Rosana%20Cristiny%20Soares%20de%20Farias.pdf)
+- [Distrato Rosana Cristiny Soares de Farias.pdf](Distrato%20Rosana%20Cristiny%20Soares%20de%20Farias.pdf)

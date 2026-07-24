@@ -29,6 +29,9 @@ dados/*.json
 .DS_Store
 node_modules/
 
+# Cache local do Supabase CLI (gerado por máquina, não deve ser versionado)
+**/supabase/.temp/
+
 # Repositórios git próprios, aninhados dentro de pastas de cliente
 # (já versionados/hospedados separadamente — não devem ser rastreados aqui)
 clientes/joao-ferret/Elo Jurídico OS/

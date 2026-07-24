@@ -51,8 +51,12 @@ Salvar o HTML em `clientes/[nome-cliente]/contrato.html`.
 
 ### Passo 4 — Converter pra PDF
 
+**Nunca usar `npx playwright pdf` (CLI)** — ele não ativa `printBackground`, então qualquer fundo colorido (headers escuros, caixas de destaque) some no PDF e texto claro sobre fundo escuro fica invisível.
+
+Usar o script `scripts/gerar-pdf.js` desta skill, que renderiza com `printBackground: true`:
+
 ```bash
-npx playwright pdf "file:///caminho/absoluto/clientes/[nome-cliente]/contrato.html" "clientes/[nome-cliente]/contrato.pdf"
+node ".claude/skills/contrato-cliente/scripts/gerar-pdf.js" "caminho/absoluto/clientes/[nome-cliente]/contrato.html" "clientes/[nome-cliente]/contrato.pdf"
 ```
 
 Se Playwright/Chromium não estiver instalado: `npx playwright install chromium`.

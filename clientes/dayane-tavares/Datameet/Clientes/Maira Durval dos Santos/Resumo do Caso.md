@@ -19,5 +19,9 @@
 
 ⚠️ O contrato também tem um erro de cópia: a Cláusula 3ª define a meta em 5 contratos, mas a Cláusula 8.1 (prazo/rescisão) menciona "50 (cinquenta) contratos qualificados" — provável cópia do modelo usado no contrato do Marcos Pimentel (que é de 50 contratos). Mesmo padrão de erro já visto no contrato da Rosana Cristiny Soares de Farias (lá era "10" em vez de "5").
 
-## Documento
-[Contrato Maira Durval dos Santos.pdf](Contrato%20Maira%20Durval%20dos%20Santos.pdf)
+## Distrato
+2026-07-16: gerado distrato padrão (não solicitado pela cliente) como parte da padronização de todos os contratos ativos da Datameet, com prazo de restituição uniformizado em 30 dias úteis. Valor a restituir: R$ 360,00 (entrada paga, considerando nenhum contrato entregue). ⚠️ Documento preparado como modelo pronto — antes de enviar pra assinatura, confirmar com a Dayane se a assinatura da cliente no contrato original já foi regularizada (ver alerta acima sobre status "Em-Curso" no ZapSign).
+
+## Documentos
+- [Contrato Maira Durval dos Santos.pdf](Contrato%20Maira%20Durval%20dos%20Santos.pdf)
+- [Distrato Maira Durval dos Santos.pdf](Distrato%20Maira%20Durval%20dos%20Santos.pdf)

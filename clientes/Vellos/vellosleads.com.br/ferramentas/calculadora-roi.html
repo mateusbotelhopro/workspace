@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora de ROI de Prospecção B2B | Vellos</title>
+  <meta name="description" content="Calcule uma estimativa de pipeline e retorno ao estruturar a prospecção B2B da sua empresa com a Vellos." />
+  <meta name="keywords" content="calculadora ROI, ROI prospecção B2B, calculadora SDR, retorno sobre investimento vendas" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.vellosleads.com.br/ferramentas/calculadora-roi.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.vellosleads.com.br/ferramentas/calculadora-roi.html" />
+  <meta property="og:title" content="Calculadora de ROI de Prospecção B2B | Vellos" />
+  <meta property="og:description" content="Calcule uma estimativa de pipeline e retorno ao estruturar a prospecção B2B da sua empresa." />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Vellos" />
+
+  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" />
+  <link rel="apple-touch-icon" href="../img/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Calculadora de ROI de Prospecção B2B",
+    "description": "Calcule uma estimativa de pipeline e retorno ao estruturar a prospecção B2B da sua empresa com a Vellos.",
+    "url": "https://www.vellosleads.com.br/ferramentas/calculadora-roi.html",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
+    "publisher": { "@type": "Organization", "name": "Vellos", "url": "https://www.vellosleads.com.br" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://www.vellosleads.com.br/" },
+      { "@type": "ListItem", "position": 2, "name": "Ferramentas", "item": "https://www.vellosleads.com.br/ferramentas/" },
+      { "@type": "ListItem", "position": 3, "name": "Calculadora de ROI", "item": "https://www.vellosleads.com.br/ferramentas/calculadora-roi.html" }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo" aria-label="Vellos">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 44" fill="none" aria-hidden="true">
+          <circle cx="16" cy="8" r="3.2" fill="#00c9a7"/>
+          <polyline points="5,17 16,35 27,17" stroke="#00c9a7" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="42" y="30" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="24" font-weight="700" fill="#f5faf9">Vellos<tspan fill="#00c9a7">.</tspan></text>
+        </svg>
+      </a>
+      <nav class="nav">
+        <a href="../blog/index.html">Blog</a>
+        <a href="index.html" class="active">Ferramentas</a>
+        <a href="../glossario.html">Glossário</a>
+      </nav>
+      <a href="https://wa.me/5585992164191" class="btn btn-primary" target="_blank" rel="noopener">AGENDAR DIAGNÓSTICO</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="legal-hero">
+    <div class="container">
+      <p class="section-tag">CALCULADORA</p>
+      <h1 class="legal-title">Calculadora de ROI de Prospecção B2B</h1>
+      <p class="legal-meta">Preencha os três campos abaixo e veja uma estimativa de pipeline com uma operação estruturada de SDR.</p>
+    </div>
+  </section>
+
+  <!-- CALCULADORA -->
+  <section class="legal">
+    <div class="container legal-inner" style="max-width: 980px;">
+      <a href="index.html" class="article-nav-back">← Voltar para ferramentas</a>
+
+      <div class="calc-layout">
+        <div class="calc-card">
+          <div class="form-group" style="margin-bottom: 24px;">
+            <label class="form-label" for="ticket">Ticket médio mensal do seu produto ou serviço (R$)</label>
+            <input class="form-input" type="number" id="ticket" min="0" step="100" value="3000" />
+          </div>
+          <div class="form-group" style="margin-bottom: 24px;">
+            <label class="form-label" for="reunioes">Quantas reuniões com decisores você consegue hoje, por mês?</label>
+            <input class="form-input" type="number" id="reunioes" min="0" step="1" value="4" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="conversao">Sua taxa atual de conversão de reunião em venda (%)</label>
+            <input class="form-input" type="number" id="conversao" min="0" max="100" step="1" value="20" />
+          </div>
+        </div>
+
+        <div class="calc-result">
+          <p class="calc-result-label">Estimativa com a Vellos</p>
+          <p class="calc-result-value" id="result-reunioes">12 reuniões/mês</p>
+          <p class="calc-result-sub">Baseado no aumento médio de 3x no pipeline dos nossos clientes.</p>
+
+          <div class="calc-result-list">
+            <div class="calc-result-row">
+              <span>Vendas adicionais estimadas/mês</span>
+              <strong id="result-vendas">1.6</strong>
+            </div>
+            <div class="calc-result-row">
+              <span>Receita adicional estimada/mês</span>
+              <strong id="result-receita">R$ 4.800</strong>
+            </div>
+            <div class="calc-result-row">
+              <span>Receita adicional estimada/ano</span>
+              <strong id="result-anual">R$ 57.600</strong>
+            </div>
+          </div>
+
+          <p class="calc-disclaimer">
+            Estimativa ilustrativa com base na média histórica de clientes Vellos (95% de comparecimento
+            e 62% de conversão de reunião em proposta). Resultados reais variam conforme segmento,
+            ticket médio e ciclo de vendas.
+          </p>
+
+          <a href="https://wa.me/5585992164191" class="btn btn-primary btn-large" target="_blank" rel="noopener" style="width: 100%; justify-content: center; margin-top: 20px;">
+            QUERO ESSE RESULTADO
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final" id="contato">
+    <div class="container cta-inner">
+      <p class="section-tag accent">PRÓXIMO PASSO</p>
+      <h2 class="cta-title">
+        Quer validar esse número<br />
+        <em>com um especialista?</em>
+      </h2>
+      <p class="cta-desc">
+        Agende um diagnóstico de 30 minutos. Analisamos seu ICP, seu processo atual
+        e mostramos quantas reuniões podemos gerar por mês para o seu negócio.
+      </p>
+      <a href="https://wa.me/5585992164191" class="btn btn-primary btn-large" target="_blank" rel="noopener">
+        AGENDAR DIAGNÓSTICO GRÁTIS
+      </a>
+    </div>
+  </section>
+
+  <!-- WHATSAPP FLUTUANTE -->
+  <a href="https://wa.me/5585992164191" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.845L0 24l6.335-1.652A11.954 11.954 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.853 0-3.587-.5-5.087-1.373l-.364-.214-3.763.981.998-3.648-.235-.374A9.935 9.935 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    <span>Falar agora</span>
+  </a>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 44" fill="none" aria-label="Vellos">
+          <circle cx="16" cy="8" r="3.2" fill="#00c9a7"/>
+          <polyline points="5,17 16,35 27,17" stroke="#00c9a7" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="42" y="30" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="24" font-weight="700" fill="#f5faf9">Vellos<tspan fill="#00c9a7">.</tspan></text>
+        </svg>
+      </div>
+      <div class="footer-info">
+        <p>Vellos · BPO de SDR e Prospecção B2B</p>
+        <p>vellosleads.com.br · (85) 99216-4191 · comercial@vellosleads.com.br</p>
+        <p>R. Monsenhor Bruno, 1153 - Aldeota, Fortaleza - CE, 60115-191 · CNPJ 67.975.430/0001-08</p>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html">Início</a>
+        <a href="../blog/index.html">Blog</a>
+        <a href="../glossario.html">Glossário</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Vellos · Prospecção B2B · Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var ticketInput = document.getElementById('ticket');
+      var reunioesInput = document.getElementById('reunioes');
+      var conversaoInput = document.getElementById('conversao');
+
+      var resultReunioes = document.getElementById('result-reunioes');
+      var resultVendas = document.getElementById('result-vendas');
+      var resultReceita = document.getElementById('result-receita');
+      var resultAnual = document.getElementById('result-anual');
+
+      function formatBRL(value) {
+        return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+      }
+
+      function calcular() {
+        var ticket = Math.max(0, parseFloat(ticketInput.value) || 0);
+        var reunioesAtuais = Math.max(0, parseFloat(reunioesInput.value) || 0);
+        var conversao = Math.min(100, Math.max(0, parseFloat(conversaoInput.value) || 0)) / 100;
+
+        var novasReunioes = Math.max(Math.round(reunioesAtuais * 3), 8);
+        var incrementoReunioes = novasReunioes - reunioesAtuais;
+
+        var vendasAdicionais = incrementoReunioes * conversao;
+        var receitaAdicionalMensal = vendasAdicionais * ticket;
+        var receitaAdicionalAnual = receitaAdicionalMensal * 12;
+
+        resultReunioes.textContent = novasReunioes + ' reuniões/mês';
+        resultVendas.textContent = vendasAdicionais.toLocaleString('pt-BR', { maximumFractionDigits: 1 });
+        resultReceita.textContent = formatBRL(receitaAdicionalMensal);
+        resultAnual.textContent = formatBRL(receitaAdicionalAnual);
+      }
+
+      [ticketInput, reunioesInput, conversaoInput].forEach(function (el) {
+        el.addEventListener('input', calcular);
+      });
+
+      calcular();
+    })();
+  </script>
+
+</body>
+</html>

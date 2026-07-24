@@ -1,6 +1,6 @@
 # Resumo do Caso — Guilherme Fernandes Cardoso
 
-**Status:** Ativo — contrato fechado, em execução
+**Status:** Ativo — parceria comercial em execução (distrato padrão preparado, sem pedido de rescisão até o momento)
 
 ## Dados do contrato
 - **Contratante:** Guilherme Fernandes Cardoso (pessoa física, advogado — OAB/RS)
@@ -25,5 +25,9 @@ Contrato fechado e assinado por ambas as partes (19-20/05/2026). Sem pendências
 
 ⚠️ **Atenção:** por ser modelo de parceria com participação nos honorários (não valor fixo por lead), o acompanhamento financeiro deste cliente é diferente — depende de o parceiro reportar corretamente os honorários recebidos. Vale conferir periodicamente se os repasses estão em dia.
 
-## Documento
-[Contrato Guilherme Fernandes Cardoso.pdf](Contrato%20Guilherme%20Fernandes%20Cardoso.pdf)
+## Distrato
+2026-07-16: gerado distrato padrão (não solicitado pelo parceiro) como parte da padronização de todos os contratos ativos da Datameet, com prazo de 30 dias úteis. Modelo diferente dos demais — sem valor fixo a restituir (remuneração é participação de 50% nos honorários), apenas repasse de eventuais honorários pendentes na data de assinatura.
+
+## Documentos
+- [Contrato Guilherme Fernandes Cardoso.pdf](Contrato%20Guilherme%20Fernandes%20Cardoso.pdf)
+- [Distrato Guilherme Fernandes Cardoso.pdf](Distrato%20Guilherme%20Fernandes%20Cardoso.pdf)

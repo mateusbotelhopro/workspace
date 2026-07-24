@@ -6,14 +6,15 @@ Esse CLAUDE.md existe porque essa pasta às vezes é aberta **separada**, direto
 
 ## Quem é esse cliente
 
-- **Nome:** Dayane Tavares (ecossistema com 3 empresas — ver abaixo)
-- **Segmento:** ecossistema com prospecção B2B (Vellos), captação de contratos fechados (Datameet) e e-commerce de moda feminina (Dayelle)
+- **Nome:** Dayane Tavares (ecossistema com 2 empresas — ver abaixo)
+- **Segmento:** ecossistema com captação de contratos fechados (Datameet) e e-commerce de moda feminina (Dayelle)
 - **Contato principal:** [a definir]
 - **Início do trabalho:** 2026-06-21
 
-### As 3 empresas
+> ⚠️ **2026-07-24:** o Vellos (3ª frente original) foi separado e virou cliente próprio em `clientes/Vellos/`. Todo o histórico de trabalho abaixo referente ao Vellos é anterior à separação — pra tarefas novas do Vellos, usar `clientes/Vellos/CLAUDE.md` e `clientes/Vellos/briefing.md`.
 
-- **Vellos** — prospecção B2B pra empresas via LinkedIn, com marcação de reuniões
+### As empresas
+
 - **Datameet** — captação de clientes com contratos fechados (contrato geral, não só previdenciário — mesmo modelo do João Ferret)
 - **Dayelle** — loja de roupa feminina, Recife, vendas online
 
@@ -26,15 +27,13 @@ Detalhes completos do negócio, objetivo, público e histórico estão em [brief
 - [ ] Tráfego pago — Google Ads
 - [x] Tráfego pago — Meta Ads — Dayelle (vendas de roupas online)
 - [x] Marketing / estrutura comercial — Datameet
-- [x] Site / blog / SaaS / aplicativo — Vellos, Datameet e Dayelle (sites e sistemas criados pra todas as 3)
+- [x] Site / blog / SaaS / aplicativo — Datameet e Dayelle (sites e sistemas criados pra ambas)
 - [ ] Automação WhatsApp (ManyChat/n8n)
 - [ ] Copywriting
 - [ ] Conteúdo / redes sociais
-- [x] Operacional / administrativo — Vellos (operacional, edição de contrato, exportação)
 
 ### Escopo por empresa
 
-- **Vellos:** serviço técnico — criação de site, operacional, edição de contrato, exportação
 - **Datameet:** marketing
 - **Dayelle:** tráfego pago pra vendas online
 
@@ -44,11 +43,6 @@ Pasta organizada por frente de negócio:
 
 ```text
 clientes/dayane-tavares/
-  Vellos/                         — prospecção B2B via LinkedIn, site/sistema, operacional/contratos/exportação
-    vellosleads.com.br/           — site institucional (landing, onboarding de cliente, política/termos)
-    Apresentação Comercial/       — proposta comercial (HTML + PDF) e materiais de capa/avatar do LinkedIn
-      LinkedIn/                   — capa, capa v2 e foto de perfil (arquivos finais prontos pra subir)
-        Fontes/                   — HTMLs geradores (Playwright) e fotos stock de origem
   Datameet/                       — captação de contratos fechados (modelo João Ferret), marketing
     Clientes/                     — todo cliente com contrato fechado, organizado por cliente (ativo ou em distrato) — contrato original e distrato ficam juntos, dentro da pasta do próprio cliente (não numa pasta "Contratos" separada)
       Modelo Distrato.html/pdf     — template genérico pra gerar novos distratos
@@ -64,7 +58,7 @@ clientes/dayane-tavares/
 
 Pastas criadas em 2026-06-21. _geral ainda vazia — popular conforme os arquivos de cada empresa forem recebidos/organizados.
 
-### Site e proposta — Vellos
+### Site e proposta — Vellos (histórico anterior à separação de 2026-07-24)
 
 Recebido em 2026-06-21: site institucional completo (`vellosleads.com.br/`) e apresentação comercial (`Apresentação Comercial/`, HTML + PDF + materiais de capa/avatar do LinkedIn).
 
@@ -125,6 +119,21 @@ O Castro e Silveira enviou também, nesse mesmo dia, o modelo de contrato de hon
 - **Roberto Barbosa Leal Advocacia** — duplicado do cliente já processado, mas essa versão trazia o relatório de assinaturas do ZapSign confirmando "2 de 2 Assinaturas" (Datameet 15/04 14:47, cliente 15/04 15:21) — contrato validamente fechado, sem o problema visto no caso da Maira. Guardado como segunda cópia (`... (com assinatura ZapSign).pdf`) na pasta já existente.
 - **Elder Ruiz Dias Ribeiro Amaral** (CPF, pessoa física, Santa Maria/RS) — previdenciário, 5 contratos, R$ 1.499,00 (PIX único), assinado 29/04-04/05/2026. Cliente novo.
 - **Thiago Cantarelli Sociedade Individual de Advocacia** (CNPJ 26.191.013/0001-89, Recife/PE) — previdenciário, 5 contratos + 2 bônus sem custo (7 no total), R$ 2.000,00 (PIX no ato), assinado 07-14/04/2026. Cliente novo.
+
+### Padronização de distratos — Datameet (2026-07-16)
+
+A pedido do Mateus, gerado (ou corrigido) o distrato de **todos os clientes com dados suficientes** em `Datameet/Clientes/`, inclusive clientes ativos sem qualquer pedido de rescisão — tratado como documento padrão pronto pra uso a qualquer momento, não como indicação de cancelamento real. Prazo de restituição uniformizado em **30 (trinta) dias úteis** em todos os distratos, substituindo os prazos anteriores que variavam entre 20 dias úteis e 90 dias corridos conforme o caso. Também atualizado o `Modelo Distrato.html` (template) pra já nascer com 30 dias úteis em novos casos.
+
+- **Corrigidos** (já tinham distrato gerado): Ana Paula Zarpelon, George Christopher Rocio, Sinval Andrade, Elias Nunes, Elder Ruiz Dias Ribeiro Amaral, Jose Eduardo Kotwica Jardim, Ciro Freitas.
+- **Completado** (tinha minuta com campos em aberto): Marcos Pimentel — preenchidos CNPJ, endereço e valor a partir do contrato já localizado; valor a restituir R$ 2.500,00 (entrada).
+- **Criados do zero**: Candido Parente (R$ 2.000,00 integral), Castro e Silveira Advogados (R$ 1.500,00, 50%), Dias Braga Advocacia (R$ 2.000,00 integral), E R Magalhães Fernandes Advocacia (R$ 2.000,00 integral), Gomes de Oliveira Advogados Associados (R$ 1.000,00, 50%), Roberto Barbosa Leal Advocacia (R$ 1.100,00, 50%), Rodrigues dos Santos e Bemfica Advogados Associados (R$ 1.900,00, 50%), Thiago Cantarelli (R$ 2.000,00 integral). Valor a restituir sempre calculado como o montante já pago até o momento (entrada ou integral, quando não há entrega de contrato ainda).
+- **Casos especiais**:
+  - **Guilherme Fernandes Cardoso** — modelo de parceria comercial (participação de 50% nos honorários, sem taxa fixa), não cabe o valor fixo de restituição do modelo padrão. Distrato customizado: sem valor fixo, apenas repasse de honorários pendentes (se houver) em até 30 dias úteis, e encerramento do investimento diário compartilhado em tráfego pago.
+  - **Maira Durval dos Santos** — distrato gerado normalmente (R$ 360,00, entrada), mas com alerta mantido no Resumo do Caso.md: confirmar com a Dayane se a assinatura da cliente no contrato original (status "Em-Curso" no ZapSign) já foi regularizada antes de considerar o distrato exigível.
+  - **Rosana Cristiny Soares de Farias** — pagamento parcelado em 7x no cartão, sem registro de quantas parcelas já foram pagas até o momento. Distrato gerado com placeholder vermelho no campo do valor a restituir — não enviar pra assinatura sem confirmar com a Dayane quantas parcelas entraram.
+- **Fora do escopo**: RSB Advogados e Rafael Nunes continuam sem CNPJ, contrato ou valor registrados — não há dados mínimos pra gerar um distrato, mesmo que padrão.
+
+Todos os distratos gerados/corrigidos foram exportados em HTML + PDF (via `gerar-pdf.js`, Playwright) e os respectivos `Resumo do Caso.md` e `Situações.md` foram atualizados com a seção de Distrato e o status de cada cliente.
 
 ### Identidade visual — Dayelle
 

@@ -1,0 +1,1179 @@
+{
+  "name": "Lucro Bom - Atendimento WhatsApp (Evolution API + IA)",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "lucro-bom-whatsapp",
+        "options": {}
+      },
+      "id": "wh",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -3200,
+        0
+      ],
+      "webhookId": "lucro-bom-atendimento-001"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c1",
+              "leftValue": "={{ $json.body.data.key.fromMe }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "ifFromMe",
+      "name": "Ignorar eco (fromMe)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -3000,
+        0
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "noopIgnora",
+      "name": "Ignora (própria mensagem)",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -2800,
+        -150
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "t1",
+                    "leftValue": "={{ $json.body.data.messageType }}",
+                    "rightValue": "conversation",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Texto"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "t2",
+                    "leftValue": "={{ $json.body.data.messageType }}",
+                    "rightValue": "extendedTextMessage",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "TextoEstendido"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "t3",
+                    "leftValue": "={{ $json.body.data.messageType }}",
+                    "rightValue": "audioMessage",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Audio"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "t4",
+                    "leftValue": "={{ $json.body.data.messageType }}",
+                    "rightValue": "imageMessage",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Imagem"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "id": "switchTipo",
+      "name": "Tipo de mensagem",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -2600,
+        0
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "noopOutros",
+      "name": "Ignora (tipo não suportado)",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -2400,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const texto = $('Webhook').item.json.body.data.message.conversation || '';\nreturn [{ json: { textoUsuario: texto } }];"
+      },
+      "id": "codeTextoConv",
+      "name": "Montar texto (conversation)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2400,
+        -150
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const texto = $('Webhook').item.json.body.data.message.extendedTextMessage?.text || '';\nreturn [{ json: { textoUsuario: texto } }];"
+      },
+      "id": "codeTextoExt",
+      "name": "Montar texto (extendedText)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2400,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b1",
+              "name": "base64",
+              "value": "={{ $('Webhook').item.json.body.data.message.base64 }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "setAudioB64",
+      "name": "Base64 Áudio",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2400,
+        150
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "base64",
+        "options": {
+          "fileName": "audio.ogg",
+          "mimeType": "audio/ogg"
+        }
+      },
+      "id": "convAudio",
+      "name": "Converter Áudio",
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        -2200,
+        150
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "operation": "transcribe",
+        "options": {}
+      },
+      "id": "openaiAudio",
+      "name": "Transcrever Áudio",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.3,
+      "position": [
+        -2000,
+        150
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "064gjvhbyJAhxPei",
+          "name": "OpenAI - Lucro Bom"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const texto = $json.text || '';\nreturn [{ json: { textoUsuario: texto } }];"
+      },
+      "id": "codeTextoAudio",
+      "name": "Montar texto (áudio)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1800,
+        150
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b2",
+              "name": "base64",
+              "value": "={{ $('Webhook').item.json.body.data.message.base64 }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "setImgB64",
+      "name": "Base64 Imagem",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2400,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "base64",
+        "options": {}
+      },
+      "id": "convImg",
+      "name": "Converter Imagem",
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        -2200,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "text": "Descreva objetivamente o que tem nessa imagem, em português, em até 2 frases.",
+        "inputType": "base64",
+        "options": {}
+      },
+      "id": "openaiImg",
+      "name": "Analisar Imagem",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        -2000,
+        300
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "064gjvhbyJAhxPei",
+          "name": "OpenAI - Lucro Bom"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const texto = '[Imagem recebida] ' + ($json.content || '');\nreturn [{ json: { textoUsuario: texto } }];"
+      },
+      "id": "codeTextoImg",
+      "name": "Montar texto (imagem)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1800,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const staticData = $getWorkflowStaticData('global');\nif (!staticData.handoff) staticData.handoff = {};\nif (!staticData.aguardandoCidade) staticData.aguardandoCidade = {};\n\nconst webhookBody = $('Webhook').item.json.body;\nconst remoteJid = webhookBody.data.key.remoteJid;\nconst numero = remoteJid.split('@')[0];\nconst textoOriginal = ($input.item.json.textoUsuario || '').toString();\nconst texto = textoOriginal.toLowerCase().trim();\nconst agora = Date.now();\n\n// 1. Handoff ativo -> bot fica em silêncio por 30 min\nconst handoffAte = staticData.handoff[remoteJid];\nif (handoffAte && agora < handoffAte) {\n  return [{ json: { remoteJid, numero, route: 'pausado' } }];\n}\nif (handoffAte && agora >= handoffAte) {\n  delete staticData.handoff[remoteJid];\n}\n\n// 2. Comando de reset\nconst resetKeywords = ['resetar', 'reset', 'limpar conversa', 'esquecer conversa', 'começar de novo', 'comecar de novo', 'recomeçar', 'recomecar'];\nif (resetKeywords.some(k => texto.includes(k))) {\n  delete staticData.aguardandoCidade[remoteJid];\n  delete staticData.handoff[remoteJid];\n  return [{ json: { remoteJid, numero, route: 'reset' } }];\n}\n\n// 3. Aguardando resposta de cidade (TTL 10 min)\nconst aguardando = staticData.aguardandoCidade[remoteJid];\nif (aguardando && (agora - aguardando.ts) < 10 * 60 * 1000) {\n  delete staticData.aguardandoCidade[remoteJid];\n  return [{ json: { remoteJid, numero, route: 'cidade_resposta', textoUsuario: textoOriginal } }];\n}\nif (aguardando) {\n  delete staticData.aguardandoCidade[remoteJid];\n}\n\n// 4. Palavras-chave (respostas fixas, sem passar pela IA)\nconst grupoTeleconsulta = ['consulta online', 'clinico geral', 'clínico geral', 'pediatra', 'plantao', 'plantão', '24h', '24 horas'];\nconst grupoDentista = ['dentista', 'odonto', 'dental'];\nconst grupoDependentes = ['dependente', 'familiar', 'esposa', 'marido', 'filho', 'filha', 'filhos'];\nconst grupoPsicologa = ['psicolog'];\n\nif (grupoDentista.some(k => texto.includes(k))) {\n  staticData.aguardandoCidade[remoteJid] = { ts: agora };\n  return [{ json: { remoteJid, numero, route: 'dentista_pergunta_cidade' } }];\n}\nif (grupoTeleconsulta.some(k => texto.includes(k))) {\n  return [{ json: { remoteJid, numero, route: 'teleconsulta' } }];\n}\nif (grupoDependentes.some(k => texto.includes(k))) {\n  return [{ json: { remoteJid, numero, route: 'dependentes' } }];\n}\nif (grupoPsicologa.some(k => texto.includes(k))) {\n  return [{ json: { remoteJid, numero, route: 'psicologa' } }];\n}\n\n// 5. Cai na IA (Pedro Paulo)\nreturn [{ json: { remoteJid, numero, route: 'ai', textoUsuario: textoOriginal } }];"
+      },
+      "id": "roteador",
+      "name": "Roteador",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1600,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "r1",
+                    "leftValue": "={{ $json.route }}",
+                    "rightValue": "pausado",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Pausado"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "r2",
+                    "leftValue": "={{ $json.route }}",
+                    "rightValue": "reset",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Reset"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "r3",
+                    "leftValue": "={{ $json.route }}",
+                    "rightValue": "dentista_pergunta_cidade",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "PerguntaCidade"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "r4",
+                    "leftValue": "={{ $json.route }}",
+                    "rightValue": "cidade_resposta",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "RespostaCidade"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "r5",
+                    "leftValue": "={{ $json.route }}",
+                    "rightValue": "teleconsulta",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Teleconsulta"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "r6",
+                    "leftValue": "={{ $json.route }}",
+                    "rightValue": "dependentes",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Dependentes"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "r7",
+                    "leftValue": "={{ $json.route }}",
+                    "rightValue": "psicologa",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Psicologa"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "r8",
+                    "leftValue": "={{ $json.route }}",
+                    "rightValue": "ai",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "IA"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "switchRota",
+      "name": "Rotear",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -1400,
+        0
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "noopPausado",
+      "name": "Bot em silêncio (handoff ativo)",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -1200,
+        -300
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "setReset-v",
+              "name": "resposta",
+              "value": "Prontinho! Já limpei nosso papo por aqui, pode começar de novo. 😊",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "setReset",
+      "name": "Resposta: reset",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1200,
+        -150
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "setPergCidade-v",
+              "name": "resposta",
+              "value": "Show! Pra te ajudar com o atendimento odontológico, me diz: você está em qual cidade?",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "setPergCidade",
+      "name": "Resposta: pergunta cidade",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1200,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const staticData = $getWorkflowStaticData('global');\nif (!staticData.handoff) staticData.handoff = {};\nconst remoteJid = $('Roteador').item.json.remoteJid;\nconst numero = $('Roteador').item.json.numero;\nconst texto = ($json.textoUsuario || '').toLowerCase();\nlet resposta;\nif (texto.includes('abre campo')) {\n  resposta = 'Boa! Em Abre Campo nosso parceiro pra atendimento odontológico é o *Instituto Felipe Abreu*. Pode chamar direto no WhatsApp: *+55 31 98556-0521* 🦷';\n} else {\n  staticData.handoff[remoteJid] = Date.now() + 30 * 60 * 1000;\n  resposta = 'Entendi! Pra essa cidade eu vou te passar direto pra um dos nossos consultores, só um instante que já te chamam por aqui. 🙂';\n}\nreturn [{ json: { remoteJid, numero, resposta } }];"
+      },
+      "id": "codeCidade",
+      "name": "Verifica cidade (dentista)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1200,
+        150
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "setTeleconsulta-v",
+              "name": "resposta",
+              "value": "Pra falar agora com clínico geral ou pediatra é só acessar nosso portal de teleconsulta 24h: [LINK DO PORTAL - PREENCHER]\\n\\nA senha de acesso são os 6 primeiros dígitos do seu CPF + a letra L (exemplo: 123456L).\\n\\nSe preferir agendar com um especialista, chama no WhatsApp: [WHATSAPP AGENDAMENTO ESPECIALISTAS - PREENCHER]",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "setTeleconsulta",
+      "name": "Resposta: teleconsulta",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1200,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "setDependentes-v",
+              "name": "resposta",
+              "value": "Show, vamos incluir seus dependentes! Preciso de alguns dados:\\n\\n- Seu nome completo, CPF e empresa\\n- De cada dependente: nome completo, CPF, data de nascimento e WhatsApp\\n\\nPode mandar por aqui mesmo 🙂",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "setDependentes",
+      "name": "Resposta: dependentes",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1200,
+        450
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "setPsicologa-v",
+              "name": "resposta",
+              "value": "Vou confirmar os detalhes do atendimento com a nossa psicóloga e te retorno por aqui em breve, tá bom? 💚",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "setPsicologa",
+      "name": "Resposta: psicóloga",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1200,
+        600
+      ]
+    },
+    {
+      "parameters": {
+        "model": "gpt-4o-mini",
+        "options": {
+          "temperature": 0.4
+        }
+      },
+      "id": "aiChatModel",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "position": [
+        -1200,
+        900
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "064gjvhbyJAhxPei",
+          "name": "OpenAI - Lucro Bom"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.textoUsuario }}",
+        "options": {
+          "systemMessage": "Você é o Pedro Paulo, atendente da Lucro Bom (planos de saúde e odontológico). Você é uma pessoa de verdade atendendo pelo WhatsApp - nunca diga que é uma IA, robô ou assistente virtual, mesmo se perguntarem diretamente.\n\nTom: natural, direto, educado, como alguém escrevendo no WhatsApp (frases curtas, sem parecer script de call center, sem exagerar em emoji).\n\nProdutos da Lucro Bom:\n- Plano Médico e Odontológico Completo\n- Pediatra e Clínico 24h em plantão\n- Especialistas gratuitos e ilimitados\n- Assistência Odontológica\n\nUse essas informações pra responder dúvidas gerais sobre os planos. Não invente cobertura, carência, valores ou prazos que você não tem certeza.\n\nQuando perceber que a conversa precisa de um atendente humano (cliente insatisfeito ou reclamando, pedido explícito de falar com humano/atendente, negociação de valores, pedido de cancelamento, ou qualquer dúvida técnica que você não tem certeza), termine sua resposta acrescentando exatamente o texto [[HANDOFF]] no final, sem espaço antes de mais nada depois. Esse marcador é só pra uso interno do sistema - nunca mencione ele, nunca explique pro cliente que vai transferir usando essas palavras exatas, o sistema cuida de avisar.",
+          "maxIterations": 10
+        }
+      },
+      "id": "aiAgent",
+      "name": "Pedro Paulo (IA)",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.6,
+      "position": [
+        -1200,
+        750
+      ],
+      "retryOnFail": false
+    },
+    {
+      "parameters": {
+        "jsCode": "const staticData = $getWorkflowStaticData('global');\nif (!staticData.handoff) staticData.handoff = {};\nconst remoteJid = $('Roteador').item.json.remoteJid;\nconst numero = $('Roteador').item.json.numero;\nlet resposta = ($json.output || '').toString();\nif (resposta.includes('[[HANDOFF]]')) {\n  resposta = resposta.replace('[[HANDOFF]]', '').trim();\n  staticData.handoff[remoteJid] = Date.now() + 30 * 60 * 1000;\n}\nreturn [{ json: { remoteJid, numero, resposta } }];"
+      },
+      "id": "codeHandoff",
+      "name": "Processa handoff (IA)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1000,
+        750
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.kortexcompany.cloud/message/sendText/lucrobom",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "fb78671a8acadb78b55df5c8e1400b2a"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $json.numero }}"
+            },
+            {
+              "name": "text",
+              "value": "={{ $json.resposta }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "sendMsg",
+      "name": "Enviar resposta (Evolution API)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -800,
+        -50
+      ],
+      "onError": "continueRegularOutput"
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Ignorar eco (fromMe)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ignorar eco (fromMe)": {
+      "main": [
+        [
+          {
+            "node": "Ignora (própria mensagem)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Tipo de mensagem",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tipo de mensagem": {
+      "main": [
+        [
+          {
+            "node": "Montar texto (conversation)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Montar texto (extendedText)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Base64 Áudio",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Base64 Imagem",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Ignora (tipo não suportado)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Montar texto (conversation)": {
+      "main": [
+        [
+          {
+            "node": "Roteador",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Montar texto (extendedText)": {
+      "main": [
+        [
+          {
+            "node": "Roteador",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Base64 Áudio": {
+      "main": [
+        [
+          {
+            "node": "Converter Áudio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Converter Áudio": {
+      "main": [
+        [
+          {
+            "node": "Transcrever Áudio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcrever Áudio": {
+      "main": [
+        [
+          {
+            "node": "Montar texto (áudio)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Montar texto (áudio)": {
+      "main": [
+        [
+          {
+            "node": "Roteador",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Base64 Imagem": {
+      "main": [
+        [
+          {
+            "node": "Converter Imagem",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Converter Imagem": {
+      "main": [
+        [
+          {
+            "node": "Analisar Imagem",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analisar Imagem": {
+      "main": [
+        [
+          {
+            "node": "Montar texto (imagem)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Montar texto (imagem)": {
+      "main": [
+        [
+          {
+            "node": "Roteador",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Roteador": {
+      "main": [
+        [
+          {
+            "node": "Rotear",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rotear": {
+      "main": [
+        [
+          {
+            "node": "Bot em silêncio (handoff ativo)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Resposta: reset",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Resposta: pergunta cidade",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Verifica cidade (dentista)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Resposta: teleconsulta",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Resposta: dependentes",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Resposta: psicóloga",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Pedro Paulo (IA)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resposta: reset": {
+      "main": [
+        [
+          {
+            "node": "Enviar resposta (Evolution API)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resposta: pergunta cidade": {
+      "main": [
+        [
+          {
+            "node": "Enviar resposta (Evolution API)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verifica cidade (dentista)": {
+      "main": [
+        [
+          {
+            "node": "Enviar resposta (Evolution API)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resposta: teleconsulta": {
+      "main": [
+        [
+          {
+            "node": "Enviar resposta (Evolution API)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resposta: dependentes": {
+      "main": [
+        [
+          {
+            "node": "Enviar resposta (Evolution API)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resposta: psicóloga": {
+      "main": [
+        [
+          {
+            "node": "Enviar resposta (Evolution API)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pedro Paulo (IA)": {
+      "main": [
+        [
+          {
+            "node": "Processa handoff (IA)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Processa handoff (IA)": {
+      "main": [
+        [
+          {
+            "node": "Enviar resposta (Evolution API)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Pedro Paulo (IA)",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

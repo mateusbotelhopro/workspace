@@ -1,6 +1,6 @@
 # Resumo do Caso — Marcos Pimentel
 
-**Status:** Ativo — contrato fechado, em execução (dados completos, antes aguardava contrato)
+**Status:** Ativo — contrato fechado, em execução (distrato padrão completado e atualizado, sem pedido de rescisão até o momento)
 
 ## Dados do contrato
 - **Razão social:** Marcos Pimentel Sociedade de Advogados
@@ -16,7 +16,11 @@
 ## Situação
 Contrato recebido e identificado em 2026-07-10 — este cliente já constava em `Clientes/` aguardando dados para um caso em aberto (motivo original não especificado). Agora com o contrato completo em mãos, dados preenchidos.
 
-⚠️ **Atenção:** havia uma minuta de distrato pendente (`Distrato Marcos Pimentel.html`, com campos em aberto) e um `Soluções.md` — conferir com a Dayane se o caso original ainda está em aberto (e qual era a pendência) agora que o contrato foi localizado, antes de decidir se o distrato deve seguir ou ser descartado.
+⚠️ Havia uma minuta de distrato pendente (`Distrato Marcos Pimentel.html`, com campos em aberto) — a pendência original nunca foi esclarecida com a Dayane. Em 2026-07-16, a minuta foi completada com os dados do contrato (CNPJ, endereço, valor) como parte da padronização de todos os distratos da Datameet, e não mais tratada como um caso de rescisão em aberto.
 
-## Documento
-[Contrato Marcos Pimentel.pdf](Contrato%20Marcos%20Pimentel.pdf)
+## Distrato
+2026-07-16: minuta de distrato completada e padronizada (prazo de restituição uniformizado em 30 dias úteis). Valor a restituir: R$ 2.500,00 (entrada paga no ato, considerando nenhum contrato entregue).
+
+## Documentos
+- [Contrato Marcos Pimentel.pdf](Contrato%20Marcos%20Pimentel.pdf)
+- [Distrato Marcos Pimentel.pdf](Distrato%20Marcos%20Pimentel.pdf)
