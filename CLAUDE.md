@@ -86,7 +86,7 @@ Ao concluir uma tarefa que não tinha skill mas parece repetível, perguntar se 
 - Propostas de cliente salvar em `clientes/[nome-cliente]/proposta.pdf` (gerada por `/proposta-comercial`)
 - Operação interna própria vai em `interno/[area]/`
 - Conteúdo próprio (não de cliente) vai em `conteudo/`, organizado por plataforma e depois por formato: conteúdo de Instagram vive em `conteudo/instagram/[formato]/` (`carrosseis/`, `posts-estaticos/`, `stories/`). Skills como `carrossel` e `publicar-instagram` devem salvar aí, não na raiz de `conteudo/`
-- Lotes de conteúdo/roteiro de um cliente (ex: roteiros de postagens, scripts de vídeo) vão em `clientes/[Nome do Cliente]/Conteúdo/` — arquivo final (o que vai pro cliente) e arquivo de trabalho interno (contagem, distribuição, gap-analysis) ficam juntos nessa subpasta, separados do resto da raiz do cliente (CLAUDE.md, briefing.md, site)
+- Lotes de conteúdo/roteiro de um cliente (ex: roteiros de postagens, scripts de vídeo) vão em `clientes/[nome-do-cliente]/conteudo/` — arquivo final (o que vai pro cliente) e arquivo de trabalho interno (contagem, distribuição, gap-analysis) ficam juntos nessa subpasta, separados do resto da raiz do cliente (CLAUDE.md, briefing.md, site)
 - Tarefas gerais vão em `tarefas/geral.md`; tarefas por cliente vão em `tarefas/[nome-cliente].md` (copiar de `clientes/_modelo-cliente/tarefas-modelo.md`)
 - Projetos de automação WhatsApp (ManyChat/n8n) pra cliente seguem o fluxo de `/novo-projeto`, usando as ferramentas do `templates/ferramentas/catalogo.md` (N8N MCP, WhatsApp Cloud API/Z-API) conforme o que o projeto pedir
 
