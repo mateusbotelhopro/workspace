@@ -33,7 +33,7 @@ Gera dois arquivos na pasta de saída:
 ## Fluxo
 
 1. Perguntar (se não estiver claro) onde está a lista: arquivo já na pasta do cliente, ou link do Google Sheets
-2. Rodar o script apontando `--output-dir` pra pasta do cliente (ex: `clientes/Dayane Tavares/Datameet/`)
+2. Rodar o script apontando `--output-dir` pra pasta do cliente (ex: `clientes/dayane-tavares/datameet/`)
 3. Reportar os números do print do script (quantos foram removidos e por quê)
 4. Avisar se a coluna de telefone não foi encontrada automaticamente, pedindo o nome exato da coluna
 

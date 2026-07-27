@@ -1,6 +1,6 @@
 # [Nome do Cliente]
 
-> Copiar esse arquivo pra `clientes/[Nome do Cliente]/CLAUDE.md` quando o cliente entrar (a skill `/onboarding-cliente` já faz isso). Preencher os campos entre `[ ]`. Nome de pasta em Title Case com espaço (ex: `Nome Sobrenome`, `Empresa Tal`), sem hífen/kebab-case — o mesmo vale pras subpastas internas (`Conteúdo/`, `Contrato/`, `Materiais/` etc.), exceto pastas que espelham domínio real de site.
+> Copiar esse arquivo pra `clientes/[nome-do-cliente]/CLAUDE.md` quando o cliente entrar (a skill `/onboarding-cliente` já faz isso). Preencher os campos entre `[ ]`. Nome de pasta em kebab-case minúsculo sem acento (ex: `nome-sobrenome`, `empresa-tal`) — o mesmo vale pras subpastas internas (`conteudo/`, `contrato/`, `materiais/` etc.), exceto pastas que espelham domínio real de site (nesse caso, nada dentro delas deve ser tocado, é build de site publicado).
 
 Esse CLAUDE.md existe porque essa pasta às vezes é aberta **separada**, direto como workspace no Claude Code (não dentro do BotelhoOS completo). Por isso ele precisa se bastar: além do contexto deste cliente, ele também aponta de volta pro contexto geral do negócio, caso o Claude precise ler.
 
@@ -44,15 +44,15 @@ Por padrão segue `_contexto/preferencias.md` do sistema principal. Se esse clie
 
 ## Identidade visual
 
-Se o cliente tiver marca própria (logo, cores, fontes), guardar em `Marca/` dentro dessa pasta e referenciar aqui. Caso contrário, tarefas visuais (proposta, carrossel, landing page) seguem `marca/design-guide.md` do sistema principal.
+Se o cliente tiver marca própria (logo, cores, fontes), guardar em `marca/` dentro dessa pasta e referenciar aqui. Caso contrário, tarefas visuais (proposta, carrossel, landing page) seguem `marca/design-guide.md` do sistema principal.
 
 ## Conteúdo e relatórios
 
-Lotes de conteúdo (roteiros de postagens, scripts) vão em `Conteúdo/` dentro dessa pasta — tanto o arquivo final quanto a nota de trabalho interna (contagem, distribuição, gap-analysis), separados da raiz do cliente. Relatórios de métricas/performance ficam soltos na raiz (ex: `relatorio-instagram-[mes-ano].html`).
+Lotes de conteúdo (roteiros de postagens, scripts) vão em `conteudo/` dentro dessa pasta — tanto o arquivo final quanto a nota de trabalho interna (contagem, distribuição, gap-analysis), separados da raiz do cliente. Relatórios de métricas/performance ficam soltos na raiz, nome kebab-case com data em `AAAA-MM` (ex: `relatorio-instagram-2026-07.html`).
 
 ## Tarefas
 
-Tarefas desse cliente ficam em [tarefas/[Nome do Cliente].md](../../tarefas/[Nome do Cliente].md) (gerado a partir de `tarefas-modelo.md`). Manter atualizado: mover entre "A fazer", "Em andamento" e "Feito" conforme o trabalho avança.
+Tarefas desse cliente ficam em [tarefas/[nome-do-cliente].md](../../tarefas/[nome-do-cliente].md) (gerado a partir de `tarefas-modelo.md`). Manter atualizado: mover entre "A fazer", "Em andamento" e "Feito" conforme o trabalho avança.
 
 ## Estratégia e histórico
 
