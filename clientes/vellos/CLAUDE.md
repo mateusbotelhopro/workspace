@@ -46,7 +46,8 @@ Nomes de pasta em kebab-case minúsculo sem acento, seguindo o padrão geral do 
 
 ### Histórico
 
-- **2026-07-24:** Vellos separado do cliente Dayane Tavares e promovido a cliente próprio — pasta movida de `clientes/dayane-tavares/vellos/` pra `clientes/vellos/`. Histórico de trabalho anterior a essa data (auditoria do site, geração de propostas, ajustes de LinkedIn) está registrado em `clientes/dayane-tavares/CLAUDE.md`.
+- **2026-07-24:** Vellos separado do cliente Dayane Tavares e promovido a cliente próprio — pasta movida de `clientes/dayane-tavares/vellos/` pra `clientes/vellos/`.
+- **2026-07-27:** cliente Dayane Tavares excluído do BotelhoOS (a pedido do Mateus). O histórico de trabalho anterior à separação (auditoria do site, geração de propostas, ajustes de LinkedIn), que antes estava registrado em `clientes/dayane-tavares/CLAUDE.md`, não existe mais em nenhum arquivo — só nesse changelog.
 
 ## Acessos e contas conectadas
 
