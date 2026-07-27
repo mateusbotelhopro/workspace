@@ -2,7 +2,7 @@
 
 **Conta:** @mateusbotelhopro
 **Formato:** post estático (1 imagem — foto + texto curto)
-**Foto:** `interno/mateus-botelho/fotos/mateus-botelho-frontal.jpeg`
+**Foto:** `marca/fotos/mateus-botelho-frontal.jpeg`
 
 ---
 

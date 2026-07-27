@@ -121,10 +121,10 @@ Se escolheu Graph API:
 ### 1. Detectar o que publicar
 
 Se o usuário chamou `/publicar` sem argumentos, verificar:
-- Existe `conteudo/carrosseis/` com PNGs recentes? Se sim, oferecer publicar o mais recente
+- Existe `conteudo/instagram/carrosseis/` com PNGs recentes? Se sim, oferecer publicar o mais recente
 - Se não, perguntar: "O que tu quer publicar? Me passa o caminho das imagens ou roda /carrossel primeiro"
 
-Se chamou com caminho (ex: `/publicar conteudo/carrosseis/ia-no-varejo/instagram/`):
+Se chamou com caminho (ex: `/publicar conteudo/instagram/carrosseis/ia-no-varejo/instagram/`):
 - Usar os PNGs e o `carousel-text.md` (legenda) daquela pasta
 
 ### 2. Detectar o método configurado

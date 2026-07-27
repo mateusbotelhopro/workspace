@@ -113,7 +113,7 @@ Usar com intenção pra criar profundidade:
 
 ## Tratamento de imagens
 
-Imagens em `conteudo/carrosseis/[tema]/imagens/`, referência relativa no HTML.
+Imagens em `conteudo/instagram/carrosseis/[tema]/imagens/`, referência relativa no HTML.
 
 ### Capa — duas opções conforme o tipo de imagem
 

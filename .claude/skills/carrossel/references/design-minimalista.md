@@ -46,7 +46,7 @@ Usar pelo menos 3 layouts diferentes entre os slides pra manter o interesse visu
 
 ## Tratamento de imagens
 
-As imagens ficam na pasta `conteudo/carrosseis/[tema]/imagens/`.
+As imagens ficam na pasta `conteudo/instagram/carrosseis/[tema]/imagens/`.
 Referenciar no HTML com caminho relativo: `<img src="imagens/foto-capa.jpg">`
 
 ### Capa — duas opções conforme o tipo de imagem

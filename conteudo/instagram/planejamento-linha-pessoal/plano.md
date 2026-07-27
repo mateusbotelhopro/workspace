@@ -6,7 +6,7 @@
 **Objetivo:** construir marca pessoal do Mateus como especialista em marketing jurídico — o rosto por trás da Botelho Marketing Jurídico — gerando confiança antes da venda
 **Produção:** carrosséis via skill `/carrossel`, publicação via skill `/publicar-instagram` na conta @mateusbotelhopro
 **Norma:** mesma régua do funil institucional — Provimento 205/2021 da OAB (educação e autoridade, nunca captação/promessa de resultado)
-**Numeração:** continua a sequência de `conteudo/carrosseis/` (institucional vai até 12) — essa linha usa `conteudo/instagram/planejamento-linha-pessoal/carrosseis/` com numeração própria (01 em diante) pra não misturar as duas linhas
+**Numeração:** continua a sequência de `conteudo/instagram/carrosseis/` (institucional vai até 12) — essa linha usa `conteudo/instagram/planejamento-linha-pessoal/carrosseis/` com numeração própria (01 em diante) pra não misturar as duas linhas
 
 ---
 
@@ -96,7 +96,7 @@ Complementa o funil institucional, mas em formato mais leve/pessoal — pergunta
 - **CTA:** "Manda esse pra quem tá começando agora."
 
 ### 21. Post estático — "Bastidor + apresentação pessoal"
-- **Formato:** estático (foto profissional + texto curto de posicionamento, usar `interno/mateus-botelho/fotos/`)
+- **Formato:** estático (foto profissional + texto curto de posicionamento, usar `marca/fotos/`)
 - **Gancho:** "Se a gente ainda não se conhece: eu sou o Mateus, e é assim que eu ajudo escritórios a parar de depender só de indicação."
 - **Conteúdo:** apresentação pessoal direta — quem é, o que faz, pra quem. Serve como "pinned post" da linha pessoal.
 - **CTA:** "Me segue pra acompanhar bastidor e conteúdo sobre marketing jurídico."

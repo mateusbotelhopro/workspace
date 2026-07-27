@@ -25,4 +25,4 @@ Vende automação de WhatsApp via ManyChat e n8n. Tipo de entrega varia por clie
 
 ## Marca Botelho Marketing Jurídico (vertical jurídica)
 
-O site institucional (mateusbotelho.com, em `interno/mateus-botelho/site/`) opera sob a marca **Botelho Marketing Jurídico**, um modelo de **agência de marketing jurídico** — tráfego pago e marketing para advogados e escritórios, dentro das normas da OAB. Arquitetura de marca: Botelho Marketing Jurídico é o negócio/agência; **Mateus Botelho é a pessoa/fundador** por trás (o site mantém voz pessoal). SEO e materiais dessa vertical usam a marca-agência como nome do negócio e Mateus como fundador.
+O site institucional (mateusbotelho.com, em `marca/site/`) opera sob a marca **Botelho Marketing Jurídico**, um modelo de **agência de marketing jurídico** — tráfego pago e marketing para advogados e escritórios, dentro das normas da OAB. Arquitetura de marca: Botelho Marketing Jurídico é o negócio/agência; **Mateus Botelho é a pessoa/fundador** por trás (o site mantém voz pessoal). SEO e materiais dessa vertical usam a marca-agência como nome do negócio e Mateus como fundador.

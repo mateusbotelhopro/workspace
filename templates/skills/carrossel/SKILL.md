@@ -140,7 +140,7 @@ O usuário fornece:
    > "Antes de escrever, me confirma:
    > - Quantos slides? (padrão: 8-10)
    > - Vai querer imagem na capa ou dentro dos slides? Se sim, quantas imagens tu tem?
-   >   - Se tiver imagens: joga na pasta `conteudo/carrosseis/[tema]/imagens/` e me diz os nomes
+   >   - Se tiver imagens: joga na pasta `conteudo/instagram/carrosseis/[tema]/imagens/` e me diz os nomes
    >   - Se não tiver: faço um design visual que funciona bem sem foto
    >   - Se quiser, posso gerar imagens por IA (ver seção Geração de Imagens abaixo)
    > - CTA do último slide? (ex: 'segue pra mais', 'link na bio', 'comenta X')
@@ -148,7 +148,7 @@ O usuário fornece:
 
    Se o usuário responder tudo junto ("faz sobre X com 8 slides"), não ficar perguntando mais. Usar bom senso pros campos que faltaram.
 
-   Se o usuário fornecer imagens, criar a pasta `conteudo/carrosseis/[tema]/imagens/` e confirmar que as imagens estão lá antes de seguir.
+   Se o usuário fornecer imagens, criar a pasta `conteudo/instagram/carrosseis/[tema]/imagens/` e confirmar que as imagens estão lá antes de seguir.
 
 6. **Planejar a espinha dorsal do carrossel e mostrar pro usuário.** Montar e apresentar:
 
@@ -225,7 +225,7 @@ O usuário fornece:
 
 9. Mostrar o texto completo de todos os slides + legenda no chat (não só salvar no arquivo)
 
-10. Salvar tudo em `conteudo/carrosseis/[tema]/carousel-text.md`
+10. Salvar tudo em `conteudo/instagram/carrosseis/[tema]/carousel-text.md`
 
 **CHECKPOINT 2:** Mostrar o texto completo + legenda. Esperar o usuário aprovar ou pedir ajustes antes de seguir pra Fase 2. Se pedir pra mudar um slide, ajustar só aquele.
 
@@ -236,7 +236,7 @@ O usuário fornece:
 1. Ler `marca/design-guide.md` pra identidade visual (cores, fontes, logo)
 2. Ler `references/design-carrossel.md` pra regras de design (layouts, ritmo, imagens, elementos fixos)
 3. Criar HTMLs seguindo as regras do arquivo de design
-4. Salvar HTMLs em `conteudo/carrosseis/[tema]/instagram/`
+4. Salvar HTMLs em `conteudo/instagram/carrosseis/[tema]/instagram/`
 5. Renderizar via CLI:
    ```bash
    npx playwright screenshot --viewport-size=1080,1350 --full-page "file:///caminho/absoluto/slide-01.html" "slide-01.png"
@@ -245,7 +245,7 @@ O usuário fornece:
 
 **CHECKPOINT:** Mostrar slide 1 renderizado. Se aprovado, renderizar os demais. Se pedir ajuste, editar o HTML e re-renderizar só aquele slide.
 
-Salvar PNGs em `conteudo/carrosseis/[tema]/instagram/`.
+Salvar PNGs em `conteudo/instagram/carrosseis/[tema]/instagram/`.
 
 > **Dica:** se o usuário não gostar do visual, as regras de design ficam em `references/design-carrossel.md`. Pode editar direto ou pedir: "muda a regra X no design do carrossel".
 
@@ -263,14 +263,14 @@ Se sim:
   ```bash
   npx playwright screenshot --viewport-size=1080,1920 --full-page "file:///caminho/absoluto/slide-01.html" "slide-01.png"
   ```
-- Salvar em `conteudo/carrosseis/[tema]/tiktok/`
+- Salvar em `conteudo/instagram/carrosseis/[tema]/tiktok/`
 
 ---
 
 ## Output final
 
 ```
-conteudo/carrosseis/[tema]/
+conteudo/instagram/carrosseis/[tema]/
   carousel-text.md          <- texto aprovado + legenda
   imagens/                  <- fotos do usuário ou geradas (se houver)
   instagram/
@@ -300,7 +300,7 @@ curl -L "https://image.pollinations.ai/prompt/modern%20office%20desk%20minimal%2
 
 **Como usar no fluxo:**
 1. Perguntar ao usuário o que quer na imagem (ex: "mesa de trabalho com notebook", "pessoa usando celular")
-2. Gerar com Pollinations, salvar em `conteudo/carrosseis/[tema]/imagens/`
+2. Gerar com Pollinations, salvar em `conteudo/instagram/carrosseis/[tema]/imagens/`
 3. Mostrar pro usuário aprovar antes de usar no slide
 4. Se a qualidade não servir, sugerir: "Se quiser uma imagem melhor, tu pode gerar no Canva, DALL-E ou Midjourney e jogar na pasta imagens/"
 

@@ -1,8 +1,0 @@
-Sobre os arquivos - Referências do site Ferraz & Arraz Advogados Associados
-
-Capturas de tela de um site existente da Ferraz & Arraz (hospedado em
-*arrazadvogadosassociados.pantheonsite.io*), usado como referência de
-estrutura/conteúdo para o novo site a ser desenvolvido.
-
-- referencia-site-01-hero.jpeg  -> topo do site: logo, marca "Ferraz & Arraz Advogados Associados" e foto da Dra. Kássia Ferraz.
-- referencia-site-02-sobre.jpeg -> seção "Transformando vidas com a advocacia", com texto institucional sobre a atuação do escritório (mais de 25 anos, áreas Cível, Família, Trabalhista, Previdenciário e Criminal).
