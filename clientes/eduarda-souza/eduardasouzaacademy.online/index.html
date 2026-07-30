@@ -173,43 +173,46 @@
 
   .countdown {
     display: inline-flex;
-    align-items: flex-start;
-    gap: 10px;
+    align-items: center;
+    gap: 4px;
+    padding: 14px 20px;
+    border: 1px solid var(--hairline);
+    border-radius: 20px;
+    background: rgba(216, 185, 120, 0.06);
     margin-bottom: 32px;
   }
-  .countdown-unit {
+  .countdown-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 62px;
-    padding: 12px 4px 10px;
-    border: 1px solid var(--hairline);
-    border-radius: 14px;
-    background: rgba(216, 185, 120, 0.06);
+    min-width: 52px;
+    padding: 0 6px;
   }
-  .countdown-unit .num {
+  .countdown-num {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
-    font-size: 25px;
+    font-size: 26px;
     line-height: 1;
     color: var(--gold-1);
     font-variant-numeric: tabular-nums;
   }
-  .countdown-unit .label {
-    font-size: 9px;
-    font-weight: 600;
-    color: var(--muted-cream);
-    letter-spacing: 1.3px;
+  .countdown-sub {
+    font-size: 10px;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    margin-top: 7px;
+    color: var(--muted-cream);
+    margin-top: 6px;
   }
   .countdown-sep {
-    color: var(--gold-2);
     font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-size: 20px;
+    font-size: 22px;
+    color: var(--gold-2);
     opacity: 0.4;
-    padding-top: 14px;
+  }
+  @media (max-width: 380px) {
+    .countdown { gap: 0; padding: 12px 10px; }
+    .countdown-item { min-width: 42px; padding: 0 2px; }
+    .countdown-num { font-size: 21px; }
   }
 
   .hero-cta { display: flex; }
@@ -218,7 +221,7 @@
   @media (max-width: 900px) {
     .hero {
       background-image:
-        linear-gradient(180deg, rgba(12,4,12,0.25) 0%, rgba(12,4,12,0.35) 45%, rgba(12,4,12,0.75) 100%),
+        linear-gradient(180deg, rgba(12,4,12,0.1) 0%, rgba(12,4,12,0.15) 45%, rgba(12,4,12,0.55) 100%),
         url('img/hero-eduarda-mobile.png');
       background-position: top center;
       align-items: flex-end;
@@ -230,14 +233,12 @@
       padding: 28px 24px 6px;
       border-radius: 26px;
       /* scrim sized to the text block itself, not the viewport — stays legible no matter how short/wide the screen is */
-      background: radial-gradient(130% 140% at 20% 55%, rgba(12,4,12,0.94) 0%, rgba(12,4,12,0.86) 45%, rgba(12,4,12,0.55) 78%, rgba(12,4,12,0) 100%);
+      background: radial-gradient(130% 140% at 20% 55%, rgba(12,4,12,0.82) 0%, rgba(12,4,12,0.68) 45%, rgba(12,4,12,0.35) 78%, rgba(12,4,12,0) 100%);
     }
     .hero-logo { width: 220px; }
     .hero-promise { font-size: 15.5px; }
     .hero-cta, .hero .cta-note { text-align: center; justify-content: center; }
-    .countdown { justify-content: center; width: 100%; }
-    .countdown-unit { width: 56px; padding: 10px 3px 8px; }
-    .countdown-unit .num { font-size: 22px; }
+    .countdown { justify-content: center; }
   }
 
   /* ---------- Reformulada / Aulas ---------- */
@@ -455,16 +456,83 @@
 
   /* ---------- Sobre a pré-venda ---------- */
   .pre-venda { text-align: center; }
-  .pre-venda .wrap-narrow p {
+  .pre-venda-box {
+    max-width: 620px;
+    margin: 0 auto;
+    background: linear-gradient(160deg, #FBEFE9 0%, #F3DFC4 100%);
+    border-radius: 24px;
+    padding: 46px 38px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+    text-align: left;
+  }
+  .pre-venda-box .eyebrow { display: block; text-align: center; margin-bottom: 14px; color: var(--gold-3); }
+  .pre-venda-box > p {
     font-size: 15.5px;
     line-height: 1.7;
-    color: var(--muted-cream);
+    color: rgba(61, 14, 34, 0.75);
+    text-align: center;
+    max-width: 480px;
+    margin: 0 auto 30px;
   }
+  .pre-venda-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .pre-venda-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--maroon-1);
+    font-weight: 500;
+  }
+  .pre-venda-check {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    margin-top: 1px;
+    color: var(--gold-3);
+  }
+  @media (max-width: 640px) { .pre-venda-box { padding: 38px 24px; } }
 
   /* ---------- Método comprovado / pilares ---------- */
   .metodo { text-align: center; padding-top: 10px; }
   .metodo h2 { font-size: clamp(24px, 4.5vw, 34px); margin: 14px 0 8px; }
   .metodo .sub { color: var(--muted-cream); font-size: 15px; margin-bottom: 54px; }
+
+  .metodo-box {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 68px 32px 40px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+  }
+  .metodo-box .gem-photo {
+    position: absolute;
+    top: -38px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--gold-2);
+    box-shadow: 0 0 24px rgba(216, 185, 120, 0.55);
+    background: var(--maroon-3);
+  }
+  .metodo-box .gem-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 55% 50%;
+  }
+  @media (max-width: 640px) { .metodo-box { padding: 60px 22px 34px; } }
 
   .pilares-grid {
     display: flex;
@@ -631,6 +699,22 @@
     .mentora-photo { width: 180px; height: 220px; }
   }
 
+  /* ---------- Sticky CTA (mobile) ---------- */
+  .sticky-cta {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 40;
+    padding: 14px 20px calc(14px + env(safe-area-inset-bottom));
+    background: linear-gradient(180deg, rgba(12,4,12,0) 0%, rgba(12,4,12,0.94) 35%, var(--maroon-3) 100%);
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    pointer-events: none;
+  }
+  .sticky-cta.visible { transform: translateY(0); opacity: 1; pointer-events: auto; }
+  .sticky-cta .cta-btn { width: 100%; padding: 15px 20px; }
+  @media (min-width: 901px) { .sticky-cta { display: none; } }
+
   /* ---------- Footer ---------- */
   footer {
     text-align: center;
@@ -648,23 +732,34 @@
   <section class="hero" id="hero">
     <div class="hero-inner">
       <h1 class="sr-only">A Nova Era do Piercer Elite PRO — Formação de Body Piercing com Eduarda Souza</h1>
-      <img class="hero-logo" src="img/logo-piercer-elite-pro.png" alt="A Nova Era — Piercer Elite PRO">
-
-      <div class="hero-eyebrow eyebrow">Lançamento ao vivo</div>
-
-      <p class="hero-promise">A formação que já mudou a vida de mais de 2 mil alunas passou por uma transformação completa. Novo método. Nova identidade. Uma nova era do body piercing está prestes a começar.</p>
-
-      <div class="hero-date">13 de agosto · 19h · ao vivo pelo Instagram</div>
 
       <div class="countdown" aria-label="Contagem regressiva para a Nova Era">
-        <div class="countdown-unit"><span class="num" id="cd-days">--</span><span class="label">Dias</span></div>
+        <div class="countdown-item">
+          <span class="countdown-num" id="cd-days">--</span>
+          <span class="countdown-sub">dias</span>
+        </div>
         <span class="countdown-sep">:</span>
-        <div class="countdown-unit"><span class="num" id="cd-hours">--</span><span class="label">Horas</span></div>
+        <div class="countdown-item">
+          <span class="countdown-num" id="cd-hours">--</span>
+          <span class="countdown-sub">horas</span>
+        </div>
         <span class="countdown-sep">:</span>
-        <div class="countdown-unit"><span class="num" id="cd-min">--</span><span class="label">Min</span></div>
+        <div class="countdown-item">
+          <span class="countdown-num" id="cd-mins">--</span>
+          <span class="countdown-sub">min</span>
+        </div>
         <span class="countdown-sep">:</span>
-        <div class="countdown-unit"><span class="num" id="cd-sec">--</span><span class="label">Seg</span></div>
+        <div class="countdown-item">
+          <span class="countdown-num" id="cd-secs">--</span>
+          <span class="countdown-sub">seg</span>
+        </div>
       </div>
+
+      <img class="hero-logo" src="img/logo-piercer-elite-pro.png" alt="A Nova Era — Piercer Elite PRO">
+
+      <p class="hero-promise">Você vai sair da insegurança pra dominar cada perfuração, ser reconhecida pelo seu trabalho e viver da profissão com a liberdade que sempre quis — o mesmo método que já formou mais de 2 mil alunas, agora numa era completamente nova.</p>
+
+      <div class="hero-date">Pré-venda exclusiva</div>
 
       <div class="hero-cta">
         <a href="#" class="cta-btn cta-vip">Quero ser VIP</a>
@@ -691,7 +786,7 @@
 
       <ul class="card-list">
         <li><span class="mark"></span> Aulas com gestor de tráfego</li>
-        <li><span class="mark"></span> Aulas com consultoria de imagem</li>
+        <li><span class="mark"></span> Aulas com consultora de imagem</li>
         <li><span class="mark"></span> Aulas com contabilidade</li>
         <li><span class="mark"></span> Suporte direto com a mentora</li>
       </ul>
@@ -703,7 +798,7 @@
     <div class="wrap">
       <div class="eyebrow">Método comprovado</div>
       <div class="stat gold-text">+2000 alunas</div>
-      <div class="stat-sub">formadas pelo mundo com o mesmo método</div>
+      <div class="stat-sub">formadas no mundo todo com nosso método exclusivo</div>
 
       <div class="carousel">
         <div class="carousel-arrow prev" id="feedback-prev" aria-label="Anterior">‹</div>
@@ -733,6 +828,18 @@
             <img src="img/feedback-estudio-montado.jpg" alt="Aluna mostrando o estúdio próprio montado">
             <div class="cap">Estúdio próprio montado</div>
           </div>
+          <div class="feedback-card">
+            <img src="img/feedback-rai-1.jpg" alt="Print de recorde de vendas de aluna Rai Piercer">
+            <div class="cap">Recorde de vendas</div>
+          </div>
+          <div class="feedback-card">
+            <img src="img/feedback-cantinho-casa.jpg" alt="Aluna montando o próprio espaço de atendimento em casa">
+            <div class="cap">O cantinho dela, em casa</div>
+          </div>
+          <div class="feedback-card">
+            <img src="img/feedback-himawari-agenda.jpg" alt="Agenda lotada de aluna com atendimentos internacionais">
+            <div class="cap">Agenda lotada, fora do Brasil</div>
+          </div>
         </div>
       </div>
       <div class="carousel-dots" id="feedback-dots"></div>
@@ -742,7 +849,6 @@
   <!-- PRA QUEM É -->
   <section class="identifica">
     <div class="wrap">
-      <div class="eyebrow">Você se identifica?</div>
       <p class="intro">Se você está vivendo uma dessas situações...</p>
 
       <ul class="pain-grid">
@@ -790,8 +896,15 @@
   <!-- SOBRE A PRÉ-VENDA -->
   <section class="pre-venda">
     <div class="wrap-narrow">
-      <div class="eyebrow">Sobre a pré-venda</div>
-      <p>Antes de abrir pro público, um grupo pequeno vai ter acesso a tudo em primeira mão. Condições, bônus e vagas que não vão se repetir depois do lançamento oficial.</p>
+      <div class="pre-venda-box">
+        <span class="eyebrow">Sobre a pré-venda</span>
+        <p>Antes de abrir pro público, um grupo pequeno vai ter acesso a tudo em primeira mão. Condições, bônus e vagas que não vão se repetir depois do lançamento oficial.</p>
+        <ul class="pre-venda-list">
+          <li><svg class="pre-venda-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5l2.5 2.5 5-6"></path></svg> Grupo pequeno, fora do radar do público em geral.</li>
+          <li><svg class="pre-venda-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5l2.5 2.5 5-6"></path></svg> Tudo em primeira mão: condições, bônus e vagas.</li>
+          <li><svg class="pre-venda-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5l2.5 2.5 5-6"></path></svg> O que passar aqui, não se repete depois.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -802,39 +915,42 @@
       <h2 class="gold-text">Os 3 pilares do método</h2>
       <p class="sub">O método que está mudando vidas de mulheres.</p>
 
-      <div class="pilares-grid">
-        <div class="pilar">
-          <div class="pilar-ic" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="13" y1="35" x2="30" y2="18"></line>
-              <path d="M27 15l6 6-3 3-6-6z"></path>
-              <circle cx="34" cy="14" r="2.4" fill="currentColor" stroke="none"></circle>
-            </svg>
+      <div class="metodo-box">
+        <div class="gem-photo"><img src="img/diamante-pilares.png" alt="Diamante — símbolo dos 3 pilares do método"></div>
+        <div class="pilares-grid">
+          <div class="pilar">
+            <div class="pilar-ic" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="13" y1="35" x2="30" y2="18"></line>
+                <path d="M27 15l6 6-3 3-6-6z"></path>
+                <circle cx="34" cy="14" r="2.4" fill="currentColor" stroke="none"></circle>
+              </svg>
+            </div>
+            <h3 class="pilar-title">Técnica</h3>
+            <p class="pilar-desc">Domínio, precisão e segurança em <b>cada perfuração</b>.</p>
           </div>
-          <div class="pilar-title">Técnica</div>
-          <p class="pilar-desc">Domínio, precisão e segurança em <b>cada perfuração</b>.</p>
-        </div>
-        <div class="pilar">
-          <div class="pilar-ic" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M8 20v8h5l15 8V12l-15 8H8z"></path>
-              <path d="M28 18a6 6 0 010 12"></path>
-              <path d="M13 28v6a2 2 0 002 2h1a2 2 0 002-2v-4"></path>
-            </svg>
+          <div class="pilar">
+            <div class="pilar-ic" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 20v8h5l15 8V12l-15 8H8z"></path>
+                <path d="M28 18a6 6 0 010 12"></path>
+                <path d="M13 28v6a2 2 0 002 2h1a2 2 0 002-2v-4"></path>
+              </svg>
+            </div>
+            <h3 class="pilar-title">Divulgação</h3>
+            <p class="pilar-desc">Estratégias que posicionam, atraem e <b>convertem clientes</b>.</p>
           </div>
-          <div class="pilar-title">Divulgação</div>
-          <p class="pilar-desc">Estratégias que posicionam, atraem e <b>convertem clientes</b>.</p>
-        </div>
-        <div class="pilar">
-          <div class="pilar-ic" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="12" y="9" width="24" height="31" rx="3"></rect>
-              <path d="M18 9V7a2 2 0 012-2h8a2 2 0 012 2v2"></path>
-              <path d="M17 22l4.5 4.5L31 17"></path>
-            </svg>
+          <div class="pilar">
+            <div class="pilar-ic" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="12" y="9" width="24" height="31" rx="3"></rect>
+                <path d="M18 9V7a2 2 0 012-2h8a2 2 0 012 2v2"></path>
+                <path d="M17 22l4.5 4.5L31 17"></path>
+              </svg>
+            </div>
+            <h3 class="pilar-title">Gestão</h3>
+            <p class="pilar-desc">Organize, planeje e escale <b>o seu negócio</b> com inteligência.</p>
           </div>
-          <div class="pilar-title">Gestão</div>
-          <p class="pilar-desc">Organize, planeje e escale <b>o seu negócio</b> com inteligência.</p>
         </div>
       </div>
     </div>
@@ -843,11 +959,11 @@
   <!-- COMPARAÇÃO -->
   <section class="comparacao">
     <div class="wrap">
-      <h2 class="gold-text">Um cursinho comum não te leva pra Nova Era</h2>
+      <h2 class="gold-text">Uma formação qualquer não te leva pra Nova Era</h2>
 
       <div class="comp-grid">
         <div class="comp-col bad">
-          <h3>Um cursinho comum</h3>
+          <h3>Formação qualquer</h3>
           <ul>
             <li><svg class="comp-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"></circle><path d="M9 9l6 6M15 9l-6 6"></path></svg> Apenas técnica</li>
             <li><svg class="comp-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"></circle><path d="M9 9l6 6M15 9l-6 6"></path></svg> Sem acompanhamento</li>
@@ -933,6 +1049,11 @@
     <div class="copy">&copy; 2026 Piercer Elite PRO — uma formação YOU Piercing Academy</div>
   </footer>
 
+  <!-- CTA fixo (mobile) -->
+  <div class="sticky-cta" id="sticky-cta">
+    <a href="#" class="cta-btn cta-vip">Quero ser VIP</a>
+  </div>
+
 <script>
   // TODO: substituir pelo link real do grupo de WhatsApp VIP
   const WHATSAPP_VIP_LINK = "https://wa.me/SEU-LINK-AQUI";
@@ -973,21 +1094,41 @@
     });
   })();
 
-  function pad(n) { return String(n).padStart(2, '0'); }
+  // CTA fixo: aparece depois do hero, some perto do rodapé
+  (function () {
+    const stickyCta = document.getElementById('sticky-cta');
+    const hero = document.getElementById('hero');
+    const footer = document.querySelector('footer');
+    let heroVisible = true;
+    let footerVisible = false;
+
+    function refresh() {
+      stickyCta.classList.toggle('visible', !heroVisible && !footerVisible);
+    }
+
+    const io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.target === hero) heroVisible = entry.isIntersecting;
+        if (entry.target === footer) footerVisible = entry.isIntersecting;
+      });
+      refresh();
+    }, { threshold: 0 });
+
+    io.observe(hero);
+    io.observe(footer);
+  })();
 
   function updateCountdown() {
     const target = new Date('2026-08-13T19:00:00-03:00').getTime();
     const diff = Math.max(0, target - Date.now());
-
     const days = Math.floor(diff / 86400000);
     const hours = Math.floor((diff % 86400000) / 3600000);
-    const minutes = Math.floor((diff % 3600000) / 60000);
-    const seconds = Math.floor((diff % 60000) / 1000);
-
-    document.getElementById('cd-days').textContent = pad(days);
-    document.getElementById('cd-hours').textContent = pad(hours);
-    document.getElementById('cd-min').textContent = pad(minutes);
-    document.getElementById('cd-sec').textContent = pad(seconds);
+    const mins = Math.floor((diff % 3600000) / 60000);
+    const secs = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+    document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+    document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
   }
   updateCountdown();
   setInterval(updateCountdown, 1000);

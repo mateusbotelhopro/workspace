@@ -34,7 +34,7 @@ clientes/vellos/
   vellosleads.com.br/           — site institucional (landing, onboarding, blog, ferramentas, política/termos)
   apresentacao-comercial/       — apresentação institucional, pitch rápido e materiais de LinkedIn
   proposta-comercial/           — propostas comerciais enviadas a prospects (ex: Neodiniz)
-  contratos/                    — contrato fechado por cliente da Vellos (ex: Ext Contabilidade)
+  contratos/                    — contrato fechado por cliente da Vellos
   minuta-contrato/               — minuta genérica de contrato, sem dados de cliente — base pra novos fechamentos
   prospeccao/                    — fluxo de listas de prospecção (a-processar/ → processadas/), controle em planilha e script de processamento de CNPJ
   conteudo/                      — lotes de posts/carrosséis pro Instagram (posts-estaticos/, carrosseis/)

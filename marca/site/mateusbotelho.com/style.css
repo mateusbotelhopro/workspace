@@ -23,7 +23,9 @@
     --shadow-hard-black: 6px 6px 0 var(--black);
     --radius: 20px;
     --radius-sm: 14px;
-    --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
+    color-scheme: light;
 }
 
 /* ==========================================================================
@@ -59,6 +61,37 @@ img { max-width: 100%; display: block; }
     overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
 }
 
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    z-index: 2000;
+    background: var(--blue);
+    color: var(--white);
+    font-family: var(--font-sub);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 100px;
+    border: 2px solid var(--black);
+    box-shadow: var(--shadow-hard-black);
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 16px;
+}
+
+a, button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible, button:focus-visible, summary:focus-visible {
+    outline: 3px solid var(--blue);
+    outline-offset: 2px;
+}
+
 /* ==========================================================================
    SHARED TYPE + COMPONENTS
    ========================================================================== */
@@ -84,6 +117,7 @@ img { max-width: 100%; display: block; }
     color: var(--black);
     font-size: clamp(2rem, 4vw, 2.9rem);
     margin-bottom: 16px;
+    text-wrap: balance;
 }
 
 .section-title--on-dark { color: var(--white); }
@@ -104,6 +138,7 @@ img { max-width: 100%; display: block; }
     cursor: pointer;
     transition: var(--transition);
     white-space: nowrap;
+    touch-action: manipulation;
 }
 
 .btn-blue {
@@ -224,6 +259,7 @@ img { max-width: 100%; display: block; }
     box-shadow: 3px 3px 0 var(--black);
     transition: var(--transition);
     white-space: nowrap;
+    touch-action: manipulation;
 }
 
 .nav-cta:hover {
@@ -267,6 +303,7 @@ img { max-width: 100%; display: block; }
     letter-spacing: 0.5px;
     color: var(--black);
     margin-bottom: 24px;
+    text-wrap: balance;
 }
 
 .hero-title .hl { color: var(--blue); }
@@ -720,6 +757,7 @@ img { max-width: 100%; display: block; }
     border-radius: var(--radius-sm);
     background: var(--white);
     box-shadow: 4px 4px 0 var(--black);
+    overflow: hidden;
 }
 
 .faq-item summary {
@@ -734,6 +772,11 @@ img { max-width: 100%; display: block; }
     justify-content: space-between;
     align-items: center;
     gap: 16px;
+    transition: var(--transition);
+}
+
+.faq-item summary:hover {
+    background: var(--offwhite);
 }
 
 .faq-item summary::-webkit-details-marker { display: none; }
@@ -972,6 +1015,7 @@ img { max-width: 100%; display: block; }
     line-height: 1.3;
     color: var(--white);
     margin-bottom: 22px;
+    text-wrap: balance;
 }
 
 .objecao-text {
@@ -1004,6 +1048,7 @@ img { max-width: 100%; display: block; }
     line-height: 1.1;
     color: var(--white);
     margin-bottom: 20px;
+    text-wrap: balance;
 }
 
 .cta-final-title .hl { color: var(--blue-light); }
@@ -1088,7 +1133,8 @@ img { max-width: 100%; display: block; }
    ========================================================================== */
 .whatsapp-float {
     position: fixed;
-    bottom: 28px; right: 28px;
+    bottom: calc(28px + env(safe-area-inset-bottom));
+    right: calc(28px + env(safe-area-inset-right));
     width: 58px; height: 58px;
     background-color: #25D366;
     border: 2px solid var(--black);
@@ -1114,7 +1160,11 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 480px) {
-    .whatsapp-float { bottom: 20px; right: 20px; width: 52px; height: 52px; }
+    .whatsapp-float {
+        bottom: calc(20px + env(safe-area-inset-bottom));
+        right: calc(20px + env(safe-area-inset-right));
+        width: 52px; height: 52px;
+    }
 }
 
 /* ==========================================================================
@@ -1308,7 +1358,7 @@ img { max-width: 100%; display: block; }
 .cookie-consent {
     position: fixed;
     left: 20px;
-    bottom: 20px;
+    bottom: calc(20px + env(safe-area-inset-bottom));
     z-index: 1200;
     max-width: 430px;
     background: var(--offwhite);
@@ -1357,7 +1407,28 @@ img { max-width: 100%; display: block; }
 .cookie-consent__btn--accept:hover { box-shadow: 6px 6px 0 var(--black); }
 
 @media (max-width: 560px) {
-    .cookie-consent { left: 12px; right: 12px; bottom: 12px; max-width: none; }
+    .cookie-consent {
+        left: 12px; right: 12px;
+        bottom: calc(12px + env(safe-area-inset-bottom));
+        max-width: none;
+    }
     .cookie-consent__actions { flex-direction: row; }
-    .cookie-consent__btn { flex: 1; }
+    .cookie-consent__btn { flex: 1; touch-action: manipulation; }
+
+    /* O banner de cookie e o botão do WhatsApp disputam o mesmo canto no mobile.
+       Enquanto o banner está aberto, o botão fica escondido (e inacessível por trás dele). */
+    body.cc-banner-open .whatsapp-float { display: none; }
+}
+
+/* ==========================================================================
+   PREFERS-REDUCED-MOTION
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }

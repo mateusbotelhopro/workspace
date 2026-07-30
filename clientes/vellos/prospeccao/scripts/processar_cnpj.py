@@ -6,7 +6,6 @@ Campos de saida: nome do socio, telefone (whatsapp), endereco, atuacao (CNAE pri
 """
 
 import argparse
-import csv
 import html
 import math
 import re
@@ -41,6 +40,10 @@ def normalize_phone(raw: str):
         return None, False
     ddd = national[:2]
     if not ddd.isdigit() or int(ddd) < 11 or int(ddd) > 99:
+        return None, False
+    # Só celular (WhatsApp): DDD + 9 dígitos, com "9" logo após o DDD.
+    # Fixo (DDD + 8 dígitos) não recebe WhatsApp, então é descartado aqui.
+    if len(national) != 11 or national[2] != "9":
         return None, False
     return "55" + national, True
 
@@ -133,15 +136,6 @@ def load_and_clean(inputs):
     return rows, stats
 
 
-def write_csv(rows, output_path: Path):
-    with open(output_path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(
-            f, fieldnames=["nome_socio", "telefone_original", "whatsapp", "endereco", "atuacao", "email"]
-        )
-        writer.writeheader()
-        writer.writerows(rows)
-
-
 def write_html(rows, output_path: Path, title: str, parte_num: int, total_partes: int):
     def esc(s):
         return html.escape(str(s)) if s else ""
@@ -223,17 +217,14 @@ def main():
     partes = [rows[i * tamanho:(i + 1) * tamanho] for i in range(n)]
 
     for i, parte in enumerate(partes, start=1):
-        parte_dir = out_dir / f"Lista {i} - {len(parte)} contatos"
-        parte_dir.mkdir(parents=True, exist_ok=True)
-        write_csv(parte, parte_dir / "lista.csv")
-        write_html(parte, parte_dir / "lista.html", args.title, i, n)
+        write_html(parte, out_dir / f"lista-{i}.html", args.title, i, n)
 
     print(f"Recebidos (combinado): {stats['total_recebido']}")
     print(f"Removidos (sem telefone válido): {stats['removidos_sem_telefone_valido']}")
     print(f"Removidos (duplicados): {stats['removidos_duplicado']}")
     print(f"Total final: {stats['total_final']}")
     for i, parte in enumerate(partes, start=1):
-        print(f"Lista {i}: {len(parte)} contatos -> {out_dir / f'Lista {i} - {len(parte)} contatos' / 'lista.html'}")
+        print(f"Lista {i}: {len(parte)} contatos -> {out_dir / f'lista-{i}.html'}")
 
 
 if __name__ == "__main__":

@@ -22,10 +22,12 @@
 ## Entregas
 
 - [x] Link-in-bio (site estilo linktree) — `link.eduardasouzaacademy.online/`
+- [ ] Landing page de captação "A Nova Era / Piercer Elite PRO" — `eduardasouzaacademy.online/` (em produção, lançamento 13/08/2026). Pendente: link real do grupo de WhatsApp VIP pro botão "Quero ser VIP" (hoje é placeholder no `<script>` do index.html)
 
 ## Acessos e contas conectadas
 
 - Domínio: `link.eduardasouzaacademy.online`
+- Domínio: `eduardasouzaacademy.online` (landing page de captação)
 - WhatsApp agendamento: wa.me/message/TTI7EOWDN2KJG1
 - WhatsApp formação: wa.me/message/HWGLT2DQLRKGP1
 - Google Maps: maps.app.goo.gl/yRtvKETYHhrRkky76

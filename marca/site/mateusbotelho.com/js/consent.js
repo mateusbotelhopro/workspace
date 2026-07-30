@@ -56,6 +56,7 @@
     function removeBanner() {
         var b = document.getElementById('cookie-consent');
         if (b) b.parentNode.removeChild(b);
+        document.body.classList.remove('cc-banner-open');
     }
 
     function accept() { setChoice('accepted'); removeBanner(); loadTracking(); }
@@ -76,8 +77,11 @@
                 '</div>' +
             '</div>';
         document.body.appendChild(banner);
-        banner.querySelector('[data-cc-accept]').addEventListener('click', accept);
+        document.body.classList.add('cc-banner-open');
+        var acceptBtn = banner.querySelector('[data-cc-accept]');
+        acceptBtn.addEventListener('click', accept);
         banner.querySelector('[data-cc-reject]').addEventListener('click', reject);
+        acceptBtn.focus();
     }
 
     var choice = getChoice();
