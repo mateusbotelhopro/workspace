@@ -303,6 +303,7 @@
 
   .feedback-scroll {
     display: flex;
+    align-items: flex-start;
     gap: 20px;
     overflow-x: auto;
     scroll-snap-type: x proximity;
@@ -502,6 +503,7 @@
   .metodo { text-align: center; padding-top: 10px; }
   .metodo h2 { font-size: clamp(24px, 4.5vw, 34px); margin: 14px 0 8px; }
   .metodo .sub { color: var(--muted-cream); font-size: 15px; margin-bottom: 54px; }
+  @media (max-width: 640px) { .metodo { padding-left: 10px; padding-right: 10px; } }
 
   .metodo-box {
     position: relative;
@@ -533,6 +535,10 @@
     object-position: 55% 50%;
   }
   @media (max-width: 640px) { .metodo-box { padding: 60px 22px 34px; } }
+
+  .metodo-box--img { padding: 20px; background: #000; }
+  .metodo-img { display: block; width: 100%; max-width: 720px; margin: 0 auto; border-radius: 14px; }
+  @media (max-width: 640px) { .metodo-box--img { padding: 10px; } }
 
   .pilares-grid {
     display: flex;
@@ -915,43 +921,8 @@
       <h2 class="gold-text">Os 3 pilares do método</h2>
       <p class="sub">O método que está mudando vidas de mulheres.</p>
 
-      <div class="metodo-box">
-        <div class="gem-photo"><img src="img/diamante-pilares.png" alt="Diamante — símbolo dos 3 pilares do método"></div>
-        <div class="pilares-grid">
-          <div class="pilar">
-            <div class="pilar-ic" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="13" y1="35" x2="30" y2="18"></line>
-                <path d="M27 15l6 6-3 3-6-6z"></path>
-                <circle cx="34" cy="14" r="2.4" fill="currentColor" stroke="none"></circle>
-              </svg>
-            </div>
-            <h3 class="pilar-title">Técnica</h3>
-            <p class="pilar-desc">Domínio, precisão e segurança em <b>cada perfuração</b>.</p>
-          </div>
-          <div class="pilar">
-            <div class="pilar-ic" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M8 20v8h5l15 8V12l-15 8H8z"></path>
-                <path d="M28 18a6 6 0 010 12"></path>
-                <path d="M13 28v6a2 2 0 002 2h1a2 2 0 002-2v-4"></path>
-              </svg>
-            </div>
-            <h3 class="pilar-title">Divulgação</h3>
-            <p class="pilar-desc">Estratégias que posicionam, atraem e <b>convertem clientes</b>.</p>
-          </div>
-          <div class="pilar">
-            <div class="pilar-ic" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="12" y="9" width="24" height="31" rx="3"></rect>
-                <path d="M18 9V7a2 2 0 012-2h8a2 2 0 012 2v2"></path>
-                <path d="M17 22l4.5 4.5L31 17"></path>
-              </svg>
-            </div>
-            <h3 class="pilar-title">Gestão</h3>
-            <p class="pilar-desc">Organize, planeje e escale <b>o seu negócio</b> com inteligência.</p>
-          </div>
-        </div>
+      <div class="metodo-box metodo-box--img">
+        <img class="metodo-img" src="img/pilares-metodo.jpg" alt="Os 3 pilares do método: Técnica, Divulgação e Gestão">
       </div>
     </div>
   </section>
