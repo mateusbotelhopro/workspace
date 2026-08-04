@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Variação 3 — Story</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --off: #F4F4F2;
+  --black: #0A0A0B;
+  --blue: #2438E8;
+  --blue-light: #4F6BFF;
+  --blue-deep: #0E1A8C;
+  --white: #FFFFFF;
+}
+
+body {
+  width: 1080px;
+  height: 1920px;
+  background: var(--blue-deep);
+  font-family: 'Archivo', sans-serif;
+  overflow: hidden;
+}
+
+.frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 260px 84px 300px;
+}
+
+.tag {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  padding: 18px 34px;
+  border-radius: 100px;
+  border: 2px solid var(--black);
+  background: var(--off);
+  color: var(--black);
+  font-family: 'Archivo Black', sans-serif;
+  text-transform: uppercase;
+  font-size: 26px;
+  letter-spacing: 0.04em;
+  box-shadow: 5px 5px 0 var(--black);
+}
+
+.number {
+  margin-top: 60px;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  font-size: 158px;
+  line-height: 1;
+  color: var(--off);
+  letter-spacing: -1px;
+}
+
+.number .cifra { color: var(--blue-light); }
+
+.number-label {
+  margin-top: 6px;
+  font-family: 'Archivo Black', sans-serif;
+  text-transform: uppercase;
+  font-size: 44px;
+  letter-spacing: 0.02em;
+  color: var(--off);
+}
+
+.headline {
+  margin-top: 56px;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 62px;
+  line-height: 1.15;
+  color: var(--off);
+  max-width: 860px;
+}
+
+.sub {
+  margin-top: 36px;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #C7CBD6;
+  max-width: 820px;
+}
+
+.bottom {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.cta {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 16px;
+  padding: 28px 54px;
+  border-radius: 100px;
+  border: 2px solid var(--black);
+  background: var(--off);
+  color: var(--black);
+  font-family: 'Archivo Black', sans-serif;
+  text-transform: uppercase;
+  font-size: 34px;
+  letter-spacing: 0.02em;
+  box-shadow: 6px 6px 0 var(--black);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(244,244,242,0.18);
+}
+
+.brand img { height: 34px; width: auto; display: block; }
+
+.brand .handle {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  font-size: 27px;
+  color: #B8BFE0;
+}
+</style>
+</head>
+<body>
+  <div class="frame">
+    <span class="tag">Gestão de tráfego pago</span>
+    <div class="number"><span class="cifra">R$</span> 1 MILHÃO</div>
+    <div class="number-label">em anúncios geridos</div>
+    <h1 class="headline">Quase isso. Zero enrolação.</h1>
+    <p class="sub">Google Ads e Meta Ads pra negócio de alto ticket que quer parar de depender só de indicação.</p>
+    <div class="bottom">
+      <span class="cta">Chama no WhatsApp</span>
+      <div class="brand">
+        <img src="file:///C:/Users/mateu/Desktop/BotelhoOS/marca/logo/logo-negativa.svg" alt="Mateus Botelho">
+        <span class="handle">@botelho.ag</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

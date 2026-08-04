@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Variação 1 — Story</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --off: #F4F4F2;
+  --black: #0A0A0B;
+  --blue: #2438E8;
+  --blue-light: #4F6BFF;
+  --white: #FFFFFF;
+  --gray: #8A8A92;
+}
+
+body {
+  width: 1080px;
+  height: 1920px;
+  background: var(--black);
+  font-family: 'Archivo', sans-serif;
+  overflow: hidden;
+}
+
+.frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 260px 84px 300px;
+}
+
+.tag {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  padding: 18px 34px;
+  border-radius: 100px;
+  border: 2px solid var(--black);
+  background: var(--blue);
+  color: var(--white);
+  font-family: 'Archivo Black', sans-serif;
+  text-transform: uppercase;
+  font-size: 26px;
+  letter-spacing: 0.04em;
+  box-shadow: 5px 5px 0 var(--blue-light);
+}
+
+.headline {
+  margin-top: 64px;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 100px;
+  line-height: 1.08;
+  letter-spacing: 0.2px;
+  color: var(--off);
+}
+
+.headline .hl { color: var(--blue-light); }
+
+.sub {
+  margin-top: 48px;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #C7CBD6;
+  max-width: 860px;
+}
+
+.bottom {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.cta {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 16px;
+  padding: 30px 56px;
+  border-radius: 100px;
+  border: 2px solid var(--black);
+  background: var(--blue);
+  color: var(--white);
+  font-family: 'Archivo Black', sans-serif;
+  text-transform: uppercase;
+  font-size: 36px;
+  letter-spacing: 0.02em;
+  box-shadow: 6px 6px 0 var(--blue-light);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.brand img { height: 34px; width: auto; display: block; }
+
+.brand .handle {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  font-size: 27px;
+  color: var(--gray);
+}
+</style>
+</head>
+<body>
+  <div class="frame">
+    <span class="tag">Gestão de tráfego pago</span>
+    <h1 class="headline">Cansado de esperar <span class="hl">indicação</span> pra fechar cliente?</h1>
+    <p class="sub">Tráfego pago com previsibilidade, não com sorte.</p>
+    <div class="bottom">
+      <span class="cta">Chama no WhatsApp</span>
+      <div class="brand">
+        <img src="file:///C:/Users/mateu/Desktop/BotelhoOS/marca/logo/logo-negativa.svg" alt="Mateus Botelho">
+        <span class="handle">@botelho.ag</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
