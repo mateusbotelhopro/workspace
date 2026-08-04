@@ -24,13 +24,28 @@ Automação de atendimento via WhatsApp usando N8N + Evolution API, com IA conve
 - **2026-07-24: primeiro teste rodou "com sucesso" mas não respondeu.** Causa: a instância `Botelho` (pessoal, já com webhook apontado pra esse fluxo desde antes) recebeu a mensagem de teste, mas o node de envio estava fixo mandando pra instância `lucrobom` — que ainda não existe — e como o node tem `continueRegularOutput`, o erro foi engolido e a execução apareceu como sucesso. Corrigido: o node "Enviar resposta (Evolution API)" agora usa dinamicamente `server_url`/`instance`/`apikey` do próprio payload recebido (mesmo padrão dos outros workflows desse n8n), em vez de um nome de instância fixo — funciona com qualquer instância que disparar o webhook, incluindo a `lucrobom` quando ela existir.
 - **2026-07-24: segundo teste — mensagem foi enviada mas com status ERROR de entrega.** Conferi direto no histórico de mensagens da Evolution API: o bot respondeu ("Oi! Como posso te ajudar hoje?"), mas a entrega falhou. Causa: a mensagem de teste chegou com `key.remoteJid` no formato novo `@lid` do WhatsApp (ex: `30404107047007@lid`, endereçamento por device-id, não por número), e o Roteador estava montando o número de destino a partir desse valor — que não é um JID/telefone válido pra enviar. O JID de telefone real vem em `key.remoteJidAlt` (ex: `553171560883@s.whatsapp.net`). Corrigido: o node "Roteador" agora usa `remoteJidAlt` sempre que `remoteJid` termina em `@lid`.
 - Credenciais reaproveitadas do n8n: `OpenAI - Lucro Bom` (openAiApi). O envio via Evolution não usa credencial fixa — pega `apikey`/`server_url`/`instance` do payload recebido.
-- **Pendente pra ativar em produção:**
-  - [x] Criar a instância dedicada `lucrobom` na Evolution API
-  - [x] Conectar o número via QR code
-  - [x] Configurar o webhook da instância (`lucro-bom-whatsapp`, `webhookBase64: true`)
-  - [ ] Preencher no workflow os placeholders `[LINK DO PORTAL - PREENCHER]` e `[WHATSAPP AGENDAMENTO ESPECIALISTAS - PREENCHER]` (node "Resposta: teleconsulta") — conteúdo real ainda não informado
+- **Pendente pra ativar em produção (setup atual: instância + workflow "BotelhoIA"):**
+  - [x] Instância Evolution conectada e webhook configurado
+  - [x] Workflow ativo no N8N com a persona Pedro Paulo
+  - [x] Roteador por palavra-chave (teleconsulta, dentista, dependentes, psicóloga) implementado, 2026-07-31
+  - [x] Pausa real de 30 min após handoff implementada via Redis, 2026-07-31
+  - [ ] Preencher o link do portal de teleconsulta + WhatsApp de agendamento de especialistas (hoje com placeholder `[PREENCHER]` no texto de resposta — ver Contexto 2026-07-31)
   - [ ] Testar os 3 tipos de mensagem (texto, áudio, imagem) e confirmar entrega de verdade (status diferente de ERROR) antes de considerar migrado
 - **Handoff pra humano:** a IA escala sozinha — quando decide que precisa de atendente humano (cliente insatisfeito, pedido explícito, negociação/cancelamento, dúvida técnica sem certeza, ou dentista fora de Abre Campo), ela termina a resposta com um marcador interno (`[[HANDOFF]]`, nunca mostrado ao cliente) e o fluxo fica em silêncio pra esse telefone por 30 min. Implementado em memória (`$getWorkflowStaticData`), sem Redis.
+- **2026-07-31: nova auditoria — o workflow de 07-24 foi abandonado, produção migrou pra um workflow/instância compartilhada chamada "BotelhoIA".** Conferido direto via API (N8N + Evolution) com as credenciais de `acessos.md`: o workflow antigo `Lucro Bom - Atendimento WhatsApp (Evolution API + IA)` (id `GmZuyxqugyClPoYE`) está inativo e arquivado desde 2026-07-27. A instância dedicada `lucrobom` não existe mais (404). **O setup real em produção hoje é outro**, confirmado pelo Mateus:
+  - Instância Evolution: `BotelhoIA` (número 55 47 9267-0813, token `BF356BAE1768-42DF-B36C-A35A67A1CDAD`), webhook → `webhook.kortexcompany.cloud/webhook/BotelhoIA`
+  - Workflow N8N: `BotelhoIA` (id `tJn24kuW6TRwCCFP`), **ativo**, última atualização 2026-07-31 — webhook path `BotelhoIA` (mesmo webhookId que antes pertencia ao workflow `CastilhoIA_Agendamentos`, de outro cliente — essa infra foi reaproveitada). O node "Atendente" já roda a persona Pedro Paulo/Lucro Bom com o system prompt certo, credenciais `OpenAI Botelho` e `Redis Botelho`.
+  - **Gap encontrado no workflow ativo:** o system prompt do Pedro Paulo assume que teleconsulta/plantão/pediatra, dentista, dependentes e psicóloga "já são respondidas automaticamente antes de chegar até você" — mas esse workflow **não tem nenhum roteador por palavra-chave**, só webhook → filtro fromMe → tipo de mensagem → IA direto. Ou seja, o roteiro fixo documentado abaixo (link de teleconsulta, pergunta de cidade pro dentista, coleta de dados de dependentes) **não está implementado** nessa versão — tudo cai na IA, que vai inventar ou travar nesses casos.
+  - **Gap 2:** o handoff (`[[HANDOFF]]`) só é removido do texto de saída (regex no node "Segmentos") — não encontrei lógica de pausa/silêncio de 30 min pro telefone depois do handoff (o `$getWorkflowStaticData` do workflow antigo não está presente aqui). Hoje o marcador só limpa o texto, não pausa o atendimento.
+  - Nome do cliente e produtos ainda constam corretos no prompt; falta reconciliar isso com o roteiro fixo antes de considerar 100% migrado.
+- **2026-07-31: gaps do workflow ativo corrigidos.** Atualizei o workflow `BotelhoIA` (id `tJn24kuW6TRwCCFP`) direto via API do N8N, mantendo tudo que já existia (batching/debounce de 8s, transcrição de áudio, análise de imagem, memória Redis do Atendente):
+  - **Roteador por palavra-chave** inserido logo após o texto/áudio/imagem virar uma única mensagem combinada (node "messages"), antes de chegar no Atendente. Novo node de código "Roteador Palavra-Chave" classifica a mensagem por regex (teleconsulta/plantão/pediatra, dentista, dependentes, psicóloga, reset) e um Switch ("Switch Rotas") direciona pra resposta fixa correspondente ou, se nada bater, segue pro Atendente (IA) normalmente. Lógica testada isoladamente (11 casos, todos passaram) antes do deploy.
+  - **Fluxo de cidade do dentista** implementado com estado em Redis (chave `cidade-{remoteJid}`, TTL 10 min): pergunta a cidade, se a resposta contém "abre campo" retorna o contato do Instituto Felipe Abreu, qualquer outra cidade aciona handoff pra consultor humano (mesma regra do roteiro, ainda sem lista completa de cidades).
+  - **Pausa de handoff real** implementada via Redis (chave `handoff-{remoteJid}`, TTL 30 min = 1800s): um node novo ("Detecta Handoff") verifica se a resposta do Atendente contém `[[HANDOFF]]` e, se sim, seta essa chave. No início do fluxo, antes de qualquer processamento, um gate novo ("Get Handoff" + "Handoff Ativo?") checa essa chave e, se ativa, o fluxo termina em silêncio sem responder — nenhuma mensagem chega no cliente enquanto o handoff estiver ativo.
+  - **Comando de reset** implementado: mensagens batendo no regex de reset limpam o estado "aguardando cidade" e respondem confirmando o recomeço, tem prioridade sobre qualquer outro roteamento.
+  - **Bug do `@lid` corrigido também aqui** (o mesmo problema documentado em 2026-07-24 pro workflow antigo estava presente nesse também): o node "Responde texto" agora usa `key.remoteJidAlt` como número de destino sempre que `key.remoteJid` vem no formato `@lid` (endereçamento por device-id, não é JID de telefone válido).
+  - **Conteúdo ainda com placeholder** (pendente, ver checklist acima): link do portal de teleconsulta, WhatsApp de agendamento de especialistas. O texto da psicóloga ficou só com a confirmação de retorno (sem link, igual já estava documentado como pendência).
+  - **Gap de verificação:** consegui validar a estrutura do grafo (sem conexões quebradas), confirmar via API que o workflow subiu ativo com os nós novos, e testar a lógica do roteador isoladamente fora do n8n. Não consegui inspecionar o log de execução real dentro do n8n pra confirmar que uma mensagem de teste percorreu o caminho esperado — a API key atual (`claude-code-lucro-bom`) não tem escopo pra ler `/executions` (retorna 403). Recomendo abrir o n8n e olhar a última execução do workflow `BotelhoIA` pra confirmar visualmente, ou gerar uma API key nova com escopo de execução se quiser que eu confira isso da próxima vez.
 - Histórico Z-API (abandonado 2026-07-24): chip dedicado foi comprado e credenciais criadas, mas a instância nunca saiu do estado "precisa assinar novamente" — decisão foi voltar pra Evolution API em vez de resolver a assinatura.
 - Histórico Evolution API v1 (resolvido, mantido só como referência): instância `lucrobom` original teve dois `device_removed` em 2026-07-15 por número compartilhado, e um bug de webhook em 2026-07-16 (`webhookByEvents` vs `byEvents`). Essa instância não existe mais — a nova precisa ser criada do zero.
 - Prazo/orçamento: a definir
@@ -47,7 +62,11 @@ Respostas prontas (fixas, disparadas por palavra-chave, sem passar pela IA):
 
 Perguntas fora desse roteiro caem na IA (gpt-4o-mini) com o prompt do Pedro Paulo, usando a lista de produtos da Lucro Bom como base.
 
+Implementado no workflow `BotelhoIA` desde 2026-07-31 (ver Contexto).
+
 **Pendências:**
+
+- [ ] Link do portal de teleconsulta + WhatsApp de agendamento de especialistas (hoje com placeholder no texto)
 - [ ] Link/texto da resposta de psicóloga
 - [ ] Lista completa de cidades atendidas por dentista (hoje só Abre Campo)
 
@@ -65,5 +84,7 @@ Perguntas fora desse roteiro caem na IA (gpt-4o-mini) com o prompt do Pedro Paul
 ## Entregas
 - [x] Configurar N8N
 - [x] Reconstruir o fluxo de atendimento com IA (webhook → N8N → IA → resposta), 2026-07-24
-- [ ] Criar e conectar instância dedicada na Evolution API (ver pendências em Contexto — workflow já pronto, falta a instância)
+- [x] Instância Evolution dedicada conectada e workflow ativo em produção (setup "BotelhoIA", 2026-07-31)
+- [x] Roteiro fixo por palavra-chave e pausa de handoff implementados no workflow ativo, 2026-07-31
+- [ ] Preencher conteúdo pendente (link teleconsulta, WhatsApp especialistas, texto psicóloga) e confirmar visualmente no n8n que a execução percorre o caminho esperado (ver gap de verificação em Contexto 2026-07-31)
 - [ ] Definir base de conhecimento completa do atendimento (planos, coberturas, preços, carência etc.)
