@@ -59,7 +59,9 @@ Tarefas desse cliente ficam em [tarefas/eduardo-rodrigues.md](../../tarefas/edua
 
 Registrar aqui decisões importantes de estratégia, mudanças de direção, ou aprendizados específicos desse cliente que não estão no briefing (ex: "testamos X em [mês/ano] e não funcionou porque Y").
 
-Ambiente parceiro — onboarding padrão não rodado. Briefing será montado a partir dos arquivos e formato que o Eduardo vai enviar.
+Ambiente parceiro — onboarding padrão não rodado. Briefing montado a partir dos arquivos enviados pelo Eduardo (Blueprint do funil, Organograma, VSL).
+
+**2026-08-06 — LP01 (primeira versão):** montada em `landing-page/index.html`, seguindo o padrão técnico do workspace (HTML estático, CSS inline, sem framework — mesmo padrão de `clientes/juliana-do-trafego/site-captacao/`). Estrutura adaptada do modelo metodofas.com.br: hero → identificação → quebra de crença → 4 pilares → método (8 módulos) → público-alvo → credibilidade do Eduardo → prova de "liberdade" (fotos de viagem) → formulário de captação → FAQ → CTA final. Fotos do Drive processadas em `landing-page/fotos/` (HEIC convertido pra JPG, redimensionado pra web). Pendências antes de publicar: WhatsApp real, domínio definitivo, backend do formulário — ver `tarefas/eduardo-rodrigues.md`.
 
 ---
 

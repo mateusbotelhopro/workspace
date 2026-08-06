@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operação Livre | Saia da CLT e construa sua operação regional</title>
+  <meta name="description" content="Método para gestores de tráfego e donos de pequenas agências construírem uma operação regional, enxuta e lucrativa — que continua funcionando mesmo quando você não está na frente do computador.">
+  <link rel="canonical" href="https://operacaolivre.com.br/">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0E0E10">
+  <meta name="author" content="Eduardo Rodrigues">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://operacaolivre.com.br/">
+  <meta property="og:site_name" content="Operação Livre">
+  <meta property="og:title" content="Operação Livre | Saia da CLT e construa sua operação regional">
+  <meta property="og:description" content="Método para gestores de tráfego e donos de pequenas agências construírem uma operação regional, enxuta e lucrativa — que continua funcionando mesmo quando você não está na frente do computador.">
+  <meta property="og:image" content="https://operacaolivre.com.br/fotos/foto-07.jpg">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Operação Livre | Saia da CLT e construa sua operação regional">
+  <meta name="twitter:description" content="Método para gestores de tráfego e donos de pequenas agências construírem uma operação regional, enxuta e lucrativa.">
+  <meta name="twitter:image" content="https://operacaolivre.com.br/fotos/foto-07.jpg">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Operação Livre",
+    "description": "Método para gestores de tráfego e donos de pequenas agências saírem da CLT e construírem uma operação regional, enxuta e lucrativa.",
+    "provider": {
+      "@type": "Person",
+      "name": "Eduardo Rodrigues"
+    }
+  }
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0E0E10;
+      --bg-alt: #17171A;
+      --card: #1C1C20;
+      --card-border: rgba(255,255,255,0.08);
+      --gold: #D9A34A;
+      --gold-light: #F0C078;
+      --text: #F3F1EC;
+      --text-dim: #B7B4AC;
+      --text-faint: #85827B;
+      --paper: #F4F2ED;
+      --paper-text: #17171A;
+      --font-display: 'Space Grotesk', 'Inter', sans-serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; display: block; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    a { color: inherit; }
+
+    .eyebrow {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 30px;
+      border-radius: 6px;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 0.3px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(180deg, var(--gold-light), var(--gold));
+      color: #17130A;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(217,163,74,0.28); }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border: 1.5px solid rgba(255,255,255,0.22);
+    }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ── Header ── */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(14,14,16,0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--card-border);
+      padding: 18px 0;
+    }
+    .header .container { display: flex; align-items: center; justify-content: space-between; }
+    .logo {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .logo span { color: var(--gold); }
+    .header .btn { padding: 11px 22px; font-size: 13.5px; }
+    .header-cta-wrap { display: flex; align-items: center; }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 64px 0 88px;
+      background: radial-gradient(ellipse 900px 500px at 80% -10%, rgba(217,163,74,0.14), transparent 60%);
+    }
+    .hero .container {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: clamp(30px, 4.4vw, 50px);
+      margin: 18px 0 22px;
+    }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero p.lead {
+      font-size: 18px;
+      color: var(--text-dim);
+      max-width: 52ch;
+      margin-bottom: 32px;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 26px; }
+    .hero-trust {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      font-size: 13.5px;
+      color: var(--text-faint);
+    }
+    .hero-trust span { display: flex; align-items: center; gap: 6px; }
+    .hero-trust span::before { content: "✓"; color: var(--gold); font-weight: 700; }
+
+    .hero-media { position: relative; }
+    .hero-media img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid var(--card-border);
+    }
+    .hero-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 14px;
+      background: linear-gradient(180deg, transparent 55%, rgba(14,14,16,0.85));
+      pointer-events: none;
+    }
+    .hero-badge {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+      z-index: 2;
+      background: rgba(14,14,16,0.9);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 13px;
+      color: var(--text-dim);
+      max-width: 260px;
+    }
+    .hero-badge strong { display: block; color: var(--text); font-family: var(--font-display); font-size: 14px; margin-bottom: 2px; }
+
+    /* ── Section shells ── */
+    section { padding: 84px 0; }
+    .section-alt { background: var(--bg-alt); }
+    .section-paper { background: var(--paper); color: var(--paper-text); }
+    .section-head { max-width: 640px; margin: 0 auto 48px; text-align: center; }
+    .section-head .eyebrow { display: block; margin-bottom: 12px; }
+    .section-head h2 { font-size: clamp(26px, 3.4vw, 38px); margin-bottom: 14px; }
+    .section-head p { color: var(--text-dim); font-size: 16.5px; }
+    .section-paper .section-head p { color: #4B4A45; }
+
+    /* ── Identificação ── */
+    .id-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: center; }
+    .id-photo { border-radius: 14px; overflow: hidden; border: 1px solid var(--card-border); }
+    .id-photo img { aspect-ratio: 3/4; object-fit: cover; }
+    .id-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+    .id-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      font-size: 16.5px;
+      color: var(--text-dim);
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .id-list li:last-child { border-bottom: none; }
+    .id-list li::before { content: "→"; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+    .id-list strong { color: var(--text); }
+
+    /* ── Quebra de crença ── */
+    .belief {
+      text-align: center;
+      padding: 90px 0;
+    }
+    .belief .container { max-width: 780px; }
+    .belief p.small {
+      text-decoration: line-through;
+      color: var(--text-faint);
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .belief h2 {
+      font-size: clamp(24px, 3.6vw, 36px);
+      color: var(--text);
+    }
+    .belief h2 em { color: var(--gold); font-style: normal; }
+
+    /* ── Pilares ── */
+    .pilares-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .pilar-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 28px 22px;
+    }
+    .pilar-num {
+      font-family: var(--font-display);
+      font-size: 13px;
+      color: var(--gold);
+      letter-spacing: 1.5px;
+      margin-bottom: 14px;
+    }
+    .pilar-card h3 { font-size: 18px; margin-bottom: 10px; }
+    .pilar-card p { font-size: 14.5px; color: var(--text-dim); }
+
+    /* ── Método ── */
+    .metodo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .metodo-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: var(--bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 20px 22px;
+    }
+    .metodo-item .n {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--gold);
+      flex-shrink: 0;
+      width: 28px;
+    }
+    .metodo-item h4 { font-size: 15.5px; margin-bottom: 4px; }
+    .metodo-item p { font-size: 13.5px; color: var(--text-dim); }
+    .metodo-cta { text-align: center; margin-top: 40px; }
+
+    /* ── Público ── */
+    .publico-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .publico-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 12px;
+      padding: 26px 20px;
+      font-size: 14.5px;
+      color: #3B3A35;
+    }
+    .publico-card .ico { font-size: 22px; margin-bottom: 12px; display: block; }
+
+    /* ── Credibilidade ── */
+    .cred-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .cred-photos {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 14px;
+      height: 460px;
+    }
+    .cred-photos img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; border: 1px solid var(--card-border); }
+    .cred-photos .tall { grid-row: 1 / 3; }
+    .cred-text h2 { font-size: clamp(24px, 3.2vw, 32px); margin-bottom: 18px; }
+    .cred-text p { color: var(--text-dim); font-size: 16px; margin-bottom: 16px; }
+    .cred-stats { display: flex; gap: 28px; margin-top: 26px; flex-wrap: wrap; }
+    .cred-stats div strong { display: block; font-family: var(--font-display); font-size: 15px; color: var(--gold); }
+    .cred-stats div span { font-size: 13px; color: var(--text-faint); }
+
+    /* ── Liberdade strip ── */
+    .liberdade-head { text-align: center; max-width: 620px; margin: 0 auto 40px; }
+    .liberdade-strip {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+    .liberdade-strip img { aspect-ratio: 3/4; object-fit: cover; border-radius: 10px; border: 1px solid var(--card-border); }
+    .liberdade-quote {
+      text-align: center;
+      max-width: 640px;
+      margin: 36px auto 0;
+      font-family: var(--font-display);
+      font-size: 19px;
+      color: var(--text);
+    }
+    .liberdade-quote span { color: var(--gold); }
+
+    /* ── Lead form ── */
+    .lead-section { background: var(--card); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border); }
+    .lead-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .lead-copy h2 { font-size: clamp(26px, 3.4vw, 36px); margin-bottom: 16px; }
+    .lead-copy p { color: var(--text-dim); font-size: 16px; margin-bottom: 22px; }
+    .lead-copy ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .lead-copy li { font-size: 14.5px; color: var(--text-dim); display: flex; gap: 10px; }
+    .lead-copy li::before { content: "✓"; color: var(--gold); font-weight: 700; }
+
+    .lead-form {
+      background: var(--bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 36px;
+    }
+    .lead-form h3 { font-size: 19px; margin-bottom: 6px; }
+    .lead-form .sub { font-size: 13.5px; color: var(--text-faint); margin-bottom: 22px; }
+    .field { margin-bottom: 16px; }
+    .field label { display: block; font-size: 13px; color: var(--text-dim); margin-bottom: 6px; }
+    .field input, .field select {
+      width: 100%;
+      padding: 13px 14px;
+      background: var(--bg-alt);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 14.5px;
+    }
+    .field input:focus, .field select:focus { outline: none; border-color: var(--gold); }
+    .lead-form .btn { width: 100%; margin-top: 6px; padding: 15px; font-size: 15px; }
+    .form-note { font-size: 12px; color: var(--text-faint); margin-top: 14px; text-align: center; }
+    .form-success { display: none; text-align: center; padding: 20px 0; }
+    .form-success.show { display: block; }
+    .form-success strong { display: block; font-family: var(--font-display); font-size: 18px; color: var(--gold); margin-bottom: 8px; }
+
+    /* ── FAQ ── */
+    .faq-list { max-width: 720px; margin: 0 auto; }
+    .faq-item {
+      border-bottom: 1px solid var(--card-border);
+      padding: 20px 0;
+    }
+    .faq-item summary {
+      cursor: pointer;
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-icon { color: var(--gold); font-size: 20px; transition: transform 0.2s ease; }
+    .faq-item[open] .faq-icon { transform: rotate(45deg); }
+    .faq-item p { margin-top: 12px; color: var(--text-dim); font-size: 15px; max-width: 62ch; }
+
+    /* ── Final CTA ── */
+    .final-cta { text-align: center; }
+    .final-cta h2 { font-size: clamp(26px, 4vw, 40px); margin-bottom: 16px; }
+    .final-cta p { color: var(--text-dim); font-size: 17px; max-width: 56ch; margin: 0 auto 30px; }
+
+    /* ── Footer ── */
+    footer { padding: 40px 0; border-top: 1px solid var(--card-border); }
+    footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    footer .logo { font-size: 14px; }
+    footer p { font-size: 12.5px; color: var(--text-faint); }
+
+    /* ── Floating CTA ── */
+    .fab {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 200;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    }
+
+    @media (max-width: 880px) {
+      .hero .container { grid-template-columns: 1fr; gap: 36px; }
+      .hero-media { order: -1; max-width: 380px; margin: 0 auto; }
+      .id-grid { grid-template-columns: 1fr; }
+      .id-photo { max-width: 340px; margin: 0 auto; }
+      .pilares-grid { grid-template-columns: repeat(2, 1fr); }
+      .metodo-grid { grid-template-columns: 1fr; }
+      .publico-grid { grid-template-columns: repeat(2, 1fr); }
+      .cred-grid { grid-template-columns: 1fr; }
+      .cred-photos { height: 340px; }
+      .liberdade-strip { grid-template-columns: repeat(3, 1fr); }
+      .liberdade-strip img:nth-child(4), .liberdade-strip img:nth-child(5) { display: none; }
+      .lead-grid { grid-template-columns: 1fr; }
+      section { padding: 60px 0; }
+    }
+    @media (max-width: 540px) {
+      .pilares-grid { grid-template-columns: 1fr; }
+      .publico-grid { grid-template-columns: 1fr; }
+      .liberdade-strip { grid-template-columns: repeat(2, 1fr); }
+      .liberdade-strip img:nth-child(3) { display: none; }
+      .lead-form { padding: 26px 22px; }
+      .header .btn span { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">OPERAÇÃO <span>LIVRE</span></div>
+      <div class="header-cta-wrap">
+        <a href="#lead-form" class="btn btn-primary"><span>Quero minha vaga</span> →</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Hero ── -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-copy">
+        <div class="eyebrow">Para gestores de tráfego e donos de agência</div>
+        <h1>Você abriu uma agência ou criou um emprego onde <em>todos são seus chefes?</em></h1>
+        <p class="lead">O Método Operação Livre ensina você a sair da CLT e construir uma operação regional, enxuta e previsível — que continua funcionando mesmo quando você não está na frente do computador.</p>
+        <div class="hero-actions">
+          <a href="#lead-form" class="btn btn-primary">Quero conhecer o método →</a>
+          <a href="#metodo" class="btn btn-ghost">Ver como funciona</a>
+        </div>
+        <div class="hero-trust">
+          <span>Transição segura da CLT</span>
+          <span>Foco em autoridade regional</span>
+          <span>Mentoria ao vivo com Eduardo</span>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="fotos/foto-07.jpg" alt="Eduardo Rodrigues apresentando o método Operação Livre" loading="eager" fetchpriority="high">
+        <div class="hero-badge"><strong>Eduardo Rodrigues</strong>Criador do Método Operação Livre</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Identificação ── -->
+  <section class="section-alt">
+    <div class="container id-grid">
+      <div class="id-photo">
+        <img src="fotos/foto-01.jpg" alt="Setup de operação enxuta rodando de casa" loading="lazy">
+      </div>
+      <div>
+        <div class="eyebrow">Isso é pra você se...</div>
+        <h2 style="font-size:clamp(24px,3vw,32px); margin:14px 0 26px;">Sua agência te deu liberdade no papel, mas não na rotina</h2>
+        <ul class="id-list">
+          <li><span><strong>Você trabalha na CLT de dia e toca a agência à noite</strong>, sem parar de verdade em nenhum dos dois.</span></li>
+          <li><span><strong>Se você parar, a agência para.</strong> Se você parar de prospectar, as vendas somem.</span></li>
+          <li><span><strong>Tem medo de vender mais</strong> porque sabe que talvez não consiga entregar melhor com a estrutura que tem hoje.</span></li>
+          <li><span><strong>O WhatsApp nunca fica quieto</strong> — nem nas segundas, nem nos fins de semana.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Quebra de crença ── -->
+  <section class="belief">
+    <div class="container">
+      <p class="small">O problema não é vender mais.</p>
+      <h2>É construir uma <em>operação</em> que sobreviva ao seu crescimento.</h2>
+    </div>
+  </section>
+
+  <!-- ── 4 Pilares ── -->
+  <section class="section-alt" id="pilares">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">A grande ideia</span>
+        <h2>Você não precisa de uma agência enorme. Precisa de uma operação inteligente.</h2>
+        <p>Uma operação construída sobre quatro pilares — isso é o que permite crescer sem depender exclusivamente de você.</p>
+      </div>
+      <div class="pilares-grid">
+        <div class="pilar-card">
+          <div class="pilar-num">Pilar 01</div>
+          <h3>Autoridade Regional</h3>
+          <p>Pare de tentar conquistar o Brasil inteiro. Torne-se referência na sua cidade — mais rápido, mais barato e com oportunidades presenciais.</p>
+        </div>
+        <div class="pilar-card">
+          <div class="pilar-num">Pilar 02</div>
+          <h3>Retenção</h3>
+          <p>Uma agência não cresce só fechando contrato — cresce mantendo contrato. Aumente o LTV e transforme clientes em parceiros de longo prazo.</p>
+        </div>
+        <div class="pilar-card">
+          <div class="pilar-num">Pilar 03</div>
+          <h3>Expansão</h3>
+          <p>Existe faturamento escondido na sua carteira atual. Aumente o ticket médio sem parecer que está só tentando vender mais.</p>
+        </div>
+        <div class="pilar-card">
+          <div class="pilar-num">Pilar 04</div>
+          <h3>Operação</h3>
+          <p>Contrate parceiros sem montar estrutura pesada. Use ferramentas que reduzem a dependência do gestor no dia a dia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Método / módulos ── -->
+  <section id="metodo">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Dentro do método</span>
+        <h2>8 módulos para sair da condição de prestador e virar dono de operação</h2>
+        <p>Conteúdo gravado + aplicação prática, do jeito que Eduardo estruturou a própria operação.</p>
+      </div>
+      <div class="metodo-grid">
+        <div class="metodo-item"><div class="n">01</div><div><h4>Mentalidade da Agência Enxuta</h4><p>A virada de chave antes de qualquer processo: pensar como dono de operação, não como freelancer.</p></div></div>
+        <div class="metodo-item"><div class="n">02</div><div><h4>Aquisição Regional</h4><p>Como conquistar clientes da sua região sem depender só de tráfego pago.</p></div></div>
+        <div class="metodo-item"><div class="n">03</div><div><h4>Retenção e LTV</h4><p>Alinhar expectativa, estruturar reuniões e aumentar o tempo de vida de cada cliente.</p></div></div>
+        <div class="metodo-item"><div class="n">04</div><div><h4>Expansão da Carteira</h4><p>Identificar necessidades e ampliar contratos naturalmente, sem parecer venda forçada.</p></div></div>
+        <div class="metodo-item"><div class="n">05</div><div><h4>Rede de Parceiros</h4><p>Como contratar parceiros e delegar entregas sem virar refém da própria estrutura.</p></div></div>
+        <div class="metodo-item"><div class="n">06</div><div><h4>Processos, Ferramentas e Operação</h4><p>Organização, CRM, tarefas e financeiro — o esqueleto que sustenta o crescimento.</p></div></div>
+        <div class="metodo-item"><div class="n">07</div><div><h4>Marca e Autoridade Regional</h4><p>Construir reconhecimento local: conteúdo, presença e relacionamento na sua cidade.</p></div></div>
+        <div class="metodo-item"><div class="n">08</div><div><h4>Plano de Saída da CLT</h4><p>A transição segura — sair do emprego sem trocar um problema por outro.</p></div></div>
+      </div>
+      <div class="metodo-cta">
+        <a href="#lead-form" class="btn btn-primary">Quero fazer parte →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Público-alvo ── -->
+  <section class="section-paper">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Pra quem é</span>
+        <h2>Feito para quem já está no jogo, mas ainda não construiu a operação</h2>
+      </div>
+      <div class="publico-grid">
+        <div class="publico-card"><span class="ico">💼</span>Profissionais na CLT construindo uma agência paralelamente</div>
+        <div class="publico-card"><span class="ico">🚀</span>Gestores de tráfego iniciando com o primeiro cliente</div>
+        <div class="publico-card"><span class="ico">📈</span>Pequenas agências que faturam, mas dependem 100% do dono</div>
+        <div class="publico-card"><span class="ico">🎯</span>Prestadores de serviço que querem virar donos de uma operação</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Credibilidade ── -->
+  <section class="section-alt">
+    <div class="container cred-grid">
+      <div class="cred-photos">
+        <img class="tall" src="fotos/foto-03.jpg" alt="Eduardo Rodrigues trabalhando em sua operação">
+        <img src="fotos/foto-20.jpg" alt="Eduardo Rodrigues na mesa de trabalho">
+        <img src="fotos/foto-11.jpg" alt="Eduardo Rodrigues em ambiente de escritório">
+      </div>
+      <div class="cred-text">
+        <span class="eyebrow">Quem ensina</span>
+        <h2>Eduardo Rodrigues</h2>
+        <p>Criador do Método Operação Livre. Depois de viver a rotina de tocar agência fora do horário de trabalho, Eduardo estruturou o próprio jeito de operar — regional, enxuto e organizado — e hoje ensina gestores e donos de pequenas agências a fazer o mesmo.</p>
+        <p>Além do conteúdo gravado, Eduardo acompanha de perto quem está implementando: análise da operação, revisão de processos e bastidores reais em encontros ao vivo.</p>
+        <div class="cred-stats">
+          <div><strong>8 módulos</strong><span>Método completo</span></div>
+          <div><strong>2x/semana</strong><span>Mentoria ao vivo</span></div>
+          <div><strong>100% regional</strong><span>Foco em autoridade local</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Liberdade / prova visual ── -->
+  <section>
+    <div class="container">
+      <div class="liberdade-head">
+        <span class="eyebrow">O resultado</span>
+        <h2 style="font-size:clamp(24px,3.2vw,34px); margin-top:12px;">Uma segunda-feira com o WhatsApp quieto é sinal de uma operação saudável</h2>
+      </div>
+      <div class="liberdade-strip">
+        <img src="fotos/foto-08.jpg" alt="Eduardo Rodrigues" loading="lazy">
+        <img src="fotos/foto-13.jpg" alt="Eduardo Rodrigues" loading="lazy">
+        <img src="fotos/foto-16.jpg" alt="Eduardo Rodrigues" loading="lazy">
+        <img src="fotos/foto-17.jpg" alt="Eduardo Rodrigues" loading="lazy">
+        <img src="fotos/foto-21.jpg" alt="Eduardo Rodrigues" loading="lazy">
+      </div>
+      <p class="liberdade-quote">Não porque perdeu clientes. Mas porque <span>todos sabem o que fazer</span> — os planejamentos foram enviados, os parceiros conhecem os prazos, os clientes estão acompanhados.</p>
+    </div>
+  </section>
+
+  <!-- ── Lead form ── -->
+  <section class="lead-section" id="lead-form">
+    <div class="container lead-grid">
+      <div class="lead-copy">
+        <span class="eyebrow">Próximo passo</span>
+        <h2>Garanta sua vaga na lista do Operação Livre</h2>
+        <p>Preencha os dados abaixo. A equipe do Eduardo entra em contato pra te mostrar como o método se aplica à sua realidade.</p>
+        <ul>
+          <li>Sem compromisso — é uma conversa de diagnóstico</li>
+          <li>Resposta em até 1 dia útil</li>
+          <li>Vagas limitadas por turma</li>
+        </ul>
+      </div>
+      <div class="lead-form">
+        <form id="leadForm">
+          <h3>Quero conhecer o método</h3>
+          <p class="sub">Leva menos de 1 minuto</p>
+          <div class="field">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" required placeholder="Seu nome">
+          </div>
+          <div class="field">
+            <label for="whatsapp">WhatsApp</label>
+            <input type="tel" id="whatsapp" name="whatsapp" required placeholder="(00) 00000-0000">
+          </div>
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required placeholder="seu@email.com">
+          </div>
+          <div class="field">
+            <label for="situacao">Sua situação hoje</label>
+            <select id="situacao" name="situacao">
+              <option>Ainda na CLT, começando a agência</option>
+              <option>Já tenho os primeiros clientes</option>
+              <option>Tenho agência, mas dependo 100% de mim</option>
+              <option>Outra situação</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Quero minha vaga →</button>
+          <p class="form-note">Seus dados não serão compartilhados com terceiros.</p>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <strong>Recebemos seu contato!</strong>
+          <p style="color:var(--text-dim); font-size:14.5px;">A equipe do Eduardo vai falar com você em breve pelo WhatsApp informado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Perguntas frequentes</span>
+        <h2>Ainda com dúvida?</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Preciso sair da CLT agora pra começar?<span class="faq-icon">+</span></summary>
+          <p>Não. O método foi desenhado justamente pra quem está construindo a agência em paralelo à CLT e precisa de uma transição segura, não de um salto no escuro.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Funciona pra qualquer região do Brasil?<span class="faq-icon">+</span></summary>
+          <p>Sim. A lógica de autoridade regional funciona justamente por não depender de escala nacional — o foco é ser referência na sua própria cidade ou região.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Já tenho clientes, mas dependo de mim pra tudo. Ainda faz sentido?</summary>
+          <p>Esse é exatamente o ponto do Pilar 4 (Operação): reduzir a dependência do gestor com processos, ferramentas e uma rede de parceiros.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Como funciona a mentoria ao vivo com o Eduardo?<span class="faq-icon">+</span></summary>
+          <p>São encontros semanais pra analisar sua operação, revisar processos e tirar dúvidas de implementação — os detalhes de turma e formato são apresentados na conversa de diagnóstico.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Preencher o formulário me compromete a comprar algo?<span class="faq-icon">+</span></summary>
+          <p>Não. É o primeiro passo pra entender se o método faz sentido pra sua realidade — a decisão é sua, depois da conversa.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA final ── -->
+  <section class="section-alt final-cta">
+    <div class="container">
+      <h2>Construa uma operação que continue funcionando <em style="color:var(--gold); font-style:normal;">quando você não estiver na frente do computador.</em></h2>
+      <p>Se essa é a operação que você quer construir, o Método Operação Livre foi criado pra você.</p>
+      <a href="#lead-form" class="btn btn-primary">Quero minha vaga →</a>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container">
+      <div class="logo">OPERAÇÃO <span style="color:var(--gold);">LIVRE</span></div>
+      <p>© 2026 Operação Livre — Eduardo Rodrigues. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <a href="#lead-form" class="btn btn-primary fab">Quero minha vaga →</a>
+
+  <script>
+    document.getElementById('leadForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      // TODO: conectar a um endpoint real (webhook / Google Sheets / CRM) antes de publicar.
+      // Por enquanto, o formulário só confirma visualmente o envio, sem persistir o lead.
+      this.style.display = 'none';
+      document.getElementById('formSuccess').classList.add('show');
+    });
+  </script>
+
+</body>
+</html>
