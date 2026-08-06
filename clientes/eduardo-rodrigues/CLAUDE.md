@@ -32,6 +32,9 @@ Detalhes completos do negócio, objetivo, público e histórico estão em [brief
 - Google Ads — Customer ID: [xxx]
 - Meta Ads — Ad Account ID: [xxx]
 - Instagram/Facebook Page: [xxx]
+- **Hostinger** (hospedagem da landing page) — login: `midiafoxcontato@gmail.com` — senha: `@Rodrigues001` ou `@Rodrigues002`
+  - ⚠️ Repositório `workspace` no GitHub é público — essa credencial fica exposta publicamente ao sincronizar. Salvo aqui por decisão explícita do Mateus em 2026-08-06.
+- **Google Drive** (fotos para a LP): https://drive.google.com/drive/folders/1N34xFSrHZJKI434y7xIQ8zWFn-k4swiR
 - Outros: [xxx]
 
 ## Tom de voz deste cliente
