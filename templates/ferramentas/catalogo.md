@@ -55,6 +55,21 @@ npx playwright screenshot --viewport-size=1080,1350 --full-page "file:///caminho
 **Como usar numa skill:** `vercel --yes --prod` dentro da pasta do projeto
 **Quando usar:** Skills que constroem ou fazem deploy de apps Next.js, dashboards, plataformas
 
+### Hostinger (SSH) - hospedagem compartilhada
+**O que faz:** Publica arquivos estaticos (HTML, landing pages) via SSH/SCP num servidor compartilhado que hospeda varios dominios de clientes
+**Precisa de conta:** Sim, conta Hostinger (hPanel)
+**Configurar:**
+- Chave SSH: `~/.ssh/kortex_hostinger` (privada, fica local, nunca commitar). Publica (`kortex-deploy`) ja cadastrada em hPanel -> Avancado -> Acesso SSH
+- Host: `46.202.145.32` | Porta: `65002` | Usuario: `u389685078`
+- Cada dominio vive em `domains/{dominio}/public_html/` no servidor (ex: `domains/leady.pro/public_html/`)
+**Como usar numa skill:**
+```bash
+ssh -i ~/.ssh/kortex_hostinger -p 65002 u389685078@46.202.145.32 "ls domains/"   # confirmar pasta do dominio antes de subir
+scp -i ~/.ssh/kortex_hostinger -P 65002 -r ./landing-page/* u389685078@46.202.145.32:domains/{dominio}/public_html/
+```
+**Quando usar:** Publicar landing page/site de cliente que ja esta hospedado nessa conta Hostinger
+**Atencao:** Conta compartilhada com dominios de varios clientes diferentes no mesmo servidor. Sempre confirmar o nome exato da pasta em `domains/` antes de publicar, pra nao subir no lugar errado
+
 ---
 
 ## Publicar em redes sociais
