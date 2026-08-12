@@ -28,16 +28,18 @@
 
 <div class="note"><b>Como usar:</b> cada bloco de campanha tem grupos de anúncios com palavras-chave (com o tipo de correspondência já indicado) e o RSA (títulos + descrições) com contagem de caracteres. Títulos ≤30 caracteres, descrições ≤90. Botão "Copiar" em cada bloco copia só aquele conteúdo.</p>
 
+<div class="note"><b>Decisão estratégica (R$ 50/dia):</b> com verba nesse patamar, manter 3 estágios de funil e 9 grupos de anúncios diluía demais — cada grupo ficava sem volume pra gerar dado e o TOFU (educacional, longe da conversão) consumia orçamento sem gerar contato. Reestruturado para <b>2 campanhas</b> (Meio e Fundo) e <b>3 grupos de anúncios no total</b>, concentrando verba em quem já busca solução ou fornecedor — mais perto do clique no WhatsApp. TOFU fica documentado na seção 7 pra retomar quando o orçamento crescer (referência: acima de R$ 100/dia).</div>
+
 <h2>1. Configurações da campanha</h2>
 <table>
-<tr><th style="width:200px">Tipo</th><td>Rede de Pesquisa (Search) — 3 campanhas, uma por estágio de funil</td></tr>
+<tr><th style="width:200px">Tipo</th><td>Rede de Pesquisa (Search) — 2 campanhas ativas (Meio e Fundo de funil). Topo pausado por enquanto, ver seção 7</td></tr>
 <tr><th>Rede</th><td>Apenas Pesquisa do Google. Desmarcar "Rede de Display" e "parceiros de pesquisa"</td></tr>
 <tr><th>Objetivo</th><td>Leads / contato (clique no WhatsApp). Escolher "Criar campanha sem meta"</td></tr>
-<tr><th>Lance</th><td>Começar em Maximizar cliques com CPC máx.; migrar Meio/Fundo pra Maximizar conversões depois de ter dado</td></tr>
+<tr><th>Lance</th><td>Começar em Maximizar cliques com CPC máx.; migrar pra Maximizar conversões assim que tiver ~15-20 conversões acumuladas</td></tr>
 <tr><th>Localização</th><td>Brasil (ajustar se quiser focar em região específica). Marcar "Presença: pessoas nos locais-alvo"</td></tr>
 <tr><th>Idioma</th><td>Português</td></tr>
 <tr><th>Dispositivos</th><td>Todos, observar mobile (WhatsApp costuma vir do celular)</td></tr>
-<tr><th>Orçamento</th><td>Sugestão de partida: R$ 40/dia total — Topo R$ 6 · Meio R$ 14 · Fundo R$ 20 (15% / 35% / 50%). Ajustar conforme disponibilidade</td></tr>
+<tr><th>Orçamento</th><td>R$ 50/dia total — Meio R$ 18 (36%) · Fundo R$ 32 (64%). Fundo puxa mais porque é quem converte mais rápido com pouca verba</td></tr>
 <tr><th>Landing page</th><td>https://mateusbotelho.com — cada campanha pode apontar pra âncora relevante: <code>#dor</code>, <code>#como-funciona</code>, <code>#pacote</code>, <code>#resultados</code>, <code>#faq</code></td></tr>
 </table>
 
@@ -45,59 +47,170 @@
 <p>Convenção: <code>MB | Search | [Funil] | Geral | BR</code></p>
 <table>
 <tr><th>Campanha</th><th>Nome no Google Ads</th></tr>
-<tr><td>Topo de Funil</td><td><code>MB | Search | TOFU | Geral | BR</code></td></tr>
 <tr><td>Meio de Funil</td><td><code>MB | Search | MOFU | Geral | BR</code></td></tr>
 <tr><td>Fundo de Funil</td><td><code>MB | Search | BOFU | Geral | BR</code></td></tr>
+<tr><td>Topo de Funil (pausado)</td><td><code>MB | Search | TOFU | Geral | BR</code></td></tr>
 </table>
-<p>Grupos de anúncios seguem <code>[Funil] | [Tema]</code> (ex.: <code>BOFU | Branded</code>).</p>
+<p>Grupos de anúncios seguem <code>[Funil] | [Tema]</code> (ex.: <code>BOFU | Branded</code>). Um grupo por tema, sem fatiar mais do que isso enquanto a verba for essa.</p>
 
 <h2>3. Estrutura geral</h2>
 <table>
-<tr><th>Estágio</th><th>Consciência</th><th>Lance inicial</th><th>Orçamento/dia (R$40 total)</th></tr>
-<tr><td>Topo (TOFU)</td><td>Problema (dependência de indicação)</td><td>Maximizar cliques</td><td>R$ 6 (15%)</td></tr>
-<tr><td>Meio (MOFU)</td><td>Solução (comparando tráfego pago)</td><td>Cliques → Conversões</td><td>R$ 14 (35%)</td></tr>
-<tr><td>Fundo (BOFU)</td><td>Decisão + marca</td><td>Conversões / CPA</td><td>R$ 20 (50%)</td></tr>
+<tr><th>Estágio</th><th>Consciência</th><th>Lance inicial</th><th>Orçamento/dia (R$50 total)</th></tr>
+<tr><td>Meio (MOFU)</td><td>Solução (comparando tráfego pago)</td><td>Maximizar cliques → Conversões</td><td>R$ 18 (36%)</td></tr>
+<tr><td>Fundo (BOFU)</td><td>Decisão + marca</td><td>Maximizar cliques → Conversões / CPA</td><td>R$ 32 (64%)</td></tr>
+<tr><td>Topo (TOFU) — pausado</td><td>Problema (dependência de indicação)</td><td>—</td><td>R$ 0 (retomar depois, ver seção 7)</td></tr>
 </table>
 
-<h2>4. Campanha — Topo de Funil (TOFU)</h2>
-<p><b>Nome:</b> <code>MB | Search | TOFU | Geral | BR</code> — alcançar quem sente o problema (agenda dependente de indicação, post impulsionado sem resultado) mas ainda não busca "gestor de tráfego pago".</p>
+<h2>4. Campanha — Meio de Funil (MOFU)</h2>
+<p><b>Nome:</b> <code>MB | Search | MOFU | Geral | BR</code> — alcançar quem já pesquisa "tráfego pago" ou "anúncios pra negócio" e compara caminhos. Um único grupo de anúncios: com R$18/dia fatiar mais só reduz volume por grupo.</p>
 
-<h3>▸ Captação de clientes — <code>TOFU | Captação</code></h3>
+<h3>▸ Tráfego pago / conseguir clientes — <code>MOFU | Geral</code></h3>
+<table><tr><th>Palavra-chave</th><th>Correspondência</th></tr>
+<tr><td>tráfego pago para negócio local</td><td>Frase</td></tr>
+<tr><td>google ads para pequenas empresas</td><td>Exata</td></tr>
+<tr><td>meta ads para pequenas empresas</td><td>Frase</td></tr>
+<tr><td>anúncios para atrair clientes</td><td>Frase</td></tr>
+<tr><td>como conseguir clientes com google ads</td><td>Frase</td></tr>
+<tr><td>campanha de anúncios para atrair clientes</td><td>Frase</td></tr>
+<tr><td>anúncio para gerar contato no whatsapp</td><td>Frase</td></tr>
+<tr><td>tráfego pago para prestador de serviço</td><td>Frase</td></tr>
+<tr><td>marketing digital para pequena empresa</td><td>Frase</td></tr>
+<tr><td>anúncios para negócio local</td><td>Frase</td></tr>
+</table>
+<pre id="kw-mofu-1">"tráfego pago para negócio local"
+[google ads para pequenas empresas]
+"meta ads para pequenas empresas"
+"anúncios para atrair clientes"
+"como conseguir clientes com google ads"
+"campanha de anúncios para atrair clientes"
+"anúncio para gerar contato no whatsapp"
+"tráfego pago para prestador de serviço"
+"marketing digital para pequena empresa"
+"anúncios para negócio local"</pre>
+<button class="copybtn" data-target="kw-mofu-1">Copiar</button>
+
+<h3>RSA — Títulos (até 15, máx. 30 caracteres)</h3>
+<table>
+<tr><th>#</th><th>Título</th><th>Caract.</th></tr>
+<tr><td>1</td><td>Tráfego pago pra negócio local</td><td class="ok">30/30</td></tr>
+<tr><td>2</td><td>Google Ads pra pequena empresa</td><td class="ok">30/30</td></tr>
+<tr><td>3</td><td>Meta Ads com estratégia certa</td><td class="ok">29/30</td></tr>
+<tr><td>4</td><td>Cada real com destino certo</td><td class="ok">27/30</td></tr>
+<tr><td>5</td><td>Dado na mesa, não achismo</td><td class="ok">25/30</td></tr>
+<tr><td>6</td><td>Direto pra quem já procura</td><td class="ok">26/30</td></tr>
+<tr><td>7</td><td>Sem aposta no escuro</td><td class="ok">20/30</td></tr>
+<tr><td>8</td><td>Quem procura você te encontra</td><td class="ok">29/30</td></tr>
+<tr><td>9</td><td>Orçamento otimizado sempre</td><td class="ok">26/30</td></tr>
+<tr><td>10</td><td>Mais contato, menos achismo</td><td class="ok">27/30</td></tr>
+<tr><td>11</td><td>Estratégia sob medida</td><td class="ok">21/30</td></tr>
+<tr><td>12</td><td>Google e Meta, sem achismo</td><td class="ok">26/30</td></tr>
+<tr><td>13</td><td>Cresça sem depender de sorte</td><td class="ok">28/30</td></tr>
+<tr><td>14</td><td>Análise gratuita agora</td><td class="ok">22/30</td></tr>
+<tr><td>15</td><td>Fale comigo no WhatsApp</td><td class="ok">23/30</td></tr>
+</table>
+
+<h3>RSA — Descrições (até 4, máx. 90 caracteres)</h3>
+<table>
+<tr><th>#</th><th>Descrição</th><th>Caract.</th></tr>
+<tr><td>1</td><td>Cada campanha acompanhada com número: custo, contatos e o que converteu.</td><td class="ok">72/90</td></tr>
+<tr><td>2</td><td>Defino canal, público certo e crio os anúncios que trazem contato pro seu negócio.</td><td class="ok">82/90</td></tr>
+<tr><td>3</td><td>Acompanho todo dia, corto o que não performa e escalo o que traz contato.</td><td class="ok">73/90</td></tr>
+<tr><td>4</td><td>Estratégia sob medida pro seu nicho e momento de negócio. Sem complicação técnica.</td><td class="ok">82/90</td></tr>
+</table>
+
+<h2>5. Campanha — Fundo de Funil (BOFU)</h2>
+<p><b>Nome:</b> <code>MB | Search | BOFU | Geral | BR</code> — quem já procura fornecedor ("gestor de tráfego pago", "agência de tráfego pago") + tráfego de marca. Maior intenção, maior lance, maior fatia do orçamento (R$32/dia). Dois grupos: Branded fica separado porque quem digita seu nome já te conhece — CTR e taxa de conversão são muito mais altos, e misturar com termos genéricos prejudica o sinal de qualidade dos dois.</p>
+
+<h3>▸ Contratação — <code>BOFU | Contratação</code></h3>
+<table><tr><th>Palavra-chave</th><th>Correspondência</th></tr>
+<tr><td>gestor de tráfego pago</td><td>Exata</td></tr>
+<tr><td>agência de tráfego pago</td><td>Exata</td></tr>
+<tr><td>especialista em tráfego pago</td><td>Frase</td></tr>
+<tr><td>gestor de tráfego pago para pequenas empresas</td><td>Frase</td></tr>
+<tr><td>contratar gestor de tráfego pago</td><td>Frase</td></tr>
+<tr><td>quanto custa gestão de tráfego pago</td><td>Frase</td></tr>
+<tr><td>serviço de gestão de tráfego pago</td><td>Frase</td></tr>
+<tr><td>consultoria de tráfego pago</td><td>Frase</td></tr>
+</table>
+<pre id="kw-bofu-1">[gestor de tráfego pago]
+[agência de tráfego pago]
+"especialista em tráfego pago"
+"gestor de tráfego pago para pequenas empresas"
+"contratar gestor de tráfego pago"
+"quanto custa gestão de tráfego pago"
+"serviço de gestão de tráfego pago"
+"consultoria de tráfego pago"</pre>
+<button class="copybtn" data-target="kw-bofu-1">Copiar</button>
+
+<h3>▸ Marca (branded) — <code>BOFU | Branded</code></h3>
+<table><tr><th>Palavra-chave</th><th>Correspondência</th></tr>
+<tr><td>mateus botelho tráfego pago</td><td>Exata</td></tr>
+<tr><td>mateus botelho gestor de tráfego</td><td>Exata</td></tr>
+<tr><td>mateusbotelho.com</td><td>Exata</td></tr>
+</table>
+<pre id="kw-bofu-2">[mateus botelho tráfego pago]
+[mateus botelho gestor de tráfego]
+[mateusbotelho.com]</pre>
+<button class="copybtn" data-target="kw-bofu-2">Copiar</button>
+
+<h3>RSA — Títulos (até 15, máx. 30 caracteres)</h3>
+<table>
+<tr><th>#</th><th>Título</th><th>Caract.</th></tr>
+<tr><td>1</td><td>Gestor de tráfego pago</td><td class="ok">22/30</td></tr>
+<tr><td>2</td><td>Agência de tráfego pago</td><td class="ok">23/30</td></tr>
+<tr><td>3</td><td>Especialista em tráfego pago</td><td class="ok">28/30</td></tr>
+<tr><td>4</td><td>Mateus Botelho, tráfego pago</td><td class="ok">28/30</td></tr>
+<tr><td>5</td><td>Não é estagiário, sou eu</td><td class="ok">24/30</td></tr>
+<tr><td>6</td><td>Poucos negócios, bem cuidados</td><td class="ok">29/30</td></tr>
+<tr><td>7</td><td>Quase R$1mi em ads geridos</td><td class="ok">26/30</td></tr>
+<tr><td>8</td><td>Relatório simples todo mês</td><td class="ok">26/30</td></tr>
+<tr><td>9</td><td>Fale direto no WhatsApp</td><td class="ok">23/30</td></tr>
+<tr><td>10</td><td>Análise gratuita agora</td><td class="ok">22/30</td></tr>
+<tr><td>11</td><td>Gestão completa, sem enrolação</td><td class="ok">30/30</td></tr>
+<tr><td>12</td><td>Cliente previsível, sempre</td><td class="ok">26/30</td></tr>
+<tr><td>13</td><td>Estratégia sob medida</td><td class="ok">21/30</td></tr>
+<tr><td>14</td><td>Sem estagiário, sem 40 contas</td><td class="ok">29/30</td></tr>
+<tr><td>15</td><td>Site: mateusbotelho.com</td><td class="ok">23/30</td></tr>
+</table>
+
+<h3>RSA — Descrições (até 4, máx. 90 caracteres)</h3>
+<table>
+<tr><th>#</th><th>Descrição</th><th>Caract.</th></tr>
+<tr><td>1</td><td>Eu cuido da estratégia, criação e gestão. Você foca em atender quem chega.</td><td class="ok">74/90</td></tr>
+<tr><td>2</td><td>Não um estagiário com 40 contas pra tocar. Cuido de poucos negócios, bem.</td><td class="ok">73/90</td></tr>
+<tr><td>3</td><td>Quase R$ 1 milhão em anúncios já gerenciados. Fale no WhatsApp agora.</td><td class="ok">69/90</td></tr>
+<tr><td>4</td><td>Relatório simples: quanto investiu, quantos contatos chegaram, de onde vieram.</td><td class="ok">78/90</td></tr>
+</table>
+
+<h2>6. Reserva — Topo de Funil (TOFU, retomar depois)</h2>
+<p><b>Nome:</b> <code>MB | Search | TOFU | Geral | BR</code> — pausado por ora. Reativar quando o orçamento total passar de ~R$ 100/dia, aí sim TOFU tem fôlego pra rodar sem canibalizar Meio/Fundo. Um único grupo quando reativar, juntando os 3 temas abaixo — não recriar 3 grupos.</p>
+
+<h3>▸ TOFU | Geral (palavras-chave de reserva)</h3>
 <table><tr><th>Palavra-chave</th><th>Correspondência</th></tr>
 <tr><td>como conseguir mais clientes</td><td>Frase</td></tr>
 <tr><td>como atrair clientes para o negócio</td><td>Frase</td></tr>
 <tr><td>parar de depender de indicação</td><td>Frase</td></tr>
 <tr><td>negócio parado sem cliente novo</td><td>Ampla</td></tr>
 <tr><td>impulsionar post não funciona</td><td>Ampla</td></tr>
+<tr><td>anúncio pago vale a pena</td><td>Frase</td></tr>
+<tr><td>por que meu anúncio não funciona</td><td>Frase</td></tr>
+<tr><td>já tentei anunciar e não deu certo</td><td>Frase</td></tr>
+<tr><td>o que é tráfego pago</td><td>Frase</td></tr>
+<tr><td>como funciona tráfego pago</td><td>Frase</td></tr>
+<tr><td>tráfego pago para pequenas empresas</td><td>Frase</td></tr>
 </table>
 <pre id="kw-tofu-1">"como conseguir mais clientes"
 "como atrair clientes para o negócio"
 "parar de depender de indicação"
 negócio parado sem cliente novo
-impulsionar post não funciona</pre>
-<button class="copybtn" data-target="kw-tofu-1">Copiar</button>
-
-<h3>▸ Anúncio que não funciona — <code>TOFU | Dúvida</code></h3>
-<table><tr><th>Palavra-chave</th><th>Correspondência</th></tr>
-<tr><td>anúncio pago vale a pena</td><td>Frase</td></tr>
-<tr><td>por que meu anúncio não funciona</td><td>Frase</td></tr>
-<tr><td>já tentei anunciar e não deu certo</td><td>Frase</td></tr>
-</table>
-<pre id="kw-tofu-2">"anúncio pago vale a pena"
+impulsionar post não funciona
+"anúncio pago vale a pena"
 "por que meu anúncio não funciona"
-"já tentei anunciar e não deu certo"</pre>
-<button class="copybtn" data-target="kw-tofu-2">Copiar</button>
-
-<h3>▸ Tráfego pago (informacional) — <code>TOFU | Informacional</code></h3>
-<table><tr><th>Palavra-chave</th><th>Correspondência</th></tr>
-<tr><td>o que é tráfego pago</td><td>Frase</td></tr>
-<tr><td>como funciona tráfego pago</td><td>Frase</td></tr>
-<tr><td>tráfego pago para pequenas empresas</td><td>Frase</td></tr>
-</table>
-<pre id="kw-tofu-3">"o que é tráfego pago"
+"já tentei anunciar e não deu certo"
+"o que é tráfego pago"
 "como funciona tráfego pago"
 "tráfego pago para pequenas empresas"</pre>
-<button class="copybtn" data-target="kw-tofu-3">Copiar</button>
+<button class="copybtn" data-target="kw-tofu-1">Copiar</button>
 
 <h3>RSA — Títulos (até 15, máx. 30 caracteres)</h3>
 <table>
@@ -129,144 +242,8 @@ impulsionar post não funciona</pre>
 <tr><td>4</td><td>Análise gratuita do seu negócio. Fale no WhatsApp e veja se faz sentido pra você.</td><td class="ok">81/90</td></tr>
 </table>
 
-<h2>5. Campanha — Meio de Funil (MOFU)</h2>
-<p><b>Nome:</b> <code>MB | Search | MOFU | Geral | BR</code> — alcançar quem já pesquisa "tráfego pago" ou "anúncios pra negócio" e compara caminhos.</p>
-
-<h3>▸ Tráfego pago / anúncios pra negócio — <code>MOFU | Tráfego Pago</code></h3>
-<table><tr><th>Palavra-chave</th><th>Correspondência</th></tr>
-<tr><td>tráfego pago para negócio local</td><td>Frase</td></tr>
-<tr><td>google ads para pequenas empresas</td><td>Exata</td></tr>
-<tr><td>meta ads para pequenas empresas</td><td>Frase</td></tr>
-<tr><td>anúncios para atrair clientes</td><td>Frase</td></tr>
-</table>
-<pre id="kw-mofu-1">"tráfego pago para negócio local"
-[google ads para pequenas empresas]
-"meta ads para pequenas empresas"
-"anúncios para atrair clientes"</pre>
-<button class="copybtn" data-target="kw-mofu-1">Copiar</button>
-
-<h3>▸ Conseguir clientes com anúncio — <code>MOFU | Conseguir Clientes</code></h3>
-<table><tr><th>Palavra-chave</th><th>Correspondência</th></tr>
-<tr><td>como conseguir clientes com google ads</td><td>Frase</td></tr>
-<tr><td>campanha de anúncios para atrair clientes</td><td>Frase</td></tr>
-<tr><td>anúncio para gerar contato no whatsapp</td><td>Frase</td></tr>
-</table>
-<pre id="kw-mofu-2">"como conseguir clientes com google ads"
-"campanha de anúncios para atrair clientes"
-"anúncio para gerar contato no whatsapp"</pre>
-<button class="copybtn" data-target="kw-mofu-2">Copiar</button>
-
-<h3>▸ Por segmento — <code>MOFU | Segmento</code></h3>
-<table><tr><th>Palavra-chave</th><th>Correspondência</th></tr>
-<tr><td>tráfego pago para prestador de serviço</td><td>Frase</td></tr>
-<tr><td>marketing digital para pequena empresa</td><td>Frase</td></tr>
-<tr><td>anúncios para negócio local</td><td>Frase</td></tr>
-</table>
-<pre id="kw-mofu-3">"tráfego pago para prestador de serviço"
-"marketing digital para pequena empresa"
-"anúncios para negócio local"</pre>
-<button class="copybtn" data-target="kw-mofu-3">Copiar</button>
-
-<h3>RSA — Títulos (até 15, máx. 30 caracteres)</h3>
-<table>
-<tr><th>#</th><th>Título</th><th>Caract.</th></tr>
-<tr><td>1</td><td>Tráfego pago pra negócio local</td><td class="ok">30/30</td></tr>
-<tr><td>2</td><td>Google Ads pra pequena empresa</td><td class="ok">30/30</td></tr>
-<tr><td>3</td><td>Meta Ads com estratégia certa</td><td class="ok">29/30</td></tr>
-<tr><td>4</td><td>Cada real com destino certo</td><td class="ok">27/30</td></tr>
-<tr><td>5</td><td>Dado na mesa, não achismo</td><td class="ok">25/30</td></tr>
-<tr><td>6</td><td>Direto pra quem já procura</td><td class="ok">26/30</td></tr>
-<tr><td>7</td><td>Sem aposta no escuro</td><td class="ok">20/30</td></tr>
-<tr><td>8</td><td>Quem procura você te encontra</td><td class="ok">29/30</td></tr>
-<tr><td>9</td><td>Orçamento otimizado sempre</td><td class="ok">26/30</td></tr>
-<tr><td>10</td><td>Mais contato, menos achismo</td><td class="ok">27/30</td></tr>
-<tr><td>11</td><td>Estratégia sob medida</td><td class="ok">21/30</td></tr>
-<tr><td>12</td><td>Google e Meta, sem achismo</td><td class="ok">26/30</td></tr>
-<tr><td>13</td><td>Cresça sem depender de sorte</td><td class="ok">28/30</td></tr>
-<tr><td>14</td><td>Análise gratuita agora</td><td class="ok">22/30</td></tr>
-<tr><td>15</td><td>Fale comigo no WhatsApp</td><td class="ok">23/30</td></tr>
-</table>
-
-<h3>RSA — Descrições (até 4, máx. 90 caracteres)</h3>
-<table>
-<tr><th>#</th><th>Descrição</th><th>Caract.</th></tr>
-<tr><td>1</td><td>Cada campanha acompanhada com número: custo, contatos e o que converteu.</td><td class="ok">72/90</td></tr>
-<tr><td>2</td><td>Defino canal, público certo e crio os anúncios que trazem contato pro seu negócio.</td><td class="ok">82/90</td></tr>
-<tr><td>3</td><td>Acompanho todo dia, corto o que não performa e escalo o que traz contato.</td><td class="ok">73/90</td></tr>
-<tr><td>4</td><td>Estratégia sob medida pro seu nicho e momento de negócio. Sem complicação técnica.</td><td class="ok">82/90</td></tr>
-</table>
-
-<h2>6. Campanha — Fundo de Funil (BOFU)</h2>
-<p><b>Nome:</b> <code>MB | Search | BOFU | Geral | BR</code> — quem já procura fornecedor ("gestor de tráfego pago", "agência de tráfego pago") + tráfego de marca. Maior intenção, maior lance.</p>
-
-<h3>▸ Gestor / agência — <code>BOFU | Gestor-Agência</code></h3>
-<table><tr><th>Palavra-chave</th><th>Correspondência</th></tr>
-<tr><td>gestor de tráfego pago</td><td>Exata</td></tr>
-<tr><td>agência de tráfego pago</td><td>Exata</td></tr>
-<tr><td>especialista em tráfego pago</td><td>Frase</td></tr>
-<tr><td>gestor de tráfego pago para pequenas empresas</td><td>Frase</td></tr>
-</table>
-<pre id="kw-bofu-1">[gestor de tráfego pago]
-[agência de tráfego pago]
-"especialista em tráfego pago"
-"gestor de tráfego pago para pequenas empresas"</pre>
-<button class="copybtn" data-target="kw-bofu-1">Copiar</button>
-
-<h3>▸ Contratar serviço — <code>BOFU | Contratar</code></h3>
-<table><tr><th>Palavra-chave</th><th>Correspondência</th></tr>
-<tr><td>contratar gestor de tráfego pago</td><td>Frase</td></tr>
-<tr><td>quanto custa gestão de tráfego pago</td><td>Frase</td></tr>
-<tr><td>serviço de gestão de tráfego pago</td><td>Frase</td></tr>
-<tr><td>consultoria de tráfego pago</td><td>Frase</td></tr>
-</table>
-<pre id="kw-bofu-2">"contratar gestor de tráfego pago"
-"quanto custa gestão de tráfego pago"
-"serviço de gestão de tráfego pago"
-"consultoria de tráfego pago"</pre>
-<button class="copybtn" data-target="kw-bofu-2">Copiar</button>
-
-<h3>▸ Marca (branded) — <code>BOFU | Branded</code></h3>
-<table><tr><th>Palavra-chave</th><th>Correspondência</th></tr>
-<tr><td>mateus botelho tráfego pago</td><td>Exata</td></tr>
-<tr><td>mateus botelho gestor de tráfego</td><td>Exata</td></tr>
-<tr><td>mateusbotelho.com</td><td>Exata</td></tr>
-</table>
-<pre id="kw-bofu-3">[mateus botelho tráfego pago]
-[mateus botelho gestor de tráfego]
-[mateusbotelho.com]</pre>
-<button class="copybtn" data-target="kw-bofu-3">Copiar</button>
-
-<h3>RSA — Títulos (até 15, máx. 30 caracteres)</h3>
-<table>
-<tr><th>#</th><th>Título</th><th>Caract.</th></tr>
-<tr><td>1</td><td>Gestor de tráfego pago</td><td class="ok">22/30</td></tr>
-<tr><td>2</td><td>Agência de tráfego pago</td><td class="ok">23/30</td></tr>
-<tr><td>3</td><td>Especialista em tráfego pago</td><td class="ok">28/30</td></tr>
-<tr><td>4</td><td>Mateus Botelho, tráfego pago</td><td class="ok">28/30</td></tr>
-<tr><td>5</td><td>Não é estagiário, sou eu</td><td class="ok">24/30</td></tr>
-<tr><td>6</td><td>Poucos negócios, bem cuidados</td><td class="ok">29/30</td></tr>
-<tr><td>7</td><td>Quase R$1mi em ads geridos</td><td class="ok">26/30</td></tr>
-<tr><td>8</td><td>Relatório simples todo mês</td><td class="ok">26/30</td></tr>
-<tr><td>9</td><td>Fale direto no WhatsApp</td><td class="ok">23/30</td></tr>
-<tr><td>10</td><td>Análise gratuita agora</td><td class="ok">22/30</td></tr>
-<tr><td>11</td><td>Gestão completa, sem enrolação</td><td class="ok">30/30</td></tr>
-<tr><td>12</td><td>Cliente previsível, sempre</td><td class="ok">26/30</td></tr>
-<tr><td>13</td><td>Estratégia sob medida</td><td class="ok">21/30</td></tr>
-<tr><td>14</td><td>Sem estagiário, sem 40 contas</td><td class="ok">29/30</td></tr>
-<tr><td>15</td><td>Site: mateusbotelho.com</td><td class="ok">23/30</td></tr>
-</table>
-
-<h3>RSA — Descrições (até 4, máx. 90 caracteres)</h3>
-<table>
-<tr><th>#</th><th>Descrição</th><th>Caract.</th></tr>
-<tr><td>1</td><td>Eu cuido da estratégia, criação e gestão. Você foca em atender quem chega.</td><td class="ok">74/90</td></tr>
-<tr><td>2</td><td>Não um estagiário com 40 contas pra tocar. Cuido de poucos negócios, bem.</td><td class="ok">73/90</td></tr>
-<tr><td>3</td><td>Quase R$ 1 milhão em anúncios já gerenciados. Fale no WhatsApp agora.</td><td class="ok">69/90</td></tr>
-<tr><td>4</td><td>Relatório simples: quanto investiu, quantos contatos chegaram, de onde vieram.</td><td class="ok">78/90</td></tr>
-</table>
-
 <h2>7. Palavras-chave negativas (lista global)</h2>
-<p>Aplicar como lista de negativas compartilhada nas 3 campanhas. Foco: barrar quem busca curso/emprego/gratuito em vez de contratar o serviço.</p>
+<p>Aplicar como lista de negativas compartilhada nas 2 campanhas ativas (Meio e Fundo). Foco: barrar quem busca curso/emprego/gratuito em vez de contratar o serviço.</p>
 <pre id="kw-neg">grátis
 gratuito
 gratuita
@@ -334,13 +311,14 @@ reclame aqui</pre>
 <ul>
 <li>[ ] Conta Google Ads criada e billing configurado</li>
 <li>[ ] Conversão de WhatsApp configurada no GTM e testada</li>
-<li>[ ] 3 campanhas criadas (Topo, Meio, Fundo), rede só de Pesquisa</li>
-<li>[ ] Localização e orçamento por campanha definidos</li>
-<li>[ ] Palavras-chave inseridas com o tipo de correspondência certo</li>
-<li>[ ] Lista de negativas globais aplicada às 3 campanhas</li>
-<li>[ ] RSA com títulos e descrições por grupo (revisar título 2 do TOFU, passou de 30 caracteres)</li>
+<li>[ ] 2 campanhas criadas (Meio e Fundo), rede só de Pesquisa. TOFU fica de fora por enquanto</li>
+<li>[ ] Localização e orçamento por campanha definidos (R$18 Meio / R$32 Fundo)</li>
+<li>[ ] Palavras-chave inseridas com o tipo de correspondência certo (1 grupo no Meio, 2 no Fundo)</li>
+<li>[ ] Lista de negativas globais aplicada às 2 campanhas</li>
+<li>[ ] RSA com títulos e descrições por grupo</li>
 <li>[ ] Extensões: 4 sitelinks, 6 callouts, snippets, extensão de chamada</li>
 <li>[ ] Revisar termos de busca 2×/semana nas 2 primeiras semanas</li>
+<li>[ ] Acompanhar CPA/conversões; reavaliar reativar TOFU quando o orçamento passar de ~R$100/dia</li>
 </ul>
 
 <h2>11. Métricas para acompanhar</h2>
