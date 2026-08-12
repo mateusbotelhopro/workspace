@@ -240,15 +240,16 @@ reclame aqui</pre>
 <h2>8. Rastreamento de conversão</h2>
 <ul>
 <li>Conversão principal: clique no botão de WhatsApp (todos os links wa.me)</li>
-<li>O site já tem GTM (GTM-PFLSM4T8). Criar no GTM um gatilho de clique nos links <code>wa.me</code> → disparar tag de conversão do Google Ads</li>
-<li>A tag só dispara após o aceite de cookies (site é opt-in, ver <code>js/consent.js</code>). Uma parte dos contatos não será rastreada se o visitante recusar — considerar isso na leitura da taxa de conversão</li>
-<li>Marcar a conversão de WhatsApp como Primária</li>
+<li><b>Status: implementado e no ar.</b> Não foi via GTM — as tags (GTM, Meta Pixel, ContentSquare) já eram carregadas direto no <code>js/consent.js</code>, sem gate de consentimento (apesar do que a v. anterior deste documento dizia). A conversão do Google Ads foi adicionada no mesmo arquivo, no mesmo padrão: carrega o <code>gtag.js</code> da conta e dispara evento de conversão em todo clique em link <code>wa.me</code> (delegação simples via <code>querySelectorAll</code>, cobre nav, hero, pacote, CTA final e o botão flutuante)</li>
+<li>ID da conta: <code>AW-17962154967</code> · Ação de conversão usada: <b>"Contato (1)"</b>, rótulo <code>iBaWCPH4mOAcENf3gvVC</code> (tipo evento/clique — é a que bate com o fluxo real, já que o clique no WhatsApp abre em nova aba, sem página de confirmação no próprio site)</li>
+<li><b>Atenção:</b> a conta tem duas ações de conversão chamadas "Contato" e "Contato (1)" — a segunda ("Contato") é do tipo carregamento de página (rótulo <code>3Ww4CJejm-AcENf3gvVC</code>) e não foi usada porque não existe página de confirmação no fluxo. Provavelmente foi criada em duplicidade — considerar pausar/excluir essa no Google Ads pra não confundir relatório</li>
+<li>Marcar a conversão "Contato (1)" como Primária</li>
 </ul>
 
 <h2>9. Checklist de lançamento</h2>
 <ul>
 <li>[ ] Conta Google Ads criada e billing configurado</li>
-<li>[ ] Conversão de WhatsApp configurada no GTM e testada</li>
+<li>[x] Conversão de WhatsApp implementada (via <code>js/consent.js</code>, direto no gtag — ver seção 8) — falta testar clicando no site publicado e conferindo se a conversão chega no Google Ads (menu Conversões, pode levar algumas horas pra aparecer)</li>
 <li>[ ] 2 campanhas criadas (Meio e Fundo), rede só de Pesquisa</li>
 <li>[ ] Localização e orçamento por campanha definidos (R$10 Meio / R$40 Fundo)</li>
 <li>[ ] Palavras-chave inseridas com o tipo de correspondência certo (1 grupo no Meio, 2 no Fundo)</li>
