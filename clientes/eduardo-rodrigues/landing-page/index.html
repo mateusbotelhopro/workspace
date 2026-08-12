@@ -5,25 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Operação Livre | Saia da CLT e construa sua operação regional</title>
   <meta name="description" content="Método para gestores de tráfego e donos de pequenas agências construírem uma operação regional, enxuta e lucrativa — que continua funcionando mesmo quando você não está na frente do computador.">
-  <link rel="canonical" href="https://operacaolivre.com.br/">
+  <link rel="canonical" href="https://lp.metodofas.com.br/">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0E0E10">
   <meta name="author" content="Eduardo Rodrigues">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://operacaolivre.com.br/">
+  <meta property="og:url" content="https://lp.metodofas.com.br/">
   <meta property="og:site_name" content="Operação Livre">
   <meta property="og:title" content="Operação Livre | Saia da CLT e construa sua operação regional">
   <meta property="og:description" content="Método para gestores de tráfego e donos de pequenas agências construírem uma operação regional, enxuta e lucrativa — que continua funcionando mesmo quando você não está na frente do computador.">
-  <meta property="og:image" content="https://operacaolivre.com.br/fotos/foto-07.jpg">
+  <meta property="og:image" content="https://lp.metodofas.com.br/fotos/foto-07.jpg">
   <meta property="og:locale" content="pt_BR">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Operação Livre | Saia da CLT e construa sua operação regional">
   <meta name="twitter:description" content="Método para gestores de tráfego e donos de pequenas agências construírem uma operação regional, enxuta e lucrativa.">
-  <meta name="twitter:image" content="https://operacaolivre.com.br/fotos/foto-07.jpg">
+  <meta name="twitter:image" content="https://lp.metodofas.com.br/fotos/foto-07.jpg">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
@@ -51,8 +51,8 @@
       --bg-alt: #17171A;
       --card: #1C1C20;
       --card-border: rgba(255,255,255,0.08);
-      --gold: #D9A34A;
-      --gold-light: #F0C078;
+      --gold: #3E7BFA;
+      --gold-light: #7BAAFF;
       --text: #F3F1EC;
       --text-dim: #B7B4AC;
       --text-faint: #85827B;
@@ -112,9 +112,9 @@
 
     .btn-primary {
       background: linear-gradient(180deg, var(--gold-light), var(--gold));
-      color: #17130A;
+      color: #FFFFFF;
     }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(217,163,74,0.28); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(62,123,250,0.35); }
 
     .btn-ghost {
       background: transparent;
@@ -148,7 +148,7 @@
     /* ── Hero ── */
     .hero {
       padding: 64px 0 88px;
-      background: radial-gradient(ellipse 900px 500px at 80% -10%, rgba(217,163,74,0.14), transparent 60%);
+      background: radial-gradient(ellipse 900px 500px at 80% -10%, rgba(62,123,250,0.18), transparent 60%);
     }
     .hero .container {
       display: grid;
@@ -360,41 +360,14 @@
     }
     .liberdade-quote span { color: var(--gold); }
 
-    /* ── Lead form ── */
+    /* ── Checkout CTA ── */
     .lead-section { background: var(--card); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border); }
-    .lead-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .lead-copy h2 { font-size: clamp(26px, 3.4vw, 36px); margin-bottom: 16px; }
-    .lead-copy p { color: var(--text-dim); font-size: 16px; margin-bottom: 22px; }
-    .lead-copy ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .lead-copy li { font-size: 14.5px; color: var(--text-dim); display: flex; gap: 10px; }
-    .lead-copy li::before { content: "✓"; color: var(--gold); font-weight: 700; }
-
-    .lead-form {
-      background: var(--bg);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 36px;
-    }
-    .lead-form h3 { font-size: 19px; margin-bottom: 6px; }
-    .lead-form .sub { font-size: 13.5px; color: var(--text-faint); margin-bottom: 22px; }
-    .field { margin-bottom: 16px; }
-    .field label { display: block; font-size: 13px; color: var(--text-dim); margin-bottom: 6px; }
-    .field input, .field select {
-      width: 100%;
-      padding: 13px 14px;
-      background: var(--bg-alt);
-      border: 1px solid var(--card-border);
-      border-radius: 8px;
-      color: var(--text);
-      font-family: var(--font-body);
-      font-size: 14.5px;
-    }
-    .field input:focus, .field select:focus { outline: none; border-color: var(--gold); }
-    .lead-form .btn { width: 100%; margin-top: 6px; padding: 15px; font-size: 15px; }
-    .form-note { font-size: 12px; color: var(--text-faint); margin-top: 14px; text-align: center; }
-    .form-success { display: none; text-align: center; padding: 20px 0; }
-    .form-success.show { display: block; }
-    .form-success strong { display: block; font-family: var(--font-display); font-size: 18px; color: var(--gold); margin-bottom: 8px; }
+    .checkout-cta { text-align: center; max-width: 640px; margin: 0 auto; }
+    .checkout-cta ul { list-style: none; display: flex; flex-direction: column; gap: 10px; margin: 22px 0 30px; text-align: left; max-width: 380px; margin-left: auto; margin-right: auto; }
+    .checkout-cta li { font-size: 14.5px; color: var(--text-dim); display: flex; gap: 10px; }
+    .checkout-cta li::before { content: "✓"; color: var(--gold); font-weight: 700; }
+    .checkout-cta p { color: var(--text-dim); font-size: 16px; margin: 14px 0 4px; }
+    .checkout-cta .btn { padding: 18px 40px; font-size: 16px; }
 
     /* ── FAQ ── */
     .faq-list { max-width: 720px; margin: 0 auto; }
@@ -464,12 +437,14 @@
 </head>
 <body>
 
+  <!-- Todos os botões "Quero minha vaga" abaixo apontam para href="#" — trocar por link real do checkout quando o Eduardo enviar -->
+
   <!-- ── Header ── -->
   <header class="header">
     <div class="container">
       <div class="logo">OPERAÇÃO <span>LIVRE</span></div>
       <div class="header-cta-wrap">
-        <a href="#lead-form" class="btn btn-primary"><span>Quero minha vaga</span> →</a>
+        <a href="#" class="btn btn-primary"><span>Quero minha vaga</span> →</a>
       </div>
     </div>
   </header>
@@ -482,7 +457,7 @@
         <h1>Você abriu uma agência ou criou um emprego onde <em>todos são seus chefes?</em></h1>
         <p class="lead">O Método Operação Livre ensina você a sair da CLT e construir uma operação regional, enxuta e previsível — que continua funcionando mesmo quando você não está na frente do computador.</p>
         <div class="hero-actions">
-          <a href="#lead-form" class="btn btn-primary">Quero conhecer o método →</a>
+          <a href="#" class="btn btn-primary">Quero conhecer o método →</a>
           <a href="#metodo" class="btn btn-ghost">Ver como funciona</a>
         </div>
         <div class="hero-trust">
@@ -577,7 +552,7 @@
         <div class="metodo-item"><div class="n">08</div><div><h4>Plano de Saída da CLT</h4><p>A transição segura — sair do emprego sem trocar um problema por outro.</p></div></div>
       </div>
       <div class="metodo-cta">
-        <a href="#lead-form" class="btn btn-primary">Quero fazer parte →</a>
+        <a href="#" class="btn btn-primary">Quero fazer parte →</a>
       </div>
     </div>
   </section>
@@ -638,52 +613,17 @@
     </div>
   </section>
 
-  <!-- ── Lead form ── -->
-  <section class="lead-section" id="lead-form">
-    <div class="container lead-grid">
-      <div class="lead-copy">
-        <span class="eyebrow">Próximo passo</span>
-        <h2>Garanta sua vaga na lista do Operação Livre</h2>
-        <p>Preencha os dados abaixo. A equipe do Eduardo entra em contato pra te mostrar como o método se aplica à sua realidade.</p>
-        <ul>
-          <li>Sem compromisso — é uma conversa de diagnóstico</li>
-          <li>Resposta em até 1 dia útil</li>
-          <li>Vagas limitadas por turma</li>
-        </ul>
-      </div>
-      <div class="lead-form">
-        <form id="leadForm">
-          <h3>Quero conhecer o método</h3>
-          <p class="sub">Leva menos de 1 minuto</p>
-          <div class="field">
-            <label for="nome">Nome completo</label>
-            <input type="text" id="nome" name="nome" required placeholder="Seu nome">
-          </div>
-          <div class="field">
-            <label for="whatsapp">WhatsApp</label>
-            <input type="tel" id="whatsapp" name="whatsapp" required placeholder="(00) 00000-0000">
-          </div>
-          <div class="field">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required placeholder="seu@email.com">
-          </div>
-          <div class="field">
-            <label for="situacao">Sua situação hoje</label>
-            <select id="situacao" name="situacao">
-              <option>Ainda na CLT, começando a agência</option>
-              <option>Já tenho os primeiros clientes</option>
-              <option>Tenho agência, mas dependo 100% de mim</option>
-              <option>Outra situação</option>
-            </select>
-          </div>
-          <button type="submit" class="btn btn-primary">Quero minha vaga →</button>
-          <p class="form-note">Seus dados não serão compartilhados com terceiros.</p>
-        </form>
-        <div class="form-success" id="formSuccess">
-          <strong>Recebemos seu contato!</strong>
-          <p style="color:var(--text-dim); font-size:14.5px;">A equipe do Eduardo vai falar com você em breve pelo WhatsApp informado.</p>
-        </div>
-      </div>
+  <!-- ── Checkout CTA ── -->
+  <section class="lead-section" id="checkout">
+    <div class="container checkout-cta">
+      <span class="eyebrow">Próximo passo</span>
+      <h2>Garanta sua vaga no Método Operação Livre</h2>
+      <ul>
+        <li>Acesso imediato às 8 aulas do método</li>
+        <li>Checkout 100% seguro</li>
+        <li>Vagas limitadas por turma</li>
+      </ul>
+      <a href="#" class="btn btn-primary">Quero minha vaga →</a>
     </div>
   </section>
 
@@ -712,8 +652,8 @@
           <p>São encontros semanais pra analisar sua operação, revisar processos e tirar dúvidas de implementação — os detalhes de turma e formato são apresentados na conversa de diagnóstico.</p>
         </details>
         <details class="faq-item">
-          <summary>Preencher o formulário me compromete a comprar algo?<span class="faq-icon">+</span></summary>
-          <p>Não. É o primeiro passo pra entender se o método faz sentido pra sua realidade — a decisão é sua, depois da conversa.</p>
+          <summary>Como funciona a compra?<span class="faq-icon">+</span></summary>
+          <p>O botão "Quero minha vaga" leva direto pro checkout seguro, onde você confere os detalhes e finaliza a inscrição.</p>
         </details>
       </div>
     </div>
@@ -724,7 +664,7 @@
     <div class="container">
       <h2>Construa uma operação que continue funcionando <em style="color:var(--gold); font-style:normal;">quando você não estiver na frente do computador.</em></h2>
       <p>Se essa é a operação que você quer construir, o Método Operação Livre foi criado pra você.</p>
-      <a href="#lead-form" class="btn btn-primary">Quero minha vaga →</a>
+      <a href="#" class="btn btn-primary">Quero minha vaga →</a>
     </div>
   </section>
 
@@ -736,17 +676,7 @@
     </div>
   </footer>
 
-  <a href="#lead-form" class="btn btn-primary fab">Quero minha vaga →</a>
-
-  <script>
-    document.getElementById('leadForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      // TODO: conectar a um endpoint real (webhook / Google Sheets / CRM) antes de publicar.
-      // Por enquanto, o formulário só confirma visualmente o envio, sem persistir o lead.
-      this.style.display = 'none';
-      document.getElementById('formSuccess').classList.add('show');
-    });
-  </script>
+  <a href="#" class="btn btn-primary fab">Quero minha vaga →</a>
 
 </body>
 </html>

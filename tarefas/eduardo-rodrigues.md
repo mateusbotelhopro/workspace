@@ -2,8 +2,9 @@
 
 ## A fazer
 - [ ] Confirmar número de WhatsApp do Eduardo (pra CTA e botão flutuante)
-- [ ] Definir domínio real e publicar via Hostinger (hoje o HTML usa `operacaolivre.com.br` como placeholder nas meta tags)
-- [ ] Conectar o formulário de captação a um destino real (webhook / Google Sheets / CRM) — hoje só confirma visualmente, não persiste o lead
+- [ ] Publicar via Hostinger no domínio `lp.metodofas.com.br` (definido em 2026-08-09; ainda não resolve DNS — confirmar apontamento antes do deploy)
+- [ ] Pegar com o Eduardo o link da página de checkout — todos os CTAs ("Quero minha vaga") hoje apontam pra `href="#"` como placeholder
+- [ ] Confirmar se existe página pós-checkout (obrigado/onboarding) já pronta, ou se precisa ser montada
 - [ ] Confirmar com o Eduardo se quer incluir números reais (nº de alunos, faturamento gerado, depoimentos) — LP01 não usa nenhum por enquanto pra não inventar dado
 - [ ] Confirmar inconsistência no roteiro de VSL ("Método Eugência Livre" em vez de "Operação Livre" em `VSL_Metodo_Operação_Livre.docx`)
 - [ ] Revisar seleção de fotos com o Eduardo (22 fotos processadas em `landing-page/fotos/`)
